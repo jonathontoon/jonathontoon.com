@@ -1,0 +1,75 @@
+{
+    "root": true,
+    "extends": [
+      "plugin:astro/recommended",
+      "plugin:astro/jsx-a11y-recommended",
+      "airbnb-base",
+      "airbnb-typescript/base",
+      "plugin:@typescript-eslint/strict",
+      "plugin:@typescript-eslint/stylistic-type-checked",
+      "plugin:eslint-comments/recommended",
+      "plugin:regexp/recommended",
+      "plugin:tailwindcss/recommended",
+      "prettier"
+    ],
+    "plugins": ["simple-import-sort"],
+    "parserOptions": {
+      "project": true,
+      "extraFileExtensions": [".astro"]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": true
+      }
+    },
+  
+    "rules": {
+      /* Auto-sort imports and exports */
+      "simple-import-sort/imports": "warn",
+      "simple-import-sort/exports": "warn",
+      "sort-imports": "off",
+      "import/order": "off",
+  
+      /* Custom preferences */
+      "@typescript-eslint/consistent-indexed-object-style": [
+        "warn",
+        "index-signature" // Prevent ambiguity with Records & Tuples
+      ],
+      "@typescript-eslint/consistent-type-definitions": "warn",
+      "@typescript-eslint/method-signature-style": "error", // Force type safety
+      "@typescript-eslint/no-empty-interface": [
+        "warn",
+        { "allowSingleExtends": true }
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "destructuredArrayIgnorePattern": "^_",
+          "ignoreRestSiblings": true
+        }
+      ],
+      "@typescript-eslint/triple-slash-reference": [
+        "error",
+        { "path": "always" }
+      ],
+      "curly": "warn",
+      "func-names": ["warn", "as-needed"],
+      "import/no-extraneous-dependencies": "off",
+      "import/prefer-default-export": "off",
+      "tailwindcss/classnames-order": "off", // Enforced by Prettier
+      "tailwindcss/no-custom-classname": "off" // Avoid distractions while typing
+    },
+  
+    "overrides": [
+      {
+        "files": "*.astro",
+        "parser": "astro-eslint-parser",
+        "parserOptions": {
+          "parser": "@typescript-eslint/parser"
+        },
+        "rules": {
+          "import/no-unresolved": "off"
+        }
+      }
+    ]
+  }

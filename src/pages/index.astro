@@ -1,0 +1,112 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "../assets/images/jonathon-toon-profile.png";
+
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import H1 from "@components/H1.astro";
+import Link from "@components/Link.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Section from "@components/Section.astro";
+import ExperienceGrid from "@components/ExperienceGrid.astro";
+import ExperienceGridItem from "@components/ExperienceGridItem.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import ExperienceGridRow from "@components/ExperienceGridRow.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<Header id="introduction" class="mt-80">
+		<div class="mb-4">
+			<H1 class="mb-4">Exceptional creative problem solving for early-stage technology companies.</H1>
+			<Paragraph class="text-zinc-400">Nice to meet you. I'm Jonathon. An experienced software designer, product leader, mentor based in Aotearoa New Zealand. Your next design partner.</Paragraph>
+		</div>
+		<div class="mb-2">
+			<Link href="#services">View Services</Link>
+			<Link href="#about">About Me</Link>
+		</div>
+		<div class="flex flex-row items-center">
+			<Image src={profileImage} alt="Portrait of Jonathon Toon," class="w-8 rounded-full mr-4" />
+			<span>Interested to work together? <Link href="https://www.cal.com/jonathon-toon">Schedule a call</Link>.</span>
+		</div>
+	</Header>
+
+	<Section id="companies">
+
+	</Section>
+
+	<Section id="experience">
+		<SectionHeader
+			iconName="projector-board"
+			title="Experience"
+			description="Throughout my career, I’ve consistently worn multiple hats and blurred functional boundaries—mostly out of necessity, and other times for the joy of building."
+		/>
+		<ExperienceGrid>
+			<ExperienceGridRow>
+				<ExperienceGridItem
+					class="border-sky-400 fill-sky-400 text-sky-400"
+					iconName="microscope"
+					title="Discovery"
+					description="Market sizing, user interviews, and zero-to-one products."
+				/>
+				<ExperienceGridItem
+					class="border-green-400 fill-green-400 text-green-400"
+					iconName="palette"
+					title="Design"
+					description="Interface design, user testing, prototyping, and design systems."
+				/>
+			</ExperienceGridRow>
+			<ExperienceGridRow>
+				<ExperienceGridItem
+					class="border-amber-400 fill-amber-400 text-amber-400 "
+					iconName="component"
+					title="Leadership"
+					description="Developing teams, process, career rubrics, and hiring."
+				/>
+
+				<ExperienceGridItem
+					class="border-red-400 fill-red-400 text-red-400"
+					iconName="puzzle-piece"
+					title="Product"
+					description="Strategy, validation, growth hacking, and go-to-market."
+				/>
+			</ExperienceGridRow>
+		</ExperienceGrid>
+	</Section>
+
+	<Section id="services">
+		<SectionHeader
+			iconName="layers"
+			title="Services"
+			description="I provide structured engagements, driven by a deep desire to help both product organizations and designers build up operational effectiveness."
+		/>
+	</Section>
+
+	<Section id="question">
+		<SectionHeader
+			iconName="help-square"
+			title="Questions?"
+		/>
+	</Section>
+
+	<Section id="about">
+		<SectionHeader
+			iconName="person-circle"
+			title="About"
+		/>
+		<Paragraph class="text-zinc-400">
+			Curious to know more? Over the past 13 years, I’ve worked across various cultures and languages, in-person and remotely, in Oceania, North America, and Asia.
+		</Paragraph>
+		<Paragraph class="text-zinc-400">
+			During this time, I’ve designed interfaces and worked on products which are used by millions, at a number of innovative companies. I’ve also managed individuals and led teams to take new products to market.
+		</Paragraph>
+		<Paragraph class="text-zinc-400">
+			These experiences have taught me that great design is the result of even better synthesis—the artful understanding of data, people, and the real world. A learning that now shapes my approach, emphasizing observation and outcomes over mere output.
+		</Paragraph>
+		<Paragraph class="text-zinc-400">
+			If you’d like to get in touch <Link href="mailto:hi@jonathontoon.com">via email</Link> I’m always happy to write back. Otherwise connect with me over on <Link href="https://www.read.cv/toon">ReadCV</Link>, <Link href="https://www.linkedin.com/jonathontoon">LinkedIn</Link> or <span class="line-through">Twitter</span> <Link href="https://www.twitter.com/jonathontoon">X</Link>.
+		</Paragraph>
+		<Paragraph class="text-zinc-400">
+			Speak with you soon.
+		</Paragraph>
+	</Section>
+</Layout>

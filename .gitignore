@@ -1,4 +1,8 @@
+node_modules/
+dist/
+.output/
+*.tsbuildinfo
+*.log*
+.env.local
+.env.*.local
 .DS_Store
-node_modules
-public/*
-debug.log

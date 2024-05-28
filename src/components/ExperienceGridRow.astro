@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+    class?: string;
+};
+
+const { class: classList = "", ...attrs } = Astro.props;
+---
+<div {...attrs} class:list={`flex flex-row gap-4 w-full ${classList}`}>
+    <slot/>
+</div>
