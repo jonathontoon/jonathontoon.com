@@ -1,10 +1,11 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types"
 
-interface Props extends HTMLAttributes<'section'> {};
+interface Props extends HTMLAttributes<"section"> {}
 
-const { ...attrs } = Astro.props;
+const { ...attrs } = Astro.props
 ---
+
 <section {...attrs}>
-    <slot />
+  <slot />
 </section>

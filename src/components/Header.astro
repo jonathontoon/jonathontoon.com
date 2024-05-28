@@ -1,10 +1,11 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types"
 
-interface Props extends HTMLAttributes<'header'> {};
+interface Props extends HTMLAttributes<"header"> {}
 
-const { ...attrs } = Astro.props;
+const { ...attrs } = Astro.props
 ---
+
 <header {...attrs}>
-    <slot />
+  <slot />
 </header>

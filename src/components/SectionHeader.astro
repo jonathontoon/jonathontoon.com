@@ -1,31 +1,40 @@
 ---
-import { Icon } from "astro-icon/components";
-import type { HTMLAttributes } from "astro/types";
-import H2 from "@components/H2.astro";
-import Paragraph from "@components/Paragraph.astro";
+import { Icon } from "astro-icon/components"
+import type { HTMLAttributes } from "astro/types"
+import H2 from "@components/H2.astro"
+import Paragraph from "@components/Paragraph.astro"
 
-interface Props extends HTMLAttributes<'div'> {
-    class?: string;
-    iconName: string;
-    title: string;
-    description?: string;
-};
+interface Props extends HTMLAttributes<"div"> {
+  class?: string
+  iconName: string
+  title: string
+  description?: string
+}
 
-const { class: classList = "", iconName, title, description, ...attrs } = Astro.props;
+const {
+  class: classList = "",
+  iconName,
+  title,
+  description,
+  ...attrs
+} = Astro.props
 ---
+
 <div class:list={`${classList}`} {...attrs}>
-    <div class:list={"flex flex-row content-center mb-2"}>
-        <Icon
-            name={iconName}
-            size={32}
-            shape-rendering={"geometricPrecision"}
-            width={32}
-            height={32}
-            viewBox={"0 0 32 32"} 
-        />
-        <H2>{title}</H2>
-    </div>
-    {description && (
-        <Paragraph class="text-zinc-400 mb-8">{description}</Paragraph>
-    )}
+  <div class:list={"mb-2 flex flex-row content-center"}>
+    <Icon
+      name={iconName}
+      size={32}
+      shape-rendering={"geometricPrecision"}
+      width={32}
+      height={32}
+      viewBox={"0 0 32 32"}
+    />
+    <H2>{title}</H2>
+  </div>
+  {
+    description && (
+      <Paragraph class="mb-8 text-zinc-400">{description}</Paragraph>
+    )
+  }
 </div>

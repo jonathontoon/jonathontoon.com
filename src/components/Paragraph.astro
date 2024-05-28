@@ -1,12 +1,16 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types"
 
-interface Props extends HTMLAttributes<'p'> {
-    class?: string;
-};
+interface Props extends HTMLAttributes<"p"> {
+  class?: string
+}
 
-const { class: classList = "", ...attrs } = Astro.props;
+const { class: classList = "", ...attrs } = Astro.props
 ---
-<p {...attrs} class:list={`text-base text-pretty font-normal tracking-normal leading-snug mb-4 ${classList}`}>
-    <slot/>
+
+<p
+  {...attrs}
+  class:list={`mb-4 text-pretty text-base font-normal leading-snug tracking-normal ${classList}`}
+>
+  <slot />
 </p>

@@ -3,10 +3,11 @@
   "compilerOptions": {
     "incremental": true,
     "baseUrl": ".",
-    "paths": {
+    "types": ["astro/client"],
+		"paths": {
       "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
-    }
+		}
   }
 }
