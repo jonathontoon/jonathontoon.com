@@ -8,6 +8,12 @@ interface Props extends HTMLAttributes<"div"> {
 const { class: classList = "", ...attrs } = Astro.props;
 ---
 
-<div {...attrs} class:list={["flex flex-col gap-4", classList]}>
+<div
+  {...attrs}
+  class:list={[
+    "flex h-min flex-col flex-nowrap items-center justify-start gap-4",
+    classList
+  ]}
+>
   <slot />
 </div>

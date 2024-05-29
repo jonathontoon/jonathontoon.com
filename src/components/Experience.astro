@@ -24,21 +24,23 @@ const {
 <div
   {...attrs}
   class:list={[
-    "max-w-50 flex aspect-square w-full rotate-0 cursor-pointer flex-col justify-stretch rounded-2xl p-0.5 pb-2 transition-transform duration-300",
+    "max-w-50 flex h-min w-full rotate-0 cursor-pointer flex-col flex-nowrap items-center justify-start gap-1 rounded-[1.25rem] p-[0.2rem] transition-transform duration-300",
     classList
   ]}
 >
-  <div class="flex aspect-square flex-col space-y-4 rounded-2xl bg-black p-4">
+  <div
+    class="flex h-min flex-1 flex-col flex-nowrap items-start justify-center gap-2 space-y-4 rounded-2xl bg-black p-4"
+  >
     <Icon
       name={iconName}
       shape-rendering="geometricPrecision"
       class="h-6 w-6"
     />
-    <div class="space-y-4">
+    <div class="space-y-1">
       <H3>
         {title}
       </H3>
-      <Paragraph class="!leading-5 text-zinc-50">
+      <Paragraph class="!text-sm !leading-5 text-zinc-50 lg:!text-base">
         {description}
       </Paragraph>
     </div>
