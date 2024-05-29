@@ -1,11 +1,21 @@
 ---
-import type { HTMLAttributes } from "astro/types"
+import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<"header"> {}
+interface Props extends HTMLAttributes<"header"> {
+  class?: string;
+}
 
-const { ...attrs } = Astro.props
+const { class: classList = "", ...attrs } = Astro.props;
 ---
 
-<header {...attrs}>
-  <slot />
+<header {...attrs} class:list={[classList]}>
+  <div class="mb-4">
+    <slot name="header-title" />
+    <slot name="header-paragraph" />
+  </div>
+  <div class="mb-2">
+    <slot name="header-primary-cta" />
+    <slot name="header-secondary-cta" />
+  </div>
+  <slot name="header-tertiary-cta" />
 </header>

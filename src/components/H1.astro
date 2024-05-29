@@ -10,7 +10,10 @@ const { class: classList = "", ...attrs } = Astro.props
 
 <h1
   {...attrs}
-  class:list={`text-2xl font-semibold leading-tight tracking-normal ${classList}`}
+  class:list={[
+    "align-middle text-2xl font-semibold tracking-normal",
+    classList
+  ]}
 >
   <slot />
 </h1>

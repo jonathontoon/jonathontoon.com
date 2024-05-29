@@ -20,21 +20,14 @@ const {
 } = Astro.props
 ---
 
-<div class:list={`${classList}`} {...attrs}>
-  <div class:list={"mb-2 flex flex-row content-center"}>
+<div class:list={["space-y-2", classList]} {...attrs}>
+  <div class:list={"flex flex-row content-center space-x-2 text-zinc-50"}>
     <Icon
       name={iconName}
-      size={32}
-      shape-rendering={"geometricPrecision"}
-      width={32}
-      height={32}
-      viewBox={"0 0 32 32"}
+      shape-rendering="geometricPrecision"
+      class="h-6 w-6"
     />
     <H2>{title}</H2>
   </div>
-  {
-    description && (
-      <Paragraph class="mb-8 text-zinc-400">{description}</Paragraph>
-    )
-  }
+  {description && <Paragraph class="text-zinc-400">{description}</Paragraph>}
 </div>

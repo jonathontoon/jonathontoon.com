@@ -1,37 +1,34 @@
 ---
-import { Image } from "astro:assets"
-import profileImage from "../assets/images/jonathon-toon-profile.png"
+import { Image } from "astro:assets";
+import profileImage from "../assets/images/jonathon-toon-profile.png";
 
-import Layout from "@layouts/Layout.astro"
-import Header from "@components/Header.astro"
-import H1 from "@components/H1.astro"
-import Link from "@components/Link.astro"
-import Paragraph from "@components/Paragraph.astro"
-import Section from "@components/Section.astro"
-import ExperienceGrid from "@components/ExperienceGrid.astro"
-import ExperienceGridItem from "@components/ExperienceGridItem.astro"
-import SectionHeader from "@components/SectionHeader.astro"
-import ExperienceGridRow from "@components/ExperienceGridRow.astro"
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import H1 from "@components/H1.astro";
+import Link from "@components/Link.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Section from "@components/Section.astro";
+import SectionContent from "@components/SectionContent.astro";
+import Experience from "@components/Experience.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import ExperienceRow from "@components/ExperienceRow.astro";
+import ServicesCard from "@components/ServicesCard.astro";
+import H3 from "@components/H3.astro";
+import ButtonLink from "@components/ButtonLink.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Header id="introduction" class="mt-80">
-    <div class="mb-4">
-      <H1 class="mb-4">
-        Exceptional creative problem solving for early-stage technology
-        companies.
-      </H1>
-      <Paragraph class="text-zinc-400">
-        Nice to meet you. I'm Jonathon. An experienced software designer,
-        product leader, mentor based in Aotearoa New Zealand. Your next design
-        partner.
-      </Paragraph>
-    </div>
-    <div class="mb-2">
-      <Link href="#services">View Services</Link>
-      <Link href="#about">About Me</Link>
-    </div>
-    <div class="flex flex-row items-center">
+    <H1 slot="header-title" class="mb-4">
+      Exceptional creative problem solving for early-stage technology companies.
+    </H1>
+    <Paragraph slot="header-paragraph" class="text-zinc-400">
+      Nice to meet you. I'm Jonathon. An experienced software designer, product
+      leader, mentor based in Aotearoa New Zealand. Your next design partner.
+    </Paragraph>
+    <Link slot="header-primary-cta" href="#services">View Services</Link>
+    <Link slot="header-secondary-cta" href="#about">About Me</Link>
+    <div slot="header-tertiary-cta" class="flex flex-row items-center">
       <Image
         src={profileImage}
         alt="Portrait of Jonathon Toon,"
@@ -55,37 +52,36 @@ import ExperienceGridRow from "@components/ExperienceGridRow.astro"
       title="Experience"
       description="Throughout my career, I’ve consistently worn multiple hats and blurred functional boundaries—usually out of necessity, and other times for the joy of building."
     />
-    <ExperienceGrid>
-      <ExperienceGridRow>
-        <ExperienceGridItem
-          class="border-sky-400 fill-sky-400 text-sky-400"
+    <SectionContent>
+      <div class="flex w-full flex-row gap-4">
+        <Experience
+          class="bg-sky-400 fill-sky-400 text-sky-400 hover:-rotate-2"
           iconName="microscope"
           title="Discovery"
-          description="Market sizing, user interviews, and zero-to-one products."
+          description="Establishing new products through market research and validation."
         />
-        <ExperienceGridItem
-          class="border-green-400 fill-green-400 text-green-400"
+        <Experience
+          class="bg-green-400 fill-green-400 text-green-400 hover:rotate-2"
           iconName="palette"
           title="Design"
-          description="Interface design, user testing, prototyping, and design systems."
+          description="Rapidly executing with user interface design, ideation and protyping."
         />
-      </ExperienceGridRow>
-      <ExperienceGridRow>
-        <ExperienceGridItem
-          class="border-amber-400 fill-amber-400 text-amber-400"
+      </div>
+      <div class="flex w-full flex-row gap-4">
+        <Experience
+          class="bg-amber-400 fill-amber-400 text-amber-400 hover:-rotate-2"
           iconName="component"
           title="Leadership"
-          description="Developing teams, process, career rubrics, and hiring."
+          description="Creating the blueprint for culture through strategy, process and career rubrics."
         />
-
-        <ExperienceGridItem
-          class="border-red-400 fill-red-400 text-red-400"
+        <Experience
+          class="bg-red-400 fill-red-400 text-red-400 hover:rotate-2"
           iconName="puzzle-piece"
           title="Product"
-          description="Strategy, validation, growth hacking, and go-to-market."
+          description="Applying data to drive growth through experimentation and iteration."
         />
-      </ExperienceGridRow>
-    </ExperienceGrid>
+      </div>
+    </SectionContent>
   </Section>
 
   <Section id="services">
@@ -94,6 +90,75 @@ import ExperienceGridRow from "@components/ExperienceGridRow.astro"
       title="Services"
       description="I provide structured engagements, driven by a deep desire to help both product organizations and designers build up operational effectiveness."
     />
+    <SectionContent class="gap-y-5">
+      <ServicesCard
+        class="bg-pink-400 fill-pink-400 text-pink-400"
+        cardIcon="anchor"
+      >
+        <H3 slot="card-title">Coaching</H3>
+        <Paragraph slot="card-description" class="text-zinc-50">
+          Perfect for designers seeking help to navigate their role or career. I
+          support individuals on a range of product and brand design topics.
+        </Paragraph>
+        <ButtonLink
+          slot="card-footer-button"
+          class="bg-pink-600 hover:bg-pink-700"
+        >
+          Subscribe
+        </ButtonLink>
+        <Paragraph
+          slot="card-footer-description"
+          class="inline-block text-sm tracking-wide text-zinc-400"
+        >
+          From $180 USD / session
+        </Paragraph>
+      </ServicesCard>
+      <ServicesCard
+        class="bg-violet-400 fill-violet-400 text-violet-400"
+        cardIcon="chart-pie"
+      >
+        <H3 slot="card-title">Fractional Leadership</H3>
+        <Paragraph slot="card-description" class="text-zinc-50">
+          For organizations seeking to develop or grow an existing design
+          function. I support your executive team on strategy, hiring,
+          operations and more.
+        </Paragraph>
+        <ButtonLink
+          slot="card-footer-button"
+          class="bg-violet-600 text-center hover:bg-violet-700"
+        >
+          Subscribe
+        </ButtonLink>
+        <Paragraph
+          slot="card-footer-description"
+          class="inline-block text-sm tracking-wide text-zinc-400"
+        >
+          From $800 USD / day
+        </Paragraph>
+      </ServicesCard>
+      <ServicesCard
+        class="border-blue-400 fill-blue-400 text-blue-400"
+        cardIcon="palette"
+      >
+        <H3 slot="card-title">Design Support</H3>
+        <Paragraph slot="card-description" class="text-zinc-50">
+          Need hands-on design support that doesn't fit in to an existing
+          engagement? Just reach out.
+        </Paragraph>
+        <ButtonLink
+          slot="card-footer-button"
+          class="bg-blue-600 text-center hover:bg-blue-700"
+        >
+          Inquire Now
+        </ButtonLink>
+        <Paragraph
+          slot="card-footer-description"
+          class="inline-block text-sm tracking-wide text-zinc-400"
+        >
+          Custom pricing
+        </Paragraph>
+      </ServicesCard>
+    </SectionContent>
   </Section>
 
   <Section id="question">
@@ -102,23 +167,23 @@ import ExperienceGridRow from "@components/ExperienceGridRow.astro"
 
   <Section id="about">
     <SectionHeader iconName="person-circle" title="About" />
-    <Paragraph class="text-zinc-400">
+    <Paragraph>
       Curious to know more? Over the past 13 years, I’ve worked across various
       cultures and languages, in-person and remotely, in Oceania, North America,
       and Asia.
     </Paragraph>
-    <Paragraph class="text-zinc-400">
+    <Paragraph>
       During this time, I’ve designed interfaces and worked on products which
       are used by millions, at a number of innovative companies. I’ve also
       managed individuals and led teams to take new products to market.
     </Paragraph>
-    <Paragraph class="text-zinc-400">
+    <Paragraph>
       These experiences have taught me that great design is the result of even
       better synthesis—the artful understanding of data, people, and the real
       world. A learning that now shapes my approach, emphasizing observation and
       outcomes over mere output.
     </Paragraph>
-    <Paragraph class="text-zinc-400">
+    <Paragraph>
       If you’d like to get in touch <Link href="mailto:hi@jonathontoon.com">
         via email
       </Link> I’m always happy to write back. Otherwise connect with me over on <Link
@@ -130,6 +195,6 @@ import ExperienceGridRow from "@components/ExperienceGridRow.astro"
       </Link> or <span class="line-through">Twitter</span>
       <Link href="https://www.twitter.com/jonathontoon">X</Link>.
     </Paragraph>
-    <Paragraph class="text-zinc-400">Speak with you soon.</Paragraph>
+    <Paragraph>Speak with you soon.</Paragraph>
   </Section>
 </Layout>

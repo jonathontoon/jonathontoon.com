@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
+
+import H3 from "@components/H3.astro";
+import Paragraph from "@components/Paragraph.astro";
+
+interface Props extends HTMLAttributes<"div"> {
+  class?: string;
+  iconName: string;
+  title: string;
+  description: string;
+}
+
+const {
+  class: classList = "",
+  iconName,
+  title,
+  description,
+  ...attrs
+} = Astro.props;
+---
+
+<div
+  {...attrs}
+  class:list={[
+    "max-w-50 flex aspect-square w-full rotate-0 cursor-pointer flex-col justify-stretch rounded-2xl p-0.5 pb-2 transition-transform duration-300",
+    classList
+  ]}
+>
+  <div class="flex aspect-square flex-col space-y-4 rounded-2xl bg-black p-4">
+    <Icon
+      name={iconName}
+      shape-rendering="geometricPrecision"
+      class="h-6 w-6"
+    />
+    <div class="space-y-4">
+      <H3>
+        {title}
+      </H3>
+      <Paragraph class="!leading-5 text-zinc-50">
+        {description}
+      </Paragraph>
+    </div>
+  </div>
+</div>

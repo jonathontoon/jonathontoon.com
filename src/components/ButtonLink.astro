@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export interface LinkProps extends HTMLAttributes<"a"> {
+  href?: string;
+  class?: string;
+}
+
+const { href, class: classList = "", ...attrs } = Astro.props;
+---
+
+<a
+  rel="prefectch"
+  href={href}
+  class:list={[
+    "inline-block cursor-pointer rounded-lg px-4 py-2 font-medium text-zinc-50 transition-colors duration-300 [:where(&)]:bg-zinc-800 [:where(&)]:hover:bg-zinc-900",
+    classList
+  ]}
+  {...attrs}><slot /></a
+>

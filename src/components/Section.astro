@@ -1,11 +1,13 @@
 ---
 import type { HTMLAttributes } from "astro/types"
 
-interface Props extends HTMLAttributes<"section"> {}
+interface Props extends HTMLAttributes<"section"> {
+  class?: string
+}
 
-const { ...attrs } = Astro.props
+const { class: classList, ...attrs } = Astro.props
 ---
 
-<section {...attrs}>
+<section {...attrs} class:list={["space-y-8", classList]}>
   <slot />
 </section>

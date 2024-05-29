@@ -1,0 +1,37 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
+
+interface Props extends HTMLAttributes<"div"> {
+  class?: string;
+  cardIcon: string;
+}
+
+const { class: classList = "", cardIcon, title, ...attrs } = Astro.props;
+---
+
+<div
+  {...attrs}
+  class:list={[
+    "flex max-w-full flex-col justify-between rounded-2xl p-0.5 pb-2",
+    classList
+  ]}
+>
+  <div class="flex flex-col space-y-6 rounded-2xl bg-black p-4">
+    <div class="space-y-5">
+      <div class="flex flex-row content-center space-x-3">
+        <Icon
+          name={cardIcon}
+          shape-rendering="geometricPrecision"
+          class="h-6 w-6"
+        />
+        <slot name="card-title" />
+      </div>
+      <slot name="card-description" />
+    </div>
+    <div class="space-x-4">
+      <slot name="card-footer-button" />
+      <slot name="card-footer-description" />
+    </div>
+  </div>
+</div>
