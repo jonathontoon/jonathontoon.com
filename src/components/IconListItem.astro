@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import ListItem from "@components/ListItem.astro";
+
+interface Props extends HTMLAttributes<"li"> {
+  class?: string;
+}
+
+const { class: classList, ...attrs } = Astro.props;
+---
+
+<ListItem {...attrs} class={classList}>
+  <div class:list={["flex flex-row justify-center gap-6 pl-0 md:gap-6"]}>
+    <div class:list={["flex flex-col justify-start"]}>
+      <slot name="icon" />
+    </div>
+    <slot />
+  </div>
+</ListItem>

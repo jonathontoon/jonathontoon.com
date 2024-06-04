@@ -1,11 +1,11 @@
 ---
-import "@fontsource-variable/archivo"
+import "@fontsource-variable/archivo";
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,9 +18,11 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class:list={"bg-black py-6 text-zinc-50"}>
-    <main class:list={"mx-auto w-full max-w-md space-y-20 px-6"}>
-      <slot />
+  <body class:list={"bg-black text-slate-50"}>
+    <main class:list={"px-6"}>
+      <div class:list={["mx-auto w-full max-w-sm space-y-20 "]}>
+        <slot />
+      </div>
     </main>
   </body>
 </html>
@@ -41,5 +43,21 @@ const { title } = Astro.props
       sans-serif;
     backface-visibility: hidden;
     transform-style: preserve-3d;
+  }
+
+  sub,
+  sup {
+    font-size: 50%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: 0em;
+    vertical-align: super;
+  }
+  sub {
+    bottom: 0em;
+    vertical-align: sub;
   }
 </style>

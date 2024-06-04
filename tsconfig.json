@@ -4,10 +4,11 @@
     "incremental": true,
     "baseUrl": ".",
     "types": ["astro/client"],
-		"paths": {
+    "paths": {
       "@layouts/*": ["src/layouts/*"],
+      "@sections/*": ["src/sections/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
-		}
+    }
   }
 }

@@ -1,18 +1,18 @@
 ---
-import type { HTMLAttributes } from "astro/types"
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"h1"> {
-  class?: string
+  class?: string;
 }
 
-const { class: classList = "", ...attrs } = Astro.props
+const { class: classList = "", ...attrs } = Astro.props;
 ---
 
 <h1
   {...attrs}
   class:list={[
-    "align-middle text-2xl font-semibold tracking-normal",
-    classList
+    twMerge("m-0 align-middle text-xl font-semibold tracking-normal", classList)
   ]}
 >
   <slot />

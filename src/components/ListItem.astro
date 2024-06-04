@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"li"> {
+  class?: string;
+}
+
+const { class: classList, ...attrs } = Astro.props;
+---
+
+<li
+  {...attrs}
+  class:list={[twMerge("list-item list-inside list-image-none", classList)]}
+>
+  <slot />
+</li>

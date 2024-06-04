@@ -1,13 +1,22 @@
 ---
-import type { HTMLAttributes } from "astro/types"
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"section"> {
-  class?: string
+  class?: string;
 }
 
-const { class: classList, ...attrs } = Astro.props
+const { class: classList, ...attrs } = Astro.props;
 ---
 
-<section {...attrs} class:list={["space-y-8", classList]}>
+<section
+  {...attrs}
+  class:list={[
+    twMerge(
+      "flex w-full flex-col flex-nowrap justify-start gap-1 overflow-visible",
+      classList
+    )
+  ]}
+>
   <slot />
 </section>

@@ -1,0 +1,90 @@
+---
+import { Icon } from "astro-icon/components";
+import H2 from "@components/H2.astro";
+import H3 from "@components/H3.astro";
+import List from "@components/List.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Section from "@components/Section.astro";
+import ServicesCard from "@components/ServicesCard.astro";
+import H4 from "@components/H4.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+---
+
+<Section id="services">
+  <H2 class="mb-2">Services</H2>
+  <Paragraph>
+    To help individual designers and product organizations grow their
+    confidence, enrich operations, and enhance their process, I offer a series
+    of short-term services.
+  </Paragraph>
+  <Paragraph class="indent-4">
+    Whether one-off or recurring, these engagements, provide an opportunity to
+    leverage the skills I have sharpened as a design leader working across a
+    diverse range of industries in a way that best suits you.
+  </Paragraph>
+  <List class="space-y-8">
+    <ServicesCard>
+      <H3
+        slot="services-card-sub-title"
+        class="flex flex-row gap-1 text-base font-normal text-pink-500"
+      >
+        <Icon
+          name="microscope"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-5 text-pink-500"
+        />
+         For Individuals
+      </H3>
+      <H4
+        slot="services-card-price"
+        class="text-2xl font-normal text-slate-300"
+      >
+        From $200 <sup>per session</sup>
+      </H4>
+      <ButtonLink
+        slot="services-card-button"
+        class="w-full bg-pink-600 hover:bg-pink-500 sm:w-auto"
+      >
+        Subscribe
+      </ButtonLink>
+      <Paragraph slot="services-card-conditions" class="text-slate-500">
+        Pause or cancel any time.
+      </Paragraph>
+      <Paragraph slot="services-card-description" class="text-slate-300">
+        Perfect for designers at any stage in their career, seeking practical
+        support while navigating their current role, potential job opportunities
+        or take on new challenges.
+      </Paragraph>
+    </ServicesCard>
+    <ServicesCard>
+      <H3
+        slot="services-card-sub-title"
+        class="flex flex-row gap-1 text-base font-normal text-violet-500"
+      >
+        <Icon
+          name="microscope"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-5 text-violet-500"
+        />
+         For Organizations
+      </H3>
+      <H4 slot="services-card-price" class="text-2xl font-normal">
+        From $800 <sup>per day</sup>
+      </H4>
+      <ButtonLink
+        slot="services-card-button"
+        class="w-full bg-violet-600 hover:bg-violet-500 sm:w-auto"
+      >
+        Inquire Now
+      </ButtonLink>
+      <Paragraph slot="services-card-conditions" class="text-slate-500">
+        Minimums may apply.
+      </Paragraph>
+      <Paragraph slot="services-card-description">
+        Great for companies looking to establish or grow a design or product
+        function. Utilizing my experience I can support on strategy, hiring,
+        operations and more.
+      </Paragraph>
+    </ServicesCard>
+  </List>
+</Section>

@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+import profileImage from "@assets/images/jonathon-toon-profile.png";
+import Header from "@components/Header.astro";
+import Link from "@components/Link.astro";
+import Paragraph from "@components/Paragraph.astro";
+---
+
+<Header id="introduction">
+  <Fragment slot="header-introduction">
+    <div class="space-y-0">
+      <Paragraph>
+        Nice to meet you, I’m Jonathon. A software designer, with broad
+        experience across product, engineering, research and brand.
+      </Paragraph>
+      <Paragraph class="indent-4">
+        For over 13+ years as a creative professional I’ve had the privilege of
+        designing interfaces, building products and leading teams at innovative
+        companies across North America, Asia and Oceania.
+      </Paragraph>
+      <Paragraph class="indent-4">
+        Today, I am based in Aotearoa New Zealand. Where I work with technology
+        companies, at any stage of growth, to solve problems. While supporting
+        designers with coaching and mentorship.
+      </Paragraph>
+    </div>
+  </Fragment>
+  <Fragment slot="header-cta">
+    <Image
+      src={profileImage}
+      alt="Portrait of Jonathon Toon,"
+      class="mr-4 w-8 rounded-full"
+    />
+    <span
+      >Interested to work together? <Link
+        href="https://www.cal.com/jonathon-toon"
+      >
+        Schedule a call
+      </Link>.</span
+    >
+  </Fragment>
+</Header>

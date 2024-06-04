@@ -1,0 +1,65 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import ListItem from "@components/ListItem.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props extends HTMLAttributes<"li"> {
+  class?: string;
+}
+
+const { class: classList, ...attrs } = Astro.props;
+---
+
+<ListItem
+  {...attrs}
+  class={`bg-slate-900 transition-colors hover:bg-slate-800 duration-300 rounded-2xl ${classList}`}
+>
+  <details class:list={["cursor-pointer"]}>
+    <summary class:list={["list-none"]}>
+      <div class="flex select-none flex-row items-center justify-between p-4">
+        <slot name="collapsable-list-item-title" />
+        <div class="pl-2">
+          <Icon
+            name="plus"
+            data-icon="plus"
+            shape-rendering="geometricPrecision"
+            class="h-7 w-7 text-slate-100"
+          />
+          <Icon
+            name="minus"
+            data-icon="minus"
+            shape-rendering="geometricPrecision"
+            class="hidden h-7 w-7 text-slate-100"
+          />
+        </div>
+      </div>
+    </summary>
+    <div class="p-4 pt-0">
+      <slot name="collapsable-list-item-description" />
+    </div>
+  </details>
+</ListItem>
+
+<script>
+  const detailElements: NodeListOf<HTMLDetailsElement> =
+    document.querySelectorAll("details");
+
+  detailElements.forEach((detailElement: HTMLDetailsElement) => {
+    detailElement.addEventListener("toggle", () => {
+      const plusIcon: SVGElement = detailElement.querySelector(
+        '[data-icon="plus"]'
+      ) as SVGElement;
+      const minusIcon: SVGElement = detailElement.querySelector(
+        '[data-icon="minus"]'
+      ) as SVGElement;
+
+      if (detailElement.open) {
+        plusIcon.classList.add("hidden");
+        minusIcon.classList.remove("hidden");
+      } else {
+        plusIcon.classList.remove("hidden");
+        minusIcon.classList.add("hidden");
+      }
+    });
+  });
+</script>
