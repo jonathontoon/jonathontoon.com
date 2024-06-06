@@ -1,8 +1,21 @@
 ---
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
+interface Props extends HTMLAttributes<"canvas"> {
+  class?: string;
+}
+
+const { class: classList = "", ...attrs } = Astro.props;
 ---
 
-<canvas id="canvas" width="120" height="120"></canvas>
+<canvas
+  {...attrs}
+  class:list={[twMerge("h-20 w-20 sm:h-28 sm:w-28", classList)]}
+  id="canvas"
+  width="500"
+  height="500"></canvas>
+
 <script>
   interface Circle {
     centerX: number;

@@ -9,7 +9,10 @@ interface Props extends HTMLAttributes<"div"> {
 const { class: classList = "", title, ...attrs } = Astro.props;
 ---
 
-<ListItem class="flex flex-col space-y-4 rounded-xl bg-slate-900 p-4">
+<ListItem
+  {...attrs}
+  class={`bg-zinc-950 flex flex-col space-y-4 p-4 ${classList}`}
+>
   <slot name="services-card-sub-title" />
   <div class="space-y-3">
     <slot name="services-card-price" />

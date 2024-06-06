@@ -14,6 +14,18 @@ importers:
       '@fontsource-variable/archivo':
         specifier: ^5.0.19
         version: 5.0.19
+      '@fontsource-variable/archivo-narrow':
+        specifier: ^5.0.21
+        version: 5.0.21
+      '@fontsource-variable/playfair':
+        specifier: ^5.0.5
+        version: 5.0.5
+      '@fontsource-variable/playfair-display':
+        specifier: ^5.0.25
+        version: 5.0.25
+      '@fontsource/ibm-plex-serif':
+        specifier: ^5.0.13
+        version: 5.0.13
       astro:
         specifier: 4.9.2
         version: 4.9.2(@types/node@20.12.12)(lightningcss@1.25.1)(terser@5.31.0)(typescript@5.4.5)
@@ -520,8 +532,20 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource-variable/archivo-narrow@5.0.21':
+    resolution: {integrity: sha512-OWGp+Tfra6nIw/KI6bp6X6XS2DIzv2DnsZduZYkQ6l/U0rk820ABK2cysR5oa4TQHBbT1K8B4nH6i6vJ7wetuw==}
+
   '@fontsource-variable/archivo@5.0.19':
     resolution: {integrity: sha512-dJdRylf/50fqAY6UufqfsdW4TTznA7weeaSMy6258eG11RALWeHwZa4CDWPQ5e0Pj6OFQEV9IXZkjXdeOacvbg==}
+
+  '@fontsource-variable/playfair-display@5.0.25':
+    resolution: {integrity: sha512-q8tzLiURtXycJQ27YoppTNCEe0W2ZRXIeZ25nH9KoM6fsbWYZAm9ItY0aRoL/jn/GllsEcTSm8H2UKa7l4AxDw==}
+
+  '@fontsource-variable/playfair@5.0.5':
+    resolution: {integrity: sha512-Xzkdw17IoDhPVdHb6A+KKRH9cHOLTXtTSz7mk1bEWUXkXP5nEMewHd4sk9J1z+aCSmzCqpUD6lQ9QnpZXRVXJw==}
+
+  '@fontsource/ibm-plex-serif@5.0.13':
+    resolution: {integrity: sha512-cJsfWHOljHPbFTXjrsYiNw6i2YclggFb6YTueFiw9gr0AJxtgzizh2ObgrvVtEZlQt/UFmCetpK4W27UM5v5/A==}
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -3152,7 +3176,15 @@ snapshots:
   '@esbuild/win32-x64@0.21.4':
     optional: true
 
+  '@fontsource-variable/archivo-narrow@5.0.21': {}
+
   '@fontsource-variable/archivo@5.0.19': {}
+
+  '@fontsource-variable/playfair-display@5.0.25': {}
+
+  '@fontsource-variable/playfair@5.0.5': {}
+
+  '@fontsource/ibm-plex-serif@5.0.13': {}
 
   '@iconify/tools@3.0.7':
     dependencies:

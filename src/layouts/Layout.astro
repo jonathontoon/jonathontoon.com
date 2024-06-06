@@ -1,5 +1,8 @@
 ---
 import "@fontsource-variable/archivo";
+import "@fontsource-variable/archivo-narrow";
+import "@fontsource-variable/playfair-display";
+import "@fontsource/ibm-plex-serif/400-italic.css";
 
 interface Props {
   title: string;
@@ -14,13 +17,13 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/fa vicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class:list={"bg-black text-slate-50"}>
-    <main class:list={"px-6"}>
-      <div class:list={["mx-auto w-full max-w-sm space-y-20 "]}>
+  <body class:list={"bg-black font-sans text-zinc-50"}>
+    <main class:list={"p-6"}>
+      <div class:list={["mx-auto w-full max-w-md space-y-20 "]}>
         <slot />
       </div>
     </main>
@@ -28,21 +31,38 @@ const { title } = Astro.props;
 </html>
 <style is:global>
   * {
-    font-family:
-      "Archivo Variable",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
     backface-visibility: hidden;
     transform-style: preserve-3d;
+  }
+
+  .font-sans {
+    font-family: "Archivo Variable", ui-sans-serif, system-ui, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
+  .font-sans-narrow {
+    font-family: "Archivo Narrow Variable", ui-sans-serif, system-ui, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
+  .font-serif {
+    font-family: "IBM Plex Serif", Georgia, "Times New Roman", Times, serif;
+  }
+
+  .border-rainbow {
+    border: 1px solid transparent;
+    border-image: linear-gradient(
+      to bottom right,
+      #ea3ef7,
+      #ea3223,
+      #fffd54,
+      #75f94c,
+      #73fbfd,
+      #0021f5
+    );
+    border-image-slice: 1;
   }
 
   sub,

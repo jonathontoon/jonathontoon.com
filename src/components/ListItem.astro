@@ -11,7 +11,9 @@ const { class: classList, ...attrs } = Astro.props;
 
 <li
   {...attrs}
-  class:list={[twMerge("list-item list-inside list-image-none", classList)]}
+  class:list={[
+    twMerge("font-primary list-item list-inside list-image-none", classList)
+  ]}
 >
   <slot />
 </li>

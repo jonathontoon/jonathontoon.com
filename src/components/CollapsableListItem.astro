@@ -12,7 +12,7 @@ const { class: classList, ...attrs } = Astro.props;
 
 <ListItem
   {...attrs}
-  class={`bg-slate-900 transition-colors hover:bg-slate-800 duration-300 rounded-2xl ${classList}`}
+  class={`bg-neutral-900 transition-colors hover:bg-neutral-800 duration-300  ${classList}`}
 >
   <details class:list={["cursor-pointer"]}>
     <summary class:list={["list-none"]}>
@@ -23,13 +23,13 @@ const { class: classList, ...attrs } = Astro.props;
             name="plus"
             data-icon="plus"
             shape-rendering="geometricPrecision"
-            class="h-7 w-7 text-slate-100"
+            class="h-7 w-7 text-neutral-100"
           />
           <Icon
             name="minus"
             data-icon="minus"
             shape-rendering="geometricPrecision"
-            class="hidden h-7 w-7 text-slate-100"
+            class="hidden h-7 w-7 text-neutral-100"
           />
         </div>
       </div>

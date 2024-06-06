@@ -8,62 +8,68 @@ import Section from "@components/Section.astro";
 ---
 
 <Section id="experience">
-  <H2 class="mb-2">Experience</H2>
-  <Paragraph>
-    Throughout my career, I’ve consistently worn multiple hats and blurred
-    functional boundaries. Usually out of necessity, and other times for the joy
-    of building.
-  </Paragraph>
-  <Paragraph class="indent-4">
-    Such work has shown me that good design is the result of even greater
-    synthesis—the artful blend of data, people, and the real world. This
-    learning now shapes how I work.
-  </Paragraph>
-  <List>
-    <IconListItem class="rounded-2xl bg-slate-900 p-4">
+  <div class="space-y-2">
+    <H2>Background</H2>
+    <div class="space-y-1">
+      <Paragraph>
+        Throughout my years as a creative professional, I’ve always worn
+        multiple hats and blurred functional boundaries. Usually out of
+        necessity, and other times for the joy of building.
+      </Paragraph>
+      <Paragraph class="indent-4">
+        This experience has provided me the privilege of designing interfaces,
+        building products and leading teams at innovative start ups across North
+        America, Asia and Oceania.
+      </Paragraph>
+    </div>
+  </div>
+
+  <List class="flex-row flex-wrap">
+    <IconListItem
+      class="cursor-pointer rounded-xl border-2 border-blue-600 p-6"
+    >
       <Icon
         slot="icon"
         name="microscope"
         shape-rendering="geometricPrecision"
-        class="h-8 w-8 text-blue-500 md:h-7 md:w-7"
+        class="h-8 w-8 text-blue-200"
       />
-      <Paragraph>
-        Keeping customer-first and market-forward through regular product
-        discovery and user research.
+      <Paragraph class="text-lg font-semibold leading-snug text-blue-50">
+        Keep customer first and market forward with regular discovery.
       </Paragraph>
     </IconListItem>
-    <IconListItem class="rounded-2xl bg-slate-900 p-4">
+    <IconListItem class="cursor-pointer bg-purple-600 p-4">
       <Icon
         slot="icon"
         name="puzzle-piece"
         shape-rendering="geometricPrecision"
-        class="h-8 w-8 text-amber-500 md:h-7 md:w-7"
+        class="h-8 w-8 text-purple-200"
       />
-      <Paragraph>
+      <Paragraph class="text-lg font-semibold leading-snug text-purple-50">
         Driving growth, throughput, engagement with data-driven tactics,
         frameworks and experiments.
       </Paragraph>
     </IconListItem>
-    <IconListItem class="rounded-2xl bg-slate-900 p-4">
+    <IconListItem class="cursor-pointer bg-red-600 p-4">
       <Icon
         slot="icon"
         name="palette"
         shape-rendering="geometricPrecision"
-        class="h-8 w-8 text-red-500 md:h-7 md:w-7"
+        class="h-8 w-8 text-red-200"
       />
-      <Paragraph>
+      <Paragraph class="text-lg font-semibold leading-snug text-red-50">
         Crafting delightfully functional user interfaces across mobile and web
         through rapid ideation and iteration.
       </Paragraph>
     </IconListItem>
-    <IconListItem class="rounded-2xl bg-slate-900 p-4">
+    <IconListItem class="bg-yellow-1000 cursor-pointer p-4">
       <Icon
         slot="icon"
         name="component"
         shape-rendering="geometricPrecision"
-        class="h-8 w-8 text-green-500 md:h-7 md:w-7"
+        class="h-8 w-8 text-yellow-500 md:h-7 md:w-7"
       />
-      <Paragraph>
+      <Paragraph class="text-yellow-50">
         Cultivating strong product team culture with rituals that develop
         conviction and establish ownership.
       </Paragraph>

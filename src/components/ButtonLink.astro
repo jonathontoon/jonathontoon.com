@@ -13,7 +13,7 @@ const { href, class: classList = "", ...attrs } = Astro.props;
   rel="prefectch"
   href={href}
   class:list={[
-    "inline-block cursor-pointer px-6 py-2 text-center text-base font-medium text-slate-50 transition-colors duration-300 [:where(&)]:bg-slate-800 [:where(&)]:hover:bg-slate-900",
+    "inline-block cursor-pointer px-6 py-2 text-center text-base font-semibold text-neutral-50 transition-colors duration-300 [:where(&)]:bg-neutral-800 [:where(&)]:hover:bg-neutral-900",
     classList
   ]}
   {...attrs}><slot /></a

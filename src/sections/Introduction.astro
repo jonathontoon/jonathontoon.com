@@ -5,25 +5,35 @@ import profileImage from "@assets/images/jonathon-toon-profile.png";
 import Header from "@components/Header.astro";
 import Link from "@components/Link.astro";
 import Paragraph from "@components/Paragraph.astro";
+import H1 from "@components/H1.astro";
+import Circle from "@components/Circle.astro";
+import H2 from "@components/H2.astro";
 ---
 
 <Header id="introduction">
+  <Fragment slot="header-title">
+    <Circle class="mb-20 sm:my-24" />
+    <H1 class="mb-20 sm:mb-24">
+      Good design is the result of even <span
+        class="font-serif font-light italic">greater synthesis</span
+      >—the artful understanding of data, people, and the real world.
+    </H1>
+  </Fragment>
   <Fragment slot="header-introduction">
-    <div class="space-y-0">
-      <Paragraph>
-        Nice to meet you, I’m Jonathon. A software designer, with broad
-        experience across product, engineering, research and brand.
-      </Paragraph>
-      <Paragraph class="indent-4">
-        For over 13+ years as a creative professional I’ve had the privilege of
-        designing interfaces, building products and leading teams at innovative
-        companies across North America, Asia and Oceania.
-      </Paragraph>
-      <Paragraph class="indent-4">
-        Today, I am based in Aotearoa New Zealand. Where I work with technology
-        companies, at any stage of growth, to solve problems. While supporting
-        designers with coaching and mentorship.
-      </Paragraph>
+    <div class="space-y-2">
+      <H2>About</H2>
+      <div class="space-y-1">
+        <Paragraph>
+          Nice to meet you, I’m Jonathon Toon. A software designer, with deep
+          practical experience that spans across research, product management,
+          brand and engineering.
+        </Paragraph>
+        <Paragraph class="indent-4">
+          Today, I am based in Aotearoa New Zealand. Where I work with
+          technology companies to solve problems. While supporting individual
+          designers with coaching and mentorship.
+        </Paragraph>
+      </div>
     </div>
   </Fragment>
   <Fragment slot="header-cta">

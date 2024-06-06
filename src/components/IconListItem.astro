@@ -10,7 +10,7 @@ const { class: classList, ...attrs } = Astro.props;
 ---
 
 <ListItem {...attrs} class={classList}>
-  <div class:list={["flex flex-row justify-center gap-6 pl-0 md:gap-6"]}>
+  <div class:list={["flex flex-col justify-center gap-6 pl-0"]}>
     <div class:list={["flex flex-col justify-start"]}>
       <slot name="icon" />
     </div>

@@ -13,6 +13,10 @@
   "dependencies": {
     "@astrojs/tailwind": "5.1.0",
     "@fontsource-variable/archivo": "^5.0.19",
+    "@fontsource-variable/archivo-narrow": "^5.0.21",
+    "@fontsource-variable/playfair": "^5.0.5",
+    "@fontsource-variable/playfair-display": "^5.0.25",
+    "@fontsource/ibm-plex-serif": "^5.0.13",
     "astro": "4.9.2",
     "astro-compress": "^2.2.26",
     "astro-icon": "^1.1.0",

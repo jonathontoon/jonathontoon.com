@@ -7,13 +7,16 @@ import Paragraph from "@components/Paragraph.astro";
 import Section from "@components/Section.astro";
 ---
 
-<Section id="faqs">
-  <H2 class="mb-2">FAQs</H2>
-  <Paragraph>
-    Have a question about my services? Please start here. Otherwise don't
-    hesitate to reach out and ask. I usually respond in no more than 2 business
-    days.
-  </Paragraph>
+<Section id="faqs" class="pb-20">
+  <div class="space-y-2">
+    <H2>FAQs</H2>
+    <div class="space-y-1">
+      <Paragraph>
+        Got a question? You may find your answer here. If not, don't hesitate to
+        reach out and ask. I usually respond in no more than 2 business days.
+      </Paragraph>
+    </div>
+  </div>
   <List>
     <CollapsableListItem>
       <H3 slot="collapsable-list-item-title" class="text-base">

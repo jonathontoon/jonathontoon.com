@@ -1,7 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
-import Circle from "@components/Circle.astro";
 
 interface Props extends HTMLAttributes<"header"> {
   class?: string;
@@ -11,11 +10,7 @@ const { class: classList = "", ...attrs } = Astro.props;
 ---
 
 <header {...attrs} class:list={[twMerge(classList)]}>
-  <div class="space-y-20 pt-20 sm:space-y-32 sm:pt-32">
-    <Circle />
-    <div class="space-y-4">
-      <slot name="header-introduction" />
-      <slot name="header-cta" />
-    </div>
-  </div>
+  <slot name="header-title" />
+  <slot name="header-introduction" />
+  <slot name="header-cta" />
 </header>
