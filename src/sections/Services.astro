@@ -31,25 +31,25 @@ import Link from "@components/Link.astro";
   </div>
 
   <ServicesList>
-    <ServicesListItem>
-      <H3 class="flex flex-row gap-1 text-base font-normal text-blue-300">
+    <ServicesListItem class="border-rainbow">
+      <H3 class="flex flex-row gap-1 text-base font-normal text-zinc-50">
         <Icon
           name="microscope"
           shape-rendering="geometricPrecision"
-          class="h-5 w-5 text-blue-300"
+          class="h-5 w-5 text-zinc-50"
         />
          For Individuals
       </H3>
       <div class="space-y-3">
-        <H4 class="text-2xl font-normal text-green-50">
+        <H4 class="text-2xl font-normal text-zinc-50">
           From $200 <sup>per session</sup>
         </H4>
       </div>
       <div class="flex flex-row items-center space-x-4 space-y-0">
-        <ButtonLink class="bg-blue-700 text-zinc-50 hover:bg-blue-600">
+        <ButtonLink class="bg-zinc-50 text-zinc-950 hover:bg-zinc-400">
           Subscribe
         </ButtonLink>
-        <Paragraph class="text-zinc-50">Pause any time.</Paragraph>
+        <Paragraph class="text-zinc-500">Pause any time.</Paragraph>
       </div>
       <Paragraph class="text-zinc-50">
         Perfect for designers at any stage in their career, seeking practical
@@ -59,14 +59,19 @@ import Link from "@components/Link.astro";
     </ServicesListItem>
     <ServicesListItem>
       <Paragraph class="text-zinc-50">
-        Unsure if this is for you? I happily offer a free introductory call
-        hosted on ADPList to discuss your goals.
+        Unsure if this is for you? I offer a free introductory call to discuss
+        your goals and how I work.
       </Paragraph>
       <div class="flex flex-row items-center space-x-4 space-y-0">
-        <ButtonLink class="bg-cyan-700 text-zinc-50 hover:bg-cyan-600">
-          Book Now
+        <ButtonLink
+          class="group flex items-center gap-2 border border-solid border-zinc-50 bg-zinc-950 text-zinc-50 hover:border-zinc-400 hover:text-zinc-400"
+        >
+          <Icon
+            name="smiley-happy"
+            shape-rendering="geometricPrecision"
+            class="group:text-zinc-50 h-5 w-5"
+          />Book on ADPList
         </ButtonLink>
-        <Paragraph class="text-zinc-50">Limited availability.</Paragraph>
       </div>
     </ServicesListItem>
   </ServicesList>
@@ -76,10 +81,14 @@ import Link from "@components/Link.astro";
       <H3 slot="collapsable-list-item-title" class="text-base font-normal">
         What support can I expect to receive?
       </H3>
-      <Paragraph slot="collapsable-list-item-description">
-        I happily offer a free initial session hosted on ADPList to discuss your
-        goals and how I work. Book a call.
-      </Paragraph>
+      <Fragment slot="collapsable-list-item-description">
+        <Paragraph>Your subscription is handled through Stripe.</Paragraph>
+        <Paragraph>
+          Upon subscribing, you’ll receive a welcome email which will contain a
+          link to log into your customer portal.
+        </Paragraph>
+        <Paragraph>Or, just log in here.</Paragraph>
+      </Fragment>
     </CollapsableListItem>
     <CollapsableListItem>
       <H3 slot="collapsable-list-item-title" class="text-base font-normal">
@@ -107,8 +116,9 @@ import Link from "@components/Link.astro";
         How can I manage my subscription?
       </H3>
       <Paragraph slot="collapsable-list-item-description">
-        I happily offer a free initial session hosted on ADPList to discuss your
-        goals and how I work. Book a call.
+        Your subscription is managed through Stripe. Once you subscribe, you’ll
+        receive a welcome email containing a link to access your customer
+        portal. Alternatively, you can log in directly here.
       </Paragraph>
     </CollapsableListItem>
     <CollapsableListItem>
@@ -124,7 +134,7 @@ import Link from "@components/Link.astro";
   </CollapsableList>
 
   <ServicesList>
-    <ServicesListItem>
+    <ServicesListItem class="border-rainbow">
       <H3 class="flex flex-row gap-1 text-base font-normal text-zinc-50">
         <Icon
           name="microscope"
