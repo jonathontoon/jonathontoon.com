@@ -1,53 +1,31 @@
 ---
-import { Image } from "astro:assets";
-
-import profileImage from "@assets/images/jonathon-toon-profile.png";
-import Header from "@components/Header.astro";
-import Link from "@components/Link.astro";
+import Section from "@components/Section.astro";
 import Paragraph from "@components/Paragraph.astro";
 import H1 from "@components/H1.astro";
 import Circle from "@components/Circle.astro";
-import H2 from "@components/H2.astro";
 ---
 
-<Header id="introduction">
-  <Fragment slot="header-title">
+<Section id="introduction">
+  <Fragment>
     <Circle class="mb-20 sm:my-24" />
-    <H1 class="mb-20 sm:mb-24">
-      Good design is the result of even <span
+    <H1 class="mb-16 sm:mb-8">
+      Great design is the result of even <span
         class="font-serif font-light italic">greater synthesis</span
-      >—the artful understanding of data, people, and the real world.
+      >—the artful blend of data, people, and the real world.
     </H1>
   </Fragment>
-  <Fragment slot="header-introduction">
-    <div class="space-y-2">
-      <H2>About</H2>
-      <div class="space-y-1">
-        <Paragraph>
-          Nice to meet you, I’m Jonathon Toon. A software designer, with deep
-          practical experience that spans across research, product management,
-          brand and engineering.
-        </Paragraph>
-        <Paragraph class="indent-4">
-          Today, I am based in Aotearoa New Zealand. Where I work with
-          technology companies to solve problems. While supporting individual
-          designers with coaching and mentorship.
-        </Paragraph>
-      </div>
+  <Fragment>
+    <div class="space-y-1">
+      <Paragraph>
+        Nice to meet you, I’m Jonathon Toon. A software designer, with strong
+        practical experience working on product, research, engineering,
+        strategy, and brand, while operating across the organizational stack.
+      </Paragraph>
+      <Paragraph class="indent-4">
+        Today, I live in Aotearoa New Zealand. Where I work with technology
+        companies to solve problems. While supporting individual designers with
+        coaching and mentorship.
+      </Paragraph>
     </div>
   </Fragment>
-  <Fragment slot="header-cta">
-    <Image
-      src={profileImage}
-      alt="Portrait of Jonathon Toon,"
-      class="mr-4 w-8 rounded-full"
-    />
-    <span
-      >Interested to work together? <Link
-        href="https://www.cal.com/jonathon-toon"
-      >
-        Schedule a call
-      </Link>.</span
-    >
-  </Fragment>
-</Header>
+</Section>

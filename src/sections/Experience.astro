@@ -1,10 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
 import H2 from "@components/H2.astro";
-import IconListItem from "@components/IconListItem.astro";
 import List from "@components/List.astro";
 import Paragraph from "@components/Paragraph.astro";
 import Section from "@components/Section.astro";
+import ListItem from "@components/ListItem.astro";
 ---
 
 <Section id="experience">
@@ -12,18 +12,76 @@ import Section from "@components/Section.astro";
     <H2>Background</H2>
     <div class="space-y-1">
       <Paragraph>
-        Throughout my years as a creative professional, I’ve always worn
+        For over 13+ years as a creative professional, I’ve consistently worn
         multiple hats and blurred functional boundaries. Usually out of
         necessity, and other times for the joy of building.
       </Paragraph>
       <Paragraph class="indent-4">
-        This experience has provided me the privilege of designing interfaces,
-        building products and leading teams at innovative start ups across North
-        America, Asia and Oceania.
+        During this time, I’ve had the privilege of designing web and mobile
+        interfaces, building new products, and leading product and design teams
+        at innovative companies across Asia, North America, and Oceania.
       </Paragraph>
     </div>
+    <List
+      class="grid grid-cols-2 grid-rows-3 justify-items-stretch gap-2 rounded-xl bg-zinc-900 p-2 sm:grid-cols-3 sm:grid-rows-2"
+    >
+      <ListItem
+        class="flex aspect-square items-center justify-center justify-self-auto rounded-lg bg-[#11A629]"
+      >
+        <Icon
+          name="moneytree"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-full text-white"
+        />
+      </ListItem>
+      <ListItem
+        class="flex aspect-square items-center justify-center justify-self-auto rounded-lg bg-zinc-800"
+      >
+        <Icon
+          name="meta"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-full text-white"
+        />
+      </ListItem>
+      <ListItem
+        class="flex aspect-square items-center justify-center justify-self-auto rounded-lg bg-zinc-800"
+      >
+        <Icon
+          name="meta"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-full text-white"
+        />
+      </ListItem>
+      <ListItem
+        class="flex aspect-square items-center justify-center justify-self-auto rounded-lg bg-zinc-800"
+      >
+        <Icon
+          name="meta"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-full text-white"
+        />
+      </ListItem>
+      <ListItem
+        class="flex aspect-square items-center justify-center justify-self-auto rounded-lg bg-[#0081FB]"
+      >
+        <Icon
+          name="meta"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-full text-white"
+        />
+      </ListItem>
+      <ListItem
+        class="flex aspect-square items-center justify-center justify-self-auto rounded-lg bg-zinc-800"
+      >
+        <Icon
+          name="meta"
+          shape-rendering="geometricPrecision"
+          class="h-5 w-full text-white"
+        />
+      </ListItem>
+    </List>
   </div>
-
+  <!-- 
   <List class="flex-row flex-wrap">
     <IconListItem
       class="cursor-pointer rounded-xl border-2 border-blue-600 p-6"
@@ -74,5 +132,5 @@ import Section from "@components/Section.astro";
         conviction and establish ownership.
       </Paragraph>
     </IconListItem>
-  </List>
+  </List> -->
 </Section>

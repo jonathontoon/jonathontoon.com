@@ -1,0 +1,27 @@
+---
+import Paragraph from "@components/Paragraph.astro";
+import Section from "@components/Section.astro";
+import { Icon } from "astro-icon/components";
+import Link from "@components/Link.astro";
+---
+
+<Section id="availability">
+  <div
+    class="flex flex-row items-start gap-4 rounded-xl bg-green-950 p-3 sm:items-center"
+  >
+    <Icon
+      name="smiley-happy"
+      shape-rendering="geometricPrecision"
+      class="h-auto w-7 text-green-400"
+    />
+    <div class="flex w-full flex-col gap-2">
+      <Paragraph class="w-full text-green-400">
+        Interested to work together? <Link
+          href="https://www.cal.com/jonathon-toon"
+        >
+          Schedule a Call.
+        </Link>
+      </Paragraph>
+    </div>
+  </div>
+</Section>

@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
+import List from "./List.astro";
 
 interface Props extends HTMLAttributes<"ul"> {
   class?: string;
@@ -9,6 +10,10 @@ interface Props extends HTMLAttributes<"ul"> {
 const { class: classList, ...attrs } = Astro.props;
 ---
 
-<ul {...attrs} class:list={[twMerge("flex flex-col", classList)]}>
+<List
+  {...attrs}
+  class={twMerge("bg-zinc-900 p-2 rounded-xl gap-2", classList)}
+  `
+>
   <slot />
-</ul>
+</List>

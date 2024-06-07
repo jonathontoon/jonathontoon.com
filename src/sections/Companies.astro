@@ -1,7 +1,79 @@
 ---
+import { Icon } from "astro-icon/components";
+import List from "@components/List.astro";
+import ListItem from "@components/ListItem.astro";
 import Section from "@components/Section.astro";
+import Paragraph from "@components/Paragraph.astro";
 ---
 
-<Section id="companies">
-  Past organizations which I’ve had the privilege to work with and support.
+<Section id="companies" class="space-y-6">
+  <List class="flex-row items-center justify-center space-x-8 space-y-0">
+    <ListItem>
+      <Icon
+        name="moneytree"
+        shape-rendering="geometricPrecision"
+        class="h-6 w-full text-zinc-600"
+      />
+    </ListItem>
+    <ListItem>
+      <Icon
+        name="xero"
+        shape-rendering="geometricPrecision"
+        class="h-5 w-full text-zinc-600"
+      />
+    </ListItem>
+    <ListItem>
+      <Icon
+        name="meta"
+        shape-rendering="geometricPrecision"
+        class="h-5 w-full text-zinc-600"
+      />
+    </ListItem>
+  </List>
+  <List class="flex-row items-center justify-center space-x-8 space-y-0">
+    <ListItem>
+      <Icon
+        name="rainforestqa"
+        shape-rendering="geometricPrecision"
+        class="h-7 w-full text-zinc-600"
+      />
+    </ListItem>
+    <ListItem>
+      <Icon
+        name="origami"
+        shape-rendering="geometricPrecision"
+        class="h-7 w-full text-zinc-600"
+      />
+    </ListItem>
+    <ListItem>
+      <Icon
+        name="resn"
+        shape-rendering="geometricPrecision"
+        class="h-5 w-full text-zinc-600"
+      />
+    </ListItem>
+  </List>
+  <!-- <List class="flex-row items-center justify-between space-y-0">
+    <ListItem>
+      <Icon
+        name="rainforestqa"
+        shape-rendering="geometricPrecision"
+        class="h-7 w-full text-zinc-600"
+      />
+    </ListItem>
+    <ListItem>
+      <Icon
+        name="resn"
+        shape-rendering="geometricPrecision"
+        class="h-6 w-full text-zinc-600"
+      />
+    </ListItem>
+    <ListItem>
+      <Icon
+        name="origami"
+        shape-rendering="geometricPrecision"
+        class="h-7 w-full text-zinc-600"
+      />
+    </ListItem>
+  </List> -->
 </Section>

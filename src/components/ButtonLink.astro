@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 export interface LinkProps extends HTMLAttributes<"a"> {
   href?: string;
@@ -13,8 +14,10 @@ const { href, class: classList = "", ...attrs } = Astro.props;
   rel="prefectch"
   href={href}
   class:list={[
-    "inline-block cursor-pointer px-6 py-2 text-center text-base font-semibold text-neutral-50 transition-colors duration-300 [:where(&)]:bg-neutral-800 [:where(&)]:hover:bg-neutral-900",
-    classList
+    twMerge(
+      "block cursor-pointer rounded-md bg-zinc-800 p-4 py-2 text-center align-middle text-base font-normal text-zinc-50 transition-colors duration-300 hover:bg-zinc-700",
+      classList
+    )
   ]}
   {...attrs}><slot /></a
 >

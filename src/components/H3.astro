@@ -12,10 +12,7 @@ const { class: classList = "", ...attrs } = Astro.props;
 <h3
   {...attrs}
   class:list={[
-    twMerge(
-      "font-primary m-0 align-middle text-lg font-medium tracking-normal",
-      classList
-    )
+    twMerge("m-0 align-middle text-base font-normal tracking-normal", classList)
   ]}
 >
   <slot />
