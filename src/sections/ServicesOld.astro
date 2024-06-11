@@ -1,0 +1,211 @@
+---
+import { Icon } from "astro-icon/components";
+import H2 from "@components/H2.astro";
+import H3 from "@components/H3.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Section from "@components/Section.astro";
+import ServicesListItem from "@components/ServicesListItem.astro";
+import H4 from "@components/H4.astro";
+import ButtonLink from "@components/ButtonLink.astro";
+import CollapsableListItem from "@components/CollapsableListItem.astro";
+import CollapsableList from "@components/CollapsableList.astro";
+import ServicesList from "@components/ServicesList.astro";
+import Link from "@components/Link.astro";
+---
+
+<Section id="services" class="space-y-10">
+  <div class="space-y-2">
+    <H2>Services</H2>
+    <div class="space-y-1">
+      <Paragraph>
+        To support designers and product organizations to grow their confidence,
+        enrich their process, and enhance operations I offer a series of
+        engagements both one-off or reccuring.
+      </Paragraph>
+    </div>
+  </div>
+
+  <div class="space-y-6">
+    <ServicesList>
+      <ServicesListItem class="border-warm">
+        <H3 class="flex flex-row gap-1 text-base font-normal text-zinc-50">
+          <Icon
+            name="microscope"
+            shape-rendering="geometricPrecision"
+            class="h-5 w-5 text-zinc-50"
+          />
+           Coaching
+        </H3>
+        <div class="space-y-3">
+          <H4 class="text-2xl font-normal text-zinc-50">
+            From $200 <sup>per session</sup>
+          </H4>
+        </div>
+        <div class="flex flex-row items-center space-x-4 space-y-0">
+          <ButtonLink
+            class="bg-zinc-50 font-semibold text-zinc-950 hover:bg-zinc-400"
+          >
+            Subscribe <Icon
+              name="arrow-up-right"
+              shape-rendering="geometricPrecision"
+              class="group:text-zinc-50 h-5 w-5"
+            />
+          </ButtonLink>
+          <Paragraph class="text-zinc-500">Pause any time.</Paragraph>
+        </div>
+        <Paragraph class="text-zinc-50">
+          Perfect for designers seeking practical help to navigate their current
+          role, career or the industry.
+        </Paragraph>
+      </ServicesListItem>
+      <ServicesListItem>
+        <Paragraph class="text-zinc-50">
+          Unsure if this is for you? Schedule a free introductory call to
+          discuss your goals and how I work.
+        </Paragraph>
+        <div class="flex flex-row items-center space-x-4 space-y-0">
+          <ButtonLink
+            target="_blank"
+            href="https://adplist.org/mentors/jonathon-toon"
+            class="group flex items-center justify-between gap-4 border border-solid border-zinc-50 bg-zinc-950 font-medium text-zinc-50 hover:border-zinc-400 hover:text-zinc-400"
+          >
+            Book on ADPList<Icon
+              name="smiley-happy"
+              shape-rendering="geometricPrecision"
+              class="group:text-zinc-50 h-5 w-5"
+            />
+          </ButtonLink>
+        </div>
+      </ServicesListItem>
+    </ServicesList>
+
+    <CollapsableList>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          What support can I expect to receive?
+        </H3>
+        <Fragment slot="collapsable-list-item-description">
+          <Paragraph>Your subscription is handled through Stripe.</Paragraph>
+          <Paragraph>
+            Upon subscribing, you’ll receive a welcome email which will contain
+            a link to log into your customer portal.
+          </Paragraph>
+          <Paragraph>Or, just log in here.</Paragraph>
+        </Fragment>
+      </CollapsableListItem>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          After I subscribe what happens?
+        </H3>
+        <Paragraph slot="collapsable-list-item-description">
+          I happily offer a free initial session hosted on ADPList to discuss
+          your goals and how I work. Book a call.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          Do you provide any discounts?
+        </H3>
+        <Paragraph slot="collapsable-list-item-description">
+          If you are you a student, employed at a Non-Profit, or based in a
+          location with an exceedingly high exchange rate.
+          <Link href="mailto:hi@jonathontoon.com?subject=Mentorship Pricing">
+            Send me an email
+          </Link> to discuss a custom price.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          How can I manage my subscription?
+        </H3>
+        <Paragraph slot="collapsable-list-item-description">
+          Your subscription is managed through Stripe. Once you subscribe,
+          you’ll receive a welcome email containing a link to access your
+          customer portal. Alternatively, you can log in directly here.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          Can I pause or cancel my subscription?
+        </H3>
+        <Paragraph slot="collapsable-list-item-description">
+          Of course. You can pause or cancel your subscription whenever it suits
+          you. Whenever you restart you subscription we'll pick up right where
+          we left off.
+        </Paragraph>
+      </CollapsableListItem>
+    </CollapsableList>
+  </div>
+
+  <div class="space-y-6">
+    <ServicesList>
+      <ServicesListItem class="border-cool">
+        <H3 class="flex flex-row gap-1 text-base font-normal text-zinc-50">
+          <Icon
+            name="microscope"
+            shape-rendering="geometricPrecision"
+            class="h-5 w-5 text-zinc-50"
+          />
+           Fractional Leadership
+        </H3>
+        <div class="space-y-3">
+          <H4 class="text-2xl font-normal text-zinc-50">
+            From $1000 <sup>per day</sup>
+          </H4>
+        </div>
+        <div class="flex flex-row items-center space-x-4 space-y-0">
+          <ButtonLink
+            class="bg-zinc-950 text-zinc-50 hover:bg-zinc-900"
+            href="mailto:hi@jonathontoon.com?subject=Fractional Leadership Quote"
+          >
+            Request a Quote <Icon
+              name="email"
+              shape-rendering="geometricPrecision"
+              class="group:text-zinc-50 h-5 w-5"
+            />
+          </ButtonLink>
+          <Paragraph class="text-zinc-50">Minimums apply.</Paragraph>
+        </div>
+        <Paragraph class="text-zinc-50">
+          Great for companies looking to build a strong design teams. I support
+          on hiring, strategy and more.
+        </Paragraph>
+      </ServicesListItem>
+    </ServicesList>
+
+    <CollapsableList>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          What support can my company expect to receive?
+        </H3>
+        <Paragraph slot="collapsable-list-item-description">
+          I happily offer a free initial session hosted on ADPList to discuss
+          your goals and how I work. Book a call.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          Do you provide any discounts?
+        </H3>
+        <Paragraph slot="collapsable-list-item-description">
+          If you operate a Non-Profit, or are based in a location with an
+          exceedingly high exchange rate.
+          <Link
+            href="mailto:hi@jonathontoon.com?subject=Fractional Leadership Pricing"
+          >
+            Send me an email
+          </Link> to discuss a custom price.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem>
+        <H3 slot="collapsable-list-item-title" class="text-base font-normal">
+          Can I hire you for product design work?
+        </H3>
+        <Paragraph slot="collapsable-list-item-description">
+          I happily offer a free initial session hosted on ADPList to discuss
+          your goals and how I work. Book a call.
+        </Paragraph>
+      </CollapsableListItem>
+    </CollapsableList>
+  </div>
+</Section>

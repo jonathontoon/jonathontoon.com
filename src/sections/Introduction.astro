@@ -1,25 +1,59 @@
 ---
 import Section from "@components/Section.astro";
-import Paragraph from "@components/Paragraph.astro";
+import Header from "@components/Header.astro";
 import H1 from "@components/H1.astro";
-import Circle from "@components/Circle.astro";
+import H2 from "@components/H2.astro";
+import Paragraph from "@components/Paragraph.astro";
 ---
 
 <Section id="introduction">
-  <Fragment>
+  <Header class="flex flex-col">
+    <H1 class="!text-xl !font-semibold !leading-normal sm:!text-2xl">
+      Jonathon Toon
+    </H1>
+    <Paragraph class="!text-xl !leading-normal sm:!text-2xl">
+      Software Designer
+    </Paragraph>
+  </Header>
+
+  <H2 class="!text-3xl !font-normal sm:!text-4xl sm:!leading-tight">
+    Good design is the result of even <span class="font-serif font-light italic"
+      >better synthesis</span
+    >—the artful blend of data, context, and the real world.
+  </H2>
+
+  <div class="space-y-1 sm:space-y-2">
+    <!-- <Paragraph>
+      Nice to meet you, I’m Jonathon. A versatile design leader, who has strong
+      practical experience across product, engineering, user research, strategy,
+      and go-to-market. Today, I live in Aotearoa New Zealand. Where I work with
+      technology companies, to solve problems. While supporting individual
+      designers with coaching and mentorship.
+    </Paragraph> -->
+    <Paragraph>
+      Nice to meet you, I’m Jonathon. A versatile design leader, who has strong
+      practical experience across product, engineering, user research, strategy,
+      and go-to-market.
+    </Paragraph>
+    <Paragraph class="!indent-8">
+      Today, I live in Aotearoa New Zealand. Where I work with technology
+      companies, to solve problems. While supporting individual designers with
+      coaching and mentorship.
+    </Paragraph>
+  </div>
+
+  <!-- <div class="space-y-8 sm:space-y-8">
     <Circle class="mb-20 sm:my-24" />
-    <H1 class="mb-16 sm:mb-8">
+    <H1>
       Great design is the result of even <span
         class="font-serif font-light italic">greater synthesis</span
       >—the artful blend of data, people, and the real world.
     </H1>
-  </Fragment>
-  <Fragment>
     <div class="space-y-1">
       <Paragraph>
-        Nice to meet you, I’m Jonathon Toon. A software designer, with strong
-        practical experience working on product, research, engineering,
-        strategy, and brand, while operating across the organizational stack.
+        Nice to meet you, I’m Jonathon Toon. A versatile design leader, who has
+        strong practical experience working across product, research,
+        engineering, strategy, and brand.
       </Paragraph>
       <Paragraph class="indent-4">
         Today, I live in Aotearoa New Zealand. Where I work with technology
@@ -27,5 +61,30 @@ import Circle from "@components/Circle.astro";
         coaching and mentorship.
       </Paragraph>
     </div>
-  </Fragment>
+    <div class="xs:flex-row xs:space-x-4 xs:space-y-0 flex flex-col space-y-4">
+      <ButtonLink
+        href="#services"
+        class="group flex items-center justify-between gap-4 bg-zinc-50 font-semibold text-zinc-950 hover:bg-zinc-200"
+      >
+        View Services
+        <Icon
+          name="arrow-down"
+          shape-rendering="geometricPrecision"
+          class="group:text-zinc-50 h-5 w-5"
+        />
+      </ButtonLink>
+      <ButtonLink
+        target="_blank"
+        href="https://cal.com/jonathon-toon/introduction"
+        class="group flex items-center justify-between gap-4 border border-solid border-zinc-50 bg-zinc-950 font-medium text-zinc-50 hover:border-zinc-200 hover:text-zinc-200"
+      >
+        Schedule a Call
+        <Icon
+          name="arrow-up-right"
+          shape-rendering="geometricPrecision"
+          class="group:text-zinc-50 h-5 w-5"
+        />
+      </ButtonLink>
+    </div>
+  </div> -->
 </Section>

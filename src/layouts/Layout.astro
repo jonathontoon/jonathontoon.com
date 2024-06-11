@@ -21,11 +21,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class:list={"bg-zinc-950 font-sans text-zinc-50"}>
-    <main class:list={"p-6 sm:px-6 sm:py-0"}>
-      <div class:list={["mx-auto w-full max-w-md space-y-12 sm:space-y-16"]}>
-        <slot />
-      </div>
+  <body class:list={["bg-white", "font-sans", "text-slate-950"]}>
+    <main class:list={["flex", "flex-col"]}>
+      <slot />
     </main>
   </body>
 </html>
@@ -33,6 +31,7 @@ const { title } = Astro.props;
   * {
     backface-visibility: hidden;
     transform-style: preserve-3d;
+    scroll-behavior: smooth;
   }
 
   .font-sans {
@@ -65,24 +64,31 @@ const { title } = Astro.props;
     border-image-slice: 1;
   } */
 
-  .border-rainbow {
+  .border-warm,
+  .border-cool {
     position: relative;
   }
-  .border-rainbow::before {
+  .border-warm::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 0.75rem;
     padding: 1px;
-    background: linear-gradient(
-      to bottom right,
-      #ff00ff,
-      #ff6600,
-      #ffff00,
-      #00ff00,
-      #00ffff,
-      #0000ff
-    );
+    background: linear-gradient(to bottom right, #ff00ff, #ff6600, #ffff00);
+    -webkit-mask:
+      linear-gradient(#ffffff 0 0) content-box,
+      linear-gradient(#ffffff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .border-cool::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    padding: 1px;
+    background: linear-gradient(to bottom right, #00ff00, #00ffff, #0000ff);
     -webkit-mask:
       linear-gradient(#ffffff 0 0) content-box,
       linear-gradient(#ffffff 0 0);
@@ -92,7 +98,7 @@ const { title } = Astro.props;
 
   sub,
   sup {
-    font-size: 50%;
+    font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;

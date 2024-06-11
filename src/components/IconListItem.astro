@@ -6,12 +6,12 @@ interface Props extends HTMLAttributes<"li"> {
   class?: string;
 }
 
-const { class: classList, ...attrs } = Astro.props;
+const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<ListItem {...attrs} class={classList}>
-  <div class:list={["flex flex-col justify-center gap-6 pl-0"]}>
-    <div class:list={["flex flex-col justify-start"]}>
+<ListItem {...attrs} class:list={[className]}>
+  <div class:list={["flex", "flex-col", "justify-center", "gap-6", "pl-0"]}>
+    <div class:list={["flex", "flex-col", "justify-start"]}>
       <slot name="icon" />
     </div>
     <slot />

@@ -6,74 +6,54 @@ import Section from "@components/Section.astro";
 import Paragraph from "@components/Paragraph.astro";
 ---
 
-<Section id="companies" class="space-y-6">
-  <List class="flex-row items-center justify-center space-x-8 space-y-0">
+<Section id="companies" class="max-w-full space-y-6 sm:space-y-4">
+  <!-- <Paragraph class="mx-auto max-w-md tracking-normal text-zinc-500">
+    Trusted by leading companies and clients
+  </Paragraph> -->
+  <List
+    class="flex-row flex-wrap items-center justify-center gap-x-6 gap-y-6 sm:gap-10"
+  >
     <ListItem>
       <Icon
         name="moneytree"
         shape-rendering="geometricPrecision"
-        class="h-6 w-full text-zinc-600"
-      />
-    </ListItem>
-    <ListItem>
-      <Icon
-        name="xero"
-        shape-rendering="geometricPrecision"
-        class="h-5 w-full text-zinc-600"
+        class="h-6 w-auto text-zinc-500"
       />
     </ListItem>
     <ListItem>
       <Icon
         name="meta"
         shape-rendering="geometricPrecision"
-        class="h-5 w-full text-zinc-600"
+        class="h-5 w-auto text-zinc-500"
       />
     </ListItem>
-  </List>
-  <List class="flex-row items-center justify-center space-x-8 space-y-0">
+    <ListItem>
+      <Icon
+        name="xero"
+        shape-rendering="geometricPrecision"
+        class="h-5 w-auto text-zinc-500"
+      />
+    </ListItem>
     <ListItem>
       <Icon
         name="rainforestqa"
         shape-rendering="geometricPrecision"
-        class="h-7 w-full text-zinc-600"
+        class="h-7 w-auto text-zinc-500"
       />
     </ListItem>
     <ListItem>
       <Icon
         name="origami"
         shape-rendering="geometricPrecision"
-        class="h-7 w-full text-zinc-600"
+        class="h-7 w-auto text-zinc-500"
       />
     </ListItem>
-    <ListItem>
+    <!-- <ListItem class="hidden sm:flex">
       <Icon
         name="resn"
         shape-rendering="geometricPrecision"
-        class="h-5 w-full text-zinc-600"
+        class="h-5 w-auto text-zinc-500"
       />
-    </ListItem>
+    </ListItem> -->
   </List>
-  <!-- <List class="flex-row items-center justify-between space-y-0">
-    <ListItem>
-      <Icon
-        name="rainforestqa"
-        shape-rendering="geometricPrecision"
-        class="h-7 w-full text-zinc-600"
-      />
-    </ListItem>
-    <ListItem>
-      <Icon
-        name="resn"
-        shape-rendering="geometricPrecision"
-        class="h-6 w-full text-zinc-600"
-      />
-    </ListItem>
-    <ListItem>
-      <Icon
-        name="origami"
-        shape-rendering="geometricPrecision"
-        class="h-7 w-full text-zinc-600"
-      />
-    </ListItem>
-  </List> -->
 </Section>

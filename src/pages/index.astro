@@ -1,23 +1,20 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Services from "src/sections/Services.astro";
-import Experience from "src/sections/Experience.astro";
 import Connect from "src/sections/Connect.astro";
 import Colophon from "src/sections/Colophon.astro";
-// import Companies from "src/sections/Companies.astro";
+import Companies from "src/sections/Companies.astro";
 import Introduction from "@sections/Introduction.astro";
-import Availability from "@sections/Availability.astro";
 import Separator from "@components/Separator.astro";
+import Work from "@sections/Work.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Introduction />
-  <!-- <Separator /> -->
-  <!-- <Companies /> -->
+  <Work />
   <Services />
-  <Availability />
-  <Experience />
+  <!-- <Companies />
   <Connect />
-  <!-- <Separator /> -->
-  <Colophon />
+  <Separator />
+  <Colophon /> -->
 </Layout>

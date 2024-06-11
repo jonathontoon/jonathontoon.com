@@ -1,37 +1,46 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import ListItem from "@components/ListItem.astro";
 import { Icon } from "astro-icon/components";
+import ListItem from "@components/ListItem.astro";
 
 interface Props extends HTMLAttributes<"li"> {
   class?: string;
 }
 
-const { class: classList, ...attrs } = Astro.props;
+const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<ListItem {...attrs} class={`bg-zinc-950 rounded-xl  ${classList}`}>
+<ListItem {...attrs} class:list={["bg-zinc-200", "rounded-xl", className]}>
   <details class:list={["cursor-pointer"]}>
     <summary class:list={["list-none"]}>
-      <div class="flex select-none flex-row items-center justify-between p-5">
+      <div
+        class:list={[
+          "flex",
+          "select-none",
+          "flex-row",
+          "items-center",
+          "justify-between",
+          "p-4"
+        ]}
+      >
         <slot name="collapsable-list-item-title" />
         <div class="pl-2">
           <Icon
             name="plus"
             data-icon="plus"
             shape-rendering="geometricPrecision"
-            class="h-7 w-7 text-zinc-100"
+            class:list={["h-7", "w-7", "text-zinc-950"]}
           />
           <Icon
             name="minus"
             data-icon="minus"
             shape-rendering="geometricPrecision"
-            class="hidden h-7 w-7 text-zinc-100"
+            class:list={["h-7", "w-7", "text-zinc-950", "hidden"]}
           />
         </div>
       </div>
     </summary>
-    <div class="p-5 pt-0">
+    <div class:list={["p-4", "pt-0"]}>
       <slot name="collapsable-list-item-description" />
     </div>
   </details>
@@ -41,21 +50,38 @@ const { class: classList, ...attrs } = Astro.props;
   const detailElements: NodeListOf<HTMLDetailsElement> =
     document.querySelectorAll("details");
 
+  const toggleIcons = (detailElement: HTMLDetailsElement, isOpen: boolean) => {
+    const plusIcon: SVGElement = detailElement.querySelector(
+      '[data-icon="plus"]'
+    ) as SVGElement;
+    const minusIcon: SVGElement = detailElement.querySelector(
+      '[data-icon="minus"]'
+    ) as SVGElement;
+
+    if (isOpen) {
+      plusIcon.classList.add("hidden");
+      minusIcon.classList.remove("hidden");
+    } else {
+      plusIcon.classList.remove("hidden");
+      minusIcon.classList.add("hidden");
+    }
+  };
+
   detailElements.forEach((detailElement: HTMLDetailsElement) => {
     detailElement.addEventListener("toggle", () => {
-      const plusIcon: SVGElement = detailElement.querySelector(
-        '[data-icon="plus"]'
-      ) as SVGElement;
-      const minusIcon: SVGElement = detailElement.querySelector(
-        '[data-icon="minus"]'
-      ) as SVGElement;
-
+      // Close all other details elements except the current if it is opening
       if (detailElement.open) {
-        plusIcon.classList.add("hidden");
-        minusIcon.classList.remove("hidden");
+        detailElements.forEach((otherDetailElement: HTMLDetailsElement) => {
+          if (otherDetailElement !== detailElement) {
+            if (otherDetailElement.open) {
+              otherDetailElement.open = false;
+              toggleIcons(otherDetailElement, false); // Reset icons as it closes
+            }
+          }
+        });
+        toggleIcons(detailElement, true);
       } else {
-        plusIcon.classList.remove("hidden");
-        minusIcon.classList.add("hidden");
+        toggleIcons(detailElement, false);
       }
     });
   });

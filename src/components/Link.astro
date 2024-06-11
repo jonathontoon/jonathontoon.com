@@ -1,20 +1,17 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"a"> {
   href?: string;
   class?: string;
 }
 
-const { href, class: classList = "", ...attrs } = Astro.props;
+const { href, class: className = "", ...attrs } = Astro.props;
 ---
 
 <a
   rel="prefectch"
   href={href}
-  class:list={[
-    twMerge("cursor-pointer underline hover:no-underline", classList)
-  ]}
+  class:list={["cursor-pointer", "underline", "hover:no-underline", className]}
   {...attrs}><slot /></a
 >

@@ -1,16 +1,13 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"header"> {
   class?: string;
 }
 
-const { class: classList = "", ...attrs } = Astro.props;
+const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<header {...attrs} class:list={[twMerge(classList)]}>
-  <slot name="header-title" />
-  <slot name="header-introduction" />
-  <slot name="header-cta" />
+<header {...attrs} class:list={[className]}>
+  <slot />
 </header>

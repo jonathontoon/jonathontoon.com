@@ -1,18 +1,25 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import { twMerge } from "tailwind-merge";
-import List from "./List.astro";
+import List from "@components/List.astro";
 
 interface Props extends HTMLAttributes<"ul"> {
   class?: string;
 }
 
-const { class: classList, ...attrs } = Astro.props;
+const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <List
   {...attrs}
-  class={twMerge("p-2 bg-zinc-900 rounded-2xl space-y-2", classList)}
+  class:list={[
+    "p-2",
+    "sm:p-4",
+    "bg-zinc-50",
+    "rounded-2xl",
+    "space-y-2",
+    "sm:space-y-4",
+    className
+  ]}
   `
 >
   <slot />
