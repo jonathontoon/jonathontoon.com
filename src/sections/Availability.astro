@@ -1,27 +1,22 @@
 ---
-import Paragraph from "@components/Paragraph.astro";
-import Section from "@components/Section.astro";
 import { Icon } from "astro-icon/components";
+import Paragraph from "@components/Paragraph.astro";
 import Link from "@components/Link.astro";
+import ServicesList from "@components/ServicesList.astro";
+import ServicesListItem from "@components/ServicesListItem.astro";
 ---
 
-<Section id="availability">
-  <div
-    class="xs:items-center flex flex-row items-start gap-4 rounded-xl bg-green-950 p-3"
-  >
-    <Icon
-      name="smiley-happy"
-      shape-rendering="geometricPrecision"
-      class="h-auto w-7 text-green-400"
-    />
-    <div class="flex w-full flex-col gap-2">
-      <Paragraph class="w-full text-green-400">
-        Interested to work together? <Link
-          href="https://www.cal.com/jonathon-toon"
-        >
-          Schedule a Call.
-        </Link>
-      </Paragraph>
+<ServicesList class="!bg-green-50">
+  <ServicesListItem class="!bg-green-200">
+    <div class="flex flex-row">
+      <div class="flex w-full flex-col gap-2">
+        <Paragraph class="w-full text-zinc-950">
+          Available for new individual coaching and fractional leadership and
+          engagements. <Link href="https://www.cal.com/jonathon-toon">
+            Learn more.
+          </Link>
+        </Paragraph>
+      </div>
     </div>
-  </div>
-</Section>
+  </ServicesListItem>
+</ServicesList>

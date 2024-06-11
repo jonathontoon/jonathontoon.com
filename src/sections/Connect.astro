@@ -1,17 +1,51 @@
 ---
+import { Icon } from "astro-icon/components";
 import H2 from "@components/H2.astro";
 import Paragraph from "@components/Paragraph.astro";
 import Section from "@components/Section.astro";
+import List from "@components/List.astro";
+import ListItem from "@components/ListItem.astro";
+import Link from "@components/Link.astro";
 ---
 
-<Section id="connect" class="pb-20">
-  <div class="space-y-2">
-    <H2>Connect</H2>
-    <div class="space-y-1">
-      <Paragraph>
-        You can usually find or contact with me on most of the internet’s common
-        meeting places. Otherwise here are the more reliable ways to reach me.
-      </Paragraph>
-    </div>
+<Section id="services" class="">
+  <div class="space-y-3 sm:space-y-4">
+    <H2 class="!flex !flex-row !items-center !gap-2">
+      <Icon
+        name="layers"
+        shape-rendering="geometricPrecision"
+        class="h-7 w-7 text-zinc-950 sm:h-8 sm:w-8"
+      />Connect
+    </H2>
+    <Paragraph>
+      I'm always interested and open to meet new people, discuss potential
+      opportunities to provide my support. Although you can find me on the
+      internet’s common meeting places. To reliably reach me, please use one of
+      the links below.
+    </Paragraph>
   </div>
+  <List>
+    <ListItem>
+      <Paragraph>Email</Paragraph>
+      <Link href="mailto:hi@jonathontoon.com">mailto:hi@jonathontoon.com</Link>
+    </ListItem>
+    <ListItem>
+      <Paragraph>Meet</Paragraph>
+      <Link href="cal.com/jonathontoon/15min">cal.com/jonathontoon/15min</Link>
+    </ListItem>
+    <ListItem>
+      <Paragraph>Twitter</Paragraph>
+      <Link href="twitter.com/jonathontoon">twitter.com/jonathontoon</Link>
+    </ListItem>
+    <ListItem>
+      <Paragraph>Post.cv</Paragraph>
+      <Link href="posts.cv/toon">posts.cv/toon</Link>
+    </ListItem>
+    <ListItem>
+      <Paragraph>LinkedIn</Paragraph>
+      <Link href="linkedin.com/in/jonathontoon">
+        linkedin.com/in/jonathontoon
+      </Link>
+    </ListItem>
+  </List>
 </Section>
