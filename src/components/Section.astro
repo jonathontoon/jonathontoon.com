@@ -20,16 +20,7 @@ const { class: className = "", ...attrs } = Astro.props;
     className
   ]}
 >
-  <div
-    class:list={[
-      "my-16",
-      "sm:my-24",
-      "mx-auto",
-      "max-w-xl",
-      "space-y-12",
-      "sm:!space-y-16"
-    ]}
-  >
+  <div class:list={["mx-auto", "max-w-xl", "space-y-12", "sm:!space-y-16"]}>
     <slot />
   </div>
 </section>
