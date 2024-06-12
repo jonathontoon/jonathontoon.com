@@ -11,6 +11,7 @@
     "format": "prettier -c \"src/**/*.{json,js,ts,astro,css}\" --write"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^10.4.0",
     "@astrojs/tailwind": "5.1.0",
     "@fontsource-variable/archivo": "^5.0.19",
     "@fontsource-variable/archivo-narrow": "^5.0.21",
