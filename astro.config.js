@@ -7,7 +7,6 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: cloudflare(),
   trailingSlash: "always",
   integrations: [
     icon({
@@ -15,5 +14,6 @@ export default defineConfig({
     }),
     tailwind(),
     compress()
-  ]
+  ],
+  adapter: cloudflare()
 });
