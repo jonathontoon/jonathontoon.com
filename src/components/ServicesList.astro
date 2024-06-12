@@ -11,15 +11,7 @@ const { class: className = "", ...attrs } = Astro.props;
 
 <List
   {...attrs}
-  class:list={[
-    "p-2",
-    "sm:p-4",
-    "bg-zinc-50",
-    "rounded-2xl",
-    "space-y-2",
-    "sm:space-y-4",
-    className
-  ]}
+  class:list={["p-2", "bg-zinc-50", "rounded-2xl", "space-y-2", className]}
   `
 >
   <slot />

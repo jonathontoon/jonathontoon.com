@@ -1,18 +1,56 @@
 ---
-import H2 from "@components/H2.astro";
+import Link from "@components/Link.astro";
 import Paragraph from "@components/Paragraph.astro";
 import Section from "@components/Section.astro";
+
+const getFormattedDate = (): string => {
+  const date = new Date();
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  };
+  return date.toLocaleDateString("en-US", options);
+};
 ---
 
-<Section id="colophon">
-  <div class="space-y-2">
-    <H2>Colophon</H2>
-    <div class="space-y-1">
-      <Paragraph>
-        If you’d like to get in touch via email I’m always happy to write back.
-        Otherwise feel free to connect with me over on ReadCV, LinkedIn or X.
-        Speak with you soon.
-      </Paragraph>
-    </div>
+<Section id="colophon" class="mb-6 sm:mb-16">
+  <div class="space-y-1 sm:space-y-2">
+    <Paragraph>
+      All content provided under the <Link
+        target="_blank"
+        href="https://creativecommons.org/licenses/by-nc/4.0/"
+      >
+        CC BY-NC 3.0
+      </Link> license and was last updated {getFormattedDate}.
+    </Paragraph>
+    <Paragraph class="!indent-4">
+      It was served to you via <Link
+        target="_blank"
+        href="https://www.cloudflare.com/application-services/products/cdn/"
+      >
+        Cloudflare’s CDN
+      </Link> and built using the wonderful open-source framework <Link
+        target="_blank"
+        href="https://astro.build/"
+      >
+        AstroJS
+      </Link>.
+    </Paragraph>
+    <Paragraph class="!indent-4">
+      The icons used throughout this web page were designed by <Link
+        target="_blank"
+        href="https://www.marekminor.work/"
+      >
+        Marek Minor
+      </Link> and can be <Link
+        target="_blank"
+        href="https://gumroad.com/a/218413075/egyte"
+      >
+        purchased
+      </Link> here.
+    </Paragraph>
   </div>
+  <Paragraph>Thanks for stopping by.</Paragraph>
 </Section>

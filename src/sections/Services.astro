@@ -13,237 +13,211 @@ import ButtonLink from "@components/ButtonLink.astro";
 ---
 
 <Section id="services" class="">
-  <div class="space-y-3 sm:space-y-4">
-    <H2 class="!flex !flex-row !items-center !gap-2">
-      <Icon
-        name="layers"
-        shape-rendering="geometricPrecision"
-        class="h-7 w-7 text-zinc-950 sm:h-8 sm:w-8"
-      />Services
-    </H2>
+  <div class="space-y-1 sm:space-y-2">
     <Paragraph>
-      To aid individual designers and organizations I offer support through
-      mentorship and fractional leadership engagements, in both recurring and
-      one-off formats with predictable pricing.
+      Now, I focus my time on empowering others. Drawing on my experience
+      designing for both consumers and businesses, I offer coaching to creative
+      individuals and provide fractional leadership to high-performing teams.
+    </Paragraph>
+    <Paragraph class="!indent-4">
+      With each engagement, I aim to provide support with humility and respect.
+      I equip people with innovative tools to navigate ambiguity, develop a bias
+      for impact, and create products that people love.
     </Paragraph>
   </div>
-  <div class="flex flex-col space-y-12 sm:space-y-16">
-    <div class="flex flex-col space-y-6 sm:space-y-8">
-      <ServicesList class="!bg-blue-50">
-        <ServicesListItem class="!bg-blue-200">
-          <div
-            class="flex flex-col space-y-1 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
-          >
-            <H3 class="!flex !flex-row !items-center !gap-2">
-              <Icon
-                name="person"
-                shape-rendering="geometricPrecision"
-                class="h-5 w-5 text-zinc-950 sm:h-6 sm:w-6"
-              />
-               For Individuals
-            </H3>
-            <Paragraph class="!text-xl sm:!text-2xl">
-              $180 USD <sup>per session</sup>
-            </Paragraph>
-          </div>
-          <Paragraph>
-            Perfect for designers looking for practical support to excel in
-            their current role, advance their career, or navigate the
-            ever-changing design industry.
-          </Paragraph>
-          <div
-            class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8"
-          >
-            <ButtonLink>
-              Subscribe
-              <Icon
-                name="sparkles"
-                shape-rendering="geometricPrecision"
-                class="h-5 w-5 text-zinc-50 sm:h-6 sm:w-6"
-              />
-            </ButtonLink>
-            <Paragraph class="!text-base !text-zinc-600 sm:!text-lg">
-              Pause or cancel any time.
-            </Paragraph>
-          </div>
-        </ServicesListItem>
-        <ServicesListItem class="!bg-blue-200">
-          <Paragraph>
-            Interested to learn more or unsure if this is the right thing you?
-            Book a free initial call, hosted on ADPList, to discuss your goals.
-          </Paragraph>
-          <div
-            class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8"
-          >
-            <ButtonLink>
-              Book a Call
-              <Icon
-                name="smiley-happy"
-                shape-rendering="geometricPrecision"
-                class="h-5 w-5 text-zinc-50 sm:h-6 sm:w-6"
-              />
-            </ButtonLink>
-            <Paragraph class="!text-base !text-zinc-600 sm:!text-lg">
-              Availability may vary.
-            </Paragraph>
-          </div>
-        </ServicesListItem>
-      </ServicesList>
-      <CollapsableList class="!bg-blue-50">
-        <CollapsableListItem
-          class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+  <div class="flex flex-col space-y-6">
+    <ServicesList class="!bg-blue-50">
+      <ServicesListItem class="!bg-blue-200">
+        <div
+          class="flex flex-col space-y-1 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
         >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            What support can I expect to receive?
+          <H3 class="!flex !flex-row !items-center !gap-2">
+            <Icon
+              name="person"
+              shape-rendering="geometricPrecision"
+              class="h-5 w-5 text-zinc-950 sm:h-5 sm:w-5"
+            />
+             For Individuals
+          </H3>
+          <Paragraph class="!text-lg sm:!text-xl">
+            $200 USD <sup>per session</sup>
           </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            Your subscription is handled through Stripe. Upon subscribing,
-            you’ll receive a welcome email which will contain a link to log into
-            your customer portal. Or, just log in here.
-          </Paragraph>
-        </CollapsableListItem>
-        <CollapsableListItem
-          class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+        </div>
+        <Paragraph class="!leading-snug">
+          Perfect for designers seeking practical support to shine in their
+          current job, move up in their career, or keep up with the fast-paced
+          design world.
+        </Paragraph>
+        <div
+          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6"
         >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            After I subscribe what happens?
+          <ButtonLink>Subscribe</ButtonLink>
+          <Paragraph class="!text-base !text-zinc-600">
+            Pause or cancel any time.
           </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            I happily offer a free initial session hosted on ADPList to discuss
-            your goals and how I work. Book a call.
-          </Paragraph>
-        </CollapsableListItem>
-        <CollapsableListItem
-          class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+        </div>
+      </ServicesListItem>
+      <!-- <ServicesListItem class="!bg-blue-200">
+        <Paragraph class="!leading-snug">
+          Not sure if this is right for you? Let’s chat. Book a free 30-minute
+          call on ADPList to talk about what you’re aiming for.
+        </Paragraph>
+        <div
+          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6"
         >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            Do you provide any discounts?
+          <ButtonLink>Book a Call</ButtonLink>
+          <Paragraph class="!text-base !text-zinc-600">
+            Availability may vary.
           </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            If you are you a student, employed at a Non-Profit, or based in a
-            location with an exceedingly high exchange rate.
-            <Link href="mailto:hi@jonathontoon.com?subject=Mentorship Pricing">
-              Send me an email
-            </Link> to discuss a custom price.
-          </Paragraph>
-        </CollapsableListItem>
-        <CollapsableListItem
-          class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+        </div>
+      </ServicesListItem> -->
+    </ServicesList>
+    <CollapsableList class="!bg-blue-50">
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          What support can I expect to receive?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          Your subscription is handled through Stripe. Upon subscribing, you’ll
+          receive a welcome email which will contain a link to log into your
+          customer portal. Or, just log in here.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          After I subscribe what happens?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          I happily offer a free initial session hosted on ADPList to discuss
+          your goals and how I work. Book a call.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          Do you provide any discounts?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          If you are you a student, employed at a Non-Profit, or based in a
+          location with an exceedingly high exchange rate.
+          <Link href="mailto:hi@jonathontoon.com?subject=Mentorship Pricing">
+            Send me an email
+          </Link> to discuss a custom price.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          How can I manage my subscription?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          Your subscription is managed through Stripe. Once you subscribe,
+          you’ll receive a welcome email containing a link to access your
+          customer portal. Alternatively, you can log in directly here.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          Can I pause or cancel my subscription?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          Of course. You can pause or cancel your subscription whenever it suits
+          you. Whenever you restart you subscription we'll pick up right where
+          we left off.
+        </Paragraph>
+      </CollapsableListItem>
+    </CollapsableList>
+  </div>
+  <div class="flex flex-col space-y-6">
+    <ServicesList class="!bg-sky-50">
+      <ServicesListItem class="!bg-sky-200">
+        <div
+          class="flex flex-col space-y-1 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
         >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            How can I manage my subscription?
+          <H3 class="!flex !flex-row !items-center !gap-2">
+            <Icon
+              name="people"
+              shape-rendering="geometricPrecision"
+              class="h-5 w-5 text-zinc-950 sm:h-6 sm:w-6"
+            />
+             For Teams
+          </H3>
+          <Paragraph class="!text-lg sm:!text-xl">
+            $800 USD <sup>per day</sup>
           </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            Your subscription is managed through Stripe. Once you subscribe,
-            you’ll receive a welcome email containing a link to access your
-            customer portal. Alternatively, you can log in directly here.
-          </Paragraph>
-        </CollapsableListItem>
-        <CollapsableListItem
-          class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-100"
+        </div>
+        <Paragraph class="!leading-snug">
+          Perfect for teams looking to set up a new design team, receive advice
+          on discovery and research, or need help kicking off a new 0-1 product.
+        </Paragraph>
+        <div
+          class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6"
         >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            Can I pause or cancel my subscription?
+          <ButtonLink>Book a Call</ButtonLink>
+          <Paragraph class="!text-base !text-zinc-600">
+            Contract minimums apply.
           </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            Of course. You can pause or cancel your subscription whenever it
-            suits you. Whenever you restart you subscription we'll pick up right
-            where we left off.
-          </Paragraph>
-        </CollapsableListItem>
-      </CollapsableList>
-    </div>
-    <div class="flex flex-col space-y-6 sm:space-y-8">
-      <ServicesList class="!bg-violet-50">
-        <ServicesListItem class="!bg-violet-200">
-          <div
-            class="flex flex-col space-y-1 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
-          >
-            <H3 class="!flex !flex-row !items-center !gap-2">
-              <Icon
-                name="people"
-                shape-rendering="geometricPrecision"
-                class="h-5 w-5 text-zinc-950 sm:h-6 sm:w-6"
-              />
-               For Teams
-            </H3>
-            <Paragraph class="!text-xl sm:!text-2xl">
-              $800 USD <sup>per day</sup>
-            </Paragraph>
-          </div>
-          <Paragraph>
-            Great for small teams or organizations aiming to establish a new
-            design team, seeking support to create a 0-1 product, or needing
-            guidance on discovery and research.
-          </Paragraph>
-          <div
-            class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8"
-          >
-            <ButtonLink>
-              Request Quote
-              <Icon
-                name="email"
-                shape-rendering="geometricPrecision"
-                class="h-5 w-5 text-zinc-50 sm:h-6 sm:w-6"
-              />
-            </ButtonLink>
-            <Paragraph class="!text-base !text-zinc-600 sm:!text-lg">
-              Contract minimums apply.
-            </Paragraph>
-          </div>
-        </ServicesListItem>
-      </ServicesList>
-      <CollapsableList class="!bg-violet-50">
-        <CollapsableListItem
-          class="transition-color !bg-violet-200 duration-300 hover:!bg-violet-100"
-        >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            What support can my team expect to receive?
-          </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            Your subscription is handled through Stripe. Upon subscribing,
-            you’ll receive a welcome email which will contain a link to log into
-            your customer portal. Or, just log in here.
-          </Paragraph>
-        </CollapsableListItem>
-        <CollapsableListItem
-          class="transition-color !bg-violet-200 duration-300 hover:!bg-violet-100"
-        >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            Do you provide any discounts?
-          </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            I happily offer a free initial session hosted on ADPList to discuss
-            your goals and how I work. Book a call.
-          </Paragraph>
-        </CollapsableListItem>
-        <CollapsableListItem
-          class="transition-color !bg-violet-200 duration-300 hover:!bg-violet-100"
-        >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            How long does it take to receive a quote?
-          </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            If you are you a student, employed at a Non-Profit, or based in a
-            location with an exceedingly high exchange rate.
-            <Link href="mailto:hi@jonathontoon.com?subject=Mentorship Pricing">
-              Send me an email
-            </Link> to discuss a custom price.
-          </Paragraph>
-        </CollapsableListItem>
-        <CollapsableListItem
-          class="transition-color !bg-violet-200 duration-300 hover:!bg-violet-100"
-        >
-          <Paragraph slot="collapsable-list-item-title" class="!font-medium">
-            Can we schedule an initial call?
-          </Paragraph>
-          <Paragraph slot="collapsable-list-item-description">
-            Your subscription is managed through Stripe. Once you subscribe,
-            you’ll receive a welcome email containing a link to access your
-            customer portal. Alternatively, you can log in directly here.
-          </Paragraph>
-        </CollapsableListItem>
-      </CollapsableList>
-    </div>
+        </div>
+      </ServicesListItem>
+    </ServicesList>
+    <CollapsableList class="!bg-sky-50">
+      <CollapsableListItem
+        class="transition-color !bg-sky-200 duration-300 hover:!bg-sky-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          What support can my team expect to receive?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          Your subscription is handled through Stripe. Upon subscribing, you’ll
+          receive a welcome email which will contain a link to log into your
+          customer portal. Or, just log in here.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-sky-200 duration-300 hover:!bg-sky-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          How long does it take to receive a quote?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          I happily offer a free initial session hosted on ADPList to discuss
+          your goals and how I work. Book a call.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-sky-200 duration-300 hover:!bg-sky-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          Can you share with us a portfolio of your work?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          If you are you a student, employed at a Non-Profit, or based in a
+          location with an exceedingly high exchange rate.
+          <Link href="mailto:hi@jonathontoon.com?subject=Mentorship Pricing">
+            Send me an email
+          </Link> to discuss a custom price.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-sky-200 duration-300 hover:!bg-sky-100"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          Do you provide any discounts?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          Your subscription is managed through Stripe. Once you subscribe,
+          you’ll receive a welcome email containing a link to access your
+          customer portal. Alternatively, you can log in directly here.
+        </Paragraph>
+      </CollapsableListItem>
+    </CollapsableList>
   </div>
 </Section>

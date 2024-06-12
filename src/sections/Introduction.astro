@@ -4,20 +4,19 @@ import Header from "@components/Header.astro";
 import H1 from "@components/H1.astro";
 import H2 from "@components/H2.astro";
 import Paragraph from "@components/Paragraph.astro";
-import Availability from "./Availability.astro";
 ---
 
-<Section id="introduction">
-  <Header class="flex flex-col">
-    <H1 class="!text-xl !font-semibold !leading-normal sm:!text-2xl">
+<Section id="introduction" class="!space-y-10 sm:!space-y-16">
+  <Header class="mt-6 flex flex-col sm:mt-16">
+    <H1 class="!text-lg !font-semibold !leading-normal sm:!text-xl">
       Jonathon Toon
     </H1>
-    <Paragraph class="!text-xl !leading-normal sm:!text-2xl">
+    <Paragraph class="!text-lg !leading-normal sm:!text-xl">
       Software Designer
     </Paragraph>
   </Header>
 
-  <H2 class="!text-3xl !font-normal sm:!text-4xl sm:!leading-tight">
+  <H2 class="!text-2xl !font-normal sm:!text-3xl sm:!leading-tight">
     Good design is the result of even <span class="font-serif font-light italic"
       >better synthesis</span
     >—the artful blend of data, context, and the real world.
@@ -25,16 +24,18 @@ import Availability from "./Availability.astro";
 
   <div class="space-y-1 sm:space-y-2">
     <Paragraph>
-      Nice to meet you, I’m Jonathon. A versatile design leader, who has strong
-      practical experience across product, engineering, research, strategy, and
-      go-to-market.
+      Nice to meet you, I’m Jonathon. A versatile software design leader, and
+      coach, living and working remotely in Aotearoa New Zealand.
     </Paragraph>
     <Paragraph class="!indent-4">
-      Today, I live in Aotearoa New Zealand. Where I work with technology
-      companies, to solve problems. While supporting individual designers with
-      coaching and mentorship.
+      Over the last 14 years I've worked at innovative companies across North
+      America, Asia and Oceania. Each step of the way gaining deep practical
+      experience that spans product, engineering and research.
     </Paragraph>
+    <!-- <Paragraph class="!indent-4">
+      Now I spend my time empowering others. Helping individuals and companies
+      to navigate ambiguity, develop a bias for impact, and create products that
+      people love.
+    </Paragraph> -->
   </div>
-
-  <Availability />
 </Section>

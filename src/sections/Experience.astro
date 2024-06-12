@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon/components";
+import List from "@components/List.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Section from "@components/Section.astro";
+import ListItem from "@components/ListItem.astro";
+---
+
+<Section id="experience">
+  <div class="space-y-1 sm:space-y-2">
+    <Paragraph>
+      As a leader, I've built product teams that posses conviction, created
+      design processes that embrace reality, and shipped revenue-generating
+      products based on customer and market discovery.
+    </Paragraph>
+    <Paragraph class="!indent-4">
+      As a designer, I've crafted user interfaces that are as delightful as they
+      are functional, improved positioning and drove better conversion through
+      research, analytics and experimentation.
+    </Paragraph>
+    <Paragraph class="!indent-4">
+      Regardless of the role, I've consistently worn multiple hats—usually out
+      of necessity, other times for the joy of building. It’s from these
+      experiences that I've developed the following four principles.
+    </Paragraph>
+  </div>
+  <List class="grid grid-cols-2 grid-rows-2 gap-4">
+    <ListItem
+      class="flex aspect-square -rotate-1 cursor-pointer rounded-2xl bg-emerald-100 p-2 transition-transform duration-300 hover:rotate-1"
+    >
+      <div
+        class="flex aspect-square flex-col justify-between rounded-lg bg-emerald-200 p-6"
+      >
+        <Icon
+          name="component"
+          shape-rendering="geometricPrecision"
+          class="h-8 w-8 text-zinc-950"
+        />
+        <Paragraph class="!text-lg !leading-snug">
+          Polished designs are no good if they can't be found.
+        </Paragraph>
+      </div>
+    </ListItem>
+    <ListItem
+      class="flex aspect-square rotate-1 cursor-pointer rounded-2xl bg-fuchsia-100 p-2 transition-transform duration-300 hover:-rotate-1"
+    >
+      <div
+        class="flex aspect-square flex-col justify-between rounded-lg bg-fuchsia-200 p-6"
+      >
+        <Icon
+          name="puzzle-piece"
+          shape-rendering="geometricPrecision"
+          class="h-8 w-8 text-zinc-950"
+        />
+        <Paragraph class="!text-lg !leading-snug">
+          Customers set the course, but data shows the way.
+        </Paragraph>
+      </div>
+    </ListItem>
+    <ListItem
+      class="flex aspect-square rotate-1 cursor-pointer rounded-2xl bg-amber-100 p-2 transition-transform duration-300 hover:-rotate-1"
+    >
+      <div
+        class="flex aspect-square flex-col justify-between rounded-lg bg-amber-200 p-6"
+      >
+        <Icon
+          name="hamburger"
+          shape-rendering="geometricPrecision"
+          class="h-8 w-8 text-zinc-950"
+        />
+        <Paragraph class="!text-lg !leading-snug">
+          Brands are defined by their stories, not their logo.
+        </Paragraph>
+      </div>
+    </ListItem>
+    <ListItem
+      class="flex aspect-square -rotate-1 cursor-pointer rounded-2xl bg-red-100 p-2 transition-transform duration-300 hover:rotate-1"
+    >
+      <div
+        class="flex aspect-square flex-col justify-between rounded-lg bg-red-200 p-6"
+      >
+        <Icon
+          name="chart-line"
+          shape-rendering="geometricPrecision"
+          class="h-8 w-8 text-zinc-950"
+        />
+        <Paragraph class="!text-lg !leading-snug">
+          Revenue is the primary metric for measuring value.
+        </Paragraph>
+      </div>
+    </ListItem>
+  </List>
+</Section>
