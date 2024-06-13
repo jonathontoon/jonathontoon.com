@@ -12,7 +12,7 @@
     "private": true,
     "engineStrict": true,
     "engines": {
-        "node": "12.x"
+        "node": "14.21.3"
     },
     "main": "gulpfile.js",
     "devDependencies": {
