@@ -24,49 +24,51 @@ import ListItem from "@components/ListItem.astro";
       experiences that I've developed the following four principles.
     </Paragraph>
   </div>
-  <List class="grid grid-cols-2 grid-rows-2 gap-4">
+  <List
+    class="grid grid-cols-1 grid-rows-4 gap-4 sm:grid-cols-2 sm:grid-rows-2"
+  >
     <ListItem
-      class="flex aspect-square -rotate-1 cursor-pointer rounded-2xl bg-emerald-100 p-2 transition-transform duration-300 hover:rotate-1"
+      class="flex -rotate-1 cursor-pointer rounded-2xl bg-emerald-100 p-2 transition-transform duration-300 hover:rotate-1 sm:aspect-square"
     >
       <div
-        class="flex aspect-square flex-col justify-between rounded-lg bg-emerald-200 p-6"
+        class="flex flex-col justify-between gap-6 rounded-lg bg-emerald-200 p-4 sm:aspect-square sm:p-6"
       >
         <Icon
           name="component"
           shape-rendering="geometricPrecision"
-          class="h-8 w-8 text-zinc-950"
+          class="h-8 w-8 text-slate-950"
         />
         <Paragraph class="!text-lg !leading-snug">
-          Polished designs are no good if they can't be found.
+          Discoverability is the first step to effective design.
         </Paragraph>
       </div>
     </ListItem>
     <ListItem
-      class="flex aspect-square rotate-1 cursor-pointer rounded-2xl bg-fuchsia-100 p-2 transition-transform duration-300 hover:-rotate-1"
+      class="flex rotate-1 cursor-pointer rounded-2xl bg-fuchsia-100 p-2 transition-transform duration-300 hover:-rotate-1 sm:aspect-square"
     >
       <div
-        class="flex aspect-square flex-col justify-between rounded-lg bg-fuchsia-200 p-6"
+        class="flex flex-col justify-between gap-6 rounded-lg bg-fuchsia-200 p-4 sm:aspect-square sm:p-6"
       >
         <Icon
           name="puzzle-piece"
           shape-rendering="geometricPrecision"
-          class="h-8 w-8 text-zinc-950"
+          class="h-8 w-8 text-slate-950"
         />
         <Paragraph class="!text-lg !leading-snug">
-          Customers set the course, but data shows the way.
+          Data lights the way, customers set the course.
         </Paragraph>
       </div>
     </ListItem>
     <ListItem
-      class="flex aspect-square rotate-1 cursor-pointer rounded-2xl bg-amber-100 p-2 transition-transform duration-300 hover:-rotate-1"
+      class="flex rotate-1 cursor-pointer rounded-2xl bg-amber-100 p-2 transition-transform duration-300 hover:-rotate-1 sm:aspect-square"
     >
       <div
-        class="flex aspect-square flex-col justify-between rounded-lg bg-amber-200 p-6"
+        class="flex flex-col justify-between gap-6 rounded-lg bg-amber-200 p-4 sm:aspect-square sm:p-6"
       >
         <Icon
           name="hamburger"
           shape-rendering="geometricPrecision"
-          class="h-8 w-8 text-zinc-950"
+          class="h-8 w-8 text-slate-950"
         />
         <Paragraph class="!text-lg !leading-snug">
           Brands are defined by their stories, not their logo.
@@ -74,15 +76,15 @@ import ListItem from "@components/ListItem.astro";
       </div>
     </ListItem>
     <ListItem
-      class="flex aspect-square -rotate-1 cursor-pointer rounded-2xl bg-red-100 p-2 transition-transform duration-300 hover:rotate-1"
+      class="flex -rotate-1 cursor-pointer rounded-2xl bg-red-100 p-2 transition-transform duration-300 hover:rotate-1 sm:aspect-square"
     >
       <div
-        class="flex aspect-square flex-col justify-between rounded-lg bg-red-200 p-6"
+        class="flex flex-col justify-between gap-6 rounded-lg bg-red-200 p-4 sm:aspect-square sm:p-6"
       >
         <Icon
           name="chart-line"
           shape-rendering="geometricPrecision"
-          class="h-8 w-8 text-zinc-950"
+          class="h-8 w-8 text-slate-950"
         />
         <Paragraph class="!text-lg !leading-snug">
           Revenue is the primary metric for measuring value.

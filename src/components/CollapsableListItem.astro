@@ -10,7 +10,7 @@ interface Props extends HTMLAttributes<"li"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<ListItem {...attrs} class:list={["bg-zinc-200", "rounded-xl", className]}>
+<ListItem {...attrs} class:list={["bg-slate-200", "rounded-xl", className]}>
   <details class:list={["cursor-pointer"]}>
     <summary class:list={["list-none"]}>
       <div
@@ -29,13 +29,13 @@ const { class: className = "", ...attrs } = Astro.props;
             name="plus"
             data-icon="plus"
             shape-rendering="geometricPrecision"
-            class:list={["h-7", "w-7", "text-zinc-950"]}
+            class:list={["h-6", "w-6", "text-slate-950"]}
           />
           <Icon
             name="minus"
             data-icon="minus"
             shape-rendering="geometricPrecision"
-            class:list={["h-7", "w-7", "text-zinc-950", "hidden"]}
+            class:list={["h-6", "w-6", "text-slate-950", "hidden"]}
           />
         </div>
       </div>
