@@ -85,6 +85,7 @@ import ButtonLink from "@components/ButtonLink.astro";
           Your subscription is handled through Stripe. Upon subscribing, you’ll
           receive a welcome email which will contain a link to log into your
           customer portal. Or, just <Link
+            aria-label="log in here"
             target="_blank"
             href="https://billing.stripe.com/p/login/eVa0348SGd69eRO000"
             >log in here</Link
@@ -98,6 +99,7 @@ import ButtonLink from "@components/ButtonLink.astro";
         <Paragraph slot="collapsable-list-item-description">
           I happily offer a free 30-minute session, hosted on ADPList, to
           introduce myself and discuss your goals. <Link
+            aria-label="Book a call"
             target="_blank"
             href="https://adplist.org/mentors/jonathon-toon">Book a call</Link
           >.
@@ -119,7 +121,10 @@ import ButtonLink from "@components/ButtonLink.astro";
         <Paragraph slot="collapsable-list-item-description">
           If you are you a student, work at a Non-Profit, or are based in a
           location with an exceedingly high exchange rate.
-          <Link href="mailto:hi@jonathontoon.com?subject=Mentorship Pricing">
+          <Link
+            aria-label="Send me an email"
+            href="mailto:hi@jonathontoon.com?subject=Mentorship Pricing"
+          >
             Send me an email
           </Link> to discuss an alternative price.
         </Paragraph>
@@ -166,6 +171,7 @@ import ButtonLink from "@components/ButtonLink.astro";
             class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6"
           >
             <ButtonLink
+              aria-label="Book a Call"
               target="_blank"
               href="https://cal.com/jonathon-toon/30-min"
               >Book a Call</ButtonLink
@@ -210,6 +216,7 @@ import ButtonLink from "@components/ButtonLink.astro";
             If you run a pre-seed startup, a Non-Profit, or are based in a
             location with an exceedingly high exchange rate.
             <Link
+              aria-label="Send me an email"
               href="mailto:hi@jonathontoon.com?subject=Fractional Leadership Pricing"
             >
               Send me an email

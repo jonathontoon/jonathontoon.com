@@ -19,16 +19,19 @@ const getFormattedDate = (): string => {
   <div class="space-y-1 sm:space-y-2">
     <Paragraph>
       All content provided under <Link
+        aria-label="CC BY-NC 3.0"
         target="_blank"
         href="https://creativecommons.org/licenses/by-nc/4.0/"
       >
         CC BY-NC 3.0
       </Link> and was last updated {getFormattedDate}. It was served to you via <Link
+        aria-label="Cloudflare’s CDN"
         target="_blank"
         href="https://www.cloudflare.com/application-services/products/cdn/"
       >
         Cloudflare’s CDN
       </Link> and built using the wonderful open source framework <Link
+        aria-label="AstroJS"
         target="_blank"
         href="https://astro.build/"
       >
@@ -37,11 +40,13 @@ const getFormattedDate = (): string => {
     </Paragraph>
     <Paragraph class="!indent-4">
       The icons used throughout this page were designed by <Link
+        aria-label="Marek Minor"
         target="_blank"
         href="https://www.marekminor.work/"
       >
         Marek Minor
       </Link> and can be <Link
+        aria-label="purchased"
         target="_blank"
         href="https://gumroad.com/a/218413075/egyte"
       >
