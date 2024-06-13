@@ -27,7 +27,9 @@ import ButtonLink from "@components/ButtonLink.astro";
   </div>
   <div class="flex flex-col space-y-6">
     <ServicesList class="!bg-blue-50">
-      <ServicesListItem class="!bg-blue-200">
+      <ServicesListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
+      >
         <div
           class="flex flex-col space-y-1 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
         >
@@ -64,7 +66,7 @@ import ButtonLink from "@components/ButtonLink.astro";
     </ServicesList>
     <CollapsableList class="!bg-blue-50">
       <!-- <CollapsableListItem
-        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
       >
         <Paragraph slot="collapsable-list-item-title">
           What support can I expect to receive?
@@ -81,7 +83,7 @@ import ButtonLink from "@components/ButtonLink.astro";
         </Paragraph>
       </CollapsableListItem> -->
       <CollapsableListItem
-        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
       >
         <Paragraph slot="collapsable-list-item-title">
           What if I'm not sure if this is for me?
@@ -96,7 +98,7 @@ import ButtonLink from "@components/ButtonLink.astro";
         </Paragraph>
       </CollapsableListItem>
       <CollapsableListItem
-        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
       >
         <Paragraph slot="collapsable-list-item-title">
           After I subscribe what happens?
@@ -108,7 +110,7 @@ import ButtonLink from "@components/ButtonLink.astro";
         </Paragraph>
       </CollapsableListItem>
       <CollapsableListItem
-        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
       >
         <Paragraph slot="collapsable-list-item-title">
           How do I cancel my subscription?
@@ -126,7 +128,7 @@ import ButtonLink from "@components/ButtonLink.astro";
         </Paragraph>
       </CollapsableListItem>
       <CollapsableListItem
-        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
       >
         <Paragraph slot="collapsable-list-item-title">
           Do you provide any discounts?
@@ -142,7 +144,9 @@ import ButtonLink from "@components/ButtonLink.astro";
           </Link> to discuss an alternative price.
         </Paragraph>
       </CollapsableListItem>
-      <CollapsableListItem class="!bg-blue-200">
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
+      >
         <Paragraph slot="collapsable-list-item-title">
           How can I manage my subscription?
         </Paragraph>
