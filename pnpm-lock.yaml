@@ -38,9 +38,6 @@ importers:
       astro-icon:
         specifier: ^1.1.0
         version: 1.1.0
-      astro-purgecss:
-        specifier: ^4.1.1
-        version: 4.1.1(astro@4.10.2(@types/node@20.14.2)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.4.5))(purgecss@6.0.0)
       purgecss:
         specifier: ^6.0.0
         version: 6.0.0
@@ -1311,12 +1308,6 @@ packages:
 
   astro-icon@1.1.0:
     resolution: {integrity: sha512-Nksc09p7UuHeMcPNS9w1pKqRw3+wEmmh0A3FJW+FNXvqaeWI4RLvD1MCWErpY3Z5Cvad317rvLdik/Hg8GEk8Q==}
-
-  astro-purgecss@4.1.1:
-    resolution: {integrity: sha512-Lrtd+8iwznjQUBW1aqgdEYyc5xSgRa+Ir97EMsX17WvI6aVXGLoEWsVxQD9qtcGfLU5Qoq1hQOUKzVbCJSHcAg==}
-    peerDependencies:
-      astro: ^4.0.0
-      purgecss: ^6.0.0
 
   astro@4.10.2:
     resolution: {integrity: sha512-SBdkoOanPsxKlKVU4uu/XG0G7NYAFoqmfBtq9SPMJ34B7Hr1MxVdEugERs8IwYN6UaxdDVcqA++9PvH6Onq2cg==}
@@ -4342,11 +4333,6 @@ snapshots:
       '@iconify/utils': 2.1.24
     transitivePeerDependencies:
       - supports-color
-
-  astro-purgecss@4.1.1(astro@4.10.2(@types/node@20.14.2)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.4.5))(purgecss@6.0.0):
-    dependencies:
-      astro: 4.10.2(@types/node@20.14.2)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.4.5)
-      purgecss: 6.0.0
 
   astro@4.10.2(@types/node@20.14.2)(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.4.5):
     dependencies:
