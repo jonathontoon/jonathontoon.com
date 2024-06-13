@@ -10,33 +10,75 @@ import Link from "@components/Link.astro";
 
 <Section id="services">
   <Paragraph>
-    I'm always interested to meet new people and discuss potential
+    I'm always interested to meet new people, make friends and chat about
     opportunities. Although you'll often find me around the internet’s most
     common meeting places, to reliably reach me, you can use one of the links
     below.
   </Paragraph>
-  <List>
-    <ListItem>
-      <Paragraph>Email</Paragraph>
-      <Link href="mailto:hi@jonathontoon.com">mailto:hi@jonathontoon.com</Link>
+  <List class="space-y-2">
+    <ListItem class="!flex !flex-row !justify-between">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="at-symbol"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-zinc-950 sm:h-5 sm:w-5"
+        />
+        Email
+      </Paragraph>
+      <Link target="_blank" href="mailto:hi@jonathontoon.com"
+        >mailto:hi@jonathontoon.com</Link
+      >
     </ListItem>
-    <ListItem>
-      <Paragraph>Meet</Paragraph>
-      <Link href="cal.com/jonathontoon/15min">cal.com/jonathontoon/15min</Link>
+    <ListItem class="!flex !flex-row !justify-between">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="calendar"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-zinc-950 sm:h-5 sm:w-5"
+        />
+        Meet
+      </Paragraph>
+      <Link target="_blank" href="https://cal.com/jonathon-toon/introduction"
+        >cal.com/jonathon-toon/introduction</Link
+      >
     </ListItem>
-    <ListItem>
-      <Paragraph>Twitter</Paragraph>
-      <Link href="twitter.com/jonathontoon">twitter.com/jonathontoon</Link>
+    <ListItem class="!flex !flex-row !justify-between">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="megaphone"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-zinc-950 sm:h-5 sm:w-5"
+        />
+        X / Twitter
+      </Paragraph>
+      <Link target="_blank" href="https://www.x.com/jonathontoon"
+        >x.com/jonathontoon</Link
+      >
     </ListItem>
-    <ListItem>
-      <Paragraph>Post.cv</Paragraph>
-      <Link href="posts.cv/toon">posts.cv/toon</Link>
+    <ListItem class="!flex !flex-row !justify-between">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="note"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-zinc-950 sm:h-5 sm:w-5"
+        />
+        Posts.cv
+      </Paragraph>
+      <Link target="_blank" href="https://www.posts.cv/toon">posts.cv/toon</Link
+      >
     </ListItem>
-    <ListItem>
-      <Paragraph>LinkedIn</Paragraph>
-      <Link href="linkedin.com/in/jonathontoon">
-        linkedin.com/in/jonathontoon
-      </Link>
+    <ListItem class="!flex !flex-row !justify-between">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="briefcase"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-zinc-950 sm:h-5 sm:w-5"
+        />
+        LinkedIn
+      </Paragraph>
+      <Link target="_blank" href="https://www.linkedin.com/in/jonathontoon/"
+        >linkedin.com/in/jonathontoon/m</Link
+      >
     </ListItem>
   </List>
 </Section>

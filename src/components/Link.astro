@@ -10,6 +10,7 @@ const { href, class: className = "", ...attrs } = Astro.props;
 ---
 
 <a
+  rel="noopener"
   rel="prefectch"
   href={href}
   class:list={["cursor-pointer", "underline", "hover:no-underline", className]}
