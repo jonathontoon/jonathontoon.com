@@ -27,9 +27,7 @@ import ButtonLink from "@components/ButtonLink.astro";
   </div>
   <div class="flex flex-col space-y-6">
     <ServicesList class="!bg-blue-50">
-      <ServicesListItem
-        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-300"
-      >
+      <ServicesListItem class="!bg-blue-200">
         <div
           class="flex flex-col space-y-1 sm:flex-row sm:items-center sm:justify-between sm:space-y-0"
         >
@@ -151,7 +149,10 @@ import ButtonLink from "@components/ButtonLink.astro";
         <Paragraph slot="collapsable-list-item-title">
           How can I manage my subscription?
         </Paragraph>
-        <Fragment slot="collapsable-list-item-description">
+        <div
+          slot="collapsable-list-item-description"
+          class="flex flex-col space-y-4"
+        >
           <Paragraph>
             Your subscription is managed through Stripe. Once you subscribe,
             you’ll receive a welcome email containing a link to access your
@@ -162,10 +163,10 @@ import ButtonLink from "@components/ButtonLink.astro";
             >
           </Paragraph>
           <Paragraph>
-            If you decide to cancel your current subscription and resubscribe at
-            a later date we will pick right back up where we left off.
+            If you decide to cancel your current subscription, and resubscribe
+            at a later date, we will pick right back up where we left off.
           </Paragraph>
-        </Fragment>
+        </div>
       </CollapsableListItem>
     </CollapsableList>
     <div class="flex flex-col space-y-6">
