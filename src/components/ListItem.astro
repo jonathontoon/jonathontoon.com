@@ -10,13 +10,7 @@ const { class: classList, ...attrs } = Astro.props;
 
 <li
   {...attrs}
-  class:list={[
-    "font-primary",
-    "list-item",
-    "list-inside",
-    "list-image-none",
-    classList
-  ]}
+  class:list={["font-primary", "list-none", "list-image-none", classList]}
 >
   <slot />
 </li>

@@ -10,9 +10,21 @@ interface Props extends HTMLAttributes<"li"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<ListItem {...attrs} class:list={["bg-slate-200", "rounded-xl", className]}>
-  <details class:list={["cursor-pointer"]}>
-    <summary class:list={["list-none"]}>
+<ListItem
+  {...attrs}
+  class:list={[
+    "bg-slate-200",
+    "rounded-xl",
+    "flex",
+    "flex-row",
+    "w-full",
+    className
+  ]}
+>
+  <details
+    class:list={["flex", "flex-col", "h-full", "w-full", "cursor-pointer"]}
+  >
+    <summary class:list={["flex", "flex-row", "max-w-full", "list-none"]}>
       <div
         class:list={[
           "flex",
@@ -20,6 +32,7 @@ const { class: className = "", ...attrs } = Astro.props;
           "flex-row",
           "items-center",
           "justify-between",
+          "w-full",
           "p-4"
         ]}
       >
