@@ -1,0 +1,232 @@
+---
+import "@fontsource-variable/archivo";
+import "@fontsource-variable/archivo-narrow";
+import "@fontsource-variable/playfair-display";
+import "@fontsource/ibm-plex-serif/400-italic.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta
+      name="description"
+      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+    />
+    <meta
+      content="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+      name="keywords"
+    />
+    <meta content="dark light" name="color-scheme" />
+    <meta content="#000000" name="theme-color" />
+    <meta content="yes" name="mobile-web-app-capable" />
+    <meta content="Jonathon Toon" name="apple-mobile-web-app-title" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta content="Jonathon Toon" name="application-name" />
+    <meta
+      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+      name="msapplication-tooltip"
+    />
+    <meta content="/" name="msapplication-starturl" />
+    <meta content="#000000" name="msapplication-navbutton-color" />
+    <meta content="#000000" name="msapplication-TileColor" />
+    <meta content="browserconfig.xml" name="msapplication-config" />
+    <meta content="images/favicon-144.png" name="msapplication-TileImage" />
+    <meta content="no" name="msapplication-tap-highlight" />
+    <meta content="yes" name="full-screen" />
+    <meta content="application" name="browsermode" />
+    <meta content="Jonathon Toon" property="og:title" />
+    <meta
+      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="https://www.jonathontoon.com/" property="og:url" />
+    <meta content="image/png" property="og:image:type" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta content="summary" name="twitter:card" />
+    <meta content="" name="twitter:site" />
+    <meta content="https://www.jonathontoon.com/" name="twitter:url" />
+    <meta content="Jonathon Toon" name="twitter:title" />
+    <meta
+      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+      name="twitter:description"
+    />
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link
+      href="images/favicon-16.png"
+      rel="icon"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-32.png"
+      rel="icon"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-48.png"
+      rel="icon"
+      sizes="48x48"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-57.png"
+      rel="icon"
+      sizes="57x57"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-76.png"
+      rel="icon"
+      sizes="76x76"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-96.png"
+      rel="icon"
+      sizes="96x96"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-128.png"
+      rel="icon"
+      sizes="128x128"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-192.png"
+      rel="icon"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-228.png"
+      rel="icon"
+      sizes="228x228"
+      type="image/png"
+    />
+    <link
+      href="images/favicon-120.png"
+      rel="apple-touch-icon"
+      sizes="120x120"
+    />
+    <link
+      href="images/favicon-152.png"
+      rel="apple-touch-icon"
+      sizes="152x152"
+    />
+    <link
+      href="images/favicon-167.png"
+      rel="apple-touch-icon"
+      sizes="167x167"
+    />
+    <link
+      href="images/favicon-180.png"
+      rel="apple-touch-icon"
+      sizes="180x180"
+    />
+    <link href="jonathontoon.webmanifest" rel="manifest" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class:list={[
+      "bg-white",
+      "font-sans",
+      "text-slate-950",
+      "selection:bg-slate-950",
+      "selection:text-slate-50"
+    ]}
+  >
+    <main class:list={["flex", "flex-col", "space-y-12", "sm:space-y-24"]}>
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  * {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    scroll-behavior: smooth;
+  }
+
+  .font-sans {
+    font-family: "Archivo Variable", ui-sans-serif, system-ui, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
+  .font-sans-narrow {
+    font-family: "Archivo Narrow Variable", ui-sans-serif, system-ui, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
+  .font-serif {
+    font-family: "IBM Plex Serif", Georgia, "Times New Roman", Times, serif;
+  }
+
+  .border-warm,
+  .border-cool {
+    position: relative;
+  }
+  .border-warm::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    padding: 1px;
+    background: linear-gradient(to bottom right, #ff00ff, #ff6600, #ffff00);
+    -webkit-mask:
+      linear-gradient(#ffffff 0 0) content-box,
+      linear-gradient(#ffffff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .border-cool::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    padding: 1px;
+    background: linear-gradient(to bottom right, #00ff00, #00ffff, #0000ff);
+    -webkit-mask:
+      linear-gradient(#ffffff 0 0) content-box,
+      linear-gradient(#ffffff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: 0em;
+    vertical-align: super;
+  }
+  sub {
+    bottom: 0em;
+    vertical-align: sub;
+  }
+</style>

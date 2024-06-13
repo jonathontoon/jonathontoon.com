@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+import Paragraph from "@components/Paragraph.astro";
+import Link from "@components/Link.astro";
+import ServicesList from "@components/ServicesList.astro";
+import ServicesListItem from "@components/ServicesListItem.astro";
+---
+
+<ServicesList class="!bg-green-50">
+  <ServicesListItem class="!bg-green-200">
+    <div class="flex flex-row">
+      <div class="flex w-full flex-col gap-2">
+        <Paragraph class="w-full text-slate-950">
+          Available for new individual coaching and fractional leadership and
+          engagements. <Link
+            aria-label="Learn more"
+            href="https://www.cal.com/jonathon-toon"
+          >
+            Learn more.
+          </Link>
+        </Paragraph>
+      </div>
+    </div>
+  </ServicesListItem>
+</ServicesList>

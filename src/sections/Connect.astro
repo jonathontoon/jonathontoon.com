@@ -1,0 +1,196 @@
+---
+import { Icon } from "astro-icon/components";
+import H2 from "@components/H2.astro";
+import Paragraph from "@components/Paragraph.astro";
+import Section from "@components/Section.astro";
+import List from "@components/List.astro";
+import ListItem from "@components/ListItem.astro";
+import Link from "@components/Link.astro";
+---
+
+<Section id="services">
+  <Paragraph>
+    I'm always interested to meet new people, make friends and chat about
+    opportunities. Although you'll often find me around the internet’s most
+    common meeting places, to reliably reach me, you can use one of the links
+    below.
+  </Paragraph>
+  <List class="!space-y-2 !rounded-2xl !bg-slate-50 !p-2">
+    <ListItem
+      class="!transition-color !flex !flex-row !items-center !justify-between !rounded-xl !bg-slate-200 !duration-300 hover:!bg-slate-300"
+    >
+      <Link
+        class="!flex !w-full !flex-row !items-center !justify-between !gap-6 !rounded-lg !p-4 !no-underline"
+        target="_blank"
+        href="mailto:hi@jonathontoon.com"
+      >
+        <Paragraph
+          class="flex flex-row items-center gap-2 rounded-lg !font-medium"
+        >
+          <Icon
+            name="at-symbol"
+            shape-rendering="geometricPrecision"
+            class="h-6 w-6 text-slate-950"
+          />
+          Email
+        </Paragraph>
+        <Icon
+          name="arrow-up-right"
+          shape-rendering="geometricPrecision"
+          class="h-6 w-6 text-slate-950"
+        />
+      </Link>
+    </ListItem>
+    <ListItem
+      class="!transition-color !flex !flex-row !items-center !justify-between !rounded-xl !bg-slate-200 !duration-300 hover:!bg-slate-300"
+    >
+      <Link
+        class="!flex !w-full !flex-row !items-center !justify-between !gap-6 !rounded-lg !p-4 !no-underline"
+        target="_blank"
+        href="https://cal.com/jonathon-toon/15-mins"
+      >
+        <Paragraph
+          class="flex flex-row items-center gap-2 rounded-lg !font-medium"
+        >
+          <Icon
+            name="calendar"
+            shape-rendering="geometricPrecision"
+            class="h-6 w-6 text-slate-950"
+          />
+          Meet
+        </Paragraph>
+        <Icon
+          name="arrow-up-right"
+          shape-rendering="geometricPrecision"
+          class="h-6 w-6 text-slate-950"
+        />
+      </Link>
+    </ListItem>
+    <ListItem
+      class="!transition-color !flex !flex-row !items-center !justify-between !rounded-xl !bg-slate-200 !duration-300 hover:!bg-slate-300"
+    >
+      <Link
+        class="!flex !w-full !flex-row !items-center !justify-between !gap-6 !rounded-lg !p-4 !no-underline"
+        target="_blank"
+        href="https://www.x.com/jonathontoon"
+      >
+        <Paragraph
+          class="flex flex-row items-center gap-2 rounded-lg !font-medium"
+        >
+          <Icon
+            name="megaphone"
+            shape-rendering="geometricPrecision"
+            class="h-6 w-6 text-slate-950"
+          />
+          X / Twitter
+        </Paragraph>
+        <Icon
+          name="arrow-up-right"
+          shape-rendering="geometricPrecision"
+          class="h-6 w-6 text-slate-950"
+        />
+      </Link>
+    </ListItem>
+    <ListItem
+      class="!transition-color !flex !flex-row !items-center !justify-between !rounded-xl !bg-slate-200 !duration-300 hover:!bg-slate-300"
+    >
+      <Link
+        class="!flex !w-full !flex-row !items-center !justify-between !gap-6 !rounded-lg !p-4 !no-underline"
+        target="_blank"
+        href="https://www.posts.cv/toon"
+      >
+        <Paragraph
+          class="flex flex-row items-center gap-2 rounded-lg !font-medium"
+        >
+          <Icon
+            name="note"
+            shape-rendering="geometricPrecision"
+            class="h-4 w-4 text-slate-950 sm:h-5 sm:w-5"
+          />
+          Posts.cv
+        </Paragraph>
+        <Icon
+          name="arrow-up-right"
+          shape-rendering="geometricPrecision"
+          class="h-6 w-6 text-slate-950"
+        />
+      </Link>
+    </ListItem>
+    <ListItem
+      class="!transition-color !flex !flex-row !items-center !justify-between !rounded-xl !bg-slate-200 !duration-300 hover:!bg-slate-300"
+    >
+      <Link
+        class="!flex !w-full !flex-row !items-center !justify-between !gap-6 !rounded-lg !p-4 !no-underline"
+        target="_blank"
+        href="https://www.linkedin.com/in/jonathontoon/"
+      >
+        <Paragraph
+          class="flex flex-row items-center gap-2 rounded-lg !font-medium"
+        >
+          <Icon
+            name="briefcase"
+            shape-rendering="geometricPrecision"
+            class="h-6 w-6 text-slate-950"
+          />
+          LinkedIn
+        </Paragraph>
+        <Icon
+          name="arrow-up-right"
+          shape-rendering="geometricPrecision"
+          class="h-6 w-6 text-slate-950"
+        />
+      </Link>
+    </ListItem>
+    <!-- <ListItem class="!flex !flex-row !items-center !justify-between p-4">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="calendar"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-slate-950 sm:h-5 sm:w-5"
+        />
+        Meet
+      </Paragraph>
+      <Link target="_blank" href="https://cal.com/jonathon-toon/15-mins"
+        >cal.com/jonathon-toon/15-mins</Link
+      >
+    </ListItem>
+    <ListItem class="!flex !flex-row !items-center !justify-between p-4">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="megaphone"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-slate-950 sm:h-5 sm:w-5"
+        />
+        X / Twitter
+      </Paragraph>
+      <Link target="_blank" href="https://www.x.com/jonathontoon"
+        >x.com/jonathontoon</Link
+      >
+    </ListItem>
+    <ListItem class="!flex !flex-row !items-center !justify-between p-4">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="note"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-slate-950 sm:h-5 sm:w-5"
+        />
+        Posts.cv
+      </Paragraph>
+      <Link target="_blank" href="https://www.posts.cv/toon">posts.cv/toon</Link
+      >
+    </ListItem>
+    <ListItem class="!flex !flex-row !items-center !justify-between p-4">
+      <Paragraph class="flex flex-row items-center gap-2">
+        <Icon
+          name="briefcase"
+          shape-rendering="geometricPrecision"
+          class="h-4 w-4 text-slate-950 sm:h-5 sm:w-5"
+        />
+        LinkedIn
+      </Paragraph>
+      <Link target="_blank" href="https://www.linkedin.com/in/jonathontoon/"
+        >linkedin.com/in/jonathontoon/m</Link
+      >
+    </ListItem> -->
+  </List>
+</Section>

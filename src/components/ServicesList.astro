@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import List from "@components/List.astro";
+
+interface Props extends HTMLAttributes<"ul"> {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<List
+  {...attrs}
+  class:list={["p-2", "bg-slate-50", "rounded-2xl", "space-y-2", className]}
+  `
+>
+  <slot />
+</List>
