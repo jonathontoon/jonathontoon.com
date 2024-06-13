@@ -77,7 +77,9 @@ import ButtonLink from "@components/ButtonLink.astro";
       </ServicesListItem> -->
     </ServicesList>
     <CollapsableList class="!bg-blue-50">
-      <CollapsableListItem class="!bg-blue-200">
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+      >
         <Paragraph slot="collapsable-list-item-title">
           What support can I expect to receive?
         </Paragraph>
@@ -92,7 +94,9 @@ import ButtonLink from "@components/ButtonLink.astro";
           >.
         </Paragraph>
       </CollapsableListItem>
-      <CollapsableListItem class="!bg-blue-200">
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+      >
         <Paragraph slot="collapsable-list-item-title">
           What if I'm not sure if this is for me?
         </Paragraph>
@@ -105,21 +109,44 @@ import ButtonLink from "@components/ButtonLink.astro";
           >.
         </Paragraph>
       </CollapsableListItem>
-      <CollapsableListItem class="!bg-blue-200">
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+      >
         <Paragraph slot="collapsable-list-item-title">
           After I subscribe what happens?
         </Paragraph>
         <Paragraph slot="collapsable-list-item-description">
-          I happily offer a free initial session hosted on ADPList to discuss
-          your goals and how I work. Book a call.
+          Once subscribed through Stripe you’ll receive a welcome email which
+          includes a unique link to schedule your first session and an invite
+          for our private chat thread.
         </Paragraph>
       </CollapsableListItem>
-      <CollapsableListItem class="!bg-blue-200">
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+      >
+        <Paragraph slot="collapsable-list-item-title">
+          How do I cancel my subscription?
+        </Paragraph>
+        <Paragraph slot="collapsable-list-item-description">
+          All payments are managed through Stripe, once subscribed you will be
+          able to log in to their
+          <Link
+            aria-label="log in here"
+            target="_blank"
+            href="https://billing.stripe.com/p/login/eVa0348SGd69eRO000"
+            >customer portal</Link
+          > to adjust any details or cancel your current subscription. If you subscribe
+          again we can pick right back up where we left off.
+        </Paragraph>
+      </CollapsableListItem>
+      <CollapsableListItem
+        class="transition-color !bg-blue-200 duration-300 hover:!bg-blue-200"
+      >
         <Paragraph slot="collapsable-list-item-title">
           Do you provide any discounts?
         </Paragraph>
         <Paragraph slot="collapsable-list-item-description">
-          If you are you a student, work at a Non-Profit, or are based in a
+          If you are you a student, work at a non-profit, or are based in a
           location with an exceedingly high exchange rate.
           <Link
             aria-label="Send me an email"
@@ -213,7 +240,7 @@ import ButtonLink from "@components/ButtonLink.astro";
             Do you provide any discounts?
           </Paragraph>
           <Paragraph slot="collapsable-list-item-description">
-            If you run a pre-seed startup, a Non-Profit, or are based in a
+            If you run a pre-seed startup, a non-profit, or are based in a
             location with an exceedingly high exchange rate.
             <Link
               aria-label="Send me an email"
