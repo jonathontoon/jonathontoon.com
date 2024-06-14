@@ -1,19 +1,31 @@
 ---
+import { Image } from "astro:assets";
 import Section from "@components/Section.astro";
 import Header from "@components/Header.astro";
 import H1 from "@components/H1.astro";
 import H2 from "@components/H2.astro";
 import Paragraph from "@components/Paragraph.astro";
+
+import ProfileImage from "@assets/images/profile.jpg";
 ---
 
 <Section id="introduction" class="!space-y-14 sm:!space-y-16">
   <Header class="mt-6 flex flex-col sm:mt-16">
-    <H1 class="!text-lg !font-semibold !leading-normal sm:!text-xl">
-      Jonathon Toon
-    </H1>
-    <Paragraph class="!text-lg !leading-normal sm:!text-xl">
-      Software Designer
-    </Paragraph>
+    <div class="flex flex-row items-center space-x-4 sm:space-x-6">
+      <Image
+        src={ProfileImage}
+        class:list={["w-12", "h-12", "rounded-full"]}
+        alt="The face of Jonathon Toon, in black and white, wearing glasses."
+      />
+      <div class="flex flex-col">
+        <H1 class="!text-lg !font-semibold !leading-normal sm:!text-xl">
+          Jonathon Toon
+        </H1>
+        <Paragraph class="!text-lg !leading-normal sm:!text-xl">
+          Software Designer
+        </Paragraph>
+      </div>
+    </div>
   </Header>
 
   <H2
