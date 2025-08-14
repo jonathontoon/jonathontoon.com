@@ -1,13 +1,13 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<"header"> {
+interface Props extends HTMLAttributes<"summary"> {
   class?: string;
 }
 
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<header {...attrs} class:list={[className]}>
+<summary class:list={[className, "[&::-webkit-details-marker]:hidden"]} {...attrs}>
   <slot />
-</header>
+</summary>

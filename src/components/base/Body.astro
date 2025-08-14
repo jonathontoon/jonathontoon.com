@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"body"> {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<body class:list={[className]} {...attrs}>
+  <slot />
+</body>

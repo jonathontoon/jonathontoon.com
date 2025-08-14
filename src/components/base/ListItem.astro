@@ -5,12 +5,9 @@ interface Props extends HTMLAttributes<"li"> {
   class?: string;
 }
 
-const { class: classList, ...attrs } = Astro.props;
+const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<li
-  {...attrs}
-  class:list={["font-primary", "list-none", "list-image-none", classList]}
->
+<li class:list={[className]} {...attrs}>
   <slot />
 </li>

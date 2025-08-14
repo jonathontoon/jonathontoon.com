@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"pre"> {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<pre class:list={[className]} {...attrs}>
+  <slot />
+</pre>

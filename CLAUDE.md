@@ -1,0 +1,2 @@
+- Astro documentation https://docs.astro.build/
+- Astro Content Collection Guide https://docs.astro.build/en/guides/content-collections/
