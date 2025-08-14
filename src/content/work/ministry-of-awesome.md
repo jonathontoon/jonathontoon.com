@@ -1,9 +1,11 @@
 ---
 name: "Ministry of Awesome"
+location: ["Remote"]
+url: https://www.ministryofawesome.com/
+type: "volunteering"
 roles:
-  - title: "Startup Mentor"
-    date: "01/04/2024 - Present"
-    location: "Christchurch Metropolitan Area, Remote"
+  - title: "Start Up Mentor"
+    startDate: "01/04/2024"
 ---
 
-Volunteer mentorship. Helping build Aotearoa New Zealand's knowledge-based economy through startup founder mentorship.
+Helping build Aotearoa New Zealand's knowledge-based economy through startup founder mentorship.

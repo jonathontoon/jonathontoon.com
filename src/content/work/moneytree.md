@@ -1,15 +1,16 @@
 ---
 name: "Moneytree"
+url: https://www.getmoneytree.com/
 roles:
   - title: "Director of Design (Fractional)"
     startDate: "01/01/2024"
     endDate: "31/05/2024"
-    location: ["Tokyo, Japan", "Remote"]
+    location: ["Remote"]
     type: "part-time"
   - title: "Director of Design & Discovery"
     startDate: "01/01/2023"
     endDate: "31/01/2024"
-    location: ["Tokyo, Japan", "Remote"]
+    location: ["Remote"]
     type: "full-time"
   - title: "Director of Design"
     startDate: "01/11/2021"
@@ -19,12 +20,12 @@ roles:
   - title: "Design Consultant"
     startDate: "01/07/2019"
     endDate: "31/10/2019"
-    location: ["Remote"]
+    location: ["Sydney, Australia"]
     type: "contract"
   - title: "Product & Design Lead"
     startDate: "01/08/2017"
     endDate: "31/07/2019"
-    location: ["Tokyo, Japan", "Remote"]
+    location: ["Tokyo, Japan", "Sydney, Australia"]
     type: "full-time"
   - title: "Senior Designer"
     startDate: "01/11/2016"

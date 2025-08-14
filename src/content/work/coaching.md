@@ -1,10 +1,8 @@
 ---
-name: "Self-employed"
-roles:
-  - title: "Mentor & Coach"
-    startDate: "01/05/2024"
-    location: ["Remote"]
-    type: "freelance"
+name: "Coaching & Mentorship"
+startDate: "01/05/2024"
+location: ["Remote"]
+type: "freelance"
 ---
 
-Providing professional mentorship to designers, founders and leaders at small businesses and venture-backed start ups.
+I help designers, product managers and leaders from early-stage startups and established companies navigate challenges and achieve personal growth opportunities through practical, actionable coaching.

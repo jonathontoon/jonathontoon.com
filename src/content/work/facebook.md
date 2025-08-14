@@ -1,16 +1,14 @@
 ---
 name: "Facebook"
+location: ["Menlo Park, California"]
+url: "https://design.facebook.com/"
+type: "full-time"
 roles:
   - title: "Product Designer"
-    date: "01/08/2012 - 31/07/2014"
-    location: "San Francisco Bay Area"
+    startDate: "01/08/2012"
+    endDate: "31/07/2014"
 ---
 
-Part of the Facebook design team, owning end-to-end design of products across Facebook Messenger, Photos and Feed for Web, iOS and Android platforms.
+I joined Facebook’s Product Design team when we were still small enough to fit in a single conference room. 
 
-Key projects and achievements:
-- Facebook Messenger Voice Calling for iOS and Android
-- Drove Facebook Messenger user engagement and activity initiatives
-- Redesigned Photo Uploading for core Facebook application on iOS and Android to increase content production
-- Improved face tagging in Photos by 10% on iOS and Android by aligning UX with user behavior patterns
-- Worked across multiple high-impact product areas serving billions of users
+Over the years, I led the end-to-end design of features and new products across Messenger, Photos, and Feed—partnering closely with product managers, engineers, and fellow designers to craft experiences used by billions of people worldwide.

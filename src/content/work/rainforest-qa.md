@@ -1,12 +1,15 @@
 ---
 name: "Rainforest QA"
+url: "https://www.rainforestqa.com/"
 roles:
   - title: "Director of Design"
-    date: "01/01/2021 - 31/10/2021"
+    startDate: "01/01/2021"
+    endDate: "31/10/2021"
     location: ["Remote"]
     type: "full-time"
   - title: "Design Lead"
-    date: "01/03/2020 - 31/01/2021"
+    startDate: "01/03/2020"
+    endDate: "31/01/2021"
     location: ["Remote"]
     type: "full-time"
 ---

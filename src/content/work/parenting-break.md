@@ -1,10 +1,8 @@
 ---
-name: "Full-time Parenting"
-roles:
-  - title: "Career Break"
-    startDate: "01/11/2024"
-    location: ["Christchurch Metropolitan Area"]
-    type: "full-time"
+name: "Parenting"
+startDate: "01/11/2024"
+location: ["Christchurch, New Zealand"]
+type: "sabbatical"
 ---
 
-Taking a brief break. Learning to be the best Dad I can.
+Taking a sabatical. Learning to be the best Dad I can.

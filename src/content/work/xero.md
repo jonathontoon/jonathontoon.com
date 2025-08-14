@@ -1,9 +1,12 @@
 ---
 name: "Xero"
+location: ["San Francisco, California"]
+url: "https://www.xero.com/us/"
+type: "full-time"
 roles:
   - title: "Mobile Product Designer"
-    date: "01/08/2014 - 31/07/2015"
-    location: "San Francisco Bay Area"
+    startDate: "01/08/2014"
+    endDate: "31/07/2015"
 ---
 
 Worked with a team of 7 to design, build and ship a new mobile application focused on helping employers communicate with their employees more effectively.
