@@ -1,6 +1,6 @@
 ---
 name: "Victoria University of Wellington"
-location: ["Wellington, New Zealand"]
+locations: ["Wellington, New Zealand"]
 startDate: "01/03/2009"
 endDate: "31/12/2012"
 qualification: "Bachelor of Design Innovation"

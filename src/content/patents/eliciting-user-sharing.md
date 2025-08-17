@@ -3,7 +3,7 @@ title: "Eliciting user sharing of content"
 number: "US10140373B2"
 date: "15/04/2014"
 inventors: ["Jonathon Toon"]
-work: "facebook"
+work: "facebook-product-designer"
 description: "Method for inferring user intent to post to social-networking system based on information items, assembling relevant content, and sending prompts to encourage sharing"
 url: "https://patents.google.com/patent/US10140373B2/en?inventor=Jonathon+Toon&oq=Jonathon+Toon"
 ---

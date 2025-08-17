@@ -1,14 +1,13 @@
 ---
-name: "Simple Picker"
+name: "Voice Calling"
 type: "work"
 context: "facebook"
-tags: ["mobile", "design", "product design", "ios", "android", "photos", "facebook", "meta", "user testing", "research", "social media"]
-date: "05/11/2013"
+tags: ["mobile", "design", "product design", "ios", "android", "facebook", "meta", "calling", "voice", "messenger", "social media"]
+date: "13/11/2012"
 locations: ["Menlo Park, California"]
 platforms: ["ios", "android"]
-stack: ["photoshop", "objective-c", "quartz-composer"]
-outcomes: ["The number of photos shared per post grew by ~1.2%.", "The average number of photos shared to grew to 1.75.", "Contributed to annual org-level goals of content production."]
-references: ["https://about.fb.com/news/2014/10/improvements-to-photo-posts-on-mobile/"]
+stack: ["photoshop", "javascript", "quartz-composer"]
+references: ["https://techcrunch.com/2013/01/16/facebook-rolls-out-voip-calling-to-u-s-ios-messenger-users/", "https://techcrunch.com/2013/04/18/facebook-voip-home/"]
 ---
 During this time within the company, many were fed up with creating products to only grease vanity metrics. Teams like mine on Photos began to push for sweeping core changes that focused more on natural user behavior, instead of engagement based features. This began with fixing our sharing experience.
 

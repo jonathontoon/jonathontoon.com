@@ -1,0 +1,12 @@
+---
+name: "Photo Albums"
+type: "work"
+context: "facebook"
+tags: ["mobile", "design", "product design", "android", "shared", "photos", "facebook", "meta"]
+date: "17/06/2013"
+locations: ["Menlo Park, California"]
+platforms: ["android"]
+stack: ["photoshop", "quartz-composer"]
+outcomes: ["Brought shared photo albums to Android.", "Modernized a high-trafficed interface with components from the new internal design system."]
+references: ["https://techcrunch.com/2013/08/26/facebook-announces-shared-photo-albums/"]
+---

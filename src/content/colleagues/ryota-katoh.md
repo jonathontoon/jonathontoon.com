@@ -1,0 +1,5 @@
+---
+name: "Ryota Katoh"
+url: "https://www.linkedin.com/in/ryota-katoh-46843615a/"
+image: "/images/content/colleagues/ryota-katoh.png"
+---
