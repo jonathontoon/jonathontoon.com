@@ -120,7 +120,6 @@ const awards = defineCollection({
       reference("education")
     ]),
     date: dateSchema,
-    description: z.string(),
     category: z.enum(["award", "honor", "recognition", "certification", "achievement"]),
     slug: slugSchema
   }),
