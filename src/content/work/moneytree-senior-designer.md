@@ -1,8 +1,8 @@
 ---
 title: "Senior Designer"
 company: "moneytree"
-startDate: "01/11/2016"
-endDate: "31/08/2017"
+startDate: "2016-11-01"
+endDate: "2017-08-31"
 locations: ["Tokyo, Japan"]
 type: "full-time"
 ---

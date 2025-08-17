@@ -3,8 +3,7 @@ name: "Simple Picker"
 type: "work"
 context: "facebook"
 tags: ["mobile", "design", "product design", "ios", "android", "photos", "facebook", "meta", "user testing", "research", "social media"]
-date: "05/11/2013"
-locations: ["Menlo Park, California"]
+date: "2013-11-05"
 platforms: ["ios", "android"]
 stack: ["photoshop", "objective-c", "quartz-composer"]
 outcomes: ["The number of photos shared per post grew by ~1.2%.", "The average number of photos shared to grew to 1.75.", "Contributed to annual org-level goals of content production."]

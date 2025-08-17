@@ -3,8 +3,7 @@ name: "Feed Tagging"
 type: "work"
 context: "facebook"
 tags: ["mobile", "design", "product design", "ios", "android", "photos", "facebook", "meta", "tagging"]
-date: "24/03/2014"
-locations: ["Menlo Park, California"]
+date: "2014-03-24"
 platforms: ["ios", "android"]
 stack: ["photoshop", "quartz-composer"]
 outcomes: ["Face tags added to photos via news feed increased by 5%."]

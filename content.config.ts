@@ -1,14 +1,22 @@
 import { defineCollection, z, reference } from "astro:content";
 
+// Shared validation schemas
+const dateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format");
+const urlSchema = z.string().url();
+const imageSchema = z.string().regex(/\.(jpg|jpeg|png|webp|svg)$/i, "Image must be a valid image file");
+const slugSchema = z.string().regex(/^[a-z0-9-]+$/, "Slug must contain only lowercase letters, numbers, and hyphens").optional();
+
 const education = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
     locations: z.array(z.string()),
-    startDate: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format"),
-    endDate: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format"),
+    startDate: dateSchema,
+    endDate: dateSchema,
     qualification: z.string(),
-    major: z.string().optional()
+    major: z.string().optional(),
+    description: z.string().optional(),
+    slug: slugSchema
   }),
 });
 
@@ -16,10 +24,13 @@ const companies = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
-    url: z.string().url().optional(),
+    url: urlSchema.optional(),
     locations: z.array(z.string()).optional(),
-    state: z.enum(["active", "closed", "sold"]),
+    state: z.enum(["active", "closed", "sold", "acquired"]),
     colleagues: z.array(reference("colleagues")).optional(),
+    description: z.string().optional(),
+    founded: dateSchema.optional(),
+    slug: slugSchema
   }),
 });
 
@@ -28,10 +39,14 @@ const work = defineCollection({
   schema: z.object({
     title: z.string(),
     company: reference("companies").optional(),
-    startDate: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format"),
-    endDate: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format").optional(),
+    startDate: dateSchema,
+    endDate: dateSchema.optional(),
     locations: z.array(z.string()).optional(),
     type: z.enum(["full-time", "part-time", "contract", "internship", "freelance", "volunteering", "sabbatical"]),
+    colleagues: z.array(reference("colleagues")).optional(),
+    projects: z.array(reference("projects")).optional(),
+    description: z.string().optional(),
+    slug: slugSchema
   }),
 });
 
@@ -40,8 +55,10 @@ const colleagues = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
-    url: z.string().url(),
-    image: z.string(),
+    url: urlSchema,
+    image: imageSchema,
+    description: z.string().optional(),
+    slug: slugSchema
   }),
 });
 
@@ -49,7 +66,10 @@ const stack = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
-    url: z.string().url(),
+    url: urlSchema,
+    category: z.enum(["language", "framework", "library", "tool", "platform", "service"]).optional(),
+    description: z.string().optional(),
+    slug: slugSchema
   }),
 });
 
@@ -62,18 +82,18 @@ const projects = defineCollection({
       reference("companies"),
       reference("education")
     ]).optional(),
+    work: reference("work").optional(),
     tags: z.array(z.string()).optional(),
-    date: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format"),
-    locations: z.array(z.string()).optional(),
-    platforms: z.array(z.enum(["web", "ios", "android", "other"])).optional(),
+    date: dateSchema,
+    platforms: z.array(z.enum(["web", "ios", "android", "desktop", "other"])).optional(),
     stack: z.array(reference("stack")).optional(),
     outcomes: z.array(z.string()).optional(),
     description: z.string().optional(),
-    technologies: z.array(z.string()).optional(),
-    url: z.string().url().optional(),
-    repository: z.string().url().optional(),
-    references: z.array(z.string().url()).optional(),
+    url: urlSchema.optional(),
+    repository: urlSchema.optional(),
+    references: z.array(urlSchema).optional(),
     status: z.enum(["active", "completed", "archived", "on-hold"]).optional(),
+    slug: slugSchema
   }),
 });
 
@@ -83,9 +103,11 @@ const publications = defineCollection({
     title: z.string(),
     authors: z.array(z.string()),
     publication: z.string(),
-    date: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format"),
-    url: z.string().url().optional(),
-    type: z.enum(["article", "paper", "book", "blog-post", "whitepaper", "other"]),
+    date: dateSchema,
+    url: urlSchema.optional(),
+    type: z.enum(["article", "paper", "book", "blog-post", "whitepaper", "conference", "other"]),
+    description: z.string().optional(),
+    slug: slugSchema
   }),
 });
 
@@ -93,10 +115,14 @@ const awards = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    organization: z.string(),
-    date: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format"),
+    organization: z.union([
+      reference("companies"),
+      reference("education")
+    ]),
+    date: dateSchema,
     description: z.string(),
     category: z.enum(["award", "honor", "recognition", "certification", "achievement"]),
+    slug: slugSchema
   }),
 });
 
@@ -105,11 +131,12 @@ const patents = defineCollection({
   schema: z.object({
     title: z.string(),
     number: z.string(),
-    date: z.string().regex(/^\d{2}\/\d{2}\/\d{4}$/, "Date must be in DD/MM/YYYY format"),
+    date: dateSchema,
     inventors: z.array(z.string()),
     work: reference('work'),
     description: z.string(),
-    url: z.string().url().optional(),
+    url: urlSchema.optional(),
+    slug: slugSchema
   }),
 });
 

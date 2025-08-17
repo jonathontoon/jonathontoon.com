@@ -1,8 +1,8 @@
 ---
 title: "Product Designer"
 company: "facebook"
-startDate: "01/08/2012"
-endDate: "31/07/2014"
+startDate: "2012-08-01"
+endDate: "2014-07-31"
 locations: ["Menlo Park, California"]
 type: "full-time"
 ---

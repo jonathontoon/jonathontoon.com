@@ -1,8 +1,8 @@
 ---
 title: "Design Lead"
 company: "rainforest-qa"
-startDate: "01/03/2020"
-endDate: "31/01/2021"
+startDate: "2020-03-01"
+endDate: "2021-01-31"
 locations: ["Remote"]
 type: "full-time"
 ---

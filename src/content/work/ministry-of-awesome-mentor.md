@@ -1,7 +1,7 @@
 ---
 title: "Start Up Mentor"
 company: "ministry-of-awesome"
-startDate: "01/04/2024"
+startDate: "2024-04-01"
 locations: ["Remote"]
 type: "volunteering"
 ---

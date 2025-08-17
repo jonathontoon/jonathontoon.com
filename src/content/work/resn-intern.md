@@ -1,8 +1,8 @@
 ---
 title: "Intern"
 company: "resn"
-startDate: "01/03/2012"
-endDate: "30/06/2012"
+startDate: "2012-03-01"
+endDate: "2012-06-30"
 locations: ["Wellington, New Zealand"]
 type: "internship"
 ---

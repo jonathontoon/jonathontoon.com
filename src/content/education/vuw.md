@@ -1,8 +1,8 @@
 ---
 name: "Victoria University of Wellington"
 locations: ["Wellington, New Zealand"]
-startDate: "01/03/2009"
-endDate: "31/12/2012"
+startDate: "2009-03-01"
+endDate: "2012-12-31"
 qualification: "Bachelor of Design Innovation"
 major: "Media Design"
 ---

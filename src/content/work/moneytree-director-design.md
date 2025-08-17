@@ -1,8 +1,8 @@
 ---
 title: "Director of Design"
 company: "moneytree"
-startDate: "01/11/2021"
-endDate: "31/01/2023"
+startDate: "2021-11-01"
+endDate: "2023-01-31"
 locations: ["Remote"]
 type: "full-time"
 ---

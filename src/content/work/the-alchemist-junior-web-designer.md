@@ -1,8 +1,8 @@
 ---
 title: "Junior Web Designer"
 company: "the-alchemist-design"
-startDate: "01/11/2009"
-endDate: "30/11/2011"
+startDate: "2009-11-01"
+endDate: "2011-11-30"
 locations: ["Wellington, New Zealand"]
 type: "part-time"
 ---

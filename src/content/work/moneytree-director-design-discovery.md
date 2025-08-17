@@ -1,8 +1,8 @@
 ---
 title: "Director of Design & Discovery"
 company: "moneytree"
-startDate: "01/01/2023"
-endDate: "31/01/2024"
+startDate: "2023-01-01"
+endDate: "2024-01-31"
 locations: ["Remote"]
 type: "full-time"
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Director of Design"
 company: "rainforest-qa"
-startDate: "01/01/2021"
-endDate: "31/10/2021"
+startDate: "2021-01-01"
+endDate: "2021-10-31"
 locations: ["Remote"]
 type: "full-time"
 ---

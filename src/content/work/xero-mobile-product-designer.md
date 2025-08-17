@@ -1,8 +1,8 @@
 ---
 title: "Mobile Product Designer"
 company: "xero"
-startDate: "01/08/2014"
-endDate: "31/07/2015"
+startDate: "2014-08-01"
+endDate: "2015-07-31"
 locations: ["San Francisco, California"]
 type: "full-time"
 ---

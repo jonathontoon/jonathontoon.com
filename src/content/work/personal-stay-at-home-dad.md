@@ -1,6 +1,6 @@
 ---
 title: "Stay At Home Dad"
-startDate: "01/11/2024"
+startDate: "2024-11-01"
 locations: ["Christchurch, New Zealand"]
 type: "sabbatical"
 ---

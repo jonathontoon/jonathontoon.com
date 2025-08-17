@@ -3,8 +3,7 @@ name: "Xero Me"
 type: "work"
 context: "xero"
 tags: ["mobile", "design", "product design", "ios", "android", "xero", "employee", "payroll", "small business", "new zealand", "united states"]
-date: "24/03/2014"
-locations: ["San Francisco, California"]
+date: "2014-03-24"
 platforms: ["ios", "android"]
 stack: ["sketch", "quartz-composer", "objective-c"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Coaching & Mentorship"
-startDate: "01/05/2024"
+startDate: "2024-05-01"
 locations: ["Remote"]
 type: "freelance"
 ---

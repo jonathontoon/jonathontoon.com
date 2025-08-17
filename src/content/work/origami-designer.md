@@ -1,8 +1,8 @@
 ---
 title: "Designer"
 company: "origami"
-startDate: "01/07/2015"
-endDate: "30/11/2016"
+startDate: "2015-07-01"
+endDate: "2016-11-30"
 locations: ["Tokyo, Japan"]
 type: "full-time"
 ---

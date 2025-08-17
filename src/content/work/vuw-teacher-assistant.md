@@ -1,8 +1,8 @@
 ---
 title: "Teacher Assistant"
 company: "vuw"
-startDate: "01/02/2012"
-endDate: "30/06/2012"
+startDate: "2012-02-01"
+endDate: "2012-06-30"
 locations: ["Wellington, New Zealand"]
 type: "part-time"
 ---

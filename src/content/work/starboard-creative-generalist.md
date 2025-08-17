@@ -1,8 +1,8 @@
 ---
 title: "Creative Generalist"
 company: "starboard-maritime-intelligence"
-startDate: "01/08/2024"
-endDate: "31/10/2024"
+startDate: "2024-08-01"
+endDate: "2024-10-31"
 locations: ["Remote"]
 type: "contract"
 ---

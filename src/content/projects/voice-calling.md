@@ -3,8 +3,7 @@ name: "Voice Calling"
 type: "work"
 context: "facebook"
 tags: ["mobile", "design", "product design", "ios", "android", "facebook", "meta", "calling", "voice", "messenger", "social media"]
-date: "13/11/2012"
-locations: ["Menlo Park, California"]
+date: "2012-11-13"
 platforms: ["ios", "android"]
 stack: ["photoshop", "javascript", "quartz-composer"]
 references: ["https://techcrunch.com/2013/01/16/facebook-rolls-out-voip-calling-to-u-s-ios-messenger-users/", "https://techcrunch.com/2013/04/18/facebook-voip-home/"]

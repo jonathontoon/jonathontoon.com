@@ -1,8 +1,8 @@
 ---
 title: "Design Consultant"
 company: "moneytree"
-startDate: "01/07/2019"
-endDate: "31/10/2019"
+startDate: "2019-07-01"
+endDate: "2019-10-31"
 locations: ["Sydney, Australia"]
 type: "contract"
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Undergraduate Research Assistant"
 company: "vuw"
-startDate: "01/11/2011"
-endDate: "28/02/2012"
+startDate: "2011-11-01"
+endDate: "2012-02-28"
 locations: ["Wellington, New Zealand"]
 type: "part-time"
 ---

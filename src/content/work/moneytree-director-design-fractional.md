@@ -1,8 +1,8 @@
 ---
 title: "Director of Design (Fractional)"
 company: "moneytree"
-startDate: "01/01/2024"
-endDate: "31/05/2024"
+startDate: "2024-01-01"
+endDate: "2024-05-31"
 locations: ["Remote"]
 type: "part-time"
 ---

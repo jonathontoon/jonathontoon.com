@@ -1,8 +1,8 @@
 ---
 title: "Product & Design Lead"
 company: "moneytree"
-startDate: "01/08/2017"
-endDate: "31/07/2019"
+startDate: "2017-08-01"
+endDate: "2019-07-31"
 locations: ["Tokyo, Japan", "Sydney, Australia"]
 type: "full-time"
 ---

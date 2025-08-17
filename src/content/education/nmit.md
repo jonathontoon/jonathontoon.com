@@ -1,8 +1,8 @@
 ---
 name: "Nelson Marlborough Institute of Technology (NMIT)"
 locations: ["Nelson, New Zealand"]
-startDate: "01/01/2008"
-endDate: "31/12/2009"
+startDate: "2008-01-01"
+endDate: "2009-12-31"
 qualification: "Diploma of Graphics and Multimedia Design"
 ---
 

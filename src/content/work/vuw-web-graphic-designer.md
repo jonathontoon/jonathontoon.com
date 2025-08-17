@@ -1,8 +1,8 @@
 ---
 title: "Web & Graphic Designer"
 company: "vuw"
-startDate: "01/12/2009"
-endDate: "31/03/2012"
+startDate: "2009-12-01"
+endDate: "2012-03-31"
 locations: ["Wellington, New Zealand"]
 type: "part-time"
 ---
