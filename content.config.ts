@@ -34,7 +34,7 @@ const companies = defineCollection({
   }),
 });
 
-const work = defineCollection({
+const role = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -66,10 +66,7 @@ const stack = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
-    url: urlSchema,
-    category: z.enum(["language", "framework", "library", "tool", "platform", "service"]).optional(),
-    description: z.string().optional(),
-    slug: slugSchema
+    url: urlSchema
   }),
 });
 
@@ -82,17 +79,13 @@ const projects = defineCollection({
       reference("companies"),
       reference("education")
     ]).optional(),
-    work: reference("work").optional(),
+    role: reference("role").optional(),
     tags: z.array(z.string()).optional(),
     date: dateSchema,
     platforms: z.array(z.enum(["web", "ios", "android", "desktop", "other"])).optional(),
     stack: z.array(reference("stack")).optional(),
     outcomes: z.array(z.string()).optional(),
-    description: z.string().optional(),
-    url: urlSchema.optional(),
-    repository: urlSchema.optional(),
     references: z.array(urlSchema).optional(),
-    status: z.enum(["active", "completed", "archived", "on-hold"]).optional(),
     slug: slugSchema
   }),
 });
@@ -132,7 +125,7 @@ const patents = defineCollection({
     number: z.string(),
     date: dateSchema,
     inventors: z.array(z.string()),
-    work: reference('work'),
+    role: reference('role'),
     description: z.string(),
     url: urlSchema.optional(),
     slug: slugSchema
@@ -142,7 +135,7 @@ const patents = defineCollection({
 export const collections = {
   education,
   companies,
-  work,
+  role,
   colleagues,
   stack,
   projects,

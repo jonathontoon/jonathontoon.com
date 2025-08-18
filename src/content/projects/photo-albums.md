@@ -2,6 +2,7 @@
 name: "Photo Albums"
 type: "work"
 context: "facebook"
+role: "facebook-product-designer"
 tags: ["mobile", "design", "product design", "android", "shared", "photos", "facebook", "meta"]
 date: "2013-06-17"
 platforms: ["android"]

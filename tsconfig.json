@@ -10,7 +10,7 @@
       "@components/*": ["src/components/*"],
       "@components/base/*": ["src/components/base*"],
       "@components/base": ["src/components/base"],
-      "@assets/*": ["src/assets/*"]
+      "@public/*": ["public/*"]
     }
   }
 }

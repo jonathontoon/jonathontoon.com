@@ -8,7 +8,7 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [
     icon({
-      iconDir: "src/assets/svgs"
+      iconDir: "public/svgs"
     }),
     tailwind(),
     compress()

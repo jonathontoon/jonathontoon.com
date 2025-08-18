@@ -2,7 +2,8 @@
 name: "Simple Picker"
 type: "work"
 context: "facebook"
-tags: ["mobile", "design", "product design", "ios", "android", "photos", "facebook", "meta", "user testing", "research", "social media"]
+role: "facebook-product-designer"
+tags: ["mobile", "design", "product design", "ios", "android", "photos", "facebook", "meta", "user testing", "research", "social media", "prototyping"]
 date: "2013-11-05"
 platforms: ["ios", "android"]
 stack: ["photoshop", "objective-c", "quartz-composer"]

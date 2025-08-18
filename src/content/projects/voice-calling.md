@@ -2,6 +2,7 @@
 name: "Voice Calling"
 type: "work"
 context: "facebook"
+role: "facebook-product-designer"
 tags: ["mobile", "design", "product design", "ios", "android", "facebook", "meta", "calling", "voice", "messenger", "social media"]
 date: "2012-11-13"
 platforms: ["ios", "android"]

@@ -2,6 +2,7 @@
 name: "Feed Tagging"
 type: "work"
 context: "facebook"
+role: "facebook-product-designer"
 tags: ["mobile", "design", "product design", "ios", "android", "photos", "facebook", "meta", "tagging"]
 date: "2014-03-24"
 platforms: ["ios", "android"]

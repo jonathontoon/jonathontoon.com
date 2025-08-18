@@ -142,6 +142,13 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "colleagues": {
+"aaron-carambula.md": {
+	id: "aaron-carambula.md";
+  slug: "aaron-carambula";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
 "akihiro-ome.md": {
 	id: "akihiro-ome.md";
   slug: "akihiro-ome";
@@ -191,6 +198,20 @@ declare module 'astro:content' {
   collection: "colleagues";
   data: any
 } & { render(): Render[".md"] };
+"austin-bales.md": {
+	id: "austin-bales.md";
+  slug: "austin-bales";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
+"barton-smith.md": {
+	id: "barton-smith.md";
+  slug: "barton-smith";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
 "ben-kelly.md": {
 	id: "ben-kelly.md";
   slug: "ben-kelly";
@@ -201,6 +222,13 @@ declare module 'astro:content' {
 "bhupendra-singh.md": {
 	id: "bhupendra-singh.md";
   slug: "bhupendra-singh";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
+"billy-roh.md": {
+	id: "billy-roh.md";
+  slug: "billy-roh";
   body: string;
   collection: "colleagues";
   data: any
@@ -243,6 +271,13 @@ declare module 'astro:content' {
 "christophe-tauziet.md": {
 	id: "christophe-tauziet.md";
   slug: "christophe-tauziet";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
+"christopher-chedeau.md": {
+	id: "christopher-chedeau.md";
+  slug: "christopher-chedeau";
   body: string;
   collection: "colleagues";
   data: any
@@ -348,6 +383,20 @@ declare module 'astro:content' {
 "jan-grodowski.md": {
 	id: "jan-grodowski.md";
   slug: "jan-grodowski";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
+"jason-cashdollar.md": {
+	id: "jason-cashdollar.md";
+  slug: "jason-cashdollar";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
+"jasper-r-hauser.md": {
+	id: "jasper-r-hauser.md";
+  slug: "jasper-r-hauser";
   body: string;
   collection: "colleagues";
   data: any
@@ -478,9 +527,23 @@ declare module 'astro:content' {
   collection: "colleagues";
   data: any
 } & { render(): Render[".md"] };
+"lee-gibson.md": {
+	id: "lee-gibson.md";
+  slug: "lee-gibson";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
 "livio-canonica.md": {
 	id: "livio-canonica.md";
   slug: "livio-canonica";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
+"luke-smith.md": {
+	id: "luke-smith.md";
+  slug: "luke-smith";
   body: string;
   collection: "colleagues";
   data: any
@@ -663,6 +726,13 @@ declare module 'astro:content' {
 "thiago-hirai.md": {
 	id: "thiago-hirai.md";
   slug: "thiago-hirai";
+  body: string;
+  collection: "colleagues";
+  data: any
+} & { render(): Render[".md"] };
+"tuhin-kumar.md": {
+	id: "tuhin-kumar.md";
+  slug: "tuhin-kumar";
   body: string;
   collection: "colleagues";
   data: any
