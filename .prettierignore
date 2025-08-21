@@ -1,2 +1,5 @@
 dist
 pnpm-lock.yaml
+node_modules/
+build/
+src/**/*.html

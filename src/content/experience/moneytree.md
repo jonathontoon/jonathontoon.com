@@ -1,10 +1,11 @@
 ---
 title: "Moneytree"
-focus: "Design & Product Leadership"
+focus: "Product & Design Lead"
 location: ["Remote"]
-startDate: "2021-11-01"
-endDate: "2024-07-31"
-colleagues: ["alexander-auld", "paul-chapman", "mark-makdad", "livio-canonica", "hayoung-shin", "rendy-pranata", "roberto-sobachi", "zach-taub", "camy-tsukamoto", "alex-kyo", "dan-cowell", "ben-kelly", "rena-matsumoto", "tetsuya-yamaguchi", "gosha-tcherednitchenko", "james-simpson"]
+startDate: "2016-11-01"
+endDate: "2019-10-31"
+colleagues: ["alexander-auld", "paul-chapman", "mark-makdad", "zach-taub", "camy-tsukamoto", "ben-kelly", "rena-matsumoto", "gosha-tcherednitchenko"]
+logo: "images/logos/moneytree-old.svg"
 ---
 
 Returned as Director of Design, later becoming Director of Discovery, the business vertical responsible for incubating new products.

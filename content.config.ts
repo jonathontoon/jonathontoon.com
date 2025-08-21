@@ -1,6 +1,5 @@
 import { defineCollection, z, reference } from "astro:content";
 
-// Shared validation schemas
 const dateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be in YYYY-MM-DD format");
 const urlSchema = z.string().url();
 const imageSchema = z.string().regex(/\.(jpg|jpeg|png|webp|svg)$/i, "Image must be a valid image file");
@@ -28,11 +27,12 @@ const experience = defineCollection({
     location: z.array(z.string()),
     startDate: dateSchema,
     endDate: dateSchema.optional(),
-    colleagues: z.array(reference("colleagues")).optional(),
+    people: z.array(reference("people")).optional(),
+    logo: imageSchema.optional(),
   }),
 });
 
-const colleagues = defineCollection({
+const people = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
@@ -56,9 +56,23 @@ const achievements = defineCollection({
   }),
 });
 
+const projects = defineCollection({
+  type: "content",
+  schema: z.object({
+    name: z.string(),
+    technology: z.array(z.string()),
+    releaseDate: dateSchema,
+    people: z.array(reference("people")).optional(),
+    logo: imageSchema,
+    url: urlSchema,
+    slug: slugSchema
+  }),
+});
+
 export const collections = {
   education,
   experience,
-  colleagues,
+  people,
   achievements,
+  projects,
 };

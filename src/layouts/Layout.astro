@@ -1,14 +1,25 @@
 ---
+import { Body, Main } from "@components/base";
 import "@fontsource-variable/archivo";
 import "@fontsource-variable/archivo-narrow";
-import "@fontsource-variable/playfair-display";
-import "@fontsource/ibm-plex-serif/400-italic.css";
 
 interface Props {
   title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  keywords?: string;
+  twitterHandle?: string;
 }
 
-const { title } = Astro.props;
+const { 
+  title, 
+  description = "Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand.",
+  canonicalUrl,
+  ogImage,
+  keywords = "design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist",
+  twitterHandle = ""
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,10 +30,10 @@ const { title } = Astro.props;
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
     <meta
       name="description"
-      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+      content={description}
     />
     <meta
-      content="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+      content={keywords}
       name="keywords"
     />
     <meta content="dark light" name="color-scheme" />
@@ -36,7 +47,7 @@ const { title } = Astro.props;
     />
     <meta content="Jonathon Toon" name="application-name" />
     <meta
-      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+      content={description}
       name="msapplication-tooltip"
     />
     <meta content="/" name="msapplication-starturl" />
@@ -47,24 +58,30 @@ const { title } = Astro.props;
     <meta content="no" name="msapplication-tap-highlight" />
     <meta content="yes" name="full-screen" />
     <meta content="application" name="browsermode" />
-    <meta content="Jonathon Toon" property="og:title" />
+    <meta content={title} property="og:title" />
     <meta
-      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+      content={description}
       property="og:description"
     />
     <meta content="website" property="og:type" />
-    <meta content="https://www.jonathontoon.com/" property="og:url" />
-    <meta content="image/png" property="og:image:type" />
-    <meta content="1200" property="og:image:width" />
-    <meta content="630" property="og:image:height" />
+    <meta content={canonicalUrl || "https://www.jonathontoon.com/"} property="og:url" />
+    {ogImage && (
+      <>
+        <meta content={ogImage} property="og:image" />
+        <meta content="image/png" property="og:image:type" />
+        <meta content="1200" property="og:image:width" />
+        <meta content="630" property="og:image:height" />
+      </>
+    )}
     <meta content="summary" name="twitter:card" />
-    <meta content="" name="twitter:site" />
-    <meta content="https://www.jonathontoon.com/" name="twitter:url" />
-    <meta content="Jonathon Toon" name="twitter:title" />
+    <meta content={twitterHandle} name="twitter:site" />
+    <meta content={canonicalUrl || "https://www.jonathontoon.com/"} name="twitter:url" />
+    <meta content={title} name="twitter:title" />
     <meta
-      content="Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand."
+      content={description}
       name="twitter:description"
     />
+    {ogImage && <meta content={ogImage} name="twitter:image" />}
     <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link
       href="images/favicon-16.png"
@@ -142,22 +159,15 @@ const { title } = Astro.props;
     />
     <link href="jonathontoon.webmanifest" rel="manifest" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body
-    class:list={[
-      "bg-white",
-      "font-sans",
-      "text-slate-950",
-      "selection:bg-slate-950",
-      "selection:text-slate-50"
-    ]}
-  >
-    <main class:list={["flex", "flex-col", "space-y-12", "sm:space-y-24"]}>
+  <Body class="bg-stone-50 text-stone-900">
+    <Main class="flex flex-col max-w-xl px-6 mx-auto py-6 md:py-12 gap-y-10 md:gap-y-14">
       <slot />
-    </main>
-  </body>
+    </Main>
+  </Body>
 </html>
 
 {import.meta.env.PROD && (
@@ -188,73 +198,5 @@ const { title } = Astro.props;
     transform-style: preserve-3d;
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
-  }
-
-  .font-sans {
-    font-family: "Archivo Variable", ui-sans-serif, system-ui, sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
-  }
-
-  .font-sans-narrow {
-    font-family: "Archivo Narrow Variable", ui-sans-serif, system-ui, sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
-  }
-
-  .font-serif {
-    font-family: "IBM Plex Serif", Georgia, "Times New Roman", Times, serif;
-  }
-
-  .border-warm,
-  .border-cool {
-    position: relative;
-  }
-  .border-warm::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 0.75rem;
-    padding: 1px;
-    background: linear-gradient(to bottom right, #ff00ff, #ff6600, #ffff00);
-    -webkit-mask:
-      linear-gradient(#ffffff 0 0) content-box,
-      linear-gradient(#ffffff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-
-  .border-cool::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 0.75rem;
-    padding: 1px;
-    background: linear-gradient(to bottom right, #00ff00, #00ffff, #0000ff);
-    -webkit-mask:
-      linear-gradient(#ffffff 0 0) content-box,
-      linear-gradient(#ffffff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-
-  summary::-webkit-details-marker {
-    display: none;
-  }
-
-  sub,
-  sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
-  sup {
-    top: 0em;
-    vertical-align: super;
-  }
-  sub {
-    bottom: 0em;
-    vertical-align: sub;
   }
 </style>

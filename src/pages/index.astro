@@ -1,20 +1,74 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Services from "src/sections/Services.astro";
-import Connect from "src/sections/Connect.astro";
-import Introduction from "@sections/Introduction.astro";
-import Experience from "@sections/Experience.astro";
-import Colophon from "@sections/Colophon.astro";
-import Companies from "@sections/Companies.astro";
+import { Section, Link, Div, H1, H2, Paragraph } from "@components/base";
+import { ProfileImage, ListView, ListViewItem } from "@components/common";
+import { Layout } from "@layouts";
+import { getCollection } from "astro:content";
+
+const experience = await getCollection("experience");
+const sortedExperience = experience.sort((a, b) => 
+  new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
+);
+
+const projects = await getCollection("projects");
+const sortedProjects = projects.sort((a, b) => 
+  new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime()
+);
+
+
+function formatDateRange(startDate: string, endDate?: string): string {
+  const startYear = new Date(startDate).getFullYear();
+  const endYear = endDate ? new Date(endDate).getFullYear() : "Now";
+  return `${startYear} — ${endYear}`;
+}
 ---
 
 <Layout
-  title="Jonathon Toon ~ A software designer, leader and coach based in Aotearoa New Zealand."
+  title="Jonathon Toon | Home"
+  description="Jonathon Toon is a software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand. He has a passion for creating impactful digital experiences and fostering innovation in teams."
+  keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/"
+  ogImage="/images/og-image.png"
 >
-  <Introduction />
-  <Companies />
-  <Services />
-  <Experience />
-  <Connect />
-  <Colophon />
+  <Section class="flex flex-row">
+    <Div class="px-2">
+      <Link href="/" class="block hover:-rotate-6 duration-200 transition-all w-24">
+        <ProfileImage class="w-full aspect-square bg-blue-500 rounded-xl  border-2 border-stone-800" />
+      </Link>
+    </Div>
+  </Section>
+  <Section class="flex flex-col gap-y-4">
+    <H1 class="font-semibold text-3xl md:text-2xl tracking-tight px-2">Nice to meet you, I’m Jonathon.</H1>
+    <Paragraph class="px-2">A versatile software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand.</Paragraph>
+    <Paragraph class="indent-4 px-2">For the past 15 years, I’ve worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Paragraph>
+    <Paragraph class="indent-4 px-2">In that time, I’ve built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Paragraph>
+  </Section>
+  <Section class="flex flex-col gap-y-4">
+    <H2 class="font-semibold text-xl tracking-normal px-2">Experience</H2>
+    <ListView>
+      {sortedExperience.map((experience) => (
+        <ListViewItem
+          title={experience.data.title}
+          href={`/experience/${experience.slug}`}
+          meta={`${formatDateRange(experience.data.startDate, experience.data.endDate)} · ${experience.data.focus}`}
+          imageSrc={experience.data.logo ? `/${experience.data.logo}` : undefined}
+          imageAlt={`${experience.data.title} logo`}
+        />
+      ))}
+    </ListView>
+  </Section>
+    <Section class="flex flex-col gap-y-4">
+    <H2 class="font-semibold text-xl tracking-normal px-2">Projects</H2>
+    <ListView>
+      {sortedProjects.map((project) => (
+        <ListViewItem
+          title={project.data.name}
+          href={`/project/${project.slug}`}
+          meta={`${new Date(project.data.releaseDate).getFullYear()} · ${project.data.technology.join(", ")}`}
+          imageSrc={project.data.logo ? `/${project.data.logo}` : undefined}
+          imageAlt={`${project.data.name} logo`}
+        />
+      ))}
+    </ListView>
+  </Section>
 </Layout>
