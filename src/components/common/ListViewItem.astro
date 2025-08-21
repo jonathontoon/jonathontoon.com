@@ -1,23 +1,15 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-import { Link, Div, H3, Paragraph, ListItem, Image } from "@components/base";
-import { Icon } from "astro-icon/components";
+import { Link, Div, ListItem } from "@components/base";
 
-interface Props extends HTMLAttributes<"li"> {
-  title: string;
+interface Props {
   href?: string;
-  meta?: string;
-  imageSrc?: string;
-  imageAlt?: string;
+  target?: string;
   class?: string;
 }
 
 const { 
-  title, 
   href, 
-  meta, 
-  imageSrc, 
-  imageAlt, 
+  target,
   class: className = "", 
   ...attrs 
 } = Astro.props;
@@ -26,53 +18,27 @@ const {
 <ListItem class={className} {...attrs}>
   {href ? (
     <Link 
-      href={href} 
+      href={href}
+      target={target}
       class="hover:bg-stone-950/5 duration-200 ease-out transition-all p-2 flex flex-row gap-x-3 justify-between rounded-2xl"
     >
       <Div class="flex flex-row gap-x-3">
-        <Div class="w-14 h-14 bg-stone-200 rounded-lg flex items-center justify-center">
-          {imageSrc ? (
-            <Image 
-              src={imageSrc} 
-              alt={imageAlt || title} 
-              class="w-full h-full object-contain rounded-lg" 
-            />
-          ) : (
-            <slot name="image">Image</slot>
-          )}
-        </Div>
+        <slot name="image" />
         <Div class="flex flex-col justify-center gap-y-1">
-          <H3 class="text-lg font-semibold">{title}</H3>
-          {meta && (
-            <Paragraph class="text-stone-500">{meta}</Paragraph>
-          )}
+          <slot name="content" />
         </Div>
       </Div>
-      <Div>
-        <Icon name="stroke-arrow-small-right" class="text-stone-400 w-6 h-full aspect-square" />
-      </Div>
+      <slot name="action" />
     </Link>
   ) : (
     <Div class="p-2 flex flex-row gap-x-3 justify-between">
       <Div class="flex flex-row gap-x-3">
-        <Div class="w-14 h-14 bg-stone-200 rounded-lg flex items-center justify-center">
-          {imageSrc ? (
-            <Image 
-              src={imageSrc} 
-              alt={imageAlt || title} 
-              class="w-full h-full object-contain rounded-lg" 
-            />
-          ) : (
-            <slot name="image">Image</slot>
-          )}
-        </Div>
+        <slot name="image" />
         <Div class="flex flex-col justify-center gap-y-1">
-          <H3 class="text-lg font-semibold">{title}</H3>
-          {meta && (
-            <Paragraph class="text-stone-500">{meta}</Paragraph>
-          )}
+          <slot name="content" />
         </Div>
       </Div>
+      <slot name="action" />
     </Div>
   )}
 </ListItem>

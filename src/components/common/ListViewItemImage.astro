@@ -1,0 +1,24 @@
+---
+import { Image, Div } from "@components/base";
+
+interface Props {
+  src?: string;
+  alt?: string;
+  class?: string;
+}
+
+const { src, alt, class: className = "", ...attrs } = Astro.props;
+---
+
+<Div class="w-14 h-14 bg-stone-200 rounded-lg flex items-center justify-center">
+  {src ? (
+    <Image 
+      src={src} 
+      alt={alt || ""} 
+      class={`w-full h-full object-contain rounded-lg ${className}`}
+      {...attrs}
+    />
+  ) : (
+    <slot>Image</slot>
+  )}
+</Div>

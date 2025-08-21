@@ -1,0 +1,19 @@
+---
+import { Link, Div } from "@components/base";
+
+interface Props {
+  href: string;
+  target?: string;
+}
+
+const { href, target = "_blank", ...attrs } = Astro.props;
+---
+<Div class="flex items-center justify-center" {...attrs}>
+  <Link 
+    href={href} 
+    target={target}
+    class="px-3 py-1.5 font-medium bg-stone-200 hover:bg-stone-300 rounded-lg transition-colors duration-200 text-base"
+  >
+    Visit
+  </Link>
+</Div>
