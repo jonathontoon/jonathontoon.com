@@ -19,10 +19,20 @@ const sortedEducation = education.sort((a, b) =>
   new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
 );
 
+const achievements = await getCollection("achievements");
+const sortedAchievements = achievements.sort((a, b) => 
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
 
 function formatDateRange(startDate: string, endDate?: string): string {
   const startYear = new Date(startDate).getFullYear();
   const endYear = endDate ? new Date(endDate).getFullYear() : "Now";
+  
+  if (endYear !== "Now" && startYear === endYear) {
+    return `${startYear}`;
+  }
+  
   return `${startYear} — ${endYear}`;
 }
 ---
@@ -38,7 +48,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
   <Section class="flex flex-row">
     <Div class="px-2">
       <Link href="/" class="block w-24">
-        <ProfileImage class="w-full aspect-square bg-blue-500 rounded-xl  border-2 border-stone-800" />
+        <ProfileImage class="w-full aspect-square bg-blue-500 rounded-xl" />
       </Link>
     </Div>
   </Section>
@@ -69,6 +79,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
   </Section>
   <Section class="flex flex-col gap-y-4">
     <H2 class="font-semibold text-xl tracking-normal px-2">Projects</H2>
+    <Paragraph class="px-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
     <ListView>
       {sortedProjects.map((project) => (
         <ListViewItem>
@@ -86,7 +97,26 @@ function formatDateRange(startDate: string, endDate?: string): string {
       ))}
     </ListView>
   </Section>
-    <Section class="flex flex-col gap-y-4">
+  <Section class="flex flex-col gap-y-4">
+    <H2 class="font-semibold text-xl tracking-normal px-2">Patents, Publications, Awards</H2>
+    <Paragraph class="px-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
+    <ListView>
+      {sortedAchievements.map((achievement) => (
+        <ListViewItem>
+          <Fragment slot="content">
+            <ListViewItemTitle>{achievement.data.title}</ListViewItemTitle>
+            <ListViewItemMeta>{`${new Date(achievement.data.date).getFullYear()} · ${achievement.data.author} · ${achievement.data.type}`}</ListViewItemMeta>
+          </Fragment>
+          {achievement.data.url && (
+            <ListViewItemLink href={achievement.data.url} slot="action">
+              View
+            </ListViewItemLink>
+          )}
+        </ListViewItem>
+      ))}
+    </ListView>
+  </Section>
+  <Section class="flex flex-col gap-y-4">
     <H2 class="font-semibold text-xl tracking-normal px-2">Education</H2>
     <ListView>
       {sortedEducation.map((education) => (

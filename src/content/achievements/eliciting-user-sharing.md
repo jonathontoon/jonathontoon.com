@@ -2,7 +2,7 @@
 title: "Eliciting user sharing of content"
 author: "Facebook"
 date: "2014-04-15"
-type: "patent"
+type: "Patent"
 url: "https://patents.google.com/patent/US10140373B2/en?inventor=Jonathon+Toon&oq=Jonathon+Toon"
 ---
 

@@ -48,7 +48,7 @@ const achievements = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    type: z.enum(["article", "award", "patent"]),
+    type: z.enum(["Article", "Award", "Patent"]),
     author: z.string(),
     date: dateSchema,
     url: urlSchema.optional(),

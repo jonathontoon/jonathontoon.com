@@ -12,8 +12,8 @@ const { href, target = "_blank", ...attrs } = Astro.props;
   <Link 
     href={href} 
     target={target}
-    class="px-3 py-1.5 font-medium bg-stone-200 hover:bg-stone-300 rounded-lg transition-colors duration-200 text-base"
+    class="px-3 py-1.5 font-medium bg-stone-950/5 hover:bg-stone-950/10 rounded-lg transition-colors duration-200 text-base"
   >
-    Visit
+    <slot>Visit</slot>
   </Link>
 </Div>
