@@ -69,7 +69,7 @@ const projects = defineCollection({
   }),
 });
 
-const sessions = defineCollection({
+const mentorship = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
@@ -80,11 +80,20 @@ const sessions = defineCollection({
   }),
 });
 
+const appendix = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    slug: slugSchema
+  }),
+});
+
 export const collections = {
   education,
   experience,
   people,
   achievements,
   projects,
-  sessions,
+  mentorship,
+  appendix,
 };

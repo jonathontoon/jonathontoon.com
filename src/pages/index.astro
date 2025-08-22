@@ -9,8 +9,8 @@ const sortedExperience = experience.sort((a, b) =>
   new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
 );
 
-const sessions = await getCollection("sessions");
-const sortedSessions = sessions.sort((a, b) => {
+const mentorship = await getCollection("mentorship");
+const sortedMentorship = mentorship.sort((a, b) => {
   const priceA = parseFloat(a.data.price.replace(/[^\d.]/g, ''));
   const priceB = parseFloat(b.data.price.replace(/[^\d.]/g, ''));
   return priceA - priceB;
@@ -29,6 +29,11 @@ const sortedEducation = education.sort((a, b) =>
 const achievements = await getCollection("achievements");
 const sortedAchievements = achievements.sort((a, b) => 
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+const appendix = await getCollection("appendix");
+const sortedAppendix = appendix.sort((a: any, b: any) => 
+  a.data.title.localeCompare(b.data.title)
 );
 
 function formatDateRange(startDate: string, endDate?: string): string {
@@ -62,9 +67,9 @@ function formatDateRange(startDate: string, endDate?: string): string {
     <H1 class="font-semibold text-3xl md:text-2xl tracking-tight px-2">Nice to meet you, I’m Jonathon.</H1>
     <Paragraph class="text-stone-700 px-2">A versatile software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand.</Paragraph>
     <Paragraph class="text-stone-700 indent-4 px-2">For the past 15 years, I’ve worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Paragraph>
-    <Paragraph class="text-stone-700 iindent-4 px-2">In that time, I’ve built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Paragraph>
+    <Paragraph class="text-stone-700 indent-4 px-2">In that time, I’ve built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Paragraph>
   </Section>
-  <Section class="flex flex-col gap-y-4">
+  <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-2">Experience</H2>
     <ListView>
       {sortedExperience.map((experience) => (
@@ -85,25 +90,25 @@ function formatDateRange(startDate: string, endDate?: string): string {
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-4">
+  <Section class="flex flex-col gap-y-2">
     <H3 class="font-semibold text-xl tracking-normal px-2">Mentorship</H3>
-    <Paragraph class="text-stone-700 px-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship and advising.</Paragraph>
+    <Paragraph class="text-stone-700 px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship and advising.</Paragraph>
     <ListView>
-      {sortedSessions.map((session) => (
+      {sortedMentorship.map((mentorship) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
-            src={session.data.logo ? `/${session.data.logo}` : undefined}
-            alt={`${session.data.name} logo`}
+            src={mentorship.data.logo ? `/${mentorship.data.logo}` : undefined}
+            alt={`${mentorship.data.name} logo`}
           />
           <Fragment slot="content">
-            <ListViewItemTitle>{session.data.name}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{session.data.length}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{session.data.price}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${session.data.price} · ${session.data.length}`}</ListViewItemMeta>
+            <ListViewItemTitle>{mentorship.data.name}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{mentorship.data.length}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{mentorship.data.price}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${mentorship.data.price} · ${mentorship.data.length}`}</ListViewItemMeta>
           </Fragment>
-          {session.data.url && (
-            <ListViewItemLink href={session.data.url} slot="action">
+          {mentorship.data.url && (
+            <ListViewItemLink href={mentorship.data.url} slot="action">
               Schedule
             </ListViewItemLink>
           )}
@@ -111,9 +116,9 @@ function formatDateRange(startDate: string, endDate?: string): string {
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-4">
+  <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-2">Projects</H2>
-    <Paragraph class="text-stone-700 px-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
+    <Paragraph class="text-stone-700 px-2 pb-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
     <ListView>
       {sortedProjects.map((project) => (
         <ListViewItem>
@@ -135,17 +140,17 @@ function formatDateRange(startDate: string, endDate?: string): string {
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-4">
+  <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-2">Patents, Publications, Awards</H2>
-    <Paragraph class="text-stone-700 px-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
+    <Paragraph class="text-stone-700 px-2 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
     <ListView>
       {sortedAchievements.map((achievement) => (
         <ListViewItem>
           <Fragment slot="content">
             <ListViewItemTitle>{achievement.data.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${achievement.data.author} · ${achievement.data.type}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${achievement.data.type} · ${achievement.data.author}`}</ListViewItemMeta>
             <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(achievement.data.date).getFullYear()}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${new Date(achievement.data.date).getFullYear()} · ${achievement.data.author} · ${achievement.data.type}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${achievement.data.type} · ${new Date(achievement.data.date).getFullYear()} · ${achievement.data.author}`}</ListViewItemMeta>
           </Fragment>
           {achievement.data.url && (
             <ListViewItemLink href={achievement.data.url} slot="action">
@@ -156,7 +161,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-4">
+  <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-2">Education</H2>
     <ListView>
       {sortedEducation.map((education) => (
@@ -172,6 +177,20 @@ function formatDateRange(startDate: string, endDate?: string): string {
             <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{formatDateRange(education.data.startDate, education.data.endDate)}</ListViewItemMeta>
             <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${formatDateRange(education.data.startDate, education.data.endDate)} · ${education.data.qualification}`}</ListViewItemMeta>
           </Fragment>
+        </ListViewItem>
+      ))}
+    </ListView>
+  </Section>
+  <Section class="flex flex-col gap-y-2">
+    <H2 class="font-semibold text-xl tracking-normal px-2">Appendix</H2>
+    <Paragraph class="text-stone-700 px-2 pb-2">Sometimes there are notes, memories or information I want to share that don't quite fit anywhere else. This is the place for those things.</Paragraph>
+    <ListView>
+      {sortedAppendix.map((appendix) => (
+        <ListViewItem href={`/appendix/${appendix.data.slug}`}>
+          <Fragment slot="content">
+            <ListViewItemTitle>{appendix.data.title}</ListViewItemTitle>
+          </Fragment>
+          <ListViewItemChevron slot="action" />
         </ListViewItem>
       ))}
     </ListView>
