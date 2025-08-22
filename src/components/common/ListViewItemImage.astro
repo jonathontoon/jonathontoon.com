@@ -10,12 +10,12 @@ interface Props {
 const { src, alt, class: className = "", ...attrs } = Astro.props;
 ---
 
-<Div class="w-14 h-14 bg-stone-200 rounded-lg flex items-center justify-center">
+<Div class="w-16 h-16">
   {src ? (
     <Image 
       src={src} 
       alt={alt || ""} 
-      class={`w-full h-full object-contain rounded-lg ${className}`}
+      class={`bg-stone-200 w-16 h-16 rounded-lg ${className}`}
       {...attrs}
     />
   ) : (

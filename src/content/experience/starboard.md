@@ -1,5 +1,5 @@
 ---
-title: "Starboard Maritime Intelligence"
+title: "Starboard"
 focus: "Creative Generalist"
 location: ["Remote"]
 startDate: "2024-08-01"

@@ -9,7 +9,7 @@ const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <Image
-  class:list={[className]}
+  class:list={["before:absolute before:inset-0 before:rounded-xl before:shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]", className]}
   src={"/images/profile.png"}
   alt="Jonathon Toon"
   {...attrs}

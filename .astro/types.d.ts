@@ -898,6 +898,36 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".md"] };
 };
+"sessions": {
+"early-career.md": {
+	id: "early-career.md";
+  slug: "early-career";
+  body: string;
+  collection: "sessions";
+  data: any
+} & { render(): Render[".md"] };
+"founder.md": {
+	id: "founder.md";
+  slug: "founder";
+  body: string;
+  collection: "sessions";
+  data: any
+} & { render(): Render[".md"] };
+"mid-career.md": {
+	id: "mid-career.md";
+  slug: "mid-career";
+  body: string;
+  collection: "sessions";
+  data: any
+} & { render(): Render[".md"] };
+"out-of-work.md": {
+	id: "out-of-work.md";
+  slug: "out-of-work";
+  body: string;
+  collection: "sessions";
+  data: any
+} & { render(): Render[".md"] };
+};
 
 	};
 

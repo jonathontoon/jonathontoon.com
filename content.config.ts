@@ -69,10 +69,22 @@ const projects = defineCollection({
   }),
 });
 
+const sessions = defineCollection({
+  type: "content",
+  schema: z.object({
+    name: z.string(),
+    price: z.string(),
+    url: urlSchema,
+    length: z.string(),
+    logo: imageSchema.optional(),
+  }),
+});
+
 export const collections = {
   education,
   experience,
   people,
   achievements,
   projects,
+  sessions,
 };

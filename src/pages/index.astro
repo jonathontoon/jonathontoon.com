@@ -1,5 +1,5 @@
 ---
-import { Section, Link, Div, H1, H2, Paragraph } from "@components/base";
+import { Header, Section, Link, Div, H1, H2, H3, Paragraph } from "@components/base";
 import { ProfileImage, ListView, ListViewItem, ListViewItemImage, ListViewItemTitle, ListViewItemMeta, ListViewItemChevron, ListViewItemLink } from "@components/common";
 import { Layout } from "@layouts";
 import { getCollection } from "astro:content";
@@ -8,6 +8,13 @@ const experience = await getCollection("experience");
 const sortedExperience = experience.sort((a, b) => 
   new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
 );
+
+const sessions = await getCollection("sessions");
+const sortedSessions = sessions.sort((a, b) => {
+  const priceA = parseFloat(a.data.price.replace(/[^\d.]/g, ''));
+  const priceB = parseFloat(b.data.price.replace(/[^\d.]/g, ''));
+  return priceA - priceB;
+});
 
 const projects = await getCollection("projects");
 const sortedProjects = projects.sort((a, b) => 
@@ -23,7 +30,6 @@ const achievements = await getCollection("achievements");
 const sortedAchievements = achievements.sort((a, b) => 
   new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
-
 
 function formatDateRange(startDate: string, endDate?: string): string {
   const startYear = new Date(startDate).getFullYear();
@@ -45,18 +51,18 @@ function formatDateRange(startDate: string, endDate?: string): string {
   canonicalUrl="https://www.jonathontoon.com/"
   ogImage="/images/og-image.png"
 >
-  <Section class="flex flex-row">
+  <Header class="flex flex-row">
     <Div class="px-2">
       <Link href="/" class="block w-24">
         <ProfileImage class="w-full aspect-square bg-blue-500 rounded-xl" />
       </Link>
     </Div>
-  </Section>
+  </Header>
   <Section class="flex flex-col gap-y-4">
     <H1 class="font-semibold text-3xl md:text-2xl tracking-tight px-2">Nice to meet you, I’m Jonathon.</H1>
-    <Paragraph class="px-2">A versatile software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand.</Paragraph>
-    <Paragraph class="indent-4 px-2">For the past 15 years, I’ve worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Paragraph>
-    <Paragraph class="indent-4 px-2">In that time, I’ve built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Paragraph>
+    <Paragraph class="text-stone-700 px-2">A versatile software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand.</Paragraph>
+    <Paragraph class="text-stone-700 indent-4 px-2">For the past 15 years, I’ve worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Paragraph>
+    <Paragraph class="text-stone-700 iindent-4 px-2">In that time, I’ve built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Paragraph>
   </Section>
   <Section class="flex flex-col gap-y-4">
     <H2 class="font-semibold text-xl tracking-normal px-2">Experience</H2>
@@ -70,7 +76,9 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{experience.data.title}</ListViewItemTitle>
-            <ListViewItemMeta>{`${formatDateRange(experience.data.startDate, experience.data.endDate)} · ${experience.data.focus}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${experience.data.focus}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{`${formatDateRange(experience.data.startDate, experience.data.endDate)}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${experience.data.focus} · ${formatDateRange(experience.data.startDate, experience.data.endDate)}`}</ListViewItemMeta>
           </Fragment>
           <ListViewItemChevron slot="action" />
         </ListViewItem>
@@ -78,8 +86,34 @@ function formatDateRange(startDate: string, endDate?: string): string {
     </ListView>
   </Section>
   <Section class="flex flex-col gap-y-4">
+    <H3 class="font-semibold text-xl tracking-normal px-2">Mentorship</H3>
+    <Paragraph class="text-stone-700 px-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship and advising.</Paragraph>
+    <ListView>
+      {sortedSessions.map((session) => (
+        <ListViewItem>
+          <ListViewItemImage 
+            slot="image" 
+            src={session.data.logo ? `/${session.data.logo}` : undefined}
+            alt={`${session.data.name} logo`}
+          />
+          <Fragment slot="content">
+            <ListViewItemTitle>{session.data.name}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{session.data.length}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{session.data.price}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${session.data.price} · ${session.data.length}`}</ListViewItemMeta>
+          </Fragment>
+          {session.data.url && (
+            <ListViewItemLink href={session.data.url} slot="action">
+              Schedule
+            </ListViewItemLink>
+          )}
+        </ListViewItem>
+      ))}
+    </ListView>
+  </Section>
+  <Section class="flex flex-col gap-y-4">
     <H2 class="font-semibold text-xl tracking-normal px-2">Projects</H2>
-    <Paragraph class="px-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
+    <Paragraph class="text-stone-700 px-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
     <ListView>
       {sortedProjects.map((project) => (
         <ListViewItem>
@@ -90,22 +124,28 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{project.data.name}</ListViewItemTitle>
-            <ListViewItemMeta>{`${new Date(project.data.releaseDate).getFullYear()} · ${project.data.technology.join(", ")}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{project.data.technology.join(", ")}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(project.data.releaseDate).getFullYear()}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${new Date(project.data.releaseDate).getFullYear()} · ${project.data.technology.join(", ")}`}</ListViewItemMeta>
           </Fragment>
-          <ListViewItemLink href={project.data.url} slot="action" />
+          {project.data.url && (
+            <ListViewItemLink href={project.data.url} slot="action" />
+          )}
         </ListViewItem>
       ))}
     </ListView>
   </Section>
   <Section class="flex flex-col gap-y-4">
     <H2 class="font-semibold text-xl tracking-normal px-2">Patents, Publications, Awards</H2>
-    <Paragraph class="px-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
+    <Paragraph class="text-stone-700 px-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
     <ListView>
       {sortedAchievements.map((achievement) => (
         <ListViewItem>
           <Fragment slot="content">
             <ListViewItemTitle>{achievement.data.title}</ListViewItemTitle>
-            <ListViewItemMeta>{`${new Date(achievement.data.date).getFullYear()} · ${achievement.data.author} · ${achievement.data.type}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${achievement.data.author} · ${achievement.data.type}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(achievement.data.date).getFullYear()}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${new Date(achievement.data.date).getFullYear()} · ${achievement.data.author} · ${achievement.data.type}`}</ListViewItemMeta>
           </Fragment>
           {achievement.data.url && (
             <ListViewItemLink href={achievement.data.url} slot="action">
@@ -128,7 +168,9 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{education.data.name}</ListViewItemTitle>
-            <ListViewItemMeta>{`${formatDateRange(education.data.startDate, education.data.endDate)} · ${education.data.qualification}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{education.data.qualification}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{formatDateRange(education.data.startDate, education.data.endDate)}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${formatDateRange(education.data.startDate, education.data.endDate)} · ${education.data.qualification}`}</ListViewItemMeta>
           </Fragment>
         </ListViewItem>
       ))}

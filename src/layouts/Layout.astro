@@ -1,5 +1,5 @@
 ---
-import { Body, Main } from "@components/base";
+import { Body, Main, Footer, Div, Link } from "@components/base";
 import "@fontsource-variable/archivo";
 import "@fontsource-variable/archivo-narrow";
 
@@ -164,8 +164,21 @@ const {
     <title>{title}</title>
   </head>
   <Body class="bg-stone-50 text-stone-900">
-    <Main class="flex flex-col max-w-xl px-6 mx-auto py-6 md:py-12 gap-y-10 md:gap-y-14">
+    <Main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-10 md:gap-y-14">
       <slot />
+      <Footer class="flex flex-col gap-y-8 p-2">
+        <Div class="w-full text-stone-700">
+          All content provided under the <Link href="https://creativecommons.org/licenses/by-nc/4.0/" class="font-semibold underline hover:no-underline decoration-from-font underline-offset-2">CC BY-NC 4.0 license</Link> and was last updated {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.
+        </Div>
+        <Div class="flex flex-row w-full justify-between">
+          <Div class="text-stone-700">
+            Thanks for stopping by.
+          </Div>
+          <Div class="text-stone-700">
+            © {new Date().getFullYear()} Jonathon Toon.
+          </Div>
+        </Div>
+      </Footer>
     </Main>
   </Body>
 </html>
