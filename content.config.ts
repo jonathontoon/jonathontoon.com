@@ -52,6 +52,7 @@ const achievements = defineCollection({
     author: z.string(),
     date: dateSchema,
     url: urlSchema.optional(),
+    logo: imageSchema,
     slug: slugSchema
   }),
 });
@@ -76,7 +77,7 @@ const mentorship = defineCollection({
     price: z.string(),
     url: urlSchema,
     length: z.string(),
-    logo: imageSchema.optional(),
+    logo: imageSchema,
   }),
 });
 

@@ -92,7 +92,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
   </Section>
   <Section class="flex flex-col gap-y-2">
     <H3 class="font-semibold text-xl tracking-normal px-2">Mentorship</H3>
-    <Paragraph class="text-stone-700 px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship and advising.</Paragraph>
+    <Paragraph class="text-stone-700 px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Paragraph>
     <ListView>
       {sortedMentorship.map((mentorship) => (
         <ListViewItem>
@@ -131,7 +131,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
             <ListViewItemTitle>{project.data.name}</ListViewItemTitle>
             <ListViewItemMeta class="text-stone-700 text-base md:hidden">{project.data.technology.join(", ")}</ListViewItemMeta>
             <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(project.data.releaseDate).getFullYear()}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${new Date(project.data.releaseDate).getFullYear()} · ${project.data.technology.join(", ")}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${project.data.technology.join(", ")} · ${new Date(project.data.releaseDate).getFullYear()}`}</ListViewItemMeta>
           </Fragment>
           {project.data.url && (
             <ListViewItemLink href={project.data.url} slot="action" />
@@ -146,11 +146,16 @@ function formatDateRange(startDate: string, endDate?: string): string {
     <ListView>
       {sortedAchievements.map((achievement) => (
         <ListViewItem>
+          <ListViewItemImage 
+            slot="image" 
+            src={achievement.data.logo ? `/${achievement.data.logo}` : undefined}
+            alt={`${achievement.data.title} logo`}
+          />
           <Fragment slot="content">
             <ListViewItemTitle>{achievement.data.title}</ListViewItemTitle>
             <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${achievement.data.type} · ${achievement.data.author}`}</ListViewItemMeta>
             <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(achievement.data.date).getFullYear()}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${achievement.data.type} · ${new Date(achievement.data.date).getFullYear()} · ${achievement.data.author}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${achievement.data.type} · ${achievement.data.author} · ${new Date(achievement.data.date).getFullYear()}`}</ListViewItemMeta>
           </Fragment>
           {achievement.data.url && (
             <ListViewItemLink href={achievement.data.url} slot="action">
@@ -175,7 +180,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
             <ListViewItemTitle>{education.data.name}</ListViewItemTitle>
             <ListViewItemMeta class="text-stone-700 text-base md:hidden">{education.data.qualification}</ListViewItemMeta>
             <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{formatDateRange(education.data.startDate, education.data.endDate)}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${formatDateRange(education.data.startDate, education.data.endDate)} · ${education.data.qualification}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${education.data.qualification} · ${formatDateRange(education.data.startDate, education.data.endDate)}`}</ListViewItemMeta>
           </Fragment>
         </ListViewItem>
       ))}
