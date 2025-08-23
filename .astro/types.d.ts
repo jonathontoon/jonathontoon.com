@@ -126,13 +126,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"achievements": {
-"academic-achievement.md": {
-	id: "academic-achievement.md";
-  slug: "academic-achievement";
-  body: string;
-  collection: "achievements";
-  data: any
-} & { render(): Render[".md"] };
 "eliciting-user-sharing.md": {
 	id: "eliciting-user-sharing.md";
   slug: "eliciting-user-sharing";
@@ -140,9 +133,16 @@ declare module 'astro:content' {
   collection: "achievements";
   data: any
 } & { render(): Render[".md"] };
-"fast-company.md": {
-	id: "fast-company.md";
-  slug: "fast-company";
+"fast-company-2022.md": {
+	id: "fast-company-2022.md";
+  slug: "fast-company-2022";
+  body: string;
+  collection: "achievements";
+  data: any
+} & { render(): Render[".md"] };
+"fast-company-2024.md": {
+	id: "fast-company-2024.md";
+  slug: "fast-company-2024";
   body: string;
   collection: "achievements";
   data: any
@@ -154,25 +154,20 @@ declare module 'astro:content' {
   collection: "achievements";
   data: any
 } & { render(): Render[".md"] };
-"pro-design.md": {
-	id: "pro-design.md";
-  slug: "pro-design";
-  body: string;
-  collection: "achievements";
-  data: any
-} & { render(): Render[".md"] };
-"student-achievement.md": {
-	id: "student-achievement.md";
-  slug: "student-achievement";
-  body: string;
-  collection: "achievements";
-  data: any
-} & { render(): Render[".md"] };
 "windows-central.md": {
 	id: "windows-central.md";
   slug: "windows-central";
   body: string;
   collection: "achievements";
+  data: any
+} & { render(): Render[".md"] };
+};
+"appendix": {
+"colophon.md": {
+	id: "colophon.md";
+  slug: "colophon";
+  body: string;
+  collection: "appendix";
   data: any
 } & { render(): Render[".md"] };
 };
@@ -200,16 +195,16 @@ declare module 'astro:content' {
   collection: "experience";
   data: any
 } & { render(): Render[".md"] };
-"moneytree-return.md": {
-	id: "moneytree-return.md";
-  slug: "moneytree-return";
+"moneytree-2016.md": {
+	id: "moneytree-2016.md";
+  slug: "moneytree-2016";
   body: string;
   collection: "experience";
   data: any
 } & { render(): Render[".md"] };
-"moneytree.md": {
-	id: "moneytree.md";
-  slug: "moneytree";
+"moneytree-2021.md": {
+	id: "moneytree-2021.md";
+  slug: "moneytree-2021";
   body: string;
   collection: "experience";
   data: any
@@ -254,6 +249,36 @@ declare module 'astro:content' {
   slug: "xero";
   body: string;
   collection: "experience";
+  data: any
+} & { render(): Render[".md"] };
+};
+"mentorship": {
+"early-career.md": {
+	id: "early-career.md";
+  slug: "early-career";
+  body: string;
+  collection: "mentorship";
+  data: any
+} & { render(): Render[".md"] };
+"founder.md": {
+	id: "founder.md";
+  slug: "founder";
+  body: string;
+  collection: "mentorship";
+  data: any
+} & { render(): Render[".md"] };
+"mid-career.md": {
+	id: "mid-career.md";
+  slug: "mid-career";
+  body: string;
+  collection: "mentorship";
+  data: any
+} & { render(): Render[".md"] };
+"out-of-work.md": {
+	id: "out-of-work.md";
+  slug: "out-of-work";
+  body: string;
+  collection: "mentorship";
   data: any
 } & { render(): Render[".md"] };
 };
@@ -895,36 +920,6 @@ declare module 'astro:content' {
   slug: "tweet-tray";
   body: string;
   collection: "projects";
-  data: any
-} & { render(): Render[".md"] };
-};
-"sessions": {
-"early-career.md": {
-	id: "early-career.md";
-  slug: "early-career";
-  body: string;
-  collection: "sessions";
-  data: any
-} & { render(): Render[".md"] };
-"founder.md": {
-	id: "founder.md";
-  slug: "founder";
-  body: string;
-  collection: "sessions";
-  data: any
-} & { render(): Render[".md"] };
-"mid-career.md": {
-	id: "mid-career.md";
-  slug: "mid-career";
-  body: string;
-  collection: "sessions";
-  data: any
-} & { render(): Render[".md"] };
-"out-of-work.md": {
-	id: "out-of-work.md";
-  slug: "out-of-work";
-  body: string;
-  collection: "sessions";
   data: any
 } & { render(): Render[".md"] };
 };

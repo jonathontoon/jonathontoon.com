@@ -5,7 +5,6 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  trailingSlash: "always",
   integrations: [
     icon({
       iconDir: "public/svgs"

@@ -1,0 +1,53 @@
+---
+import { Section, H1 } from "@components/base";
+import { ListView, ListViewItem, ListViewItemImage, ListViewItemTitle, ListViewItemMeta, ListViewItemChevron } from "@components/common";
+import { Layout } from "@layouts";
+import { getCollection } from "astro:content";
+
+const experience = await getCollection("experience");
+const sortedExperience = experience.sort((a, b) => 
+  new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
+);
+
+function formatDateRange(startDate: string, endDate?: string): string {
+  const startYear = new Date(startDate).getFullYear();
+  const endYear = endDate ? new Date(endDate).getFullYear() : "Now";
+  
+  if (endYear !== "Now" && startYear === endYear) {
+    return `${startYear}`;
+  }
+  
+  return `${startYear} — ${endYear}`;
+}
+---
+
+<Layout
+  title="Experience | Jonathon Toon"
+  description="A comprehensive look at Jonathon Toon's professional experience across design, product, and engineering roles at innovative companies."
+  keywords="experience, career, software design, product design, leadership, technology companies, startups"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/experience/"
+  ogImage="/images/og-image.png"
+>
+  <Section class="flex flex-col gap-y-2">
+    <H1 class="font-semibold text-xl tracking-normal px-2">Experience</H1>
+    <ListView>
+      {sortedExperience.map((experience) => (
+        <ListViewItem href={`/experience/${experience.slug}`}>
+          <ListViewItemImage 
+            slot="image" 
+            src={experience.data.logo ? `/${experience.data.logo}` : undefined}
+            alt={`${experience.data.title} logo`}
+          />
+          <Fragment slot="content">
+            <ListViewItemTitle>{experience.data.title}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${experience.data.focus}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{`${formatDateRange(experience.data.startDate, experience.data.endDate)}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${experience.data.focus} · ${formatDateRange(experience.data.startDate, experience.data.endDate)}`}</ListViewItemMeta>
+          </Fragment>
+          <ListViewItemChevron slot="action" />
+        </ListViewItem>
+      ))}
+    </ListView>
+  </Section>
+</Layout>

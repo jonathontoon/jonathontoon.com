@@ -1,0 +1,13 @@
+- title: "Manifest"
+  technology: ["TypeScript", "React", "Tailwind"]
+  releaseDate: "2024-01-01"
+  logo: "images/logos/manifest.svg"
+  url: "https://manifest.app"
+  urlText: "Visit"
+
+- title: "Tweet Tray"
+  technology: ["Swift", "SwiftUI", "macOS"]
+  releaseDate: "2022-06-01"
+  logo: "images/logos/tweet-tray.svg"
+  url: "https://tweettray.com"
+  urlText: "Visit"

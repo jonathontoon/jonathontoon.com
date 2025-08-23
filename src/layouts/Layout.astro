@@ -1,5 +1,6 @@
 ---
 import { Body, Main, Footer, Div, Link } from "@components/base";
+import { Breadcrumb } from "@components/common";
 import "@fontsource-variable/archivo";
 import "@fontsource-variable/archivo-narrow";
 
@@ -165,6 +166,7 @@ const {
   </head>
   <Body class="bg-stone-50 text-stone-900">
     <Main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-10 md:gap-y-14">
+      <Breadcrumb />
       <slot />
       <Footer class="flex flex-col gap-y-8 p-2">
         <Div class="w-full text-stone-700">
@@ -175,7 +177,7 @@ const {
             Thanks for stopping by.
           </Div>
           <Div class="text-stone-700">
-            © {new Date().getFullYear()} Jonathon Toon.
+            © {new Date().getFullYear()} Jonathon Toon
           </Div>
         </Div>
       </Footer>

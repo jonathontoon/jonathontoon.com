@@ -4,7 +4,7 @@ focus: "Product & Design Lead"
 location: ["Remote"]
 startDate: "2016-11-01"
 endDate: "2019-10-31"
-colleagues: ["alexander-auld", "paul-chapman", "mark-makdad", "zach-taub", "camy-tsukamoto", "ben-kelly", "rena-matsumoto", "gosha-tcherednitchenko"]
+colleagues: ["alexander-auld", "zach-taub", "camy-tsukamoto", "rena-matsumoto", "gosha-tcherednitchenko"]
 logo: "images/logos/moneytree-old.svg"
 ---
 

@@ -4,36 +4,37 @@ import { ProfileImage, ListView, ListViewItem, ListViewItemImage, ListViewItemTi
 import { Layout } from "@layouts";
 import { getCollection } from "astro:content";
 
-const experience = await getCollection("experience");
-const sortedExperience = experience.sort((a, b) => 
-  new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
+const experienceData = await getCollection("sections", ({ id }) => id === "experience");
+const projectsData = await getCollection("sections", ({ id }) => id === "projects");
+const mentorshipData = await getCollection("sections", ({ id }) => id === "mentorship");
+const achievementsData = await getCollection("sections", ({ id }) => id === "achievements");
+const educationData = await getCollection("sections", ({ id }) => id === "education");
+const appendixData = await getCollection("sections", ({ id }) => id === "appendix");
+
+const sortedExperience = experienceData[0].data.sort((a, b) => 
+  new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
 );
 
-const mentorship = await getCollection("mentorship");
-const sortedMentorship = mentorship.sort((a, b) => {
-  const priceA = parseFloat(a.data.price.replace(/[^\d.]/g, ''));
-  const priceB = parseFloat(b.data.price.replace(/[^\d.]/g, ''));
+const sortedMentorship = mentorshipData[0].data.sort((a, b) => {
+  const priceA = parseFloat(a.price.replace(/[^\d.]/g, ''));
+  const priceB = parseFloat(b.price.replace(/[^\d.]/g, ''));
   return priceA - priceB;
 });
 
-const projects = await getCollection("projects");
-const sortedProjects = projects.sort((a, b) => 
-  new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime()
+const sortedProjects = projectsData[0].data.sort((a, b) => 
+  new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
 );
 
-const education = await getCollection("education");
-const sortedEducation = education.sort((a, b) => 
-  new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
+const sortedEducation = educationData[0].data.sort((a, b) => 
+  new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
 );
 
-const achievements = await getCollection("achievements");
-const sortedAchievements = achievements.sort((a, b) => 
-  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+const sortedAchievements = achievementsData[0].data.sort((a, b) => 
+  new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
-const appendix = await getCollection("appendix");
-const sortedAppendix = appendix.sort((a: any, b: any) => 
-  a.data.title.localeCompare(b.data.title)
+const sortedAppendix = appendixData[0].data.sort((a, b) => 
+  a.title.localeCompare(b.title)
 );
 
 function formatDateRange(startDate: string, endDate?: string): string {
@@ -73,17 +74,17 @@ function formatDateRange(startDate: string, endDate?: string): string {
     <H2 class="font-semibold text-xl tracking-normal px-2">Experience</H2>
     <ListView>
       {sortedExperience.map((experience) => (
-        <ListViewItem href={`/experience/${experience.slug}`}>
+        <ListViewItem href={experience.slug ? `/experience/${experience.slug}` : undefined}>
           <ListViewItemImage 
             slot="image" 
-            src={experience.data.logo ? `/${experience.data.logo}` : undefined}
-            alt={`${experience.data.title} logo`}
+            src={experience.logo ? `/${experience.logo}` : undefined}
+            alt={`${experience.title} logo`}
           />
           <Fragment slot="content">
-            <ListViewItemTitle>{experience.data.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${experience.data.focus}`}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{`${formatDateRange(experience.data.startDate, experience.data.endDate)}`}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${experience.data.focus} · ${formatDateRange(experience.data.startDate, experience.data.endDate)}`}</ListViewItemMeta>
+            <ListViewItemTitle>{experience.title}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${experience.focus}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{`${formatDateRange(experience.startDate, experience.endDate)}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${experience.focus} · ${formatDateRange(experience.startDate, experience.endDate)}`}</ListViewItemMeta>
           </Fragment>
           <ListViewItemChevron slot="action" />
         </ListViewItem>
@@ -98,18 +99,18 @@ function formatDateRange(startDate: string, endDate?: string): string {
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
-            src={mentorship.data.logo ? `/${mentorship.data.logo}` : undefined}
-            alt={`${mentorship.data.name} logo`}
+            src={mentorship.logo ? `/${mentorship.logo}` : undefined}
+            alt={`${mentorship.title} logo`}
           />
           <Fragment slot="content">
-            <ListViewItemTitle>{mentorship.data.name}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{mentorship.data.length}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{mentorship.data.price}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${mentorship.data.price} · ${mentorship.data.length}`}</ListViewItemMeta>
+            <ListViewItemTitle>{mentorship.title}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{mentorship.length}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{mentorship.price}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${mentorship.price} · ${mentorship.length}`}</ListViewItemMeta>
           </Fragment>
-          {mentorship.data.url && (
-            <ListViewItemLink href={mentorship.data.url} slot="action">
-              Schedule
+          {mentorship.url && (
+            <ListViewItemLink href={mentorship.url} slot="action">
+              {mentorship.urlText}
             </ListViewItemLink>
           )}
         </ListViewItem>
@@ -124,17 +125,19 @@ function formatDateRange(startDate: string, endDate?: string): string {
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
-            src={project.data.logo ? `/${project.data.logo}` : undefined}
-            alt={`${project.data.name} logo`}
+            src={project.logo ? `/${project.logo}` : undefined}
+            alt={`${project.title} logo`}
           />
           <Fragment slot="content">
-            <ListViewItemTitle>{project.data.name}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{project.data.technology.join(", ")}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(project.data.releaseDate).getFullYear()}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${project.data.technology.join(", ")} · ${new Date(project.data.releaseDate).getFullYear()}`}</ListViewItemMeta>
+            <ListViewItemTitle>{project.title}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{project.technology.join(", ")}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(project.releaseDate).getFullYear()}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${project.technology.join(", ")} · ${new Date(project.releaseDate).getFullYear()}`}</ListViewItemMeta>
           </Fragment>
-          {project.data.url && (
-            <ListViewItemLink href={project.data.url} slot="action" />
+          {project.url && (
+            <ListViewItemLink href={project.url} slot="action">
+              {project.urlText}
+            </ListViewItemLink>
           )}
         </ListViewItem>
       ))}
@@ -148,18 +151,18 @@ function formatDateRange(startDate: string, endDate?: string): string {
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
-            src={achievement.data.logo ? `/${achievement.data.logo}` : undefined}
-            alt={`${achievement.data.title} logo`}
+            src={achievement.logo ? `/${achievement.logo}` : undefined}
+            alt={`${achievement.title} logo`}
           />
           <Fragment slot="content">
-            <ListViewItemTitle>{achievement.data.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${achievement.data.type} · ${achievement.data.author}`}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(achievement.data.date).getFullYear()}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${achievement.data.type} · ${achievement.data.author} · ${new Date(achievement.data.date).getFullYear()}`}</ListViewItemMeta>
+            <ListViewItemTitle>{achievement.title}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${achievement.type} · ${achievement.author}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(achievement.date).getFullYear()}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${achievement.type} · ${achievement.author} · ${new Date(achievement.date).getFullYear()}`}</ListViewItemMeta>
           </Fragment>
-          {achievement.data.url && (
-            <ListViewItemLink href={achievement.data.url} slot="action">
-              View
+          {achievement.url && (
+            <ListViewItemLink href={achievement.url} slot="action">
+              {achievement.urlText}
             </ListViewItemLink>
           )}
         </ListViewItem>
@@ -173,15 +176,20 @@ function formatDateRange(startDate: string, endDate?: string): string {
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
-            src={education.data.logo ? `/${education.data.logo}` : undefined}
-            alt={`${education.data.name} logo`}
+            src={education.logo ? `/${education.logo}` : undefined}
+            alt={`${education.title} logo`}
           />
           <Fragment slot="content">
-            <ListViewItemTitle>{education.data.name}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{education.data.qualification}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{formatDateRange(education.data.startDate, education.data.endDate)}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${education.data.qualification} · ${formatDateRange(education.data.startDate, education.data.endDate)}`}</ListViewItemMeta>
+            <ListViewItemTitle>{education.title}</ListViewItemTitle>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{education.qualification}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{formatDateRange(education.startDate, education.endDate)}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${education.qualification} · ${formatDateRange(education.startDate, education.endDate)}`}</ListViewItemMeta>
           </Fragment>
+          {education.url && (
+            <ListViewItemLink href={education.url} slot="action">
+              {education.urlText}
+            </ListViewItemLink>
+          )}
         </ListViewItem>
       ))}
     </ListView>
@@ -191,9 +199,9 @@ function formatDateRange(startDate: string, endDate?: string): string {
     <Paragraph class="text-stone-700 px-2 pb-2">Sometimes there are notes, memories or information I want to share that don't quite fit anywhere else. This is the place for those things.</Paragraph>
     <ListView>
       {sortedAppendix.map((appendix) => (
-        <ListViewItem href={`/appendix/${appendix.data.slug}`}>
+        <ListViewItem href={`/appendix/${appendix.slug}`}>
           <Fragment slot="content">
-            <ListViewItemTitle>{appendix.data.title}</ListViewItemTitle>
+            <ListViewItemTitle>{appendix.title}</ListViewItemTitle>
           </Fragment>
           <ListViewItemChevron slot="action" />
         </ListViewItem>

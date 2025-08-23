@@ -29,6 +29,7 @@ const experience = defineCollection({
     endDate: dateSchema.optional(),
     people: z.array(reference("people")).optional(),
     logo: imageSchema.optional(),
+    slug: slugSchema
   }),
 });
 
@@ -73,7 +74,7 @@ const projects = defineCollection({
 const mentorship = defineCollection({
   type: "content",
   schema: z.object({
-    name: z.string(),
+    title: z.string(),
     price: z.string(),
     url: urlSchema,
     length: z.string(),
@@ -89,6 +90,77 @@ const appendix = defineCollection({
   }),
 });
 
+// Base schema object for section items (without URL fields)
+const baseSectionFields = {
+  title: z.string(),
+  logo: imageSchema.optional(),
+  slug: z.string().optional(),
+};
+
+// Base schema object with URL fields
+const baseSectionWithUrlFields = {
+  ...baseSectionFields,
+  url: urlSchema.optional(),
+  urlText: z.string().optional(),
+};
+
+// Helper function to create section schema with URL validation
+const createSectionSchema = (additionalFields: Record<string, any>) => {
+  return z.object({
+    ...baseSectionWithUrlFields,
+    ...additionalFields,
+  }).refine((data) => !data.urlText || data.url, {
+    message: "urlText can only be provided when url is present",
+    path: ["urlText"],
+  });
+};
+
+const experienceSectionSchema = z.array(createSectionSchema({
+  focus: z.string(),
+  startDate: dateSchema,
+  endDate: dateSchema.optional(),
+}));
+
+const projectsSectionSchema = z.array(createSectionSchema({
+  technology: z.array(z.string()),
+  releaseDate: dateSchema,
+  logo: imageSchema, // Override to make required
+}));
+
+const mentorshipSectionSchema = z.array(createSectionSchema({
+  price: z.string(),
+  length: z.string(),
+  logo: imageSchema, // Override to make required
+}));
+
+const achievementsSectionSchema = z.array(createSectionSchema({
+  type: z.enum(["Article", "Award", "Patent"]),
+  author: z.string(),
+  date: dateSchema,
+  logo: imageSchema, // Override to make required
+}));
+
+const educationSectionSchema = z.array(createSectionSchema({
+  qualification: z.string(),
+  startDate: dateSchema,
+  endDate: dateSchema,
+}));
+
+const appendixSectionSchema = z.array(z.object(baseSectionFields));
+
+// Individual section collections
+const sections = defineCollection({
+  type: "data",
+  schema: z.union([
+    experienceSectionSchema,
+    projectsSectionSchema,
+    mentorshipSectionSchema,
+    achievementsSectionSchema,
+    educationSectionSchema,
+    appendixSectionSchema,
+  ]),
+});
+
 export const collections = {
   education,
   experience,
@@ -97,4 +169,14 @@ export const collections = {
   projects,
   mentorship,
   appendix,
+  sections,
+};
+
+export {
+  experienceSectionSchema,
+  projectsSectionSchema,
+  mentorshipSectionSchema,
+  achievementsSectionSchema,
+  educationSectionSchema,
+  appendixSectionSchema,
 };

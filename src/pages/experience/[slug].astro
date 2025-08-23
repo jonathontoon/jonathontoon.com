@@ -1,0 +1,71 @@
+---
+import { Section, H1, H2 } from "@components/base";
+import { Layout } from "@layouts";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const experience = await getCollection("experience");
+  const paths = experience.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+  
+  // Add special handling for moneytree-2016 to use moneytree-2021 content
+  const moneytree2021 = experience.find(entry => entry.slug === "moneytree-2021");
+  if (moneytree2021) {
+    paths.push({
+      params: { slug: "moneytree-2016" },
+      props: { entry: moneytree2021 },
+    });
+  }
+  
+  return paths;
+}
+
+type Props = {
+  entry: CollectionEntry<"experience">;
+};
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+function formatDateRange(startDate: string, endDate?: string): string {
+  const options: Intl.DateTimeFormatOptions = { 
+    year: 'numeric', 
+    month: 'long' 
+  };
+  
+  const start = new Date(startDate).toLocaleDateString('en-US', options);
+  const end = endDate ? new Date(endDate).toLocaleDateString('en-US', options) : "Present";
+  
+  return `${start} — ${end}`;
+}
+---
+
+<Layout
+  title={`${entry.data.title} | Experience | Jonathon Toon`}
+  description={`Details about Jonathon Toon's experience at ${entry.data.title} as ${entry.data.focus}.`}
+  keywords={`${entry.data.title}, ${entry.data.focus}, experience, career`}
+  twitterHandle="@jonathontoon"
+  canonicalUrl={`https://www.jonathontoon.com/experience/${entry.slug}/`}
+  ogImage="/images/og-image.png"
+>
+  <Section class="flex flex-col gap-y-6">
+    <div class="flex flex-col gap-y-2 px-2">
+      <H1 class="font-semibold text-xl tracking-normal">{entry.data.title}</H1>
+      <div class="flex flex-col gap-y-1">
+        <p class="text-stone-700 text-base">{entry.data.focus}</p>
+        <p class="text-stone-500 text-sm">
+          {formatDateRange(entry.data.startDate, entry.data.endDate)}
+          {entry.data.location && entry.data.location.length > 0 && (
+            <span> • {entry.data.location.join(", ")}</span>
+          )}
+        </p>
+      </div>
+    </div>
+    
+    <div class="prose prose-stone max-w-none px-2">
+      <Content />
+    </div>
+  </Section>
+</Layout>
