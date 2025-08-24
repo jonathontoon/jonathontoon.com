@@ -1,9 +1,8 @@
 ---
-import { Section, Link, Div, H1, H2, H3, Paragraph } from "@components/base";
+import { Section, Link, Div, H1, H2, Paragraph } from "@components/base";
 import { ProfileImage, ListView, ListViewItem, ListViewItemImage, ListViewItemTitle, ListViewItemMeta, ListViewItemChevron, ListViewItemLink } from "@components/common";
 import { Layout } from "@layouts";
 import { getSectionCollection } from "@utils/getSectionCollection";
-import type { CollectionEntry } from "astro:content";
 
 const experienceSection = await getSectionCollection("experience");
 const mentorshipSection = await getSectionCollection("mentorship");
@@ -36,7 +35,7 @@ const educationSection = await getSectionCollection("education");
   <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-1">Experience</H2>
     <ListView>
-      {experienceSection.map((experience: CollectionEntry<"sections">["data"]) => (
+      {experienceSection.map((experience) => (
         <ListViewItem href={experience.slug ? `/experience/${experience.slug}` : undefined}>
           <ListViewItemImage 
             slot="image" 
@@ -58,7 +57,7 @@ const educationSection = await getSectionCollection("education");
     <H2 class="font-semibold text-xl tracking-normal px-1">Mentorship</H2>
     <Paragraph class="text-stone-700 px-1 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Paragraph>
     <ListView>
-      {mentorshipSection.map((mentorship: CollectionEntry<"sections">["data"]) => (
+      {mentorshipSection.map((mentorship) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
@@ -84,7 +83,7 @@ const educationSection = await getSectionCollection("education");
     <H2 class="font-semibold text-xl tracking-normal px-1">Projects</H2>
     <Paragraph class="text-stone-700 px-1 pb-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
     <ListView>
-      {projectsSection.map((project: CollectionEntry<"sections">["data"]) => (
+      {projectsSection.map((project) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
@@ -110,7 +109,7 @@ const educationSection = await getSectionCollection("education");
     <H2 class="font-semibold text-xl tracking-normal px-1">Patents, Publications, Awards</H2>
     <Paragraph class="text-stone-700 px-1 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
     <ListView>
-      {achievementsSection.map((achievement: CollectionEntry<"sections">["data"]) => (
+      {achievementsSection.map((achievement) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
@@ -135,7 +134,7 @@ const educationSection = await getSectionCollection("education");
   <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-1">Education</H2>
     <ListView>
-      {educationSection.map((education: CollectionEntry<"sections">["data"]) => (
+      {educationSection.map((education) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
