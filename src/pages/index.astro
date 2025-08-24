@@ -1,52 +1,15 @@
 ---
-import { Header, Section, Link, Div, H1, H2, H3, Paragraph } from "@components/base";
+import { Section, Link, Div, H1, H2, H3, Paragraph } from "@components/base";
 import { ProfileImage, ListView, ListViewItem, ListViewItemImage, ListViewItemTitle, ListViewItemMeta, ListViewItemChevron, ListViewItemLink } from "@components/common";
 import { Layout } from "@layouts";
-import { getCollection } from "astro:content";
+import { getSectionCollection } from "@utils/getSectionCollection";
+import type { CollectionEntry } from "astro:content";
 
-const experienceData = await getCollection("sections", ({ id }) => id === "experience");
-const projectsData = await getCollection("sections", ({ id }) => id === "projects");
-const mentorshipData = await getCollection("sections", ({ id }) => id === "mentorship");
-const achievementsData = await getCollection("sections", ({ id }) => id === "achievements");
-const educationData = await getCollection("sections", ({ id }) => id === "education");
-const appendixData = await getCollection("sections", ({ id }) => id === "appendix");
-
-const sortedExperience = experienceData[0].data.sort((a, b) => 
-  new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
-);
-
-const sortedMentorship = mentorshipData[0].data.sort((a, b) => {
-  const priceA = parseFloat(a.price.replace(/[^\d.]/g, ''));
-  const priceB = parseFloat(b.price.replace(/[^\d.]/g, ''));
-  return priceA - priceB;
-});
-
-const sortedProjects = projectsData[0].data.sort((a, b) => 
-  new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-);
-
-const sortedEducation = educationData[0].data.sort((a, b) => 
-  new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
-);
-
-const sortedAchievements = achievementsData[0].data.sort((a, b) => 
-  new Date(b.date).getTime() - new Date(a.date).getTime()
-);
-
-const sortedAppendix = appendixData[0].data.sort((a, b) => 
-  a.title.localeCompare(b.title)
-);
-
-function formatDateRange(startDate: string, endDate?: string): string {
-  const startYear = new Date(startDate).getFullYear();
-  const endYear = endDate ? new Date(endDate).getFullYear() : "Now";
-  
-  if (endYear !== "Now" && startYear === endYear) {
-    return `${startYear}`;
-  }
-  
-  return `${startYear} — ${endYear}`;
-}
+const experienceSection = await getSectionCollection("experience");
+const mentorshipSection = await getSectionCollection("mentorship");
+const projectsSection = await getSectionCollection("projects");  
+const achievementsSection = await getSectionCollection("achievements");
+const educationSection = await getSectionCollection("education");
 ---
 
 <Layout
@@ -57,13 +20,13 @@ function formatDateRange(startDate: string, endDate?: string): string {
   canonicalUrl="https://www.jonathontoon.com/"
   ogImage="/images/og-image.png"
 >
-  <Header class="flex flex-row">
+  <Section class="flex flex-row">
     <Div class="px-2">
       <Link href="/" class="block w-24">
         <ProfileImage class="w-full aspect-square bg-blue-500 rounded-xl" />
       </Link>
     </Div>
-  </Header>
+  </Section>
   <Section class="flex flex-col gap-y-4">
     <H1 class="font-semibold text-3xl md:text-2xl tracking-tight px-2">Nice to meet you, I’m Jonathon.</H1>
     <Paragraph class="text-stone-700 px-2">A versatile software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand.</Paragraph>
@@ -73,7 +36,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
   <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-2">Experience</H2>
     <ListView>
-      {sortedExperience.map((experience) => (
+      {experienceSection.map((experience: CollectionEntry<"sections">["data"]) => (
         <ListViewItem href={experience.slug ? `/experience/${experience.slug}` : undefined}>
           <ListViewItemImage 
             slot="image" 
@@ -82,9 +45,9 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{experience.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${experience.focus}`}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{`${formatDateRange(experience.startDate, experience.endDate)}`}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${experience.focus} · ${formatDateRange(experience.startDate, experience.endDate)}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{experience.subtitle}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{experience.date}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${experience.subtitle} · ${experience.date}`}</ListViewItemMeta>
           </Fragment>
           <ListViewItemChevron slot="action" />
         </ListViewItem>
@@ -95,7 +58,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
     <H3 class="font-semibold text-xl tracking-normal px-2">Mentorship</H3>
     <Paragraph class="text-stone-700 px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Paragraph>
     <ListView>
-      {sortedMentorship.map((mentorship) => (
+      {mentorshipSection.map((mentorship: CollectionEntry<"sections">["data"]) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
@@ -104,12 +67,10 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{mentorship.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{mentorship.length}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{mentorship.price}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${mentorship.price} · ${mentorship.length}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base">{mentorship.subtitle}</ListViewItemMeta>
           </Fragment>
           {mentorship.url && (
-            <ListViewItemLink href={mentorship.url} slot="action">
+            <ListViewItemLink href={mentorship.url} target="_blank" slot="action">
               {mentorship.urlText}
             </ListViewItemLink>
           )}
@@ -121,7 +82,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
     <H2 class="font-semibold text-xl tracking-normal px-2">Projects</H2>
     <Paragraph class="text-stone-700 px-2 pb-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
     <ListView>
-      {sortedProjects.map((project) => (
+      {projectsSection.map((project: CollectionEntry<"sections">["data"]) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
@@ -130,12 +91,12 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{project.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{project.technology.join(", ")}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(project.releaseDate).getFullYear()}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${project.technology.join(", ")} · ${new Date(project.releaseDate).getFullYear()}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{project.subtitle}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{project.date}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${project.subtitle} · ${project.date}`}</ListViewItemMeta>
           </Fragment>
           {project.url && (
-            <ListViewItemLink href={project.url} slot="action">
+            <ListViewItemLink href={project.url} target="_blank" slot="action">
               {project.urlText}
             </ListViewItemLink>
           )}
@@ -147,7 +108,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
     <H2 class="font-semibold text-xl tracking-normal px-2">Patents, Publications, Awards</H2>
     <Paragraph class="text-stone-700 px-2 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
     <ListView>
-      {sortedAchievements.map((achievement) => (
+      {achievementsSection.map((achievement: CollectionEntry<"sections">["data"]) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
@@ -156,12 +117,12 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{achievement.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{`${achievement.type} · ${achievement.author}`}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{new Date(achievement.date).getFullYear()}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${achievement.type} · ${achievement.author} · ${new Date(achievement.date).getFullYear()}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{achievement.subtitle}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{achievement.date}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${achievement.subtitle} · ${achievement.date}`}</ListViewItemMeta>
           </Fragment>
           {achievement.url && (
-            <ListViewItemLink href={achievement.url} slot="action">
+            <ListViewItemLink href={achievement.url} target="_blank" slot="action">
               {achievement.urlText}
             </ListViewItemLink>
           )}
@@ -172,7 +133,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
   <Section class="flex flex-col gap-y-2">
     <H2 class="font-semibold text-xl tracking-normal px-2">Education</H2>
     <ListView>
-      {sortedEducation.map((education) => (
+      {educationSection.map((education: CollectionEntry<"sections">["data"]) => (
         <ListViewItem>
           <ListViewItemImage 
             slot="image" 
@@ -181,12 +142,12 @@ function formatDateRange(startDate: string, endDate?: string): string {
           />
           <Fragment slot="content">
             <ListViewItemTitle>{education.title}</ListViewItemTitle>
-            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{education.qualification}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{formatDateRange(education.startDate, education.endDate)}</ListViewItemMeta>
-            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${education.qualification} · ${formatDateRange(education.startDate, education.endDate)}`}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-700 text-base md:hidden">{education.subtitle}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{education.date}</ListViewItemMeta>
+            <ListViewItemMeta class="text-stone-500 text-base hidden md:block">{`${education.subtitle} · ${education.date}`}</ListViewItemMeta>
           </Fragment>
           {education.url && (
-            <ListViewItemLink href={education.url} slot="action">
+            <ListViewItemLink href={education.url} target="_blank" slot="action">
               {education.urlText}
             </ListViewItemLink>
           )}
@@ -194,18 +155,19 @@ function formatDateRange(startDate: string, endDate?: string): string {
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-2">
-    <H2 class="font-semibold text-xl tracking-normal px-2">Appendix</H2>
-    <Paragraph class="text-stone-700 px-2 pb-2">Sometimes there are notes, memories or information I want to share that don't quite fit anywhere else. This is the place for those things.</Paragraph>
-    <ListView>
-      {sortedAppendix.map((appendix) => (
-        <ListViewItem href={`/appendix/${appendix.slug}`}>
-          <Fragment slot="content">
-            <ListViewItemTitle>{appendix.title}</ListViewItemTitle>
-          </Fragment>
-          <ListViewItemChevron slot="action" />
-        </ListViewItem>
-      ))}
-    </ListView>
+  <Section class="flex flex-col gap-y-4">
+    <H2 class="font-semibold text-xl tracking-normal px-2">Colophon</H2>
+    <Paragraph class="text-stone-700 px-2">
+      Websites aren't temples, but rather as landscapes. Things which change over time. Here's a little about how I built this current iteration is built.
+    </Paragraph> 
+    <Paragraph class="text-stone-700 px-2 indent-4">
+      All visual elements are designed by myself or their respective owners. Each page is typeset in Archivo by <Link href="https://www.omnibus-type.com/" target="">Omnibus Type</Link>. Try it yourself on <Link href="https://fonts.google.com/specimen/Archivo?query=Omnibus-Type" target="_blank">Google Fonts</Link>. The icons used are from the wonderful <Link href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">Amicons</Link> set, by Marek Minor. Grab your own copy <Link href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">today</Link>.
+    </Paragraph>
+    <Paragraph class="text-stone-700 px-2 indent-4">
+      The technology powering this website is <Link href="https://astro.build" target="_blank">Astro</Link>, a server-first framework that generates static pages. Hosting, deployment and analytics are all provided by <Link href="https://pages.cloudflare.com" target="_blank">Cloudflare</Link>.
+    </Paragraph>
+    <Paragraph class="text-stone-700 px-2 indent-4">
+      All meeting scheduling and video calls for mentorship sessions are handled through <Link href="https://refer.cal.com/jonathontoon" target="_blank">Cal.com</Link>, while all payments are facilitated by <Link href="https://stripe.com/" target="_blank">Stripe</Link>.
+    </Paragraph>
   </Section>
 </Layout>
