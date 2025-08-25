@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+
+interface Props extends HTMLAttributes<"nav"> {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<nav class={cn(className)} {...attrs}>
+  <slot />
+</nav>

@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+
+interface Props extends HTMLAttributes<"h4"> {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<h4 class={cn("text-stone-900 font-primary leading-tight tracking-normal font-normal text-lg pb-3", className)} {...attrs}>
+  <slot />
+</h4>
