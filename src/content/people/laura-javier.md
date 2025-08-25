@@ -1,5 +1,0 @@
----
-name: "Laura Javier"
-url: "https://laurajavier.com/"
-image: "/images/content/people/laura-javier.png"
----

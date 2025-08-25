@@ -1,5 +1,0 @@
----
-name: "Isaac Minogue"
-url: "https://www.isaacminogue.com/"
-image: "/images/content/people/isaac-minogue.png"
----

@@ -1,5 +1,0 @@
----
-name: "Camy Tsukamoto"
-url: "https://www.linkedin.com/in/camy-tsukamoto-3b488163/"
-image: "/images/content/people/camy-tsukamoto.png"
----

@@ -1,5 +1,0 @@
----
-name: "Susie Kim"
-url: "https://www.linkedin.com/in/susieskim/"
-image: "/images/content/people/susie-kim.png"
----

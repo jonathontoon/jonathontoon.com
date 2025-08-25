@@ -1,5 +1,0 @@
----
-name: "J.T. Trollman"
-url: "https://www.jtroll.com/"
-image: "/images/content/people/jt-trollman.png"
----

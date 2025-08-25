@@ -1,5 +1,0 @@
----
-name: "George Hajian"
-url: "http://georgehajian.com/"
-image: "/images/content/people/george-hajian.png"
----

@@ -1,5 +1,0 @@
----
-name: "Austin Bales"
-url: "https://cv.arbales.me/"
-image: "/images/content/people/austin-bales.png"
----

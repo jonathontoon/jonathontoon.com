@@ -1,5 +1,0 @@
----
-name: "Dineth Mapa"
-url: "https://www.linkedin.com/in/dinethmapa/"
-image: "/images/content/people/dineth-mapa.png"
----

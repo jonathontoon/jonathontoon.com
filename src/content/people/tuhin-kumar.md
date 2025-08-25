@@ -1,5 +1,0 @@
----
-name: "Tuhin Kumar"
-url: "http://tuhinkumar.com/"
-image: "/images/content/people/tuhin-kumar.png"
----

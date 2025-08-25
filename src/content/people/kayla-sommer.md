@@ -1,5 +1,0 @@
----
-name: "Kayla Sommer"
-url: "https://www.ksommer.design/"
-image: "/images/content/people/kayla-sommer.png"
----

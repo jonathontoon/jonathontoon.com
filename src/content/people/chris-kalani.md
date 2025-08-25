@@ -1,5 +1,0 @@
----
-name: "Chris Kalani"
-url: "https://chriskalani.com/"
-image: "/images/content/people/chris-kalani.png"
----

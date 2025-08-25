@@ -6,20 +6,6 @@ const urlSchema = z.string().url();
 const imageSchema = z.string().regex(/\.(jpg|jpeg|png|webp|svg)$/i, "Image must be a valid image file");
 const slugSchema = z.string().regex(/^[a-z0-9-]+$/, "Slug must contain only lowercase letters, numbers, and hyphens").optional();
 
-const education = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/education" }),
-  schema: z.object({
-    name: z.string(),
-    locations: z.array(z.string()),
-    startDate: dateSchema,
-    endDate: dateSchema,
-    qualification: z.string(),
-    major: z.string().optional(),
-    description: z.string().optional(),
-    slug: slugSchema
-  }),
-});
-
 const experience = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/experience" }),
   schema: z.object({
@@ -36,58 +22,12 @@ const experience = defineCollection({
 });
 
 const people = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/people" }),
+  loader: glob({ pattern: "**/*.yaml", base: "./src/content/people" }),
   schema: z.object({
     name: z.string(),
     url: urlSchema,
     image: imageSchema,
     description: z.string().optional(),
-    slug: slugSchema
-  }),
-});
-
-
-const achievements = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/achievements" }),
-  schema: z.object({
-    title: z.string(),
-    type: z.enum(["Article", "Award", "Patent"]),
-    author: z.string(),
-    date: dateSchema,
-    url: urlSchema.optional(),
-    logo: imageSchema,
-    slug: slugSchema
-  }),
-});
-
-const projects = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
-  schema: z.object({
-    name: z.string(),
-    technology: z.array(z.string()),
-    releaseDate: dateSchema,
-    people: z.array(reference("people")).optional(),
-    logo: imageSchema,
-    url: urlSchema,
-    slug: slugSchema
-  }),
-});
-
-const mentorship = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/mentorship" }),
-  schema: z.object({
-    name: z.string(),
-    price: z.string(),
-    url: urlSchema,
-    length: z.string(),
-    logo: imageSchema,
-  }),
-});
-
-const appendix = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/appendix" }),
-  schema: z.object({
-    title: z.string(),
     slug: slugSchema
   }),
 });
@@ -112,12 +52,7 @@ const sections = defineCollection({
 });
 
 export const collections = {
-  education,
   experience,
   people,
-  achievements,
-  projects,
-  mentorship,
-  appendix,
   sections,
 };

@@ -1,4 +1,0 @@
----
-title: "Colophon"
-slug: "colophon"
----

@@ -1,12 +1,3 @@
-- id: "fast-company-2022"
-  title: "Fast Company"
-  subtitle: "Article · By Jared Newman"
-  date: "2022"
-  type: "achievement"
-  logo: "images/logos/fast-company.svg"
-  url: "https://www.fastcompany.com/90778308/browser-based-sticky-notes-notepad-app-manifest"
-  urlText: "View"
-
 - id: "fast-company-2024"
   title: "Fast Company"
   subtitle: "Article · By JR Raphael"
@@ -14,6 +5,15 @@
   type: "achievement"
   logo: "images/logos/fast-company.svg"
   url: "https://www.fastcompany.com/91159985/best-web-based-notes-app-chrome-manifest"
+  urlText: "View"
+
+- id: "nikkei"
+  title: "Nihon Keizai Shimbun"
+  subtitle: "Newspaper · Morning Edition"
+  date: "2023"
+  type: "article"
+  logo: "images/logos/nikkei.svg"
+  url: "https://www.nikkei.com/article/DGXZQOUA2767Q0X20C23A4000000/"
   urlText: "View"
 
 - id: "us10140373B2"

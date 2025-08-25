@@ -1,5 +1,0 @@
----
-name: "Nathan Borror"
-url: "https://nathan.run/"
-image: "/images/content/people/nathan-borror.png"
----

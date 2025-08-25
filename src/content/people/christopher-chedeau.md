@@ -1,5 +1,0 @@
----
-name: "Christopher Chedeau"
-url: "https://blog.vjeux.com/"
-image: "/images/content/people/christopher-chedeau.png"
----

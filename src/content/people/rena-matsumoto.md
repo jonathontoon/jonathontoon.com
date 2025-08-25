@@ -1,5 +1,0 @@
----
-name: "Rena Matsumoto"
-url: "https://www.linkedin.com/in/rena-matsumoto/"
-image: "/images/content/people/rena-matsumoto.png"
----

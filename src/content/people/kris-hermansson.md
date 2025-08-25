@@ -1,5 +1,0 @@
----
-name: "Kris Hermansson"
-url: "https://www.krishermansson.com/"
-image: "/images/content/people/kris-hermansson.png"
----

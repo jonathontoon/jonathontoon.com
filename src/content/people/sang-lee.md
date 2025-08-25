@@ -1,5 +1,0 @@
----
-name: "Sang Lee"
-url: "https://www.sanglee.me/"
-image: "/images/content/people/sang-lee.png"
----

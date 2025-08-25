@@ -1,5 +1,0 @@
----
-name: "Kyle Meyer"
-url: "https://kylemeyer.com/"
-image: "/images/content/people/kyle-meyer.png"
----

@@ -1,5 +1,0 @@
----
-name: "Neil Hamilton-Ritchie"
-url: "https://www.hamiltonritchie.design/"
-image: "/images/content/people/neil-hamilton-ritchie.png"
----

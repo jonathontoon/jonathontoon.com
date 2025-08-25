@@ -1,5 +1,0 @@
----
-name: "Jonathan Arena"
-url: "https://www.linkedin.com/in/jonathanarena/"
-image: "/images/content/people/jonathan-arena.png"
----

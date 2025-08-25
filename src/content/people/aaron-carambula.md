@@ -1,5 +1,0 @@
----
-name: "Aaron Carámbula"
-url: "https://www.linkedin.com/in/carambula/"
-image: "/images/content/people/aaron-carambula.png"
----

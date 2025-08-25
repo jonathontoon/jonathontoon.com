@@ -1,5 +1,0 @@
----
-name: "Nikki Radov"
-url: "https://www.linkedin.com/in/nikkirad/"
-image: "/images/content/people/nikki-radov.png"
----

@@ -1,5 +1,0 @@
----
-name: "Makito Ninomiya"
-url: "https://www.linkedin.com/in/makito-ninomiya/"
-image: "/images/content/people/makito-ninomiya.png"
----

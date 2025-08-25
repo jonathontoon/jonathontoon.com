@@ -1,5 +1,0 @@
----
-name: "Roberto Sobachi"
-url: "https://www.linkedin.com/in/robertosobachi/"
-image: "/images/content/people/roberto-sobachi.png"
----

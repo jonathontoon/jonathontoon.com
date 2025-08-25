@@ -1,5 +1,0 @@
----
-name: "Bhupendra Singh"
-url: "https://www.linkedin.com/in/ibhupi/"
-image: "/images/content/people/bhupendra-singh.png"
----

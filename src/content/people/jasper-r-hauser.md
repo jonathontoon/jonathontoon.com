@@ -1,5 +1,0 @@
----
-name: "Jasper R. Hauser"
-url: "https://jasperhauser.nl/"
-image: "/images/content/people/jasper-r-hauser.png"
----

@@ -1,5 +1,0 @@
----
-name: "Jonathan Hawke"
-url: "https://www.linkedin.com/in/jonathanhawkeroolz/"
-image: "/images/content/people/jonathan-hawke.png"
----

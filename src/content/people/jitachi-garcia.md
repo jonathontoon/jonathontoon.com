@@ -1,5 +1,0 @@
----
-name: "Jitachi Garcia"
-url: "https://jitachi.com/"
-image: "/images/content/people/jitachi-garcia.png"
----

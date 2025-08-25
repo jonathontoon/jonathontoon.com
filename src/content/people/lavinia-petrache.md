@@ -1,5 +1,0 @@
----
-name: "Lavinia Petrache"
-url: "https://www.linkedin.com/in/laviniapetrache/"
-image: "/images/content/people/lavinia-petrache.png"
----

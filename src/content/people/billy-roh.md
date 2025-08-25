@@ -1,5 +1,0 @@
----
-name: "Billy Roh"
-url: "https://billyroh.com/"
-image: "/images/content/people/billy-roh.png"
----
