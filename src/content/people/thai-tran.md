@@ -1,5 +1,5 @@
 ---
 name: "Thai Tran"
 url: "https://www.linkedin.com/in/thait/"
-image: "/images/content/colleagues/thai-tran.png"
+image: "/images/content/people/thai-tran.png"
 ---

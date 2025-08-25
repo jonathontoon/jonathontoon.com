@@ -4,7 +4,8 @@ focus: "Product Designer"
 location: ["Menlo Park, California"]
 startDate: "2012-08-01"
 endDate: "2014-07-31"
-colleagues: ["dan-barak", "kejia-zhu", "jp-ren", "chris-kalani", "nathan-borror", "thai-tran", "philip-zhao", "jonathan-arena", "charlie-deets", "laura-javier", "matej-hrescak", "jt-trollman", "kyle-meyer", "colin-dunn", "andy-chung", "barton-smith", "tuhin-kumar", "aaron-carambula", "austin-bales", "jason-cashdollar", "christopher-chedeau"]
+industry: ["Social Media", "Technology"]
+people: ["dan-barak", "kejia-zhu", "jp-ren", "chris-kalani", "nathan-borror", "thai-tran", "philip-zhao", "jonathan-arena", "charlie-deets", "laura-javier", "matej-hrescak", "jt-trollman", "kyle-meyer", "colin-dunn", "andy-chung", "barton-smith", "tuhin-kumar", "aaron-carambula", "austin-bales", "jason-cashdollar", "christopher-chedeau"]
 logo: "images/logos/facebook.svg"
 ---
 

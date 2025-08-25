@@ -1,0 +1,117 @@
+---
+import { Layout } from "@layouts";
+import { Section, H1, H2, Div, Paragraph, Image, UnorderedList, ListItem, Link } from "@components/base";
+import { getEntry } from "astro:content";
+
+const experience = await getEntry("experience", "moneytree");
+
+const colleagues = experience?.data.people ? 
+  (await Promise.all(
+    experience.data.people.map(async (personRef) => {
+      const person = await getEntry("people", personRef.id);
+      return {
+        name: person?.data.name || "",
+        image: person?.data.image || "",
+        url: person?.data.url || "#"
+      };
+    })
+  )).sort((a, b) => a.name.localeCompare(b.name)) : [];
+---
+<Layout
+  title="Moneytree | Experience | Jonathon Toon"
+  description={`Details about Jonathon Toon's experience at Moneytree.`}
+>
+  <Section class="flex flex-col gap-y-4 px-1">
+    <Div class="w-24 h-24 flex-shrink-0">
+      <Image 
+          src={experience?.data.logo ? `/${experience.data.logo}` : "/images/logos/moneytree.svg"}
+          alt={`${experience?.data.title || "Moneytree"} Logo`}
+          class={"bg-stone-200 w-24 h-24 rounded-2xl"}
+        />
+    </Div>
+    <H1 class="flex flex-col text-3xl font-semibold">
+      {experience?.data.title || "Moneytree"}
+    </H1>
+    <UnorderedList class="flex flex-row gap-6 flex-wrap">
+      <ListItem class="text-stone-700">
+        <Div class="font-normal text-stone-500">
+          Location
+        </Div>
+        <Div class="font-medium text-stone-900">
+          {experience?.data.location || "Tokyo, Japan"}
+        </Div>
+      </ListItem>
+      <ListItem class="text-stone-700">
+        <Div class="font-normal text-stone-500">
+          Industry
+        </Div>
+        <Div class="font-medium text-stone-900">
+          {experience?.data.industry?.join(", ") || "Open Banking, Fintech"}
+        </Div>
+      </ListItem>
+    </UnorderedList>
+  </Section>
+  <Section class="flex flex-col gap-y-3">
+    <Paragraph class="text-stone-700 px-1">
+      Moneytree is Japan’s premier finance platform. As the first of it’s kind launching back in 2012 on iOS, and going on to win Apple's 'App of the Year' in 2013, it reached 5,000,000 users. It grew to support 2000+ distinct financial institutions and 120+ enterprise customers through it’s open banking platform Moneytree Link.
+    </Paragraph>
+    <Paragraph class="text-stone-700 px-1 indent-4">
+      In 2025 Moneytree celebrated it’s acquisition by MUFG Bank, Ltd. and its consolidated subsidiary WealthNavi Inc., providing the team resource to further execute on their mission.
+    </Paragraph>  
+  </Section>
+  <Section class="flex flex-col gap-y-3">
+    <Div class="flex flex-col">
+      <H2 class="font-semibold text-xl tracking-normal px-1">Director of Discovery & Design</H2>
+      <Paragraph class="font-normal tracking-normal px-1 text-stone-500">November 12, 2021 — July 30, 2024</Paragraph>
+    </Div>
+    <Paragraph class="text-stone-700 px-1">
+      Returned as Director of Design, later becoming Director of Discovery, the business vertical responsible for incubating new products.
+    </Paragraph> 
+    <Paragraph class="text-stone-700 px-1 indent-4">
+      During this time, I rebuilt and led, hands-on, a team of product and brand designers, establishing hiring practices, weekly rituals, career rubrics, and best practices for design systems and research.
+    </Paragraph>
+    <Paragraph class="text-stone-700 px-1 indent-4">
+      I also founded and led the Moneytree Business team, shipping a discovery-backed SMB product in six months that launched at ¥2M JPY ARR and saved business owners 30 hours per week. At the same time, I led a Growth marketing team to remove sales bottlenecks through funnel automation and landing page optimizations, creating a self-serve API experience for enterprise prospects.
+    </Paragraph>
+    <Paragraph class="text-stone-700 px-1 indent-4">
+      Additionally, I regularly partnered with other leaders on revenue-generating initiatives, from a personal lending discovery project with Visa that generated ¥4M JPY in revenue, to the design and launch of a new mobile product for Japan Post Bank.
+    </Paragraph>
+  </Section>
+  <Section class="flex flex-col gap-y-3">
+    <Div class="flex flex-col">
+      <H2 class="font-semibold text-xl tracking-normal px-1">Product & Design Lead</H2>
+      <Paragraph class="font-normal tracking-normal px-1 text-stone-500">November 12, 2016 — July 30, 2019</Paragraph>
+    </Div>
+    <Paragraph class="text-stone-700 px-1">
+      I joined Moneytree as their first full-time designer, reporting to the Director of Product, immediately collaborating together for a number of months with a small group of mobile engineers to release new updates to Moneytree’s mobile products to increase revenue and engagement.
+    </Paragraph> 
+    <Paragraph class="text-stone-700 px-1 indent-4">
+      Not long after this however I saw myself move in to the role of a Product & Design Lead, owning the product experience of a new product, supporting regional banks and their customers, built upon the Moneytree LINK platform. This saw me responsible for not only the design, but the delivery and cross-functional communication with customer-facing representatives. The release of this product unlocked a new stream of revenue, signing the largest regional bank in Japan, Bank of Yokohama, while going on to sign 10 others.
+    </Paragraph>
+    <Paragraph class="text-stone-700 px-1 indent-4">
+      I continue in this role, following the incredible growth of the Moneytree LINK platform I continue in this role, to design new product primitives: common interfaces that all products built upon the platform would use. Which included a new onboarding experience, a new account experience, as well as common ways to authorize sharing financial data.
+    </Paragraph>
+  </Section>
+  <Section class="flex flex-col gap-y-3">
+    <H2 class="font-semibold text-xl tracking-normal px-1">Selected Work</H2>
+    <Paragraph class="text-stone-700 px-1">
+      Some highlights from the 5+ years at Moneytree. Each I either had a significant hand in, as the most senior designer, the responsible individual doing the work or the leader accountable for the creative and business outcomes
+    </Paragraph> 
+  </Section>
+  <Section class="flex flex-col gap-y-3">
+    <H2 class="font-semibold text-xl tracking-normal px-1">Working With</H2>
+    <Paragraph class="text-stone-700 px-1">
+      Creating great products is a team sport. As such are some of the great individuals whom I’ve had the pleasure of working alongside, managing directly or being mentored by, while at Moneytree.
+    </Paragraph>
+    <Div class="grid grid-cols-[repeat(auto-fit,minmax(3rem,1fr))] gap-1 mt-4 px-1">
+      {colleagues.map((colleague) => (
+        <Link href={colleague.url} target="_blank" class="w-12 h-12 relative group rounded-full">
+          <Image src={colleague.image} alt={colleague.name} class="w-12 h-12 object-cover bg-black rounded-full" />
+          <Div class="absolute left-1/2 transform -translate-x-1/2 bg-black text-white px-2 py-1 rounded-md text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none top-[-2rem] group-[&:nth-child(n+7)]:top-14 sm:group-[&:nth-child(n+9)]:top-14 md:group-[&:nth-child(n+11)]:top-14 group-[&:nth-child(-n+6)]:top-[-2rem] sm:group-[&:nth-child(-n+8)]:top-[-2rem] md:group-[&:nth-child(-n+10)]:top-[-2rem]">
+            {colleague.name}
+          </Div>
+        </Link>
+      ))}
+    </Div>
+  </Section>
+</Layout>

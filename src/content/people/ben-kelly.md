@@ -1,5 +1,5 @@
 ---
 name: "Ben Kelly"
 url: "https://www.linkedin.com/in/bwbkelly/"
-image: "/images/content/colleagues/ben-kelly.png"
+image: "/images/content/people/ben-kelly.png"
 ---

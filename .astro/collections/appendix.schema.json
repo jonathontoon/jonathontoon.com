@@ -1,0 +1,28 @@
+{
+  "$ref": "#/definitions/appendix",
+  "definitions": {
+    "appendix": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "errorMessage": {
+            "pattern": "Slug must contain only lowercase letters, numbers, and hyphens"
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

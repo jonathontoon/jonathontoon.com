@@ -4,7 +4,8 @@ focus: "Internship"
 location: ["Wellington, New Zealand"]
 startDate: "2012-03-01"
 endDate: "2012-06-30"
-colleagues: ["marcus-brown", "simon-neveu", "matt-halford", "jonathan-hawke", "kris-hermansson", "emlyn-hughes"]
+industry: ["Digital Agency", "Creative Services"]
+people: ["marcus-brown", "simon-neveu", "matt-halford", "jonathan-hawke", "kris-hermansson", "emlyn-hughes"]
 logo: "images/logos/resn.svg"
 ---
 

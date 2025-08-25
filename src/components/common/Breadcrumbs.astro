@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Div, Link, Span } from "@components/base";
+import { Header, Link, Span } from "@components/base";
 
 interface BreadcrumbItem {
   label: string;
@@ -31,7 +31,7 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
     
     breadcrumbs.push({
       label: pathToLabel(segment),
-      href: isLast ? undefined : currentPath === pathname ? undefined : currentPath
+      href: currentPath
     });
   });
 
@@ -42,21 +42,17 @@ const breadcrumbs = generateBreadcrumbs(Astro.url.pathname);
 ---
 
 {breadcrumbs.length > 0 && (
-  <Div class="flex items-center gap-x-2 px-2">
-    <Link href="/" class="flex items-center">
+  <Header class="flex items-center gap-x-2 px-1">
+    <Link href="/" class="no-underline flex items-center">
       <Icon name="solid-house" class="text-stone-900 w-6 h-6" />
     </Link>
     {breadcrumbs.map((crumb) => (
       <Fragment>
         <Icon name="stroke-arrow-small-right" class="text-stone-400 w-6 h-6" />
-        {crumb.href ? (
-          <Link href={crumb.href} class="text-stone-900 font-medium">
-            {crumb.label}
-          </Link>
-        ) : (
-          <Span class="text-stone-900 font-medium">{crumb.label}</Span>
-        )}
+        <Link href={crumb.href} class="no-underline text-stone-900 font-semibold">
+          {crumb.label}
+        </Link>
       </Fragment>
     ))}
-  </Div>
+  </Header>
 )}

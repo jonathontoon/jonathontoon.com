@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
 
 interface Props extends HTMLAttributes<"input"> {
   class?: string;
@@ -8,4 +9,4 @@ interface Props extends HTMLAttributes<"input"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<input type="email" class:list={[className]} {...attrs} />
+<input type="email" class={cn(className)} {...attrs} />

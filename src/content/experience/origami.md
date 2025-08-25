@@ -4,7 +4,8 @@ focus: "Product Designer"
 location: ["Tokyo, Japan"]
 startDate: "2015-07-01"
 endDate: "2016-11-30"
-colleagues: ["hiro-noguchi", "yoshito-hasaka", "bhupendra-singh", "takashi-nozawa", "keita-suzuki", "dongri-jin", "arata-yanase", "shingo-fushimi", "yoshiki-yasui", "ryota-katoh"]
+industry: ["Payments", "Fintech"]
+people: ["hiro-noguchi", "yoshito-hasaka", "bhupendra-singh", "takashi-nozawa", "keita-suzuki", "dongri-jin", "arata-yanase", "shingo-fushimi", "yoshiki-yasui", "ryota-katoh"]
 logo: "images/logos/origami.svg"
 ---
 

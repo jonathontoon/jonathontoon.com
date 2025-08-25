@@ -20,21 +20,21 @@ const {
     <Link 
       href={href}
       target={target}
-      class="hover:bg-stone-950/5 duration-200 ease-out transition-all p-2 flex flex-row gap-x-3 justify-between rounded-2xl"
+      class="no-underline hover:bg-stone-950/5 duration-200 ease-out transition-all p-1 flex flex-row gap-x-2 justify-between rounded-2xl"
     >
       <Div class="flex flex-row gap-x-3">
         <slot name="image" />
-        <Div class="flex flex-col justify-center gap-y-0.5">
+        <Div class="flex flex-col justify-center">
           <slot name="content" />
         </Div>
       </Div>
       <slot name="action" />
     </Link>
   ) : (
-    <Div class="p-2 flex flex-row gap-x-3 justify-between">
+    <Div class="p-1 flex flex-row gap-x-2 justify-between">
       <Div class="flex flex-row gap-x-3">
         <slot name="image" />
-        <Div class="flex flex-col justify-center gap-y-0.5">
+        <Div class="flex flex-col justify-center">
           <slot name="content" />
         </Div>
       </Div>

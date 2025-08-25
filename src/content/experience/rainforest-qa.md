@@ -4,7 +4,8 @@ focus: "Director of Design"
 location: ["Remote"]
 startDate: "2020-01-01"
 endDate: "2021-10-31"
-colleagues: ["maciej-gryka", "jan-grodowski", "neil-hamilton-ritchie", "kayla-sommer", "jitachi-garcia", "jonathan-barber", "natalie-friedman"]
+industry: ["Software Testing", "DevTools"]
+people: ["maciej-gryka", "jan-grodowski", "neil-hamilton-ritchie", "kayla-sommer", "jitachi-garcia", "jonathan-barber", "natalie-friedman"]
 logo: "images/logos/rainforest-qa.svg"
 ---
 

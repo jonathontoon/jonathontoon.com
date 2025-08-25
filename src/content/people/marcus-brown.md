@@ -1,5 +1,5 @@
 ---
 name: "Marcus Brown"
 url: "https://marcus-brown.com/"
-image: "/images/content/colleagues/marcus-brown.png"
+image: "/images/content/people/marcus-brown.png"
 ---

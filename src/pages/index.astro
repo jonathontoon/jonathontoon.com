@@ -22,17 +22,17 @@ const educationSection = await getSectionCollection("education");
   <Section class="flex flex-row">
     <Div class="px-2">
       <Link href="/" class="block w-24">
-        <ProfileImage class="w-full aspect-square bg-blue-500 rounded-xl" />
+        <ProfileImage class="w-full aspect-square bg-blue-500 rounded-2xl" />
       </Link>
     </Div>
   </Section>
-  <Section class="flex flex-col gap-y-2">
+  <Section class="flex flex-col gap-y-3">
     <H1 class="font-semibold text-2xl tracking-tight px-1">Nice to meet you, I'm Jonathon.</H1>
     <Paragraph class="text-stone-700 px-1">A versatile software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand.</Paragraph>
     <Paragraph class="text-stone-700 indent-4 px-1">For the past 15 years, I’ve worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Paragraph>
     <Paragraph class="text-stone-700 indent-4 px-1">In that time, I’ve built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Paragraph>
   </Section>
-  <Section class="flex flex-col gap-y-2">
+  <Section class="flex flex-col gap-y-3">
     <H2 class="font-semibold text-xl tracking-normal px-1">Experience</H2>
     <ListView>
       {experienceSection.map((experience) => (
@@ -53,7 +53,7 @@ const educationSection = await getSectionCollection("education");
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-2">
+  <Section class="flex flex-col gap-y-3">
     <H2 class="font-semibold text-xl tracking-normal px-1">Mentorship</H2>
     <Paragraph class="text-stone-700 px-1 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Paragraph>
     <ListView>
@@ -79,7 +79,7 @@ const educationSection = await getSectionCollection("education");
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-2">
+  <Section class="flex flex-col gap-y-3">
     <H2 class="font-semibold text-xl tracking-normal px-1">Projects</H2>
     <Paragraph class="text-stone-700 px-1 pb-2">I love to build things on my own. Either to explore new technologies, to make a little pocket money, or simply just for fun.</Paragraph>
     <ListView>
@@ -105,7 +105,7 @@ const educationSection = await getSectionCollection("education");
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-2">
+  <Section class="flex flex-col gap-y-3">
     <H2 class="font-semibold text-xl tracking-normal px-1">Patents, Publications, Awards</H2>
     <Paragraph class="text-stone-700 px-1 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Paragraph>
     <ListView>
@@ -131,7 +131,7 @@ const educationSection = await getSectionCollection("education");
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-2">
+  <Section class="flex flex-col gap-y-3">
     <H2 class="font-semibold text-xl tracking-normal px-1">Education</H2>
     <ListView>
       {educationSection.map((education) => (
@@ -156,19 +156,19 @@ const educationSection = await getSectionCollection("education");
       ))}
     </ListView>
   </Section>
-  <Section class="flex flex-col gap-y-2">
+  <Section class="flex flex-col gap-y-3">
     <H2 class="font-semibold text-xl tracking-normal px-1">Colophon</H2>
     <Paragraph class="text-stone-700 px-1">
-      Websites aren't temples, but rather as landscapes. Things which change over time. Here's a little about how I built this current iteration is built.
+      Websites aren't temples, but rather landscapes. Things that change over time. Here's a little about how this current iteration is built.
     </Paragraph> 
     <Paragraph class="text-stone-700 px-1 indent-4">
-      All visual elements are designed by myself or their respective owners. Each page is typeset in Archivo by <Link href="https://www.omnibus-type.com/" target="">Omnibus Type</Link>. Try it yourself on <Link href="https://fonts.google.com/specimen/Archivo?query=Omnibus-Type" target="_blank">Google Fonts</Link>. The icons used are from the wonderful <Link href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">Amicons</Link> set, by Marek Minor. Grab your own copy <Link href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">today</Link>.
+      All visual elements are either designed by myself or their respective owners. Each page is typeset in Archivo by <Link href="https://www.omnibus-type.com/" target="">Omnibus Type</Link>. Try it yourself on <Link href="https://fonts.google.com/specimen/Archivo?query=Omnibus-Type" target="_blank">Google Fonts</Link>. The icons used are from the wonderful <Link href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">Amicons</Link> set, by Marek Minor. Grab your own copy <Link href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">today</Link>.
     </Paragraph>
     <Paragraph class="text-stone-700 px-1 indent-4">
       The technology powering this website is <Link href="https://astro.build" target="_blank">Astro</Link>, a server-first framework that generates static pages. Hosting, deployment and analytics are all provided by <Link href="https://pages.cloudflare.com" target="_blank">Cloudflare</Link>.
     </Paragraph>
     <Paragraph class="text-stone-700 px-1 indent-4">
-      All meeting scheduling and video calls for mentorship sessions are handled through <Link href="https://refer.cal.com/jonathontoon" target="_blank">Cal.com</Link>, while all payments are facilitated by <Link href="https://stripe.com/" target="_blank">Stripe</Link>.
+      Meeting scheduling and video calls for mentorship sessions are handled through <Link href="https://refer.cal.com/jonathontoon" target="_blank">Cal.com</Link>, while all payments are facilitated by <Link href="https://stripe.com/" target="_blank">Stripe</Link>.
     </Paragraph>
   </Section>
 </Layout>

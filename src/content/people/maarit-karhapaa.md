@@ -1,0 +1,5 @@
+---
+name: "Maarit Karhapaa"
+url: "https://www.linkedin.com/in/maaritk/"
+image: "/images/content/people/maarit-karhapaa.png"
+---

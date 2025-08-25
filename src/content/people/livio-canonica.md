@@ -1,5 +1,5 @@
 ---
 name: "Livio Canonica"
 url: "https://www.linkedin.com/in/livio-c-b62b09b8/"
-image: "/images/content/colleagues/livio-canonica.png"
+image: "/images/content/people/livio-canonica.png"
 ---

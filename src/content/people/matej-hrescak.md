@@ -1,5 +1,5 @@
 ---
 name: "Matej Hrescak"
 url: "https://hrescak.com/"
-image: "/images/content/colleagues/matej-hrescak.png"
+image: "/images/content/people/matej-hrescak.png"
 ---

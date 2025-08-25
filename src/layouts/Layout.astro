@@ -1,8 +1,9 @@
 ---
 import { Body, Main, Footer, Div, Link } from "@components/base";
-import { Breadcrumb } from "@components/common";
+import { Breadcrumbs } from "@components/common";
 import "@fontsource-variable/archivo";
 import "@fontsource-variable/archivo-narrow";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -163,14 +164,15 @@ const {
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <Body class="bg-stone-50 text-stone-900">
     <Main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-10 md:gap-y-14">
-      <Breadcrumb />
+      <Breadcrumbs />
       <slot />
       <Footer class="flex flex-col gap-y-8 p-2">
         <Div class="w-full text-stone-700">
-          All content provided under the <Link href="https://creativecommons.org/licenses/by-nc/4.0/" class="font-semibold underline hover:no-underline decoration-from-font underline-offset-2">CC BY-NC 4.0 license</Link> and was last updated {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.
+          All content provided under the <Link href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 license</Link> and was last updated {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.
         </Div>
         <Div class="flex flex-row w-full justify-between">
           <Div class="text-stone-700">
@@ -191,7 +193,7 @@ const {
     src="https://cloud.umami.is/script.js"
     data-website-id="e1d957f7-6fdb-4665-885c-fd9ec7fa871a">
   </script>
-  <script>
+  <script is:inline>
     (function (h, o, t, j, a, r) {
       h.hj =
         h.hj ||
@@ -203,7 +205,7 @@ const {
       r = o.createElement("script");
       r.async = 1;
       r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
+      if (a) a.appendChild(r);
     })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
   </script>
 )}

@@ -1,0 +1,44 @@
+{
+  "$ref": "#/definitions/people",
+  "definitions": {
+    "people": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "image": {
+          "type": "string",
+          "pattern": "\\.(jpg|jpeg|png|webp|svg)$",
+          "errorMessage": {
+            "pattern": "Image must be a valid image file"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "errorMessage": {
+            "pattern": "Slug must contain only lowercase letters, numbers, and hyphens"
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "image"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

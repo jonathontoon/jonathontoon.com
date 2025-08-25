@@ -4,7 +4,8 @@ focus: "Mobile Product Designer"
 location: ["San Francisco, California"]
 startDate: "2014-08-01"
 endDate: "2015-07-31"
-colleagues: ["josh-wilburne", "fiid-williams", "susie-kim", "brian-boarini", "andy-hovey", "sang-lee", "dineth-mapa", "juan-arreguin", "jeremy-bank", "isaac-minogue", "dan-newman", "nikki-radov"]
+industry: ["Accounting Software", "SaaS"]
+people: ["josh-wilburne", "fiid-williams", "susie-kim", "brian-boarini", "andy-hovey", "sang-lee", "dineth-mapa", "juan-arreguin", "jeremy-bank", "isaac-minogue", "dan-newman", "nikki-radov"]
 logo: "images/logos/xero.svg"
 ---
 

@@ -1,0 +1,42 @@
+{
+  "$ref": "#/definitions/mentorship",
+  "definitions": {
+    "mentorship": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "length": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string",
+          "pattern": "\\.(jpg|jpeg|png|webp|svg)$",
+          "errorMessage": {
+            "pattern": "Image must be a valid image file"
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "price",
+        "url",
+        "length",
+        "logo"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

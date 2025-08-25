@@ -1,5 +1,5 @@
 ---
 name: "Dan Newman"
 url: "https://dan.newman.is/"
-image: "/images/content/colleagues/dan-newman.png"
+image: "/images/content/people/dan-newman.png"
 ---

@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
 
 interface Props extends HTMLAttributes<"legend"> {
   class?: string;
@@ -8,6 +9,6 @@ interface Props extends HTMLAttributes<"legend"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<legend class:list={[className]} {...attrs}>
+<legend class={cn(className)} {...attrs}>
   <slot />
 </legend>

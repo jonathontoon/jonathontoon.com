@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
 
 interface Props extends HTMLAttributes<"ul"> {
   class?: string;
@@ -8,6 +9,6 @@ interface Props extends HTMLAttributes<"ul"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<ul class:list={[className]} {...attrs}>
+<ul class={cn(className)} {...attrs}>
   <slot />
 </ul>

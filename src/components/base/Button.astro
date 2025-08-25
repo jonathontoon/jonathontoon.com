@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
 
 export interface Props extends HTMLAttributes<"button"> {
   class?: string;
@@ -9,6 +10,6 @@ export interface Props extends HTMLAttributes<"button"> {
 const { class: className = "", disabled = false, type = "button", ...attrs } = Astro.props;
 ---
 
-<button class:list={[className, "cursor-pointer"]} type={type} disabled={disabled} {...attrs}>
+<button class={cn("cursor-pointer", className)} type={type} disabled={disabled} {...attrs}>
   <slot />
 </button>

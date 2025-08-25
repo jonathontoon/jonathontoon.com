@@ -1,5 +1,5 @@
 ---
 name: "Andy Hovey"
 url: "https://andyhovey.com/"
-image: "/images/content/colleagues/andy-hovey.png"
+image: "/images/content/people/andy-hovey.png"
 ---

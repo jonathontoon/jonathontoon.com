@@ -1,5 +1,5 @@
 ---
 name: "Josh Wilburne"
 url: "https://josh.computer/"
-image: "/images/content/colleagues/josh-wilburne.png"
+image: "/images/content/people/josh-wilburne.png"
 ---

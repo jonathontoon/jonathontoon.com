@@ -1,4 +1,4 @@
-export { default as Breadcrumb } from "@components/common/Breadcrumb.astro";
+export { default as Breadcrumbs } from "@components/common/Breadcrumbs.astro";
 export { default as ProfileImage } from "@components/common/ProfileImage.astro";
 export { default as ListView } from "@components/common/ListView.astro";
 export { default as ListViewItem } from "@components/common/ListViewItem.astro";

@@ -1,5 +1,5 @@
 ---
 name: "Dan Barak"
 url: "https://danbarak.com/"
-image: "/images/content/colleagues/dan-barak.png"
+image: "/images/content/people/dan-barak.png"
 ---

@@ -4,7 +4,8 @@ focus: "Creative Generalist"
 location: ["Remote"]
 startDate: "2024-08-01"
 endDate: "2024-10-31"
-colleagues: ["andy-hovey", "kelly-rummins", "isaac-minogue"]
+industry: ["Maritime Intelligence", "Security"]
+people: ["andy-hovey", "kelly-rummins", "isaac-minogue"]
 logo: "images/logos/starboard.svg"
 ---
 

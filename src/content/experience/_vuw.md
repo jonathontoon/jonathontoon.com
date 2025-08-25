@@ -4,7 +4,8 @@ focus: "Web Design, Teaching"
 location: ["Wellington, New Zealand"]
 startDate: "2009-12-01"
 endDate: "2012-06-30"
-colleagues: ["luke-smith", "lee-gibson"]
+industry: ["Education", "University"]
+people: ["luke-smith", "lee-gibson"]
 logo: "images/logos/vuw.svg"
 ---
 

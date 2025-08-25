@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
 
 interface Props extends HTMLAttributes<"a"> {
   class?: string | undefined;
@@ -11,4 +12,4 @@ interface Props extends HTMLAttributes<"a"> {
 const { class: className = "", rel = "preload", target = "_self", ...attrs } = Astro.props;
 ---
 
-<a class:list={["cursor-pointer", className]} rel={rel} target={target} {...attrs}><slot /></a>
+<a class={cn("font-semibold underline hover:no-underline decoration-from-font underline-offset-2 cursor-pointer", className)} rel={rel} target={target} {...attrs}><slot /></a>

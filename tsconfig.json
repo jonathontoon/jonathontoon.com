@@ -13,6 +13,7 @@
       "@components/base/*": ["src/components/base/*"],
       "@components/common": ["src/components/common"],
       "@components/common/*": ["src/components/common/*"],
+      "@utils/*": ["src/utils/*"],
       "@public/*": ["public/*"]
     }
   }

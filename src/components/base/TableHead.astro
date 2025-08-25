@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
 
 interface Props extends HTMLAttributes<"th"> {
   class?: string;
@@ -9,10 +10,10 @@ const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <th
-  class:list={[
+  class={cn(
     "border-b-2 border-zinc-100 px-6 py-4 text-xs font-medium uppercase tracking-wide text-zinc-500",
     className,
-  ]}
+  )}
   {...attrs}
 >
   <slot />

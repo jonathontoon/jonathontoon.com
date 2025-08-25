@@ -1,5 +1,5 @@
 ---
 name: "Anoushka Isaac"
 url: "https://anoushkaisaac.com/"
-image: "/images/content/colleagues/noush-isaac.png"
+image: "/images/content/people/noush-isaac.png"
 ---
