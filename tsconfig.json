@@ -7,12 +7,7 @@
     "paths": {
       "@layouts": ["src/layouts"],
       "@layouts/*": ["src/layouts/*"],
-      "@sections/*": ["src/sections/*"],
       "@components/*": ["src/components/*"],
-      "@components/base": ["src/components/base"],
-      "@components/base/*": ["src/components/base/*"],
-      "@components/common": ["src/components/common"],
-      "@components/common/*": ["src/components/common/*"],
       "@utils/*": ["src/utils/*"],
       "@public/*": ["public/*"]
     }

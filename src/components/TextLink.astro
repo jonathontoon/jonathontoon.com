@@ -13,4 +13,4 @@ interface Props extends HTMLAttributes<"a"> {
 const { class: className = "", rel = "preload", target = "_self", ...attrs } = Astro.props;
 ---
 
-<Link class={cn("text-base text-stone-700 font-semibold underline hover:no-underline decoration-from-font underline-offset-2", className)} rel={rel} target={target} {...attrs}><slot /></Link>
+<Link class={cn("text-base text-stone-700 font-bold underline hover:no-underline decoration-from-font underline-offset-2", className)} rel={rel} target={target} {...attrs}><slot /></Link>

@@ -46,7 +46,7 @@ const breadcrumbs = generateBreadcrumbs(Astro.url.pathname);
     {breadcrumbs.map((crumb) => (
       <Fragment>
         <Icon name="stroke-arrow-small-right" class="text-stone-400 w-6 h-6" />
-        <Link href={crumb.href} class="no-underline text-stone-900 font-semibold">
+        <Link href={crumb.href} class="no-underline text-stone-900 font-bold">
           {crumb.label}
         </Link>
       </Fragment>

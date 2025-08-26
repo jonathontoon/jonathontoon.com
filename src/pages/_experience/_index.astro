@@ -16,7 +16,7 @@ const experienceSection = await getSectionCollection("experience");
   ogImage="/images/og-image.png"
 >
   <Section class="flex flex-col gap-y-2">
-    <Heading1 class="font-semibold text-xl tracking-normal px-2">Experience</Heading1>
+    <Heading1 class="font-bold text-xl tracking-normal px-2">Experience</Heading1>
     <ListView>
       {experienceSection.map((experience) => (
         <ListViewItem href={experience.slug ? `/experience/${experience.slug}` : undefined}>
