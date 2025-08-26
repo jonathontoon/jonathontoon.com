@@ -1,8 +1,8 @@
 ---
 import Heading from "@components/Heading.astro";
 import HeadingLarge from "@components/HeadingLarge.astro";
-import ImageLarge from "@components/ImageLarge.astro";
 import Link from "@components/Link.astro";
+import ProfileImage from "@components/ProfileImage.astro";
 import ListView from "@components/ListView.astro";
 import ListViewDescription from "@components/ListViewDescription.astro";
 import ListViewItem from "@components/ListViewItem.astro";
@@ -12,13 +12,11 @@ import ListViewItemLink from "@components/ListViewItemLink.astro";
 import ListViewItemMeta from "@components/ListViewItemMeta.astro";
 import ListViewItemTitle from "@components/ListViewItemTitle.astro";
 import Text from "@components/Text.astro";
-import TextButtonLarge from "@components/TextButtonLarge.astro";
 import TextLink from "@components/TextLink.astro";
 import View from "@components/View.astro";
 import ViewGroup from "@components/ViewGroup.astro";
 import { Layout } from "@layouts";
 import { getSectionCollection } from "@utils/getSectionCollection";
-import { Icon } from "astro-icon/components";
 
 const experienceSection = await getSectionCollection("experience");
 const mentorshipSection = await getSectionCollection("mentorship");
@@ -39,18 +37,19 @@ const contactSection = await getSectionCollection("contact");
 <ViewGroup>
       <View class="px-2">
         <Link href="/">
-          <ImageLarge src={"/images/profile.png"} alt="Jonathon Toon" class="bg-blue-500" />
+          <ProfileImage />
         </Link>
       </View>
     </ViewGroup>
     <ViewGroup>
-      <HeadingLarge class="font-semibold text-2xl tracking-tight px-2">Nice to meet you, I'm Jonathon.</HeadingLarge>
-      <Text class="text-stone-700 px-2">A versatile software designer, leader, and mentor, living and working remotely in Aotearoa New Zealand.</Text>
-      <Text class="text-stone-700 indent-4 px-2">For the past 15 years, I’ve worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Text>
-      <Text class="text-stone-700 indent-4 px-2">In that time, I’ve built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Text>  
+      <HeadingLarge class="px-2 block md:hidden">Hello, I'm Jonathon.</HeadingLarge>
+      <HeadingLarge class="px-2 hidden md:block">Nice to meet you, I'm Jonathon.</HeadingLarge>
+      <Text class="px-2">A versatile software design leader, living and working remotely in Aotearoa New Zealand. I believe that good design is the result of even greater synthesis, the right blend of technology, context, and desire.</Text>
+      <Text class="indent-4 px-2">For the past 15 years, I've worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Text>
+      <Text class="indent-4 px-2">In that time, I've built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Text>  
     </ViewGroup>
     <ViewGroup>
-      <Heading class="font-semibold text-xl tracking-normal px-2">Experience</Heading>
+      <Heading class="text-xl tracking-normal px-2">Experience</Heading>
       <ListView>
         {experienceSection.map((experience) => (
           <ListViewItem href={experience.slug ? `/experience/${experience.slug}` : undefined}>
@@ -75,8 +74,8 @@ const contactSection = await getSectionCollection("contact");
       </ListView>
     </ViewGroup>
     <ViewGroup>
-      <Heading class="font-semibold text-xl tracking-normal px-2">Mentorship</Heading>
-      <Text class="text-stone-700 px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Text>
+      <Heading class="text-xl tracking-normal px-2">Mentorship</Heading>
+      <Text class="px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Text>
       <ListView>
         {mentorshipSection.map((mentorship) => (
           <ListViewItem>
@@ -101,8 +100,8 @@ const contactSection = await getSectionCollection("contact");
       </ListView>
     </ViewGroup>
     <ViewGroup>
-      <Heading class="font-semibold text-xl tracking-normal px-2">Projects</Heading>
-      <Text class="text-stone-700 px-2 pb-2">I love to build things on my own. Either to explore new technologies or simply just for fun.</Text>
+      <Heading class="text-xl tracking-normal px-2">Projects</Heading>
+      <Text class="px-2 pb-2">I strongly believe that like how an artist understands material properties, a designer should understand the technology they are builing with. As such I love to build things on my own. Either to explore new technologies or simply just for fun.</Text>
       <ListView>
         {projectsSection.map((project) => (
           <ListViewItem>
@@ -127,8 +126,8 @@ const contactSection = await getSectionCollection("contact");
       </ListView>
     </ViewGroup>
     <ViewGroup>
-      <Heading class="font-semibold text-xl tracking-normal px-2">Patents, Publications, Awards</Heading>
-      <Text class="text-stone-700 px-2 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Text>
+      <Heading class="text-xl tracking-normal px-2">Patents, Publications, Awards</Heading>
+      <Text class="px-2 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Text>
       <ListView>
         {achievementsSection.map((achievement) => (
           <ListViewItem>
@@ -153,7 +152,7 @@ const contactSection = await getSectionCollection("contact");
       </ListView>
     </ViewGroup>
     <ViewGroup>
-      <Heading class="font-semibold text-xl tracking-normal px-2">Education</Heading>
+      <Heading class="text-xl tracking-normal px-2">Education</Heading>
       <ListView>
         {educationSection.map((education) => (
           <ListViewItem>
@@ -178,7 +177,7 @@ const contactSection = await getSectionCollection("contact");
       </ListView>
     </ViewGroup>
     <ViewGroup>
-      <Heading class="font-semibold text-xl tracking-normal px-2">Contact</Heading>
+      <Heading class="text-xl tracking-normal px-2">Contact</Heading>
       <ListView>
         {contactSection.map((contact) => (
           <ListViewItem href={contact.url} target="_blank">
@@ -191,15 +190,15 @@ const contactSection = await getSectionCollection("contact");
       </ListView>
     </ViewGroup>
     <ViewGroup>
-      <Heading class="font-semibold text-xl tracking-normal px-2">Colophon</Heading>
+      <Heading class="text-xl tracking-normal px-2">Colophon</Heading>
       <Text class="px-2">
-        All visual elements are either designed by myself or their respective owners. Each page is typeset in Archivo by <TextLink href="https://www.omnibus-type.com/" target="">Omnibus Type</TextLink>. Try it yourself on <TextLink href="https://fonts.google.com/specimen/Archivo?query=Omnibus-Type" target="_blank">Google Fonts</TextLink>. The icons used are from the wonderful <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">Amicons</TextLink> set, by Marek Minor. Grab your own copy <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">today</TextLink>.
-      </Text>
-      <Text class="px-2 indent-4">
-        The technology powering this website is <TextLink href="https://astro.build" target="_blank">Astro</TextLink>, a server-first framework that generates static pages. Hosting, deployment and analytics are all provided by <TextLink href="https://pages.cloudflare.com" target="_blank">Cloudflare</TextLink>.
+        Each page is typeset in Archivo by <TextLink href="https://www.omnibus-type.com/" target="">Omnibus Type</TextLink>. Try it yourself on <TextLink href="https://fonts.google.com/specimen/Archivo?query=Omnibus-Type" target="_blank">Google Fonts</TextLink>. The icons used are from the wonderful <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">Amicons</TextLink> set, by Marek Minor. Grab your own copy <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">today</TextLink>.
       </Text>
       <Text class="px-2 indent-4">
         Meeting scheduling and video calls for mentorship sessions are handled through <TextLink href="https://refer.cal.com/jonathontoon" target="_blank">Cal.com</TextLink>, while all payments are facilitated by <TextLink href="https://stripe.com/" target="_blank">Stripe</TextLink>.
+      </Text>
+      <Text class="px-2 indent-4">
+        The technology powering this website is <TextLink href="https://astro.build" target="_blank">Astro</TextLink>, a server-first framework that generates static pages. Hosting, deployment and analytics are all provided by <TextLink href="https://pages.cloudflare.com" target="_blank">Cloudflare</TextLink>.
       </Text>
       <Text class="px-2 indent-4">
         All content provided under the <TextLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 license</TextLink> and was last updated {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.

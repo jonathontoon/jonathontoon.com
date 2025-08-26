@@ -16,6 +16,7 @@ const { src, alt, class: className = "", ...attrs } = Astro.props;
     <Image 
       src={src} 
       alt={alt || ""}
+      class="w-[72px] h-[72px]"
       {...attrs}
     />
   ) : (

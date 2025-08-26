@@ -9,4 +9,4 @@ interface Props extends HTMLAttributes<"img"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<img class={cn("w-[4.5rem] h-[4.5rem] rounded-xl bg-stone-200 aspect-square", className)} {...attrs} />
+<img class={cn("w-12 h-12 rounded-xl bg-stone-200 aspect-square object-cover object-center", className)} {...attrs} />
