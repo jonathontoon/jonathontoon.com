@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+import TextButton from "./TextButton.astro";
+
+interface Props extends HTMLAttributes<"a"> {
+  class?: string | undefined;
+  href: string;
+  rel?: string | undefined;
+  target?: string | undefined;
+}
+
+const { class: className = "", rel = "preload", target = "_self", ...attrs } = Astro.props;
+---
+
+<TextButton class={cn("text-lg py-2.5 px-4 rounded-2xl", className)} rel={rel} target={target} {...attrs}><slot /></TextButton>

@@ -1,0 +1,13 @@
+---
+import HeadingSmall from './HeadingSmall.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<HeadingSmall class={`text-base font-semibold ${className}`} {...attrs}>
+  <slot />
+</HeadingSmall>

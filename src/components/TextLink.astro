@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+import Link from "./Link.astro";
+
+interface Props extends HTMLAttributes<"a"> {
+  class?: string | undefined;
+  href: string;
+  rel?: string | undefined;
+  target?: string | undefined;
+}
+
+const { class: className = "", rel = "preload", target = "_self", ...attrs } = Astro.props;
+---
+
+<Link class={cn("text-base text-stone-700 font-semibold underline hover:no-underline decoration-from-font underline-offset-2", className)} rel={rel} target={target} {...attrs}><slot /></Link>

@@ -1,0 +1,13 @@
+---
+import Text from './Text.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<Text class={`text-base text-stone-700 ${className}`} {...attrs}>
+  <slot />
+</Text>

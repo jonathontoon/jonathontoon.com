@@ -1,0 +1,14 @@
+- id: "x"
+  title: "Follow me on X"
+  url: "https://x.com/jonathontoon"
+  urlText: "Follow"
+
+- id: "linkedin"
+  title: "Connect on LinkedIn"
+  url: "https://www.linkedin.com/in/jonathontoon/"
+  urlText: "Connect"
+
+- id: "email"
+  title: "Send me an Email"
+  url: "mailto:hi@jonathontoon.com"
+  urlText: "Send"

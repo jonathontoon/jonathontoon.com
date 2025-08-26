@@ -5,7 +5,7 @@
   type: "project"
   logo: "images/logos/manifest.svg"
   url: "https://manifest.app"
-  urlText: "Visit"
+  urlText: "View"
 
 - id: "tweet-tray"
   title: "Tweet Tray"
@@ -14,4 +14,4 @@
   type: "project"
   logo: "images/logos/tweet-tray.svg"
   url: "https://github.com/jonathontoon/tweet-tray"
-  urlText: "Visit"
+  urlText: "View"

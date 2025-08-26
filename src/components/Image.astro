@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+
+interface Props extends HTMLAttributes<"img"> {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<img class={cn("w-[4.5rem] h-[4.5rem] rounded-xl bg-stone-200 aspect-square", className)} {...attrs} />

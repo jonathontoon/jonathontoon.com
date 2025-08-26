@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+import TextLink from "./TextLink.astro";
+
+interface Props extends HTMLAttributes<"a"> {
+  class?: string | undefined;
+  href: string;
+  rel?: string | undefined;
+  target?: string | undefined;
+}
+
+const { class: className = "", rel = "preload", target = "_self", ...attrs } = Astro.props;
+---
+
+<TextLink class={cn("text-xs text-stone-500 font-medium", className)} rel={rel} target={target} {...attrs}><slot /></TextLink>

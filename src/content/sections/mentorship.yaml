@@ -5,7 +5,7 @@
   type: "mentorship"
   logo: "images/logos/new-grad.svg"
   url: "https://cal.com/jonathontoon/new-grad"
-  urlText: "Book"
+  urlText: "Schedule"
 
 - id: "early-career"
   title: "Early-Career"
@@ -14,7 +14,7 @@
   type: "mentorship"
   logo: "images/logos/early-career.svg"
   url: "https://cal.com/jonathontoon/early-career"
-  urlText: "Book"
+  urlText: "Schedule"
 
 - id: "mid-career"
   title: "Mid-Career"
@@ -23,7 +23,7 @@
   type: "mentorship"
   logo: "images/logos/mid-career.svg"
   url: "https://cal.com/jonathontoon/mid-career"
-  urlText: "Book"
+  urlText: "Schedule"
 
 - id: "founder"
   title: "Founder"
@@ -32,4 +32,4 @@
   type: "mentorship"
   logo: "images/logos/founder.svg"
   url: "https://cal.com/jonathontoon/founder"
-  urlText: "Book"
+  urlText: "Schedule"

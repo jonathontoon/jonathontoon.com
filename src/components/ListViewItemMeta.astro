@@ -1,0 +1,13 @@
+---
+import TextSmall from './TextSmall.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<TextSmall class={`text-sm text-stone-500 ${className}`} {...attrs}>
+  <slot />
+</TextSmall>

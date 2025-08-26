@@ -1,4 +1,15 @@
 declare module 'astro:content' {
+	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+			components: import('astro').MDXInstance<{}>['components'];
+		}>;
+	}
+}
+
+declare module 'astro:content' {
 	export interface RenderResult {
 		Content: import('astro/runtime/server/index.js').AstroComponentFactory;
 		headings: import('astro').MarkdownHeading[];
@@ -162,43 +173,11 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"achievements": Record<string, {
-  id: string;
-  body?: string;
-  collection: "achievements";
-  data: InferEntrySchema<"achievements">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"appendix": Record<string, {
-  id: string;
-  body?: string;
-  collection: "appendix";
-  data: InferEntrySchema<"appendix">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"education": Record<string, {
-  id: string;
-  body?: string;
-  collection: "education";
-  data: InferEntrySchema<"education">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"experience": Record<string, {
+		"experience": Record<string, {
   id: string;
   body?: string;
   collection: "experience";
   data: InferEntrySchema<"experience">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"mentorship": Record<string, {
-  id: string;
-  body?: string;
-  collection: "mentorship";
-  data: InferEntrySchema<"mentorship">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -207,14 +186,6 @@ declare module 'astro:content' {
   body?: string;
   collection: "people";
   data: InferEntrySchema<"people">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"projects": Record<string, {
-  id: string;
-  body?: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -258,6 +229,6 @@ declare module 'astro:content' {
 		LiveContentConfig['collections'][C]['loader']
 	>;
 
-	export type ContentConfig = typeof import("../src/content/config.js");
+	export type ContentConfig = typeof import("../src/content.config.js");
 	export type LiveContentConfig = never;
 }

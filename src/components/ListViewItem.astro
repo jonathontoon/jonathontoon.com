@@ -1,0 +1,45 @@
+---
+import Link from './Link.astro';
+import View from './View.astro';
+
+interface Props {
+  href?: string;
+  target?: string;
+  class?: string;
+}
+
+const { 
+  href, 
+  target,
+  class: className = "", 
+  ...attrs 
+} = Astro.props;
+---
+
+<View class={className} {...attrs}>
+  {href ? (
+    <Link 
+      href={href}
+      target={target}
+      class="no-underline hover:bg-stone-950/5 transition-colors duration-300 ease-in-out p-2 flex flex-row gap-x-2 justify-between rounded-2xl"
+    >
+      <View class="flex flex-row gap-x-3">
+        <slot name="image" />
+        <View class="flex flex-col justify-center">
+          <slot name="content" />
+        </View>
+      </View>
+      <slot name="action" />
+    </Link>
+  ) : (
+    <View class="p-2 flex flex-row gap-x-2 justify-between">
+      <View class="flex flex-row gap-x-3">
+        <slot name="image" />
+        <View class="flex flex-col justify-center">
+          <slot name="content" />
+        </View>
+      </View>
+      <slot name="action" />
+    </View>
+  )}
+</View>

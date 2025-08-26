@@ -1,0 +1,13 @@
+---
+import View from './View.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<View class:list={["flex flex-col", className]} {...attrs}>
+  <slot />
+</View>

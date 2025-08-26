@@ -1,6 +1,8 @@
 ---
-import { Body, Main, Footer, Div, Link } from "@components/base";
-import { Breadcrumbs } from "@components/common";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Text from "@components/Text.astro";
+import TextLink from "@components/TextLink.astro";
+import View from "@components/View.astro";
 import "@fontsource-variable/archivo";
 import "@fontsource-variable/archivo-narrow";
 import { ClientRouter } from "astro:transitions";
@@ -166,25 +168,21 @@ const {
     <title>{title}</title>
     <ClientRouter />
   </head>
-  <Body class="bg-stone-50 text-stone-900">
-    <Main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-10 md:gap-y-14">
-      <Breadcrumbs />
+  <body class="bg-stone-50 text-stone-900">
+    <main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-8 md:gap-y-14">
       <slot />
-      <Footer class="flex flex-col gap-y-8 p-2">
-        <Div class="w-full text-stone-700">
-          All content provided under the <Link href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 license</Link> and was last updated {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.
-        </Div>
-        <Div class="flex flex-row w-full justify-between">
-          <Div class="text-stone-700">
+      <footer class="flex flex-col gap-y-8 p-1">
+        <View class="flex flex-row w-full justify-between">
+          <Text class="text-stone-700">
             Thanks for stopping by.
-          </Div>
-          <Div class="text-stone-700">
+          </Text>
+          <Text class="text-stone-700">
             © {new Date().getFullYear()} Jonathon Toon
-          </Div>
-        </Div>
-      </Footer>
-    </Main>
-  </Body>
+          </Text>
+        </View>
+      </footer>
+    </main>
+  </body>
 </html>
 
 {import.meta.env.PROD && (

@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+
+interface Props extends HTMLAttributes<"a"> {
+  class?: string | undefined;
+  href: string;
+  rel?: string | undefined;
+  target?: string | undefined;
+}
+
+const { class: className = "", rel = "preload", target = "_self", ...attrs } = Astro.props;
+---
+
+<a class={cn("cursor-pointer", className)} rel={rel} target={target} {...attrs}><slot /></a>

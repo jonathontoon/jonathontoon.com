@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon/components";
+import View from "./View.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<View class={className} {...attrs}>
+  <Icon name="stroke-arrow-small-right" class="text-stone-400 w-6 h-full aspect-square" />
+</View>

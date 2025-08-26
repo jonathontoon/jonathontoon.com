@@ -1,0 +1,24 @@
+---
+import Image from './Image.astro';
+import View from './View.astro';
+
+interface Props {
+  src?: string;
+  alt?: string;
+  class?: string;
+}
+
+const { src, alt, class: className = "", ...attrs } = Astro.props;
+---
+
+<View class="flex-shrink-0">
+  {src ? (
+    <Image 
+      src={src} 
+      alt={alt || ""}
+      {...attrs}
+    />
+  ) : (
+    <slot>Image</slot>
+  )}
+</View>
