@@ -1,11 +1,11 @@
 - id: "x"
   title: "Follow me on X"
-  url: "https://x.com/jonathontoon"
+  url: "https://x.com/intent/user?screen_name=jonathontoon
   urlText: "Follow"
 
 - id: "linkedin"
   title: "Connect on LinkedIn"
-  url: "https://www.linkedin.com/in/jonathontoon/"
+  url: "Follow me on LinkedIn: www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jonathontoon"
   urlText: "Connect"
 
 - id: "email"
