@@ -2,64 +2,24 @@
   "name": "Jonathon Toon",
   "short_name": "Jonathon Toon",
   "description": "Jonathon Toon is a software designer, leader and coach based in Aotearoa New Zealand.",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone",
   "orientation": "portrait",
   "start_url": "/",
   "scope": ".",
-  "icons": [
+    "icons": [
     {
-      "src": "/images/favicon-32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-192-maskable.png",
+      "src": "/images/favicon/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/images/favicon-384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/favicon-512-maskable.png",
+      "src": "/images/favicon/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "theme_color": "#3B82F6",
+  "background_color": "#3B82F6",
+  "display": "standalone"
 }
