@@ -23,18 +23,6 @@ importers:
       '@fontsource-variable/archivo':
         specifier: ^5.2.6
         version: 5.2.6
-      '@fontsource-variable/archivo-narrow':
-        specifier: ^5.2.6
-        version: 5.2.6
-      '@fontsource-variable/playfair':
-        specifier: ^5.2.6
-        version: 5.2.6
-      '@fontsource-variable/playfair-display':
-        specifier: ^5.2.6
-        version: 5.2.6
-      '@fontsource/ibm-plex-serif':
-        specifier: ^5.2.6
-        version: 5.2.6
       astro:
         specifier: 5.13.3
         version: 5.13.3(@types/node@20.14.2)(jiti@1.21.7)(lightningcss@1.29.3)(rollup@4.48.0)(terser@5.39.0)(typescript@5.9.2)(yaml@2.8.1)
@@ -555,20 +543,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource-variable/archivo-narrow@5.2.6':
-    resolution: {integrity: sha512-KXnVLLEFH3+67q/y+bbkwJonansr5PthZvX4L8+k/9OnIQWERT6Z2nmsi2HLipdb8H/PBbJpfmNE0XuRwY2vuQ==}
-
   '@fontsource-variable/archivo@5.2.6':
     resolution: {integrity: sha512-6l6yqhuNWkAz5anuWBYJ+TONIx7sWBJK5TKmMD0QsE1E8mkHYmzZAHM4K10EKeRVF6efh9n2XHIiSqDIGUmA4g==}
-
-  '@fontsource-variable/playfair-display@5.2.6':
-    resolution: {integrity: sha512-Uedpo4WwsWtobi1KMYGm9tlKcZJcD18EiBtPWhbbccT2u58qM7vwkOZGdrmdWVDhcEhjwNrqRUyZijwIFtsCcQ==}
-
-  '@fontsource-variable/playfair@5.2.6':
-    resolution: {integrity: sha512-6S8c/+CbPYdph+NAEjXfMO1CX0U4IPOE+5VxRIxy7/2IcfJM4zJDloCL5BUxyMuMXqasl7xqhszRRmT3zAgCtA==}
-
-  '@fontsource/ibm-plex-serif@5.2.6':
-    resolution: {integrity: sha512-/FyBI9qciE6QQjF0Q2Uul68tz9vPsGZgh13ftKcyHsGkP8TvcW+2H77KurT7rN3usWHEbGgjoUkSzUEG7z+fRQ==}
 
   '@iconify/tools@4.1.2':
     resolution: {integrity: sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA==}
@@ -3766,15 +3742,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.9':
     optional: true
 
-  '@fontsource-variable/archivo-narrow@5.2.6': {}
-
   '@fontsource-variable/archivo@5.2.6': {}
-
-  '@fontsource-variable/playfair-display@5.2.6': {}
-
-  '@fontsource-variable/playfair@5.2.6': {}
-
-  '@fontsource/ibm-plex-serif@5.2.6': {}
 
   '@iconify/tools@4.1.2':
     dependencies:
