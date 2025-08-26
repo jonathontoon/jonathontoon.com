@@ -1,5 +1,5 @@
 ---
-import HeadingSmall from './HeadingSmall.astro';
+import Text from './Text.astro';
 
 interface Props {
   class?: string;
@@ -8,6 +8,6 @@ interface Props {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<HeadingSmall class={`text-base font-semibold ${className}`} {...attrs}>
+<Text class={`text-base md:text-base font-semibold ${className}`} {...attrs}>
   <slot />
-</HeadingSmall>
+</Text>
