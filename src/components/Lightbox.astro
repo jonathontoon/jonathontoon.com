@@ -1,0 +1,54 @@
+---
+import Image from "./Image.astro";
+import View from "./View.astro";
+---
+
+<View id="lightbox" class="fixed top-0 left-0 right-0 bottom-0 bg-black/80 flex items-center justify-center z-[9999] opacity-0 invisible transition-opacity duration-200" style="width: 100vw; height: 100vh; position: fixed !important; transform: none !important; transform-style: flat !important; contain: none;">
+  <Image id="lightbox-image" class="md:rounded-xl max-w-screen-xl w-full object-contain cursor-pointer shadow-2xl" style="touch-action: pinch-zoom;" alt="" />
+</View>
+
+<script>
+  function initLightbox(): void {
+    const lightbox = document.getElementById('lightbox') as HTMLElement;
+    const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+
+    if (!lightbox || !lightboxImage) return;
+
+    function openLightbox(src: string, alt: string): void {
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightbox.classList.remove('opacity-0', 'invisible');
+    }
+
+    function closeLightbox(): void {
+      lightbox.classList.add('opacity-0', 'invisible');
+      setTimeout(() => {
+        lightboxImage.src = '';
+        lightboxImage.alt = '';
+      }, 300);
+    }
+
+    // Listen for custom lightbox events from WorkImage components
+    document.addEventListener('lightbox:open', (e: Event) => {
+      const customEvent = e as CustomEvent;
+      const { src, alt } = customEvent.detail;
+      openLightbox(src, alt);
+    });
+
+    // Close lightbox when clicking anywhere on it
+    lightbox.addEventListener('click', closeLightbox);
+
+    // Close lightbox with ESC key
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('invisible')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initLightbox);
+  
+  // Reinitialize on Astro page transitions
+  document.addEventListener('astro:page-load', initLightbox);
+</script>

@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { cn } from "@utils/cn";
-import Image from "./Image.astro";
+import SquareImage from "./SquareImage.astro";
 
 interface Props extends HTMLAttributes<"img"> {
   class?: string;
@@ -10,4 +10,4 @@ interface Props extends HTMLAttributes<"img"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<Image class={cn("w-12 h-12 rounded-lg bg-stone-200", className)} {...attrs} />
+<SquareImage class={cn("w-12 h-12 rounded-lg bg-stone-200", className)} {...attrs} />

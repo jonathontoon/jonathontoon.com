@@ -1,0 +1,46 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@utils/cn";
+import Image from "./Image.astro";
+import View from "./View.astro";
+
+interface Props extends HTMLAttributes<"img"> {
+  class?: string;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+<View class="relative md:-mx-12 transition-opacity hover:opacity-80 duration-200">
+  <Image 
+    class={cn("work-image w-full cursor-pointer p-4", className)} 
+    {...attrs}
+  />
+</View>
+
+<script>
+  function initWorkImage(): void {
+    const images = document.querySelectorAll('.work-image') as NodeListOf<HTMLImageElement>;
+
+    images.forEach(image => {
+      function openLightbox(): void {
+        const event = new CustomEvent('lightbox:open', {
+          detail: {
+            src: image.src,
+            alt: image.alt || ''
+          }
+        });
+        document.dispatchEvent(event);
+      }
+
+      // Remove any existing listeners to prevent duplicates
+      image.removeEventListener('click', openLightbox);
+      image.addEventListener('click', openLightbox);
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initWorkImage);
+  
+  // Reinitialize on Astro page transitions
+  document.addEventListener('astro:page-load', initWorkImage);
+</script>

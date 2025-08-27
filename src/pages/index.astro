@@ -14,7 +14,7 @@ import ListViewItemTitle from "@components/ListViewItemTitle.astro";
 import Text from "@components/Text.astro";
 import TextLink from "@components/TextLink.astro";
 import View from "@components/View.astro";
-import ViewGroup from "@components/ViewGroup.astro";
+import Group from "@components/Group.astro";
 import { Layout } from "@layouts";
 import { getSectionCollection } from "@utils/getSectionCollection";
 
@@ -34,176 +34,178 @@ const contactSection = await getSectionCollection("contact");
   canonicalUrl="https://www.jonathontoon.com/"
   ogImage="/images/og-image.png"
 >
-<ViewGroup>
+<Group class="gap-y-12 md:gap-y-14">
+  <Group>
       <View class="px-2">
-        <Link href="/" class="flex">
-          <ProfileImage />
-        </Link>
-      </View>
-    </ViewGroup>
-    <ViewGroup>
-      <HeadingLarge class="px-2 block md:hidden">Hello, I'm Jonathon.</HeadingLarge>
-      <HeadingLarge class="px-2 hidden md:block">Nice to meet you, I'm Jonathon.</HeadingLarge>
-      <Text class="px-2 block md:hidden">A versatile software designer and product leader, living in Aotearoa New Zealand.</Text>
-      <Text class="px-2 hidden md:block">A versatile software designer and product leader, living in Aotearoa New Zealand. I view good design as the result of even
-greater synthesis, the right mix of technology, context, and desire.</Text>
-      <Text class="indent-4 px-2">For the past 15 years, I've worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Text>
-      <Text class="indent-4 px-2">In that time, I've built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Text>  
-    </ViewGroup>
-    <ViewGroup>
-      <Heading class="text-xl tracking-normal px-2">Experience</Heading>
-      <ListView>
-        {experienceSection.map((experience) => (
-          <ListViewItem href={experience.slug ? `/experience/${experience.slug}` : undefined}>
-            <ListViewItemImage 
-              slot="image" 
-              src={experience.logo ? `/${experience.logo}` : undefined}
-              alt={`${experience.title} logo`}
-            />
-            <Fragment slot="content">
-              <ListViewItemTitle>{experience.title}</ListViewItemTitle>
-              <ListViewDescription class="text-stone-700 md:hidden">{experience.subtitle}</ListViewDescription>
-              <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{experience.date}</ListViewItemMeta>
-              <ListViewDescription class="text-stone-500 hidden md:block">{`${experience.subtitle} · ${experience.date}`}</ListViewDescription>
-            </Fragment>
-            {experience.url && (
-              <ListViewItemLink href={experience.url} target="_blank" slot="action">
-                {experience.urlText}
-              </ListViewItemLink>
-            )}
-          </ListViewItem>
-        ))}
-      </ListView>
-    </ViewGroup>
-    <ViewGroup>
-      <Heading class="text-xl tracking-normal px-2">Mentorship</Heading>
-      <Text class="px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Text>
-      <ListView>
-        {mentorshipSection.map((mentorship) => (
-          <ListViewItem>
-            <ListViewItemImage 
-              slot="image" 
-              src={mentorship.logo ? `/${mentorship.logo}` : undefined}
-              alt={`${mentorship.title} logo`}
-            />
-            <Fragment slot="content">
-              <ListViewItemTitle>{mentorship.title}</ListViewItemTitle>
-              <ListViewDescription class="text-stone-700 md:hidden">{mentorship.subtitle}</ListViewDescription>
-              <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{mentorship.date}</ListViewItemMeta>
-              <ListViewDescription class="text-stone-500 hidden md:block">{`${mentorship.subtitle} · ${mentorship.date}`}</ListViewDescription>
-            </Fragment>
-            {mentorship.url && (
-              <ListViewItemLink href={mentorship.url} target="_blank" slot="action">
-                {mentorship.urlText}
-              </ListViewItemLink>
-            )}
-          </ListViewItem>
-        ))}
-      </ListView>
-    </ViewGroup>
-    <ViewGroup>
-      <Heading class="text-xl tracking-normal px-2">Projects</Heading>
-      <Text class="px-2 pb-2">I believe designers, like artists, should understand the materials they work with. That’s why I love building things myself. Whether to explore new technology or just for fun.</Text>
-      <ListView>
-        {projectsSection.map((project) => (
-          <ListViewItem>
-            <ListViewItemImage 
-              slot="image" 
-              src={project.logo ? `/${project.logo}` : undefined}
-              alt={`${project.title} logo`}
-            />
-            <Fragment slot="content">
-              <ListViewItemTitle>{project.title}</ListViewItemTitle>
-              <ListViewDescription class="text-stone-700 md:hidden">{project.subtitle}</ListViewDescription>
-              <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{project.date}</ListViewItemMeta>
-              <ListViewDescription class="text-stone-500 hidden md:block">{`${project.subtitle} · ${project.date}`}</ListViewDescription>
-            </Fragment>
-            {project.url && (
-              <ListViewItemLink href={project.url} target="_blank" slot="action">
-                {project.urlText}
-              </ListViewItemLink>
-            )}
-          </ListViewItem>
-        ))}
-      </ListView>
-    </ViewGroup>
-    <ViewGroup>
-      <Heading class="text-xl tracking-normal px-2">Patents, Publications, Awards</Heading>
-      <Text class="px-2 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Text>
-      <ListView>
-        {achievementsSection.map((achievement) => (
-          <ListViewItem>
-            <ListViewItemImage 
-              slot="image" 
-              src={achievement.logo ? `/${achievement.logo}` : undefined}
-              alt={`${achievement.title} logo`}
-            />
-            <Fragment slot="content">
-              <ListViewItemTitle>{achievement.title}</ListViewItemTitle>
-              <ListViewDescription class="text-stone-700 md:hidden">{achievement.subtitle}</ListViewDescription>
-              <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{achievement.date}</ListViewItemMeta>
-              <ListViewDescription class="text-stone-500 hidden md:block">{`${achievement.subtitle} · ${achievement.date}`}</ListViewDescription>
-            </Fragment>
-            {achievement.url && (
-              <ListViewItemLink href={achievement.url} target="_blank" slot="action">
-                {achievement.urlText}
-              </ListViewItemLink>
-            )}
-          </ListViewItem>
-        ))}
-      </ListView>
-    </ViewGroup>
-    <ViewGroup>
-      <Heading class="text-xl tracking-normal px-2">Education</Heading>
-      <ListView>
-        {educationSection.map((education) => (
-          <ListViewItem>
-            <ListViewItemImage 
-              slot="image" 
-              src={education.logo ? `/${education.logo}` : undefined}
-              alt={`${education.title} logo`}
-            />
-            <Fragment slot="content">
-              <ListViewItemTitle>{education.title}</ListViewItemTitle>
-              <ListViewDescription class="text-stone-700 md:hidden">{education.subtitle}</ListViewDescription>
-              <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{education.date}</ListViewItemMeta>
-              <ListViewDescription class="text-stone-500 hidden md:block">{`${education.subtitle} · ${education.date}`}</ListViewDescription>
-            </Fragment>
-            {education.url && (
-              <ListViewItemLink href={education.url} target="_blank" slot="action">
-                {education.urlText}
-              </ListViewItemLink>
-            )}
-          </ListViewItem>
-        ))}
-      </ListView>
-    </ViewGroup>
-    <ViewGroup>
-      <Heading class="text-xl tracking-normal px-2">Contact</Heading>
-      <ListView>
-        {contactSection.map((contact) => (
-          <ListViewItem href={contact.url} target="_blank">
-            <Fragment slot="content">
-              <ListViewItemTitle>{contact.title}</ListViewItemTitle>
-            </Fragment>
-            <ListViewItemChevron slot="action" />
-          </ListViewItem>
-        ))}
-      </ListView>
-    </ViewGroup>
-    <ViewGroup>
-      <Heading class="text-xl tracking-normal px-2">Colophon</Heading>
-      <Text class="px-2">
-        Each page is typeset in Archivo by <TextLink href="https://www.omnibus-type.com/" target="">Omnibus Type</TextLink>. Try it yourself on <TextLink href="https://fonts.google.com/specimen/Archivo?query=Omnibus-Type" target="_blank">Google Fonts</TextLink>. The icons used are from the wonderful <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">Amicons</TextLink> set, by Marek Minor. Grab your own copy <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">today</TextLink>.
-      </Text>
-      <Text class="px-2 indent-4">
-        Meeting scheduling and video calls for mentorship sessions are handled through <TextLink href="https://refer.cal.com/jonathontoon" target="_blank">Cal.com</TextLink>, while all payments are facilitated by <TextLink href="https://stripe.com/" target="_blank">Stripe</TextLink>.
-      </Text>
-      <Text class="px-2 indent-4">
-        The technology powering this website is <TextLink href="https://astro.build" target="_blank">Astro</TextLink>, a server-first framework that generates static pages. Hosting, deployment and analytics are all provided by <TextLink href="https://pages.cloudflare.com" target="_blank">Cloudflare</TextLink>.
-      </Text>
-      <Text class="px-2 indent-4">
-        All content provided under the <TextLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 license</TextLink> and was last updated {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.
-      </Text>
-    </ViewGroup>
+          <Link href="/" class="flex">
+            <ProfileImage />
+          </Link>
+        </View>
+      </Group>
+      <Group>
+        <HeadingLarge class="px-2 block md:hidden">Hello, I'm Jonathon.</HeadingLarge>
+        <HeadingLarge class="px-2 hidden md:block">Nice to meet you, I'm Jonathon.</HeadingLarge>
+        <Text class="px-2 block md:hidden">A versatile software designer and product leader, living in Aotearoa New Zealand.</Text>
+        <Text class="px-2 hidden md:block">A versatile software designer and product leader, living in Aotearoa New Zealand. I view good design as the result of even
+  greater synthesis, the right mix of technology, context, and desire.</Text>
+        <Text class="indent-4 px-2">For the past 15 years, I've worked across the organizational stack cultivating and leading teams, while designing and shipping products at innovative companies in Asia, Oceania, and North America.</Text>
+        <Text class="indent-4 px-2">In that time, I've built deep, hands-on expertise in product, brand and engineering, and learned how to bring those disciplines together to create products that make a real impact.</Text>  
+      </Group>
+      <Group>
+        <Heading class="text-xl tracking-normal px-2">Experience</Heading>
+        <ListView>
+          {experienceSection.map((experience) => (
+            <ListViewItem href={experience.slug ? `/experience/${experience.slug}` : undefined}>
+              <ListViewItemImage 
+                slot="image" 
+                src={experience.logo ? `/${experience.logo}` : undefined}
+                alt={`${experience.title} logo`}
+              />
+              <Fragment slot="content">
+                <ListViewItemTitle>{experience.title}</ListViewItemTitle>
+                <ListViewDescription class="text-stone-700 md:hidden">{experience.subtitle}</ListViewDescription>
+                <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{experience.date}</ListViewItemMeta>
+                <ListViewDescription class="text-stone-500 hidden md:block">{`${experience.subtitle} · ${experience.date}`}</ListViewDescription>
+              </Fragment>
+              {experience.url && (
+                <ListViewItemLink href={experience.url} target="_blank" slot="action">
+                  {experience.urlText}
+                </ListViewItemLink>
+              )}
+            </ListViewItem>
+          ))}
+        </ListView>
+      </Group>
+      <Group>
+        <Heading class="text-xl tracking-normal px-2">Mentorship</Heading>
+        <Text class="px-2 pb-2">Through both one-off and recurring sessions I help designers, product people and founders navigate challenges through practical, honest, actionable mentorship.</Text>
+        <ListView>
+          {mentorshipSection.map((mentorship) => (
+            <ListViewItem>
+              <ListViewItemImage 
+                slot="image" 
+                src={mentorship.logo ? `/${mentorship.logo}` : undefined}
+                alt={`${mentorship.title} logo`}
+              />
+              <Fragment slot="content">
+                <ListViewItemTitle>{mentorship.title}</ListViewItemTitle>
+                <ListViewDescription class="text-stone-700 md:hidden">{mentorship.subtitle}</ListViewDescription>
+                <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{mentorship.date}</ListViewItemMeta>
+                <ListViewDescription class="text-stone-500 hidden md:block">{`${mentorship.subtitle} · ${mentorship.date}`}</ListViewDescription>
+              </Fragment>
+              {mentorship.url && (
+                <ListViewItemLink href={mentorship.url} target="_blank" slot="action">
+                  {mentorship.urlText}
+                </ListViewItemLink>
+              )}
+            </ListViewItem>
+          ))}
+        </ListView>
+      </Group>
+      <Group>
+        <Heading class="text-xl tracking-normal px-2">Projects</Heading>
+        <Text class="px-2 pb-2">I believe designers, like artists, should understand the materials they work with. That’s why I love building things myself. Whether to explore new technology or just for fun.</Text>
+        <ListView>
+          {projectsSection.map((project) => (
+            <ListViewItem>
+              <ListViewItemImage 
+                slot="image" 
+                src={project.logo ? `/${project.logo}` : undefined}
+                alt={`${project.title} logo`}
+              />
+              <Fragment slot="content">
+                <ListViewItemTitle>{project.title}</ListViewItemTitle>
+                <ListViewDescription class="text-stone-700 md:hidden">{project.subtitle}</ListViewDescription>
+                <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{project.date}</ListViewItemMeta>
+                <ListViewDescription class="text-stone-500 hidden md:block">{`${project.subtitle} · ${project.date}`}</ListViewDescription>
+              </Fragment>
+              {project.url && (
+                <ListViewItemLink href={project.url} target="_blank" slot="action">
+                  {project.urlText}
+                </ListViewItemLink>
+              )}
+            </ListViewItem>
+          ))}
+        </ListView>
+      </Group>
+      <Group>
+        <Heading class="text-xl tracking-normal px-2">Patents, Publications, Awards</Heading>
+        <Text class="px-2 pb-2">Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Text>
+        <ListView>
+          {achievementsSection.map((achievement) => (
+            <ListViewItem>
+              <ListViewItemImage 
+                slot="image" 
+                src={achievement.logo ? `/${achievement.logo}` : undefined}
+                alt={`${achievement.title} logo`}
+              />
+              <Fragment slot="content">
+                <ListViewItemTitle>{achievement.title}</ListViewItemTitle>
+                <ListViewDescription class="text-stone-700 md:hidden">{achievement.subtitle}</ListViewDescription>
+                <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{achievement.date}</ListViewItemMeta>
+                <ListViewDescription class="text-stone-500 hidden md:block">{`${achievement.subtitle} · ${achievement.date}`}</ListViewDescription>
+              </Fragment>
+              {achievement.url && (
+                <ListViewItemLink href={achievement.url} target="_blank" slot="action">
+                  {achievement.urlText}
+                </ListViewItemLink>
+              )}
+            </ListViewItem>
+          ))}
+        </ListView>
+      </Group>
+      <Group>
+        <Heading class="text-xl tracking-normal px-2">Education</Heading>
+        <ListView>
+          {educationSection.map((education) => (
+            <ListViewItem>
+              <ListViewItemImage 
+                slot="image" 
+                src={education.logo ? `/${education.logo}` : undefined}
+                alt={`${education.title} logo`}
+              />
+              <Fragment slot="content">
+                <ListViewItemTitle>{education.title}</ListViewItemTitle>
+                <ListViewDescription class="text-stone-700 md:hidden">{education.subtitle}</ListViewDescription>
+                <ListViewItemMeta class="text-stone-500 text-sm md:hidden">{education.date}</ListViewItemMeta>
+                <ListViewDescription class="text-stone-500 hidden md:block">{`${education.subtitle} · ${education.date}`}</ListViewDescription>
+              </Fragment>
+              {education.url && (
+                <ListViewItemLink href={education.url} target="_blank" slot="action">
+                  {education.urlText}
+                </ListViewItemLink>
+              )}
+            </ListViewItem>
+          ))}
+        </ListView>
+      </Group>
+      <Group>
+        <Heading class="text-xl tracking-normal px-2">Contact</Heading>
+        <ListView>
+          {contactSection.map((contact) => (
+            <ListViewItem href={contact.url} target="_blank">
+              <Fragment slot="content">
+                <ListViewItemTitle>{contact.title}</ListViewItemTitle>
+              </Fragment>
+              <ListViewItemChevron slot="action" />
+            </ListViewItem>
+          ))}
+        </ListView>
+      </Group>
+      <Group>
+        <Heading class="text-xl tracking-normal px-2">Colophon</Heading>
+        <Text class="px-2">
+          Each page is typeset in Archivo by <TextLink href="https://www.omnibus-type.com/" target="">Omnibus Type</TextLink>. Try it yourself on <TextLink href="https://fonts.google.com/specimen/Archivo?query=Omnibus-Type" target="_blank">Google Fonts</TextLink>. The icons used are from the wonderful <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">Amicons</TextLink> set, by Marek Minor. Grab your own copy <TextLink href="https://minoradventures.lemonsqueezy.com?aff=zOG5V" target="_blank">today</TextLink>.
+        </Text>
+        <Text class="px-2 indent-4">
+          Meeting scheduling and video calls for mentorship sessions are handled through <TextLink href="https://refer.cal.com/jonathontoon" target="_blank">Cal.com</TextLink>, while all payments are facilitated by <TextLink href="https://stripe.com/" target="_blank">Stripe</TextLink>.
+        </Text>
+        <Text class="px-2 indent-4">
+          The technology powering this website is <TextLink href="https://astro.build" target="_blank">Astro</TextLink>, a server-first framework that generates static pages. Hosting, deployment and analytics are all provided by <TextLink href="https://pages.cloudflare.com" target="_blank">Cloudflare</TextLink>.
+        </Text>
+        <Text class="px-2 indent-4">
+          All content provided under the <TextLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0 license</TextLink> and was last updated {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}.
+        </Text>
+      </Group>
+  </Group>
 </Layout>

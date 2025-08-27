@@ -2,8 +2,10 @@
 import Text from "@components/Text.astro";
 import View from "@components/View.astro";
 import GlobalStyles from "@components/GlobalStyles.astro";
+import Lightbox from "@components/Lightbox.astro";
 import "@fontsource-variable/archivo";
 import { ClientRouter } from "astro:transitions";
+import ScrollView from "@components/ScrollView.astro";
 
 interface Props {
   title: string;
@@ -28,7 +30,7 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes" />
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
     <meta
       name="description"
@@ -97,20 +99,23 @@ const {
     <ClientRouter />
     <GlobalStyles />
   </head>
-  <body class="bg-stone-50 text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50">
-    <main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-12 md:gap-y-14">
-      <slot />
-      <footer class="flex flex-col gap-y-8 p-1">
-        <View class="flex flex-row w-full justify-between">
-          <Text class="text-stone-700">
-            Thanks for stopping by.
-          </Text>
-          <Text class="text-stone-700">
-            © {new Date().getFullYear()} Jonathon Toon
-          </Text>
-        </View>
-      </footer>
-    </main>
+  <body class="overflow-hidden bg-stone-50 text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50">
+    <ScrollView>
+      <main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12">
+        <slot />
+        <footer class="flex flex-col gap-y-8 p-1">
+          <View class="flex flex-row w-full justify-between">
+            <Text class="text-stone-700">
+              Thanks for stopping by.
+            </Text>
+            <Text class="text-stone-700">
+              © {new Date().getFullYear()} Jonathon Toon
+            </Text>
+          </View>
+        </footer>
+      </main>
+    </ScrollView>
+    <Lightbox />
   </body>
 </html>
 
