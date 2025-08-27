@@ -69,12 +69,3 @@
   logo: "images/logos/resn.svg"
   url: "https://resn.co.nz"
   urlText: "Visit"
-
-- id: "vuw"
-  title: "VUW"
-  subtitle: "Web Designer"
-  date: "2009 — 2012"
-  type: "experience"
-  logo: "images/logos/vuw.svg"
-  url: "https://www.wgtn.ac.nz/explore/degrees/design-innovation/overview"
-  urlText: "Visit"
