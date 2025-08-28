@@ -1,0 +1,70 @@
+---
+import Link from "./Link.astro";
+import View from "./View.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const isHomePage = currentPath === "/" || currentPath === "";
+---
+
+{!isHomePage && (
+  <View
+    id="close"
+    class="fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] md:bottom-[calc(2rem+env(safe-area-inset-bottom,0px))] left-1/2 z-50 -translate-x-1/2 transform transition-transform duration-300 ease-in-out"
+  >
+    <Link
+      href="/"
+      class="hover:translate-y-0.5 flex flex-row items-center gap-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 px-4 py-3 text-base font-semibold text-center text-stone-50 transition-all duration-200 ease-in-out"
+    >
+      <Icon
+        name="solid-x"
+        class="h-8 w-8"
+      />
+    </Link>
+  </View>
+)}
+
+<script>
+  function initializeCloseButton(): void {
+    const closeButton = document.getElementById("close");
+    const scrollContainer = document.querySelector(".overflow-y-auto") as HTMLElement;
+    
+    if (!closeButton || !scrollContainer) return;
+
+    let lastScrollY = 0;
+    let ticking = false;
+
+    function updateCloseButton(): void {
+      if (!closeButton) return;
+      
+      const currentScrollY = scrollContainer.scrollTop;
+      
+      if (currentScrollY <= 50) {
+        closeButton.style.transform = "translateX(-50%) translateY(0)";
+      } else if (currentScrollY > lastScrollY) {
+        closeButton.style.transform = "translateX(-50%) translateY(250%)";
+      } else if (currentScrollY < lastScrollY) {
+        closeButton.style.transform = "translateX(-50%) translateY(0)";
+      }
+      
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    function requestTick(): void {
+      if (!ticking) {
+        requestAnimationFrame(updateCloseButton);
+        ticking = true;
+      }
+    }
+
+    scrollContainer.addEventListener("scroll", requestTick, { passive: true });
+  }
+
+  document.addEventListener("DOMContentLoaded", initializeCloseButton);
+  document.addEventListener("astro:page-load", initializeCloseButton);
+</script>
