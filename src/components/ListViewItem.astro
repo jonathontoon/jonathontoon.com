@@ -17,9 +17,9 @@ const { href, target, class: className = "", ...attrs } = Astro.props;
       <Link
         href={href}
         target={target}
-        class="flex flex-row justify-between gap-x-3 rounded-3xl p-2 no-underline transition-colors duration-300 ease-in-out hover:bg-stone-950/5"
+        class="flex flex-row justify-between gap-x-2 md:gap-x-4 rounded-3xl p-2 no-underline transition-colors duration-300 ease-in-out hover:bg-stone-950/5"
       >
-        <View class="flex flex-row gap-x-4">
+        <View class="flex flex-row gap-x-3 md:gap-x-4">
           <slot name="image" />
           <View class="flex flex-col justify-center gap-y-2 md:gap-y-1.5">
             <slot name="content" />
@@ -28,8 +28,8 @@ const { href, target, class: className = "", ...attrs } = Astro.props;
         <slot name="action" />
       </Link>
     ) : (
-      <View class="flex flex-row justify-between gap-x-4 p-2">
-        <View class="flex flex-row gap-x-3">
+      <View class="flex flex-row justify-between gap-x-2 md:gap-x-4 p-2">
+        <View class="flex flex-row gap-x-3 md:gap-x-4">
           <slot name="image" />
           <View class="flex flex-col justify-center gap-y-2 md:gap-y-1.5">
             <slot name="content" />

@@ -9,7 +9,7 @@
 
 - id: "moneytree-return"
   title: "Moneytree"
-  subtitle: "Fintech · Japan"
+  subtitle: "Open Banking · Japan"
   date: "2021 — 2024"
   type: "experience"
   logo: "images/logos/moneytree.svg"
@@ -18,7 +18,7 @@
 
 - id: "rainforest-qa"
   title: "Rainforest QA"
-  subtitle: "Dev Tools · Australia"
+  subtitle: "QA Tools · Australia"
   date: "2020 — 2021"
   type: "experience"
   logo: "images/logos/rainforest-qa.svg"
@@ -27,7 +27,7 @@
 
 - id: "moneytree"
   title: "Moneytree"
-  subtitle: "Fintech · Japan"
+  subtitle: "Open Banking · Japan"
   date: "2016 — 2019"
   type: "experience"
   logo: "images/logos/moneytree-original.svg"
@@ -36,7 +36,7 @@
 
 - id: "origami"
   title: "Origami"
-  subtitle: "Fintech · Japan"
+  subtitle: "Payments · Japan"
   date: "2015 — 2016"
   type: "experience"
   logo: "images/logos/origami.svg"
@@ -45,7 +45,7 @@
 
 - id: "xero"
   title: "Xero"
-  subtitle: "Fintech · United States"
+  subtitle: "Accounting · United States"
   date: "2014 — 2015"
   type: "experience"
   logo: "images/logos/xero.svg"

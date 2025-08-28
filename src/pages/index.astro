@@ -46,7 +46,7 @@ const educationSection = await getSectionCollection("education");
       >Hello,<br/>I’m Jonathon.</HeadingLarge
     >
     <Text class="px-2"
-      >I'm a software designer and product leader based in Aotearoa New Zealand. I see great design as the product of even greater synthesis, the process of balancing technology, context, and human desire.</Text
+      >I'm a software designer and product leader based in Aotearoa New Zealand. I see great design as the result of even greater synthesis, the process of balancing technology, context, and human desire.</Text
     >
     <View class="flex flex-col md:flex-row justify-start px-2 pt-8 gap-4">
       <TextButtonLarge href="https://x.com/intent/user?screen_name=jonathontoon" target="_blank" class="gap-3 flex items-center justify-center text-stone-50 bg-stone-900 hover:bg-stone-700">
@@ -72,8 +72,8 @@ const educationSection = await getSectionCollection("education");
   </Group>
   <Group>
     <Heading class="px-2">Experience</Heading>
-    <Text class="px-2"
-      >For over 15 years, I’ve helped companies across Asia, Oceania, and North America create meaningful, practical, products. Through a blend of design, product, and engineering, my work spans hands-on design, building teams, and taking products from 0 to 1.</Text
+    <Text class="px-2 pb-2"
+      >For over 15 years I’ve worked with companies across Asia, Oceania, and North America. Through a combination of hands on design, product, and engineering expertise I've lead and cultivated teams, while taking products from 0 to 1.</Text
     >    <ListView>
       {
         experienceSection.map((experience) => (
@@ -109,7 +109,7 @@ const educationSection = await getSectionCollection("education");
   <Group>
     <Heading class="px-2">Mentorship</Heading>
     <Text class="px-2 pb-2"
-      >I help designers, product people, and founders untangle challenges through honest, actionable mentorship. Whether you’re just starting out or navigating career complexities, you’ll get direct advice and support tailored to your goals.</Text
+      >I help designers, product people, and founders untangle challenges through honest, actionable mentorship. Whether someone is starting their career or navigating an existing one, I offer advice and support tailored to any goal.</Text
     >
     <ListView>
       {
@@ -143,7 +143,7 @@ const educationSection = await getSectionCollection("education");
   <Group>
     <Heading class="px-2">Projects</Heading>
     <Text class="px-2 pb-2"
-      >I believe great design comes from engaging deeply with the materials at hand, which is why I love to build things and experiment, whether to try out new technology or just for fun.</Text
+      >I believe a designer is made better by deeply engaging with the materials at hand, which is why I love to build things and experiment.</Text
     >
     <ListView>
       {
@@ -211,7 +211,7 @@ const educationSection = await getSectionCollection("education");
     </View>
   </Group>
   <Group>
-    <Heading class="px-2">Education</Heading>
+    <Heading class="px-2 pb-2">Education</Heading>
     <ListView>
       {
         educationSection.map((education) => (
@@ -253,7 +253,7 @@ const educationSection = await getSectionCollection("education");
     </View>
   </Group>
   <Group>
-    <Heading class="px-2">Colophon</Heading>
+    <Heading class="px-2 pb-2">Colophon</Heading>
     <Text class="px-2">
       Each page is typeset in Archivo by <TextLink
         href="https://www.omnibus-type.com/"
