@@ -1,5 +1,5 @@
 import { defineCollection, z, reference } from "astro:content";
-import { glob, file } from "astro/loaders";
+import { glob } from "astro/loaders";
 
 const dateSchema = z
   .string()
@@ -16,31 +16,31 @@ const slugSchema = z
   )
   .optional();
 
-const experience = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/experience" }),
-  schema: z.object({
-    title: z.string(),
-    focus: z.string().optional(),
-    location: z.array(z.string()).optional(),
-    startDate: dateSchema.optional(),
-    endDate: dateSchema.optional(),
-    industry: z.array(z.string()).optional(),
-    people: z.array(reference("people")).optional(),
-    logo: imageSchema.optional(),
-    slug: slugSchema
-  })
-});
+// const experience = defineCollection({
+//   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/experience" }),
+//   schema: z.object({
+//     title: z.string(),
+//     focus: z.string().optional(),
+//     location: z.array(z.string()).optional(),
+//     startDate: dateSchema.optional(),
+//     endDate: dateSchema.optional(),
+//     industry: z.array(z.string()).optional(),
+//     people: z.array(reference("people")).optional(),
+//     logo: imageSchema.optional(),
+//     slug: slugSchema
+//   })
+// });
 
-const people = defineCollection({
-  loader: glob({ pattern: "**/*.yaml", base: "./src/content/people" }),
-  schema: z.object({
-    name: z.string(),
-    url: urlSchema,
-    image: imageSchema,
-    description: z.string().optional(),
-    slug: slugSchema
-  })
-});
+// const people = defineCollection({
+//   loader: glob({ pattern: "**/*.yaml", base: "./src/content/people" }),
+//   schema: z.object({
+//     name: z.string(),
+//     url: urlSchema,
+//     image: imageSchema,
+//     description: z.string().optional(),
+//     slug: slugSchema
+//   })
+// });
 
 // Sections collection with separate files for each type
 const sections = defineCollection({
@@ -66,7 +66,7 @@ const sections = defineCollection({
 });
 
 export const collections = {
-  experience,
-  people,
+  // experience,
+  // people,
   sections
 };

@@ -5,8 +5,8 @@ import View from "./View.astro";
 
 <View
   id="lightbox"
-  class="cursor-pointer invisible fixed bottom-0 left-0 right-0 top-0 z-[9999] flex items-center justify-center bg-black/80 opacity-0 transition-opacity duration-200"
-  style="width: 100vw; height: 100vh; position: fixed !important; transform: none !important; transform-style: flat !important; contain: none;"
+  class="ease-in-out cursor-pointer invisible !fixed bottom-0 left-0 right-0 top-0 z-[9999] flex items-center justify-center bg-black/80 opacity-0 transition-opacity duration-200 w-screen h-screen"
+  style="transform: none !important; transform-style: flat !important; contain: none;"
 >
   <Image
     id="lightbox-image"

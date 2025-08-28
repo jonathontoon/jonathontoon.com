@@ -3,10 +3,10 @@ import Text from "@components/Text.astro";
 import View from "@components/View.astro";
 import GlobalStyles from "@components/GlobalStyles.astro";
 import Lightbox from "@components/Lightbox.astro";
-import ReturnToHome from "@components/ReturnToHome.astro";
 import "@fontsource-variable/archivo";
 import { ClientRouter } from "astro:transitions";
 import ScrollView from "@components/ScrollView.astro";
+import CloseButton from "@components/CloseButton.astro";
 
 interface Props {
   title: string;
@@ -117,7 +117,7 @@ const {
       </main>
     </ScrollView>
     <Lightbox />
-    <ReturnToHome currentPath={Astro.url.pathname} />
+    <CloseButton currentPath={Astro.url.pathname} />
   </body>
 </html>
 

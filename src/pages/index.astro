@@ -8,7 +8,6 @@ import ListViewDescription from "@components/ListViewDescription.astro";
 import ListViewItem from "@components/ListViewItem.astro";
 import ListViewItemChevron from "@components/ListViewItemChevron.astro";
 import ListViewItemImage from "@components/ListViewItemImage.astro";
-import ListViewItemLink from "@components/ListViewItemLink.astro";
 import ListViewItemMeta from "@components/ListViewItemMeta.astro";
 import ListViewItemTitle from "@components/ListViewItemTitle.astro";
 import Text from "@components/Text.astro";
@@ -17,18 +16,19 @@ import View from "@components/View.astro";
 import Group from "@components/Group.astro";
 import { Layout } from "@layouts";
 import { getSectionCollection } from "@utils/getSectionCollection";
+import TextButtonLarge from "@components/TextButtonLarge.astro";
+import { Icon } from "astro-icon/components";
 
 const experienceSection = await getSectionCollection("experience");
 const mentorshipSection = await getSectionCollection("mentorship");
 const projectsSection = await getSectionCollection("projects");
 const achievementsSection = await getSectionCollection("achievements");
 const educationSection = await getSectionCollection("education");
-const contactSection = await getSectionCollection("contact");
 ---
 
 <Layout
-  title="Jonathon Toon | Software Designer, Product Leader"
-  description="Jonathon Toon is a versatile software designer and product leader, living in Aotearoa New Zealand."
+  title="Home | Jonathon Toon | Software Designer, Product Leader"
+  description="Jonathon Toon is a versatile software designer and product leader, currently based in Aotearoa New Zealand."
   keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
   twitterHandle="@jonathontoon"
   canonicalUrl="https://www.jonathontoon.com/"
@@ -48,9 +48,9 @@ const contactSection = await getSectionCollection("contact");
     <HeadingLarge class="hidden px-2 md:block"
       >Nice to meet you, I'm Jonathon.</HeadingLarge
     >
-    <Text class="block px-2"
-      >A versatile software designer and product leader, living in Aotearoa New
-      Zealand.</Text
+    <Text class="px-2"
+      >A versatile software designer and product leader, currently based in Aotearoa New
+      Zealand. I believe good design is the result of great synthesis, the right mix of technology, context, and desire.</Text
     >
     <Text class="px-2 indent-4"
       >For the past 15 years, I've worked across the organizational stack
@@ -60,8 +60,24 @@ const contactSection = await getSectionCollection("contact");
     <Text class="px-2 indent-4"
       >In that time, I've built deep, hands-on expertise in product, brand and
       engineering, and learned how to bring those disciplines together to create
-      products that make a real impact.</Text
+      products that matter.</Text
     >
+    <View class="flex flex-col md:flex-row justify-start px-2 pt-8 gap-4">
+      <TextButtonLarge href="/work" class="gap-3 flex items-center justify-center  text-stone-50 bg-stone-900 hover:bg-stone-700">
+        <Icon
+          name="solid-book-open"
+          class="h-6 w-6"
+        />
+        View Work
+      </TextButtonLarge>
+      <TextButtonLarge href="mailto:hi@jonathontoon.com" class="gap-3 flex items-center justify-center text-stone-900 hover:text-stone-700 border-2 border-stone-900 hover:border-stone-700 bg-transparent hover:bg-transparent">
+        <Icon
+          name="stroke-email"
+          class="h-6 w-6"
+        />
+        Get In Touch
+      </TextButtonLarge>
+    </View>
   </Group>
   <Group>
     <View class="px-2">
@@ -70,17 +86,12 @@ const contactSection = await getSectionCollection("contact");
   </Group>
   <Group>
     <Heading class="px-2 text-xl tracking-normal">Experience</Heading>
-    <Text class="px-2 pb-2">
-      My career has shaped my view that good design doesn't simply just happen. It is the result of achieving the
-      right balance of technology, context, and desire through synthesis.
-    </Text>
     <ListView>
       {
         experienceSection.map((experience) => (
           <ListViewItem
-            href={
-              experience.slug ? `/experience/${experience.slug}` : undefined
-            }
+            target="_blank"
+            href={experience.url}
           >
             <ListViewItemImage
               slot="image"
@@ -97,6 +108,7 @@ const contactSection = await getSectionCollection("contact");
               </ListViewItemMeta>
               <ListViewDescription class="hidden text-stone-500 md:block">{`${experience.subtitle} · ${experience.date}`}</ListViewDescription>
             </Fragment>
+            <ListViewItemChevron slot="action" />
           </ListViewItem>
         ))
       }
@@ -117,7 +129,7 @@ const contactSection = await getSectionCollection("contact");
     <ListView>
       {
         mentorshipSection.map((mentorship) => (
-          <ListViewItem>
+          <ListViewItem href={mentorship.url} target="_blank">
             <ListViewItemImage
               slot="image"
               src={mentorship.logo ? `/${mentorship.logo}` : undefined}
@@ -133,15 +145,7 @@ const contactSection = await getSectionCollection("contact");
               </ListViewItemMeta>
               <ListViewDescription class="hidden text-stone-500 md:block">{`${mentorship.subtitle} · ${mentorship.date}`}</ListViewDescription>
             </Fragment>
-            {mentorship.url && (
-              <ListViewItemLink
-                href={mentorship.url}
-                target="_blank"
-                slot="action"
-              >
-                {mentorship.urlText}
-              </ListViewItemLink>
-            )}
+            <ListViewItemChevron slot="action" />
           </ListViewItem>
         ))
       }
@@ -155,14 +159,14 @@ const contactSection = await getSectionCollection("contact");
   <Group>
     <Heading class="px-2 text-xl tracking-normal">Projects</Heading>
     <Text class="px-2 pb-2"
-      >I believe designers, like artists, should understand the materials they
+      >I believe designers should intimately understand the materials they
       work with. That’s why I love building things myself. Whether to explore
       new technology or just for fun.</Text
     >
     <ListView>
       {
         projectsSection.map((project) => (
-          <ListViewItem>
+          <ListViewItem href={project.url} target="_blank">
             <ListViewItemImage
               slot="image"
               src={project.logo ? `/${project.logo}` : undefined}
@@ -178,15 +182,7 @@ const contactSection = await getSectionCollection("contact");
               </ListViewItemMeta>
               <ListViewDescription class="hidden text-stone-500 md:block">{`${project.subtitle} · ${project.date}`}</ListViewDescription>
             </Fragment>
-            {project.url && (
-              <ListViewItemLink
-                href={project.url}
-                target="_blank"
-                slot="action"
-              >
-                {project.urlText}
-              </ListViewItemLink>
-            )}
+            <ListViewItemChevron slot="action" />
           </ListViewItem>
         ))
       }
@@ -208,7 +204,7 @@ const contactSection = await getSectionCollection("contact");
     <ListView>
       {
         achievementsSection.map((achievement) => (
-          <ListViewItem>
+          <ListViewItem href={achievement.url} target="_blank">
             <ListViewItemImage
               slot="image"
               src={achievement.logo ? `/${achievement.logo}` : undefined}
@@ -224,15 +220,7 @@ const contactSection = await getSectionCollection("contact");
               </ListViewItemMeta>
               <ListViewDescription class="hidden text-stone-500 md:block">{`${achievement.subtitle} · ${achievement.date}`}</ListViewDescription>
             </Fragment>
-            {achievement.url && (
-              <ListViewItemLink
-                href={achievement.url}
-                target="_blank"
-                slot="action"
-              >
-                {achievement.urlText}
-              </ListViewItemLink>
-            )}
+            <ListViewItemChevron slot="action" />
           </ListViewItem>
         ))
       }
@@ -248,7 +236,7 @@ const contactSection = await getSectionCollection("contact");
     <ListView>
       {
         educationSection.map((education) => (
-          <ListViewItem>
+          <ListViewItem href={education.url} target="_blank">
             <ListViewItemImage
               slot="image"
               src={education.logo ? `/${education.logo}` : undefined}
@@ -264,6 +252,7 @@ const contactSection = await getSectionCollection("contact");
               </ListViewItemMeta>
               <ListViewDescription class="hidden text-stone-500 md:block">{`${education.subtitle} · ${education.date}`}</ListViewDescription>
             </Fragment>
+            <ListViewItemChevron slot="action" />
           </ListViewItem>
         ))
       }
