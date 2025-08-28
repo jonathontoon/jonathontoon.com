@@ -1,5 +1,5 @@
 - id: "vuw"
-  title: "VUW"
+  title: "Victoria University of Wellington"
   subtitle: "Bachelor of Design Innovation"
   date: "2009 — 2012"
   type: "education"
@@ -8,7 +8,7 @@
   logo: "images/logos/vuw.svg"
 
 - id: "nmit"
-  title: "NMIT"
+  title: "Nelson Marlborough Institute of Technology"
   subtitle: "Diploma in Graphics and Multimedia"
   date: "2008"
   type: "education"

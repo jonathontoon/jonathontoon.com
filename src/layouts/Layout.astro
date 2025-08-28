@@ -3,6 +3,7 @@ import Text from "@components/Text.astro";
 import View from "@components/View.astro";
 import GlobalStyles from "@components/GlobalStyles.astro";
 import Lightbox from "@components/Lightbox.astro";
+import ReturnToHome from "@components/ReturnToHome.astro";
 import "@fontsource-variable/archivo";
 import { ClientRouter } from "astro:transitions";
 import ScrollView from "@components/ScrollView.astro";
@@ -99,9 +100,9 @@ const {
     <ClientRouter />
     <GlobalStyles />
   </head>
-  <body class="overflow-hidden bg-stone-50 text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50">
+  <body class="overflow-hidden bg-stone-50 text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50 max-h-screen">
     <ScrollView>
-      <main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12">
+      <main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-12 md:gap-y-14"> 
         <slot />
         <footer class="flex flex-col gap-y-8 p-1">
           <View class="flex flex-row w-full justify-between">
@@ -116,6 +117,7 @@ const {
       </main>
     </ScrollView>
     <Lightbox />
+    <ReturnToHome currentPath={Astro.url.pathname} />
   </body>
 </html>
 

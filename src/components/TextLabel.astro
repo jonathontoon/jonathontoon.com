@@ -9,6 +9,9 @@ interface Props extends HTMLAttributes<"label"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<label class={cn("text-pretty leading-snug text-stone-700 text-base", className)} {...attrs}>
+<label
+  class={cn("text-pretty leading-snug text-stone-700 text-base", className)}
+  {...attrs}
+>
   <slot />
 </label>

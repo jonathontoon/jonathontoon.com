@@ -10,5 +10,8 @@ const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <View class={className} {...attrs}>
-  <Icon name="stroke-arrow-small-right" class="text-stone-400 w-6 h-full aspect-square" />
+  <Icon
+    name="stroke-arrow-small-right"
+    class="aspect-square h-full w-6 text-stone-400"
+  />
 </View>

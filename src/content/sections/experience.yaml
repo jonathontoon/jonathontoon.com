@@ -35,7 +35,7 @@
   urlText: "Visit"
 
 - id: "origami"
-  title: Origami
+  title: "Origami"
   subtitle: "Product Designer"
   date: "2015 — 2016"
   type: "experience"
@@ -44,7 +44,7 @@
   urlText: "Visit"
 
 - id: "xero"
-  title: Xero
+  title: "Xero"
   subtitle: "Mobile Product Designer"
   date: "2014 — 2015"
   type: "experience"

@@ -1,0 +1,71 @@
+---
+import Link from "./Link.astro";
+import View from "./View.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const isHomePage = currentPath === "/" || currentPath === "";
+---
+
+{!isHomePage && (
+  <View
+    id="return-to-home"
+    class="fixed left-1/2 z-50 -translate-x-1/2 transform transition-transform duration-300 ease-in-out"
+    style="bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));"
+  >
+    <Link
+      href="/"
+      class="flex flex-row items-center gap-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 px-4 py-3 text-base font-semibold text-center text-stone-50 transition-all duration-200"
+    >
+      <Icon
+        name="solid-x"
+        class="h-6 w-6"
+      />
+    </Link>
+  </View>
+)}
+
+<script>
+  function initReturnToHome(): void {
+    const returnToHome = document.getElementById("return-to-home");
+    const scrollContainer = document.querySelector(".overflow-y-auto") as HTMLElement;
+    
+    if (!returnToHome || !scrollContainer) return;
+
+    let lastScrollY = 0;
+    let ticking = false;
+
+    function updateReturnToHome(): void {
+      if (!returnToHome) return;
+      
+      const currentScrollY = scrollContainer.scrollTop;
+      
+      if (currentScrollY <= 50) {
+        returnToHome.style.transform = "translateX(-50%) translateY(0)";
+      } else if (currentScrollY > lastScrollY) {
+        returnToHome.style.transform = "translateX(-50%) translateY(250%)";
+      } else if (currentScrollY < lastScrollY) {
+        returnToHome.style.transform = "translateX(-50%) translateY(0)";
+      }
+      
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    function requestTick(): void {
+      if (!ticking) {
+        requestAnimationFrame(updateReturnToHome);
+        ticking = true;
+      }
+    }
+
+    scrollContainer.addEventListener("scroll", requestTick, { passive: true });
+  }
+
+  document.addEventListener("DOMContentLoaded", initReturnToHome);
+  document.addEventListener("astro:page-load", initReturnToHome);
+</script>

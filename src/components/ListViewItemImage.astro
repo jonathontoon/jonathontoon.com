@@ -1,6 +1,6 @@
 ---
-import SquareImage from './SquareImage.astro';
-import View from './View.astro';
+import SquareImage from "./SquareImage.astro";
+import View from "./View.astro";
 
 interface Props {
   src?: string;
@@ -12,14 +12,16 @@ const { src, alt, class: className = "", ...attrs } = Astro.props;
 ---
 
 <View class="flex-shrink-0">
-  {src ? (
-    <SquareImage 
-      src={src} 
-      alt={alt || ""}
-      class="w-[72px] h-[72px]"
-      {...attrs}
-    />
-  ) : (
-    <slot>Image</slot>
-  )}
+  {
+    src ? (
+      <SquareImage
+        src={src}
+        alt={alt || ""}
+        class="h-[72px] w-[72px]"
+        {...attrs}
+      />
+    ) : (
+      <slot>Image</slot>
+    )
+  }
 </View>

@@ -1,6 +1,6 @@
 ---
-import TextButton from './TextButton.astro';
-import View from './View.astro';
+import TextButton from "./TextButton.astro";
+import View from "./View.astro";
 
 interface Props {
   href: string;
@@ -9,11 +9,9 @@ interface Props {
 
 const { href, target = "_blank", ...attrs } = Astro.props;
 ---
+
 <View class="flex items-center justify-center" {...attrs}>
-  <TextButton 
-    href={href} 
-    target={target}
-  >
+  <TextButton href={href} target={target}>
     <slot>Visit</slot>
   </TextButton>
 </View>
