@@ -1,6 +1,6 @@
 - id: "fast-company-2024"
   title: "Fast Company"
-  subtitle: "Article · By JR Raphael"
+  subtitle: "Article"
   date: "2024"
   type: "achievement"
   logo: "images/logos/fast-company.svg"
@@ -8,8 +8,8 @@
   urlText: "Read"
 
 - id: "nikkei"
-  title: "Nihon Keizai Shimbun"
-  subtitle: "Article · Morning Edition"
+  title: "Nikkei"
+  subtitle: "Article"
   date: "2023"
   type: "article"
   logo: "images/logos/nikkei.svg"
@@ -18,7 +18,7 @@
 
 - id: "us10140373B2"
   title: "US10140373B2"
-  subtitle: "Patent · Facebook"
+  subtitle: "Patent"
   date: "2014"
   type: "achievement"
   logo: "images/logos/facebook.svg"
@@ -27,7 +27,7 @@
 
 - id: "omg-ubuntu"
   title: "OMG Ubuntu"
-  subtitle: "Article · By Joey Sneddon"
+  subtitle: "Article"
   date: "2019"
   type: "achievement"
   logo: "images/logos/omg-ubuntu.svg"
@@ -36,7 +36,7 @@
 
 - id: "windows-central"
   title: "Windows Central"
-  subtitle: "Article · By Dan Thorp-Lancaster"
+  subtitle: "Article"
   date: "2018"
   type: "achievement"
   logo: "images/logos/windows-central.svg"

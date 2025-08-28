@@ -17,7 +17,7 @@ const { src, alt, class: className = "", ...attrs } = Astro.props;
       <SquareImage
         src={src}
         alt={alt || ""}
-        class="h-[72px] w-[72px]"
+        class="w-20 h-20 md:w-24 md:h-24"
         {...attrs}
       />
     ) : (

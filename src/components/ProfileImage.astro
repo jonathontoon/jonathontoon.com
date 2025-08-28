@@ -9,15 +9,15 @@ interface Props {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<View class={`hover:translate-y-0.5 duration-200 ease-in-out flex relative group ${className}`}>
+<View class={`hover:translate-y-0.5 duration-300 ease-in-out flex relative group ${className}`}>
   <SquareImageLarge
-    class="bg-blue-500 group-hover:invisible"
+    class="bg-blue-500 group-hover:invisible h-32 w-32"
     src="/images/profile.png"
     alt="Jonathon Toon"
     {...attrs}
   />
   <SquareImageLarge
-    class="invisible absolute inset-0 h-24 w-24 bg-blue-500 group-hover:visible"
+    class="invisible absolute inset-0 h-32 w-32 bg-blue-500 group-hover:visible"
     src="/images/profile-blink.png"
     alt="Jonathon Toon"
     {...attrs}

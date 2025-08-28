@@ -102,15 +102,12 @@ const {
   </head>
   <body class="overflow-hidden bg-stone-50 text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50 max-h-screen">
     <ScrollView>
-      <main class="flex flex-col max-w-xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-12 md:gap-y-14"> 
+      <main class="flex flex-col max-w-2xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-12 md:gap-y-14"> 
         <slot />
-        <footer class="flex flex-col gap-y-8 p-1">
-          <View class="flex flex-row w-full justify-between">
+        <footer class="flex flex-col gap-8 p-1">
+          <View class="flex flex-col md:flex-row gap-2 w-full justify-between">
             <Text class="text-stone-700">
-              Thanks for stopping by.
-            </Text>
-            <Text class="text-stone-700">
-              © {new Date().getFullYear()} Jonathon Toon
+              © {new Date().getFullYear()}. Thanks for stopping by.
             </Text>
           </View>
         </footer>

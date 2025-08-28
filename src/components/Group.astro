@@ -9,6 +9,6 @@ interface Props extends HTMLAttributes<"section"> {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<section class={cn("flex flex-col gap-y-2", className)} {...attrs}>
+<section class={cn("flex flex-col gap-y-4", className)} {...attrs}>
   <slot />
 </section>
