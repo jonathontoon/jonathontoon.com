@@ -35,7 +35,7 @@ const educationSection = await getSectionCollection("education");
   ogImage="/images/og-image.png"
 >
   <Group>
-    <View class="px-2">
+    <View class="flex px-2 shrink-1">
       <Link href="/" class="flex">
         <ProfileImage />
       </Link>
@@ -50,18 +50,18 @@ const educationSection = await getSectionCollection("education");
     >
     <View class="flex flex-col md:flex-row justify-start px-2 pt-8 gap-4">
       <TextButtonLarge href="https://x.com/intent/user?screen_name=jonathontoon" target="_blank" class="gap-3 flex items-center justify-center text-stone-50 bg-stone-900 hover:bg-stone-700">
-        Follow me on
         <Icon
           name="stroke-x-brand"
           class="h-6 w-6"
         />
+        Follow Me
       </TextButtonLarge>
       <TextButtonLarge href="mailto:hi@jonathontoon.com" class="gap-3 flex items-center justify-center text-stone-900 hover:text-stone-700 border-2 border-stone-900 hover:border-stone-700 bg-transparent hover:bg-transparent">
-        Get in touch
         <Icon
           name="stroke-email"
           class="h-6 w-6"
         />
+        Work With Me
       </TextButtonLarge>
     </View>
   </Group>
@@ -73,7 +73,7 @@ const educationSection = await getSectionCollection("education");
   <Group>
     <Heading class="px-2">Experience</Heading>
     <Text class="px-2"
-      >For over 15 years, I've worked up and down the organizational stack as both an individual contributor and director. I have cultivated and led teams while designing and shipping products at companies across Asia, Oceania, and North America.</Text
+      >With over 15 years bridging design and product, I’ve supported companies across Asia, Oceania, and North America to create meaningful products. My efforts span hands-on design, cultivating teams and 0→1 products, always with an eye for practical solutions.</Text
     >
     <ListView>
       {
@@ -110,9 +110,7 @@ const educationSection = await getSectionCollection("education");
   <Group>
     <Heading class="px-2">Mentorship</Heading>
     <Text class="px-2 pb-2"
-      >Through both one-off and recurring sessions I mentor designers, product
-      people and founders navigate challenges through practical, honest,
-      actionable mentorship.</Text
+      >I help designers, product people, and founders untangle challenges through honest, actionable mentorship. Whether you’re just starting out or navigating career complexities, you’ll get direct advice and support tailored to your goals.</Text
     >
     <ListView>
       {
@@ -146,9 +144,7 @@ const educationSection = await getSectionCollection("education");
   <Group>
     <Heading class="px-2">Projects</Heading>
     <Text class="px-2 pb-2"
-      >I strongly believe that to be an effective designer we must intimately understand the materials we
-      work with. That’s why I love building things. Whether to explore
-      new technology or just for fun.</Text
+      >I believe great design comes from engaging deeply with the materials at hand, which is why I love to build things and experiment, whether chasing new tech or just for fun.</Text
     >
     <ListView>
       {
@@ -184,8 +180,7 @@ const educationSection = await getSectionCollection("education");
       >Achievements</Heading
     >
     <Text class="px-2 pb-2"
-      >Highlights from my career and education which have been picked up in the
-      press, recognized with awards, or even patented.</Text
+      >My work has been spotlighted in the press, recognized with awards, and granted patents.</Text
     >
     <ListView>
       {
@@ -218,9 +213,6 @@ const educationSection = await getSectionCollection("education");
   </Group>
   <Group>
     <Heading class="px-2">Education</Heading>
-    <Text class="px-2 pb-2">
-      My formal education and academic achievements that helped shape my design and technology foundations.
-    </Text>
     <ListView>
       {
         educationSection.map((education) => (
