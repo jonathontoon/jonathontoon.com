@@ -49,19 +49,19 @@ const educationSection = await getSectionCollection("education");
       >I'm a versatile software designer and product leader, based in Aotearoa New Zealand. I believe good design exists, more than anything else, as a result of great synthesis. The right blend of technology, context, and desire.</Text
     >
     <View class="flex flex-col md:flex-row justify-start px-2 pt-8 gap-4">
-      <TextButtonLarge href="/work" class="gap-3 flex items-center justify-center text-stone-50 bg-stone-900 hover:bg-stone-700">
+      <TextButtonLarge href="https://x.com/intent/user?screen_name=jonathontoon" target="_blank" class="gap-3 flex items-center justify-center text-stone-50 bg-stone-900 hover:bg-stone-700">
+        Follow me on
         <Icon
-          name="solid-book-open"
+          name="stroke-x-brand"
           class="h-6 w-6"
         />
-        View My Work
       </TextButtonLarge>
       <TextButtonLarge href="mailto:hi@jonathontoon.com" class="gap-3 flex items-center justify-center text-stone-900 hover:text-stone-700 border-2 border-stone-900 hover:border-stone-700 bg-transparent hover:bg-transparent">
+        Get in touch
         <Icon
           name="stroke-email"
           class="h-6 w-6"
         />
-        Get In Touch
       </TextButtonLarge>
     </View>
   </Group>
@@ -293,7 +293,7 @@ const educationSection = await getSectionCollection("education");
         href="https://astro.build"
         target="_blank">Astro</TextLink
       >, a server-first framework that generates static pages. Hosting,
-      deployment and analytics are all provided by <TextLink
+      and deployment are handled by <TextLink
         href="https://pages.cloudflare.com"
         target="_blank">Cloudflare</TextLink
       >.
