@@ -11,13 +11,13 @@ const { class: className = "", ...attrs } = Astro.props;
 
 <View class={`hover:translate-y-0.5 duration-300 ease-in-out flex relative group ${className}`}>
   <SquareImageLarge
-    class="bg-blue-500 group-hover:invisible h-32 w-32"
+    class="bg-blue-500 group-hover:invisible h-32 w-32 md:h-36 md:w-36"
     src="/images/profile.png"
     alt="Jonathon Toon"
     {...attrs}
   />
   <SquareImageLarge
-    class="invisible absolute inset-0 h-32 w-32 bg-blue-500 group-hover:visible"
+    class="invisible absolute inset-0 h-32 w-32 md:h-36 md:w-36 bg-blue-500 group-hover:visible"
     src="/images/profile-blink.png"
     alt="Jonathon Toon"
     {...attrs}
