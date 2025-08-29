@@ -100,13 +100,13 @@ const {
     <ClientRouter />
     <GlobalStyles />
   </head>
-  <body class="overflow-hidden bg-stone-50 text-stone-900 font-sans selection:bg-stone-900 selection:text-stone-50 max-h-screen">
+  <body class="overflow-hidden bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-sans selection:bg-stone-900 selection:text-stone-50 dark:selection:bg-stone-100 dark:selection:text-stone-900 max-h-screen">
     <ScrollView>
       <main class="flex flex-col max-w-2xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-12 md:gap-y-14"> 
         <slot />
         <footer class="flex flex-col gap-8 p-1">
           <View class="flex flex-col md:flex-row gap-2 w-full justify-between">
-            <Text class="text-stone-700">
+            <Text class="text-stone-700 dark:text-stone-400">
               © {new Date().getFullYear()}. Thanks for stopping by.
             </Text>
           </View>
