@@ -19,8 +19,8 @@ interface Props {
   twitterCreator?: string;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = "Jonathon Toon | A software designer, leader and coach based in Aotearoa New Zealand.",
   canonicalUrl,
   ogImage,
@@ -37,21 +37,22 @@ const siteUrl = "https://www.jonathontoon.com";
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Jonathon Toon",
-  "url": siteUrl,
-  "image": `${siteUrl}/images/profile.png`,
-  "description": "Software designer, product leader and coach based in Aotearoa New Zealand",
-  "jobTitle": "Software Designer & Product Leader",
-  "worksFor": {
+  name: "Jonathon Toon",
+  url: siteUrl,
+  image: `${siteUrl}/images/profile.png`,
+  description:
+    "Software designer, product leader and coach based in Aotearoa New Zealand",
+  jobTitle: "Software Designer & Product Leader",
+  worksFor: {
     "@type": "Organization",
-    "name": "Freelance"
+    name: "Freelance"
   },
-  "address": {
+  address: {
     "@type": "PostalAddress",
-    "addressCountry": "NZ",
-    "addressRegion": "Aotearoa New Zealand"
+    addressCountry: "NZ",
+    addressRegion: "Aotearoa New Zealand"
   },
-  "sameAs": [
+  sameAs: [
     "https://x.com/intent/user?screen_name=jonathontoon",
     "https://www.linkedin.com/in/jonathontoon",
     "https://bsky.app/profile/jonathontoon.com"
@@ -61,18 +62,18 @@ const personSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Jonathon Toon",
-  "url": siteUrl,
-  "description": description,
-  "author": {
+  name: "Jonathon Toon",
+  url: siteUrl,
+  description: description,
+  author: {
     "@type": "Person",
-    "name": "Jonathon Toon"
+    name: "Jonathon Toon"
   },
-  "potentialAction": {
+  potentialAction: {
     "@type": "SearchAction",
-    "target": {
+    target: {
       "@type": "EntryPoint",
-      "urlTemplate": `${siteUrl}/?q={search_term_string}`
+      urlTemplate: `${siteUrl}/?q={search_term_string}`
     },
     "query-input": "required name=search_term_string"
   }
@@ -81,20 +82,20 @@ const websiteSchema = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Jonathon Toon",
-  "url": siteUrl,
-  "logo": `${siteUrl}/images/profile.png`,
-  "description": "Software design and product leadership consultancy",
-  "founder": {
+  name: "Jonathon Toon",
+  url: siteUrl,
+  logo: `${siteUrl}/images/profile.png`,
+  description: "Software design and product leadership consultancy",
+  founder: {
     "@type": "Person",
-    "name": "Jonathon Toon"
+    name: "Jonathon Toon"
   },
-  "address": {
+  address: {
     "@type": "PostalAddress",
-    "addressCountry": "NZ",
-    "addressRegion": "Aotearoa New Zealand"
+    addressCountry: "NZ",
+    addressRegion: "Aotearoa New Zealand"
   },
-  "sameAs": [
+  sameAs: [
     "https://x.com/intent/user?screen_name=jonathontoon",
     "https://www.linkedin.com/in/jonathontoon",
     "https://bsky.app/profile/jonathontoon.com"
@@ -104,43 +105,44 @@ const organizationSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Software Design & Product Leadership",
-  "description": "Expert software design, product leadership, and mentorship services for startups and established companies",
-  "provider": {
+  name: "Software Design & Product Leadership",
+  description:
+    "Expert software design, product leadership, and mentorship services for startups and established companies",
+  provider: {
     "@type": "Person",
-    "name": "Jonathon Toon"
+    name: "Jonathon Toon"
   },
-  "serviceType": "Software Design Consulting",
-  "areaServed": {
+  serviceType: "Software Design Consulting",
+  areaServed: {
     "@type": "Country",
-    "name": "New Zealand"
+    name: "New Zealand"
   },
-  "hasOfferCatalog": {
+  hasOfferCatalog: {
     "@type": "OfferCatalog",
-    "name": "Design & Leadership Services",
-    "itemListElement": [
+    name: "Design & Leadership Services",
+    itemListElement: [
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Software Design",
-          "description": "Product design and user experience consulting"
+          name: "Software Design",
+          description: "Product design and user experience consulting"
         }
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Product Leadership",
-          "description": "Strategic product leadership and team coaching"
+          name: "Product Leadership",
+          description: "Strategic product leadership and team coaching"
         }
       },
       {
         "@type": "Offer",
-        "itemOffered": {
+        itemOffered: {
           "@type": "Service",
-          "name": "Mentorship",
-          "description": "Career mentorship for designers and product people"
+          name: "Mentorship",
+          description: "Career mentorship for designers and product people"
         }
       }
     ]
@@ -153,24 +155,30 @@ const serviceSchema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=yes" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://static.hotjar.com; connect-src 'self' https://cloud.umami.is https://static.hotjar.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com;" />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cloud.umami.is https://static.hotjar.com; connect-src 'self' https://cloud.umami.is https://static.hotjar.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com;"
+    />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+    />
     <meta name="author" content="Jonathon Toon" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="language" content="English" />
     <meta name="geo.region" content="NZ" />
     <meta name="geo.placename" content="New Zealand" />
     <meta name="geo.position" content="-41.2865;174.7762" />
     <meta name="ICBM" content="-41.2865, 174.7762" />
-    <meta
-      name="description"
-      content={description}
-    />
-    <meta
-      content={keywords}
-      name="keywords"
-    />
+    <meta name="description" content={description} />
+    <meta content={keywords} name="keywords" />
     <meta content="dark light" name="color-scheme" />
     <meta content="#fafaf9" name="theme-color" />
     <meta content="Jonathon Toon" name="apple-mobile-web-app-title" />
@@ -181,41 +189,44 @@ const serviceSchema = {
     />
     <meta content="Jonathon Toon" name="application-name" />
     <meta content={title} property="og:title" />
-    <meta
-      content={description}
-      property="og:description"
-    />
+    <meta content={description} property="og:description" />
     <meta content="website" property="og:type" />
     <meta content="Jonathon Toon" property="og:site_name" />
     <meta content="en_US" property="og:locale" />
     <meta content={currentUrl} property="og:url" />
-    {ogImage && (
-      <>
-        <meta content={ogImage} property="og:image" />
-        <meta content={ogImageAlt} property="og:image:alt" />
-        <meta content="image/png" property="og:image:type" />
-        <meta content="1200" property="og:image:width" />
-        <meta content="630" property="og:image:height" />
-      </>
-    )}
+    {
+      ogImage && (
+        <>
+          <meta content={ogImage} property="og:image" />
+          <meta content={ogImageAlt} property="og:image:alt" />
+          <meta content="image/png" property="og:image:type" />
+          <meta content="1200" property="og:image:width" />
+          <meta content="630" property="og:image:height" />
+        </>
+      )
+    }
     <meta content="summary_large_image" name="twitter:card" />
     <meta content={twitterHandle} name="twitter:site" />
     <meta content={twitterCreator} name="twitter:creator" />
     <meta content={currentUrl} name="twitter:url" />
     <meta content={title} name="twitter:title" />
-    <meta
-      content={description}
-      name="twitter:description"
-    />
-    {ogImage && (
-      <>
-        <meta content={ogImage} name="twitter:image" />
-        <meta content={ogImageAlt} name="twitter:image:alt" />
-      </>
-    )}
+    <meta content={description} name="twitter:description" />
+    {
+      ogImage && (
+        <>
+          <meta content={ogImage} name="twitter:image" />
+          <meta content={ogImageAlt} name="twitter:image:alt" />
+        </>
+      )
+    }
     <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/images/favicon/favicon-96x96.png"
+    />
     <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
     <link href="/jonathontoon.webmanifest" rel="manifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -228,25 +239,43 @@ const serviceSchema = {
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
+
     <!-- Structured Data -->
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(websiteSchema)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)}></script>
-    
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(personSchema)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(websiteSchema)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(organizationSchema)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(serviceSchema)}
+    />
+
     <ClientRouter />
     <GlobalStyles />
   </head>
-  <body class="overflow-hidden bg-stone-50 dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-sans selection:bg-stone-900 selection:text-stone-50 dark:selection:bg-stone-100 dark:selection:text-stone-900 max-h-screen">
+  <body
+    class="max-h-screen overflow-hidden bg-stone-50 font-sans text-stone-900 selection:bg-stone-900 selection:text-stone-50 dark:bg-stone-900 dark:text-stone-100 dark:selection:bg-stone-100 dark:selection:text-stone-900"
+  >
     <ScrollView>
-      <main class="flex flex-col max-w-2xl px-3 md:px-6 mx-auto py-5 md:py-12 gap-y-12 md:gap-y-14"> 
+      <main
+        class="mx-auto flex max-w-2xl flex-col gap-y-12 px-3 py-5 md:gap-y-14 md:px-6 md:py-12"
+      >
         <slot />
         <footer class="flex flex-col gap-8 p-1">
-          <View class="flex flex-col md:flex-row gap-2 w-full justify-between">
-            <Text>
-              Thanks for stopping by.
-            </Text>
+          <View class="flex w-full flex-col justify-between gap-2 md:flex-row">
+            <Text> Thanks for stopping by. </Text>
           </View>
         </footer>
       </main>
