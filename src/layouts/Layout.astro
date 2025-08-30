@@ -190,11 +190,13 @@ const serviceSchema = {
     <meta content="en_US" property="og:locale" />
     <meta content={currentUrl} property="og:url" />
     {ogImage && (
-      <meta content={ogImage} property="og:image" />
-      <meta content={ogImageAlt} property="og:image:alt" />
-      <meta content="image/png" property="og:image:type" />
-      <meta content="1200" property="og:image:width" />
-      <meta content="630" property="og:image:height" />
+      <>
+        <meta content={ogImage} property="og:image" />
+        <meta content={ogImageAlt} property="og:image:alt" />
+        <meta content="image/png" property="og:image:type" />
+        <meta content="1200" property="og:image:width" />
+        <meta content="630" property="og:image:height" />
+      </>
     )}
     <meta content="summary_large_image" name="twitter:card" />
     <meta content={twitterHandle} name="twitter:site" />
@@ -206,8 +208,10 @@ const serviceSchema = {
       name="twitter:description"
     />
     {ogImage && (
-      <meta content={ogImage} name="twitter:image" />
-      <meta content={ogImageAlt} name="twitter:image:alt" />
+      <>
+        <meta content={ogImage} name="twitter:image" />
+        <meta content={ogImageAlt} name="twitter:image:alt" />
+      </>
     )}
     <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />

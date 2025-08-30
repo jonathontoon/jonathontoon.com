@@ -35,52 +35,55 @@ const educationSection = await getSectionCollection("education");
   ogImage="/images/og-image.png"
 >
   <Group>
-    <View class="flex px-2 shrink-1">
+    <View class="shrink-1 flex px-2">
       <Link href="/" class="flex">
         <ProfileImage />
       </Link>
     </View>
   </Group>
   <Group>
-    <HeadingLarge class="px-2"
-      >Hello,<br/>I’m Jonathon.</HeadingLarge
-    >
+    <HeadingLarge class="px-2">Hello,<br />I’m Jonathon.</HeadingLarge>
     <Text class="px-2"
-      >I'm a software designer and product leader based in Aotearoa New Zealand. I see great design as the result of even greater synthesis, the process of balancing technology, context, and human desire.</Text
+      >I'm a software designer and product leader based in Aotearoa New Zealand.
+      I see great design as the result of even greater synthesis, the process of
+      balancing technology, context, and human desire.</Text
     >
-    <View class="flex flex-col md:flex-row justify-start px-2 pt-8 gap-4">
-      <TextButtonLarge href="https://x.com/intent/user?screen_name=jonathontoon" target="_blank" rel="me" class="gap-3 flex items-center justify-center text-stone-50 dark:text-stone-900 bg-stone-900 dark:bg-stone-100 hover:bg-stone-700 dark:hover:bg-stone-300">
-        <Icon
-          name="stroke-x-brand"
-          class="h-6 w-6"
-        />
+    <View class="flex flex-col justify-start gap-4 px-2 pt-8 md:flex-row">
+      <TextButtonLarge
+        href="https://x.com/intent/user?screen_name=jonathontoon"
+        target="_blank"
+        rel="me"
+        class="flex items-center justify-center gap-3 bg-stone-900 text-stone-50 hover:bg-stone-700 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-stone-300"
+      >
+        <Icon name="stroke-x-brand" class="h-6 w-6" />
         Follow Me
       </TextButtonLarge>
-      <TextButtonLarge href="mailto:hi@jonathontoon.com" class="gap-3 flex items-center justify-center text-stone-900 dark:text-stone-100 hover:text-stone-700 dark:hover:text-stone-300 border-2 border-stone-900 dark:border-stone-100 hover:border-stone-700 dark:hover:border-stone-300 bg-transparent hover:bg-transparent">
-        <Icon
-          name="stroke-email"
-          class="h-6 w-6"
-        />
+      <TextButtonLarge
+        href="mailto:hi@jonathontoon.com"
+        class="flex items-center justify-center gap-3 border-2 border-stone-900 bg-transparent text-stone-900 hover:border-stone-700 hover:bg-transparent hover:text-stone-700 dark:border-stone-100 dark:text-stone-100 dark:hover:border-stone-300 dark:hover:text-stone-300"
+      >
+        <Icon name="stroke-email" class="h-6 w-6" />
         Work With Me
       </TextButtonLarge>
     </View>
   </Group>
   <Group>
     <View class="px-2">
-      <View class="w-full h-px bg-stone-200 dark:bg-stone-700" />
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
     </View>
   </Group>
   <Group>
     <Heading class="px-2">Experience</Heading>
     <Text class="px-2 pb-2"
-      >For over 15 years I’ve worked with companies across Asia, Oceania, and North America. Through a combination of hands on design, product, and engineering expertise I've lead and cultivated teams, while taking products from 0 to 1.</Text
-    >    <ListView>
+      >For over 15 years I’ve worked with companies across Asia, Oceania, and
+      North America. Through a combination of hands on design, product, and
+      engineering expertise I've lead and cultivated teams, while taking
+      products from 0 to 1.</Text
+    >
+    <ListView>
       {
         experienceSection.map((experience) => (
-          <ListViewItem
-            target="_blank"
-            href={experience.url}
-          >
+          <ListViewItem target="_blank" href={experience.url}>
             <ListViewItemImage
               slot="image"
               src={experience.logo ? `/${experience.logo}` : undefined}
@@ -88,12 +91,8 @@ const educationSection = await getSectionCollection("education");
             />
             <Fragment slot="content">
               <ListViewItemTitle>{experience.title}</ListViewItemTitle>
-              <ListViewDescription>
-                {experience.subtitle}
-              </ListViewDescription>
-              <ListViewItemMeta>
-                {experience.date}
-              </ListViewItemMeta>
+              <ListViewDescription>{experience.subtitle}</ListViewDescription>
+              <ListViewItemMeta>{experience.date}</ListViewItemMeta>
             </Fragment>
             <ListViewItemChevron slot="action" />
           </ListViewItem>
@@ -103,13 +102,15 @@ const educationSection = await getSectionCollection("education");
   </Group>
   <Group>
     <View class="px-2">
-      <View class="w-full h-px bg-stone-200 dark:bg-stone-700" />
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
     </View>
   </Group>
   <Group>
     <Heading class="px-2">Mentorship</Heading>
     <Text class="px-2 pb-2"
-      >I help designers, product people, and founders untangle challenges through honest, actionable mentorship. Whether you're just starting a career or navigating an existing one, I offer advice tailored to any goal.</Text
+      >I help designers, product people, and founders untangle challenges
+      through honest, actionable mentorship. Whether you're just starting a
+      career or navigating an existing one, I offer advice tailored to any goal.</Text
     >
     <ListView>
       {
@@ -122,12 +123,8 @@ const educationSection = await getSectionCollection("education");
             />
             <Fragment slot="content">
               <ListViewItemTitle>{mentorship.title}</ListViewItemTitle>
-              <ListViewDescription>
-                {mentorship.subtitle}
-              </ListViewDescription>
-              <ListViewItemMeta>
-                {mentorship.date}
-              </ListViewItemMeta>
+              <ListViewDescription>{mentorship.subtitle}</ListViewDescription>
+              <ListViewItemMeta>{mentorship.date}</ListViewItemMeta>
             </Fragment>
             <ListViewItemChevron slot="action" />
           </ListViewItem>
@@ -137,13 +134,15 @@ const educationSection = await getSectionCollection("education");
   </Group>
   <Group>
     <View class="px-2">
-      <View class="w-full h-px bg-stone-200 dark:bg-stone-700" />
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
     </View>
   </Group>
   <Group>
     <Heading class="px-2">Projects</Heading>
     <Text class="px-2 pb-2"
-      >I believe designers are made better by deeply engaging with the materials at hand. This is why I enjoy taking the time to build things and experiment with ideas.</Text
+      >I believe designers are made better by deeply engaging with the materials
+      at hand. This is why I enjoy taking the time to build things and
+      experiment with ideas.</Text
     >
     <ListView>
       {
@@ -156,12 +155,8 @@ const educationSection = await getSectionCollection("education");
             />
             <Fragment slot="content">
               <ListViewItemTitle>{project.title}</ListViewItemTitle>
-              <ListViewDescription>
-                {project.subtitle}
-              </ListViewDescription>
-              <ListViewItemMeta>
-                {project.date}
-              </ListViewItemMeta>
+              <ListViewDescription>{project.subtitle}</ListViewDescription>
+              <ListViewItemMeta>{project.date}</ListViewItemMeta>
             </Fragment>
             <ListViewItemChevron slot="action" />
           </ListViewItem>
@@ -171,15 +166,14 @@ const educationSection = await getSectionCollection("education");
   </Group>
   <Group>
     <View class="px-2">
-      <View class="w-full h-px bg-stone-200 dark:bg-stone-700" />
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
     </View>
   </Group>
   <Group>
-    <Heading class="px-2"
-      >Achievements</Heading
-    >
+    <Heading class="px-2">Achievements</Heading>
     <Text class="px-2 pb-2"
-      >Highlights from my career and education which have been picked up in the press, recognized with awards, or even patented.</Text
+      >Highlights from my career and education which have been picked up in the
+      press, recognized with awards, or even patented.</Text
     >
     <ListView>
       {
@@ -192,12 +186,8 @@ const educationSection = await getSectionCollection("education");
             />
             <Fragment slot="content">
               <ListViewItemTitle>{achievement.title}</ListViewItemTitle>
-              <ListViewDescription>
-                {achievement.subtitle}
-              </ListViewDescription>
-              <ListViewItemMeta>
-                {achievement.date}
-              </ListViewItemMeta>
+              <ListViewDescription>{achievement.subtitle}</ListViewDescription>
+              <ListViewItemMeta>{achievement.date}</ListViewItemMeta>
             </Fragment>
             <ListViewItemChevron slot="action" />
           </ListViewItem>
@@ -207,7 +197,7 @@ const educationSection = await getSectionCollection("education");
   </Group>
   <Group>
     <View class="px-2">
-      <View class="w-full h-px bg-stone-200 dark:bg-stone-700" />
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
     </View>
   </Group>
   <Group>
@@ -223,12 +213,8 @@ const educationSection = await getSectionCollection("education");
             />
             <Fragment slot="content">
               <ListViewItemTitle>{education.title}</ListViewItemTitle>
-              <ListViewDescription>
-                {education.subtitle}
-              </ListViewDescription>
-              <ListViewItemMeta>
-                {education.date}
-              </ListViewItemMeta>
+              <ListViewDescription>{education.subtitle}</ListViewDescription>
+              <ListViewItemMeta>{education.date}</ListViewItemMeta>
             </Fragment>
             <ListViewItemChevron slot="action" />
           </ListViewItem>
@@ -238,18 +224,34 @@ const educationSection = await getSectionCollection("education");
   </Group>
   <Group>
     <View class="px-2">
-      <View class="w-full h-px bg-stone-200 dark:bg-stone-700" />
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
     </View>
   </Group>
   <Group>
     <Heading class="px-2">Contact</Heading>
     <Text class="px-2">
-      I'm always interested to meet new people, learn new things and hear fresh perspectives. If you'd like to send me an <TextLink href="mailto:hi@jonathontoon.com" rel="me">email</TextLink> I'd be happy to write back. Otherwise you can follow me on <TextLink target="_blank" href="https://x.com/intent/user?screen_name=jonathontoon" rel="me">X</TextLink>, <TextLink target="_blank" href="https://bsky.app/profile/jonathontoon.com" rel="me">BlueSky</TextLink> or <TextLink target="_blank" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jonathontoon" rel="me">LinkedIn</TextLink>. 
+      I'm always interested to meet new people, learn new things and hear fresh
+      perspectives. If you'd like to send me an <TextLink
+        href="mailto:hi@jonathontoon.com"
+        rel="me">email</TextLink
+      > I'd be happy to write back. Otherwise you can follow me on <TextLink
+        target="_blank"
+        href="https://x.com/intent/user?screen_name=jonathontoon"
+        rel="me">X</TextLink
+      >, <TextLink
+        target="_blank"
+        href="https://bsky.app/profile/jonathontoon.com"
+        rel="me">BlueSky</TextLink
+      > or <TextLink
+        target="_blank"
+        href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jonathontoon"
+        rel="me">LinkedIn</TextLink
+      >.
     </Text>
   </Group>
   <Group>
     <View class="px-2">
-      <View class="w-full h-px bg-stone-200 dark:bg-stone-700" />
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
     </View>
   </Group>
   <Group>
@@ -283,8 +285,8 @@ const educationSection = await getSectionCollection("education");
       The technology powering this website is <TextLink
         href="https://astro.build"
         target="_blank">Astro</TextLink
-      >, a server-first framework that generates static pages. Hosting,
-      and deployment are handled by <TextLink
+      >, a server-first framework that generates static pages. Hosting, and
+      deployment are handled by <TextLink
         href="https://pages.cloudflare.com"
         target="_blank">Cloudflare</TextLink
       >.

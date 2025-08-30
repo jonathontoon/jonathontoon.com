@@ -8,6 +8,9 @@ interface Props {
 const { class: className = "", ...attrs } = Astro.props;
 ---
 
-<Text class={`text-xl font-bold leading-none text-stone-700 dark:text-stone-50 ${className}`} {...attrs}>
+<Text
+  class={`text-xl font-bold leading-none text-stone-700 dark:text-stone-50 ${className}`}
+  {...attrs}
+>
   <slot />
 </Text>

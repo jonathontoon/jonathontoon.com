@@ -10,7 +10,10 @@ const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <label
-  class={cn("text-pretty leading-snug text-stone-700 dark:text-stone-400 text-base", className)}
+  class={cn(
+    "text-pretty leading-snug text-stone-700 dark:text-stone-400 text-base",
+    className
+  )}
   {...attrs}
 >
   <slot />
