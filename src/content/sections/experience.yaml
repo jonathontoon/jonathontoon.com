@@ -1,6 +1,6 @@
 - id: "starboard"
   title: "Starboard"
-  subtitle: "Security · New Zealand"
+  subtitle: "Martime Security"
   date: "2024"
   type: "experience"
   logo: "images/logos/starboard.svg"
@@ -9,7 +9,7 @@
 
 - id: "moneytree-return"
   title: "Moneytree"
-  subtitle: "Open Banking · Japan"
+  subtitle: "Open Banking"
   date: "2021 — 2024"
   type: "experience"
   logo: "images/logos/moneytree.svg"
@@ -18,7 +18,7 @@
 
 - id: "rainforest-qa"
   title: "Rainforest QA"
-  subtitle: "QA Tools · Australia"
+  subtitle: "Developer Tools"
   date: "2020 — 2021"
   type: "experience"
   logo: "images/logos/rainforest-qa.svg"
@@ -27,7 +27,7 @@
 
 - id: "moneytree"
   title: "Moneytree"
-  subtitle: "Open Banking · Japan"
+  subtitle: "Open Banking"
   date: "2016 — 2019"
   type: "experience"
   logo: "images/logos/moneytree-original.svg"
@@ -36,7 +36,7 @@
 
 - id: "origami"
   title: "Origami"
-  subtitle: "Payments · Japan"
+  subtitle: "Mobile Payments"
   date: "2015 — 2016"
   type: "experience"
   logo: "images/logos/origami.svg"
@@ -45,7 +45,7 @@
 
 - id: "xero"
   title: "Xero"
-  subtitle: "Accounting · United States"
+  subtitle: "Small Business Accounting"
   date: "2014 — 2015"
   type: "experience"
   logo: "images/logos/xero.svg"
@@ -54,7 +54,7 @@
 
 - id: "facebook"
   title: "Facebook"
-  subtitle: "Social · United States"
+  subtitle: "Social Networking"
   date: "2012 — 2014"
   type: "experience"
   logo: "images/logos/facebook.svg"
@@ -63,7 +63,7 @@
 
 - id: "resn"
   title: "Resn"
-  subtitle: "Agency · New Zealand"
+  subtitle: "Advertising"
   date: "2012"
   type: "experience"
   logo: "images/logos/resn.svg"
