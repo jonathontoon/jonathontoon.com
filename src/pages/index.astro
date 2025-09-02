@@ -50,10 +50,19 @@ const educationSection = await getSectionCollection("education");
     <View class="flex flex-col justify-start gap-4 px-2 pt-8 md:flex-row">
       <TextButtonLarge
         href="mailto:hi@jonathontoon.com"
-        class="flex items-center justify-center gap-3 fill-stone-50 dark:fill-stone-900 bg-stone-900 text-stone-50 hover:bg-stone-700 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-stone-300"
+        class="flex items-center justify-center gap-3 bg-stone-900 fill-stone-50 text-stone-50 hover:bg-stone-700 dark:bg-stone-100 dark:fill-stone-900 dark:text-stone-900 dark:hover:bg-stone-300"
       >
-        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M1.51381 7.16523C1.50466 7.27561 1.5 7.38726 1.5 7.5V16.5C1.5 18.7091 3.29086 20.5 5.5 20.5H18.5C20.7091 20.5 22.5 18.7091 22.5 16.5V7.5C22.5 7.38744 22.4953 7.27596 22.4862 7.16576C22.5222 6.95155 22.4888 6.72592 22.3805 6.52549C21.9453 4.78734 20.373 3.5 18.5 3.5H5.5C3.62683 3.5 2.05439 4.78756 1.61944 6.52594C1.51136 6.72609 1.478 6.95135 1.51381 7.16523ZM3.5 15.5858L7.29289 11.7929C7.29659 11.7892 7.3003 11.7855 7.30404 11.7819L3.5 8.97895V15.5858ZM8.89223 12.9522C8.84564 13.0441 8.78393 13.1303 8.70711 13.2071L4.20711 17.7071C4.15105 17.7632 4.09 17.8112 4.02538 17.8511C4.391 18.25 4.9163 18.5 5.5 18.5H18.5C19.0837 18.5 19.609 18.25 19.9746 17.8511C19.91 17.8112 19.8489 17.7632 19.7929 17.7071L15.2929 13.2071C15.2161 13.1303 15.1544 13.0441 15.1078 12.9522L13.1865 14.368C12.481 14.8878 11.5192 14.8878 10.8137 14.368L8.89223 12.9522ZM20.5 8.97904V15.5858L16.7071 11.7929L16.696 11.782L20.5 8.97904ZM20.3053 6.6382C19.9834 5.96501 19.296 5.5 18.5 5.5H5.5C4.70404 5.5 4.01667 5.96498 3.69472 6.63813L12.0001 12.7579L20.3053 6.6382Z"/>
+        <svg
+          class="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1.51381 7.16523C1.50466 7.27561 1.5 7.38726 1.5 7.5V16.5C1.5 18.7091 3.29086 20.5 5.5 20.5H18.5C20.7091 20.5 22.5 18.7091 22.5 16.5V7.5C22.5 7.38744 22.4953 7.27596 22.4862 7.16576C22.5222 6.95155 22.4888 6.72592 22.3805 6.52549C21.9453 4.78734 20.373 3.5 18.5 3.5H5.5C3.62683 3.5 2.05439 4.78756 1.61944 6.52594C1.51136 6.72609 1.478 6.95135 1.51381 7.16523ZM3.5 15.5858L7.29289 11.7929C7.29659 11.7892 7.3003 11.7855 7.30404 11.7819L3.5 8.97895V15.5858ZM8.89223 12.9522C8.84564 13.0441 8.78393 13.1303 8.70711 13.2071L4.20711 17.7071C4.15105 17.7632 4.09 17.8112 4.02538 17.8511C4.391 18.25 4.9163 18.5 5.5 18.5H18.5C19.0837 18.5 19.609 18.25 19.9746 17.8511C19.91 17.8112 19.8489 17.7632 19.7929 17.7071L15.2929 13.2071C15.2161 13.1303 15.1544 13.0441 15.1078 12.9522L13.1865 14.368C12.481 14.8878 11.5192 14.8878 10.8137 14.368L8.89223 12.9522ZM20.5 8.97904V15.5858L16.7071 11.7929L16.696 11.782L20.5 8.97904ZM20.3053 6.6382C19.9834 5.96501 19.296 5.5 18.5 5.5H5.5C4.70404 5.5 4.01667 5.96498 3.69472 6.63813L12.0001 12.7579L20.3053 6.6382Z"
+          ></path>
         </svg>
         Say Hello
       </TextButtonLarge>
@@ -63,10 +72,19 @@ const educationSection = await getSectionCollection("education");
         rel="me"
         class="flex items-center justify-center gap-3 border-2 border-stone-900 bg-transparent text-stone-900 hover:border-stone-700 hover:bg-transparent hover:text-stone-700 dark:border-stone-100 dark:text-stone-100 dark:hover:border-stone-300 dark:hover:text-stone-300"
       >
-        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-          <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+        <svg
+          class="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+          <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
         </svg>
         Follow Me
       </TextButtonLarge>

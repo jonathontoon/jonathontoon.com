@@ -11,24 +11,27 @@ interface Props extends HTMLAttributes<"img"> {
 const { class: className = "", lightbox = false, ...attrs } = Astro.props;
 ---
 
-{lightbox ? (
-  <View
-    class="relative transition-all duration-300 hover:translate-y-0.5 md:-mx-16"
-  >
-    <img
-      data-lightbox="true"
-      class={cn("bg-stone-200 dark:bg-stone-800 w-full cursor-pointer rounded-xl", className)}
-      {...attrs}
-    />
-  </View>
-) : (
-  <img class={cn("bg-stone-200 dark:bg-stone-800", className)} {...attrs} />
-)}
+{
+  lightbox ? (
+    <View class="relative transition-all duration-300 hover:translate-y-0.5 md:-mx-16">
+      <img
+        data-lightbox="true"
+        class={cn(
+          "w-full cursor-pointer rounded-xl bg-stone-200 dark:bg-stone-800",
+          className
+        )}
+        {...attrs}
+      />
+    </View>
+  ) : (
+    <img class={cn("bg-stone-200 dark:bg-stone-800", className)} {...attrs} />
+  )
+}
 
 <script>
   function initLightboxImage(): void {
     const images = document.querySelectorAll(
-      "img[data-lightbox='true']"  
+      "img[data-lightbox='true']"
     ) as NodeListOf<HTMLImageElement>;
 
     images.forEach((image) => {
