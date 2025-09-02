@@ -17,7 +17,7 @@ const { class: className = "", lightbox = false, ...attrs } = Astro.props;
       <img
         data-lightbox="true"
         class={cn(
-          "w-full cursor-pointer rounded-xl bg-stone-200 dark:bg-stone-800",
+          "w-full cursor-pointer rounded-xl bg-stone-200 dark:bg-stone-800 opacity-0 transition-opacity duration-700 ease-out",
           className
         )}
         {...attrs}
@@ -34,6 +34,17 @@ const { class: className = "", lightbox = false, ...attrs } = Astro.props;
       "img[data-lightbox='true']"
     ) as NodeListOf<HTMLImageElement>;
 
+    // Set up intersection observer for fade-in effect
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
     images.forEach((image) => {
       function openLightbox(): void {
         const event = new CustomEvent("lightbox:open", {
@@ -48,6 +59,9 @@ const { class: className = "", lightbox = false, ...attrs } = Astro.props;
       // Remove any existing listeners to prevent duplicates
       image.removeEventListener("click", openLightbox);
       image.addEventListener("click", openLightbox);
+
+      // Observe image for fade-in effect
+      observer.observe(image);
     });
   }
 
