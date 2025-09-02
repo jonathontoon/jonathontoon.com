@@ -39,7 +39,7 @@ import View from "./View.astro";
       }, 300);
     }
 
-    // Listen for custom lightbox events from WorkImage components
+    // Listen for custom lightbox events from Image components with lightbox enabled
     document.addEventListener("lightbox:open", (e: Event) => {
       const customEvent = e as CustomEvent;
       const { src, alt } = customEvent.detail;

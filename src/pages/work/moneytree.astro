@@ -1,0 +1,226 @@
+---
+import Heading from "@components/Heading.astro";
+import HeadingLarge from "@components/HeadingLarge.astro";
+import Text from "@components/Text.astro";
+import View from "@components/View.astro";
+import Group from "@components/Group.astro";
+import { Layout } from "@layouts";
+import Image from "@components/Image.astro";
+import HeadingSmall from "@components/HeadingSmall.astro";
+---
+
+<Layout
+  title="Moneytree | Jonathon Toon | Software Designer, Product Leader"
+  description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
+  keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/"
+  ogImage="/images/og-image.png"
+>
+  <!-- <Group>
+    <View class="shrink-1 flex px-2">
+      <Link href="/" class="hover:translate-y-0.5 duration-300 ease-in-out flex">
+        <SquareImageLarge
+          class="h-32 w-32 md:h-36 md:w-36"
+          src="/images/logos/moneytree.svg"
+          alt="Jonathon Toon"
+        />
+      </Link>
+    </View>
+  </Group> -->
+  <Group>
+    <HeadingLarge class="px-2">Moneytree</HeadingLarge>
+      <Text class="px-2">
+        Founded in 2012 as one of the first personal finance apps of it's kind in Japan (named Apple’s App of the Year for 2013) Moneytree grew to serve over 6.5 million users.
+      </Text>
+      <Text class="px-2">
+        Its open banking platform, Moneytree Link, now the core of the business, connects to more than 2,500 financial institutions and supports 120 enterprise customers. 
+      </Text>
+      <Text class="px-2">
+        I first joined as a Senior Product Designer in 2016 before becoming Product & Design Lead, where I drove hands-on product and design efforts for the Moneytree Link platform.
+      </Text>
+      <Text class="px-2">
+        I later returned in 2021 as Director of Design to build and scale the design team, expanding my remit to become Director of Discovery, leading the business vertical focused on incubating 0-to-1 products and enterprise customer growth.
+      </Text>
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+  <Group>
+    <Heading class="px-2">Moneytree Business</Heading>
+    <Text class="px-2">
+      I assembled and led a product team through a six-month 0-1 process to create Moneytree Business. I was responsible for all outcomes and output. Whether creative, financial or technical.
+    </Text>
+    <Text class="px-2">
+      Together we conducted over 30 interviews with accountants and business owners across Japan. Alongside this we followed through with market research around economic risks to identify the biggest operational challenges, as well as sentiment around cost and pricing.
+    </Text>
+    <Text class="px-2"> 
+      What we found was quite painful. Japanese business owners spent 30 hours per week on manual financial tasks. They visited ATMs to confirm transactions. They reconciled receipts by hand. They dealt with frustrated accountants calling about incorrect data.
+    </Text>
+    <Text class="px-2">
+     All time that should have been spent with customers.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/moneytree-business-home-desktop.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      Our intiial audience centered around businesses up to 60 employees, in industries such as heavy machinery to import goods.
+    </Text>
+    <Text class="px-2">
+      They had two core needs which manifested as primary functions in the product: monitoring cashflow and preparing clean data for their accountants.
+    </Text>
+    <Text class="px-2">
+      We iterated constantly on these core features based on regular feedback sessions or asynchoronous inputs from these business owners. By avoiding hypothetical personas, and simply cultivating relationships with early adopters we were able to understand exactly what they needed.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/moneytree-business-cashflow-desktop.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-business-export-desktop.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      The secondary opportunity was categorization. By repurposing Moneytree's existing machine learning technology, new patterns emerged for these business owners. Things they had never seen from their banks or accountants. This became valuable for events like cost reduction and planning new hires.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/moneytree-business-categories-desktop.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-business-account-desktop.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+     We chose not to build responsive design at launch. Even though it came not long after. This was quite controversial internally even if it made sense strategically.
+    </Text>
+    <Text class="px-2">
+      I made the call based on what we knew. Most of the business owners we spoke with were looking for ways to avoid leaving their place of business. For they worked at desks, not on phones. 
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/moneytree-business-mobile.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      Only a month after it's launch the product hit ¥2M ARR and maintained strong growth, surpassing revenue of previous efforts in to small business products. The company's renewed focus on small businesses also opened some interesting new partnerships, including a lending product with a major credit card company.
+    </Text>
+    <Text class="px-2">
+      When MUFG Bank, Ltd. acquired Moneytree in 2025, they specifically cited Moneytree Business growth as one of the reasons they were confident and excited about the purchase.
+    </Text>
+  </Group>
+  <Group>
+    <Heading class="px-2">Moneytree Link</Heading>
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Vault</HeadingSmall>
+    <Image
+      src="/images/work/moneytree-link-vault.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-link-service.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-link-auth.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Fast Onboarding</HeadingSmall>
+    <Image
+      src="/images/work/moneytree-link-fast-onboarding.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-link-fast-onboarding-branded.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Isshou Tsucho</HeadingSmall>
+    <Image
+      src="/images/work/moneytree-link-isshou-tsucho.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <Heading class="px-2">Yuchoreko</Heading>
+    <Image
+      src="/images/work/moneytree-yuchoreko-onboarding.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-yuchoreko-main.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-yuchoreko-brand-strategy.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <Heading class="px-2">Moneytree for iOS</Heading>
+    <Image
+      src="/images/work/moneytree-ios.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/moneytree-ios-beeper.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+</Layout>

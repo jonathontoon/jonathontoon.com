@@ -1,0 +1,73 @@
+---
+import Heading from "@components/Heading.astro";
+import HeadingLarge from "@components/HeadingLarge.astro";
+import Text from "@components/Text.astro";
+import View from "@components/View.astro";
+import Group from "@components/Group.astro";
+import { Layout } from "@layouts";
+import Image from "@components/Image.astro";
+import HeadingSmall from "@components/HeadingSmall.astro";
+---
+
+<Layout
+  title="Moneytree | Jonathon Toon | Software Designer, Product Leader"
+  description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
+  keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/"
+  ogImage="/images/og-image.png"
+>
+  <!-- <Group>
+    <View class="shrink-1 flex px-2">
+      <Link href="/" class="hover:translate-y-0.5 duration-300 ease-in-out flex">
+        <SquareImageLarge
+          class="h-32 w-32 md:h-36 md:w-36"
+          src="/images/logos/moneytree.svg"
+          alt="Jonathon Toon"
+        />
+      </Link>
+    </View>
+  </Group> -->
+  <Group>
+    <HeadingLarge class="px-2">Xero</HeadingLarge>
+      <Text class="px-2">
+        Text
+      </Text>
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+  <Group>
+    <Heading class="px-2">Xero Me</Heading>
+    <Text class="px-2">
+      Text
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/xero-me-onboarding.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/xero-me-request.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/xero-me-edit-request.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      Text
+    </Text>
+  </Group>
+</Layout>

@@ -4,14 +4,15 @@ import View from "./View.astro";
 
 interface Props {
   class?: string;
+  external?: boolean;
 }
 
-const { class: className = "", ...attrs } = Astro.props;
+const { class: className = "", external = true, ...attrs } = Astro.props;
 ---
 
 <View class={className} {...attrs}>
   <Icon
-    name="stroke-arrow-small-right"
-    class="aspect-square h-full w-8 text-stone-400 md:w-10 dark:text-stone-500"
+    name={external ? "stroke-arrow-fromSquare-upRight" : "stroke-arrow-small-right"}
+    class:list={["aspect-square h-full text-stone-400 dark:text-stone-500", external ? "w-4 md:w-8 mr-2" : "w-8 md:w-10"]}
   />
 </View>

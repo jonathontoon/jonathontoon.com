@@ -1,12 +1,56 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { cn } from "@utils/cn";
+import View from "./View.astro";
 
 interface Props extends HTMLAttributes<"img"> {
   class?: string;
+  lightbox?: boolean;
 }
 
-const { class: className = "", ...attrs } = Astro.props;
+const { class: className = "", lightbox = false, ...attrs } = Astro.props;
 ---
 
-<img class={cn("bg-stone-200 dark:bg-stone-800", className)} {...attrs} />
+{lightbox ? (
+  <View
+    class="relative transition-all duration-300 hover:translate-y-0.5 md:-mx-16"
+  >
+    <img
+      data-lightbox="true"
+      class={cn("bg-stone-200 dark:bg-stone-800 w-full cursor-pointer rounded-xl", className)}
+      {...attrs}
+    />
+  </View>
+) : (
+  <img class={cn("bg-stone-200 dark:bg-stone-800", className)} {...attrs} />
+)}
+
+<script>
+  function initLightboxImage(): void {
+    const images = document.querySelectorAll(
+      "img[data-lightbox='true']"  
+    ) as NodeListOf<HTMLImageElement>;
+
+    images.forEach((image) => {
+      function openLightbox(): void {
+        const event = new CustomEvent("lightbox:open", {
+          detail: {
+            src: image.src,
+            alt: image.alt || ""
+          }
+        });
+        document.dispatchEvent(event);
+      }
+
+      // Remove any existing listeners to prevent duplicates
+      image.removeEventListener("click", openLightbox);
+      image.addEventListener("click", openLightbox);
+    });
+  }
+
+  // Initialize on page load
+  document.addEventListener("DOMContentLoaded", initLightboxImage);
+
+  // Reinitialize on Astro page transitions
+  document.addEventListener("astro:page-load", initLightboxImage);
+</script>

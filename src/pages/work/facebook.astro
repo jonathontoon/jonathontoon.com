@@ -1,0 +1,114 @@
+---
+import Heading from "@components/Heading.astro";
+import HeadingLarge from "@components/HeadingLarge.astro";
+import Text from "@components/Text.astro";
+import View from "@components/View.astro";
+import Group from "@components/Group.astro";
+import { Layout } from "@layouts";
+import Image from "@components/Image.astro";
+import HeadingSmall from "@components/HeadingSmall.astro";
+---
+
+<Layout
+  title="Facebook | Jonathon Toon | Software Designer, Product Leader"
+  description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
+  keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/"
+  ogImage="/images/og-image.png"
+>
+  <!-- <Group>
+    <View class="shrink-1 flex px-2">
+      <Link href="/" class="hover:translate-y-0.5 duration-300 ease-in-out flex">
+        <SquareImageLarge
+          class="h-32 w-32 md:h-36 md:w-36"
+          src="/images/logos/moneytree.svg"
+          alt="Jonathon Toon"
+        />
+      </Link>
+    </View>
+  </Group> -->
+  <Group>
+    <HeadingLarge class="px-2">Facebook</HeadingLarge>
+      <Text class="px-2">
+        Founded in 2012 as one of the first personal finance apps of it's kind in Japan (named Apple’s App of the Year 2013/2014) Moneytree grew to serve over 6.5 million users.
+      </Text>
+      <Text class="px-2">
+        Its open banking platform, Moneytree Link, now the core of the business, connects to more than 2,500 financial institutions and supports 120 enterprise customers.
+      </Text>
+      <Text class="px-2">
+        Across my two tenures at the company, I influenced both craft and strategy through a variety of roles. I first joined as a Senior Product Designer before becoming Product & Design Lead, where I drove hands-on product and design efforts for the Moneytree Link platform.
+      </Text>
+      <Text class="px-2">
+        I later returned as Director of Design to build and scale the design team, expanding my remit to become Director of Discovery, leading the business vertical focused on incubating 0-to-1 products and enterprise customer growth.
+      </Text>
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+  <Group>
+    <Heading class="px-2">Photos</Heading>
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Simple Picker</HeadingSmall>
+    <Image
+      src="/images/work/facebook-simple-picker-ios.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/facebook-simple-picker-android.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Composer</HeadingSmall>
+    <Image
+      src="/images/work/facebook-simple-picker-ios.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+    <Image
+      src="/images/work/facebook-simple-picker-android.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Shared Albums</HeadingSmall>
+    <Image
+      src="/images/work/facebook-shared-albums-android.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Feed Tagging</HeadingSmall>
+    <Image
+      src="/images/work/facebook-feed-tagging.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+ <Group>
+    <Heading class="px-2">Messenger</Heading>
+  </Group>
+  <Group>
+    <HeadingSmall class="px-2">Voice Calling</HeadingSmall>
+    <Image
+      src="/images/work/facebook-voice-calling.png"
+      alt="Moneytree Vault"
+      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
+      lightbox={true} 
+    />
+  </Group>
+</Layout>
