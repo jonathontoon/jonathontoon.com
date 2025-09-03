@@ -28,7 +28,7 @@ const educationSection = await getSectionCollection("education");
 <Layout
   title="Home | Jonathon Toon | Software Designer, Product Leader"
   description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
-  keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  keywords="design, software, product, fractional, leadership, new zealand, aotearoa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
   twitterHandle="@jonathontoon"
   canonicalUrl="https://www.jonathontoon.com/"
   ogImage="/images/og-image.png"
@@ -106,7 +106,10 @@ const educationSection = await getSectionCollection("education");
     <ListView>
       {
         experienceSection.map((experience) => (
-          <ListViewItem target="_blank" href={experience.url}>
+          <ListViewItem 
+            href={experience.path || experience.url}
+            target={experience.path ? undefined : "_blank"}
+          >
             <ListViewItemImage
               slot="image"
               src={experience.logo ? `/${experience.logo}` : undefined}
@@ -117,7 +120,7 @@ const educationSection = await getSectionCollection("education");
               <ListViewDescription>{experience.subtitle}</ListViewDescription>
               <ListViewItemMeta>{experience.date}</ListViewItemMeta>
             </Fragment>
-            <ListViewItemChevron slot="action" />
+            <ListViewItemChevron slot="action" external={!experience.path} />
           </ListViewItem>
         ))
       }

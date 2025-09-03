@@ -56,7 +56,8 @@ const sections = defineCollection({
         logo: imageSchema.optional(),
         slug: z.string().optional(),
         url: urlSchema.optional(),
-        urlText: z.string().optional()
+        urlText: z.string().optional(),
+        path: z.string().regex(/^\//, "Internal path must start with /").optional()
       })
       .refine((data) => !data.urlText || data.url, {
         message: "urlText can only be provided when url is present",

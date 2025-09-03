@@ -6,6 +6,7 @@
   logo: "images/logos/starboard.svg"
   url: "https://www.starboardintelligence.com"
   urlText: "Visit"
+  path: "/work/starboard"
 
 - id: "moneytree-return"
   title: "Moneytree"
@@ -15,6 +16,7 @@
   logo: "images/logos/moneytree.svg"
   url: "https://getmoneytree.com/jp/home"
   urlText: "Visit"
+  path: "/work/moneytree"
 
 - id: "rainforest-qa"
   title: "Rainforest QA"
@@ -33,6 +35,7 @@
   logo: "images/logos/moneytree-original.svg"
   url: "https://getmoneytree.com/jp/home"
   urlText: "Visit"
+  path: "/work/moneytree"
 
 - id: "origami"
   title: "Origami"
@@ -42,6 +45,7 @@
   logo: "images/logos/origami.svg"
   url: "https://about.mercari.com/en/press/news/articles/20200123_origami-2/"
   urlText: "Visit"
+  path: "/work/origami"
 
 - id: "xero"
   title: "Xero"
@@ -51,6 +55,7 @@
   logo: "images/logos/xero.svg"
   url: "https://www.xero.com/nz/xero-me/"
   urlText: "Visit"
+  path: "/work/xero"
 
 - id: "facebook"
   title: "Facebook"
@@ -60,6 +65,7 @@
   logo: "images/logos/facebook.svg"
   url: "https://design.facebook.com"
   urlText: "Visit"
+  path: "/work/facebook"
 
 - id: "resn"
   title: "Resn"

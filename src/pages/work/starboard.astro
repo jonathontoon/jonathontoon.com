@@ -1,0 +1,86 @@
+---
+import HeadingLarge from "@components/HeadingLarge.astro";
+import Text from "@components/Text.astro";
+import View from "@components/View.astro";
+import Group from "@components/Group.astro";
+import { Layout } from "@layouts";
+import Image from "@components/Image.astro";
+import Heading from "@components/Heading.astro";
+---
+
+<Layout
+  title="Starboard | Jonathon Toon | Software Designer, Product Leader"
+  description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
+  keywords="design, software, product, fractional, leadership, new zealand, aotearoa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/"
+  ogImage="/images/og-image.png"
+>
+  <Group>
+    <HeadingLarge class="px-2">Starboard</HeadingLarge>
+    <Text class="px-2">
+      Starboard Maritime Intelligence is a New Zealand-based SaaS platform that provides real-time maritime surveillance to governments, border security teams, NGOs, and fisheries organizations.
+    </Text>
+    <Text class="px-2">
+      Processing over 4,000 vessel positions per second, the company helps combat illegal fishing, transnational crime, and protect marine ecosystems across the Pacific and beyond.
+    </Text>
+    <Text class="px-2">
+      Developed alongside government users in New Zealand, Australia, and the Pacific, Starboard recently closed a NZ$5 million seed funding round to expand globally.
+    </Text>
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+    <Group>
+    <Heading class="px-2">Website Redesign</Heading>
+    <Text class="px-2">
+      In late 2024, I partnered with their Chief of Marketing and Product to refresh Starboard's digital presence as they prepared to scale internationally.
+    </Text>
+    <Text class="px-2">
+      Their existing website was built on legacy technology that severely limited content discovery and lead generation - critical capabilities for a company expanding into new markets and growing their customer base.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/starboard-website-one.png"
+      alt="Homepage design showcasing maritime surveillance expertise and global reach."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+    <Image
+      src="/images/work/starboard-website-two.png"
+      alt="Solutions page highlighting real-time vessel tracking and analytics capabilities."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+        <Text class="px-2">
+      Together we audited and completely rethought the current sitemap based on the content most prospects and customers found to be the most useful during sales and onboarding processes, ensuring the new structure would directly support revenue growth.
+    </Text>
+    <Text class="px-2">
+      I redesigned and built more than 20 new pages on Webflow, including full content migration of over 100 articles, and comprehensive documentation for their in-house teams to manage the new structure.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/starboard-website-three.png"
+      alt="Resource center design organizing maritime intelligence insights and case studies."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+    <Image
+      src="/images/work/starboard-website-four.png"
+      alt="About page emphasizing team expertise and company mission in ocean protection."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+        <Text class="px-2">
+      With the work completed and deployed in just under 3 months, the upgraded infrastructure, product positioning and user experience provided them a modern baseline with improved lead generation capabilities.
+    </Text>
+  </Group>
+</Layout>

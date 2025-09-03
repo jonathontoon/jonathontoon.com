@@ -6,33 +6,34 @@ import View from "@components/View.astro";
 import Group from "@components/Group.astro";
 import { Layout } from "@layouts";
 import Image from "@components/Image.astro";
-import HeadingSmall from "@components/HeadingSmall.astro";
+import TextLink from "@components/TextLink.astro";
 ---
 
 <Layout
-  title="Moneytree | Jonathon Toon | Software Designer, Product Leader"
+  title="Xero | Jonathon Toon | Software Designer, Product Leader"
   description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
-  keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  keywords="design, software, product, fractional, leadership, new zealand, aotearoa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
   twitterHandle="@jonathontoon"
   canonicalUrl="https://www.jonathontoon.com/"
   ogImage="/images/og-image.png"
 >
-  <!-- <Group>
-    <View class="shrink-1 flex px-2">
-      <Link href="/" class="hover:translate-y-0.5 duration-300 ease-in-out flex">
-        <SquareImageLarge
-          class="h-32 w-32 md:h-36 md:w-36"
-          src="/images/logos/moneytree.svg"
-          alt="Jonathon Toon"
-        />
-      </Link>
-    </View>
-  </Group> -->
   <Group>
     <HeadingLarge class="px-2">Xero</HeadingLarge>
-      <Text class="px-2">
-        Text
-      </Text>
+    <Text class="px-2">
+      Founded in New Zealand in 2006, Xero has grown into one of the world’s
+      leading online accounting platforms, helping over 3.5 million small
+      business owners and their accountants simplify finances for the better.
+    </Text>
+    <Text class="px-2">
+      In 2014, I joined a newly formed team in San Francisco as a Mobile
+      Product Designer, focused on building Xero’s payroll products across three
+      continents.
+    </Text>
+    <Text class="px-2">
+      As the first hire for the mobile team, I helped shape the team culture and
+      influenced the product direction, working closely with the Director of
+      Product Design.
+    </Text>
   </Group>
   <Group>
     <View class="px-2">
@@ -42,32 +43,68 @@ import HeadingSmall from "@components/HeadingSmall.astro";
   <Group>
     <Heading class="px-2">Xero Me</Heading>
     <Text class="px-2">
-      Text
+      We inherited a product that had seen at least two unsuccessful launch
+      attempts. Working with a product manager, engineers, and another designer,
+      we had to understand what went wrong.
+    </Text>
+    <Text class="px-2">
+      Learning from those past efforts, we stripped the experience to its core
+      and timed the release with XeroCon, Xero's annual conference. We focused
+      only on what customers actually needed: easy time-off requests and payslip
+      access.
+    </Text>
+    <Text class="px-2">
+      I contributed production iOS code, building a polished custom in-app
+      notification toast to confirm time-off actions. One of my favorite
+      achievements on the project.
     </Text>
   </Group>
   <Group>
     <Image
       src="/images/work/xero-me-onboarding.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
-    />
-    <Image
-      src="/images/work/xero-me-request.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
-    />
-    <Image
-      src="/images/work/xero-me-edit-request.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
+      alt="Employee onboarding flow introducing time-off request features."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
     />
   </Group>
   <Group>
     <Text class="px-2">
-      Text
+      Despite shipping pressure, I made the time to partner with our internal
+      researcher to run lean testing. I designed the test scenarios and
+      on-device prototypes while they handled recruitment.
+    </Text>
+    <Text class="px-2">
+      A key insight emerged: users wanted the entire date range of time-off
+      requests filled in, not just start and end dates. This simple change made
+      it immediately clear the full period would be taken.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/xero-me-request.png"
+      alt="Simplified leave request form with calendar integration and visual feedback."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+    <Image
+      src="/images/work/xero-me-edit-request.png"
+      alt="Request editing with full date range selection based on user research insights."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      We shipped mid-2015 across iOS and Android to much fanfare at the
+      following year's XeroCon. Business owners and employees had been
+      restricted by a dated desktop-only interface, this was their first mobile
+      solution for employee management.
+    </Text>
+    <Text class="px-2">
+      Xero Me is now one of
+      Xero's <TextLink target="_blank" href="https://www.xero.com/nz/xero-me/"
+        >core product offerings</TextLink
+      >.
     </Text>
   </Group>
 </Layout>

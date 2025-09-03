@@ -37,6 +37,13 @@
           },
           "urlText": {
             "type": "string"
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^\\/",
+            "errorMessage": {
+              "pattern": "Internal path must start with /"
+            }
           }
         },
         "required": [
