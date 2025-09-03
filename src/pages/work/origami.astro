@@ -1,0 +1,96 @@
+---
+import Heading from "@components/Heading.astro";
+import HeadingLarge from "@components/HeadingLarge.astro";
+import Text from "@components/Text.astro";
+import View from "@components/View.astro";
+import Group from "@components/Group.astro";
+import { Layout } from "@layouts";
+import Image from "@components/Image.astro";
+---
+
+<Layout
+  title="Origami | Jonathon Toon | Software Designer, Product Leader"
+  description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
+  keywords="design, software, product, fractional, leadership, new zealand, aotearoa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/"
+  ogImage="/images/og-image.png"
+>
+  <Group>
+    <HeadingLarge class="px-2">Origami</HeadingLarge>
+    <Text class="px-2">
+      Founded in 2012 as a mobile ecommerce platform, Origami pivoted after a
+      modest raise to focus on mobile payments in Japan's cash-dominant market
+      and in a pre-Apple Pay world.
+    </Text>
+    <Text class="px-2">
+      I joined as a designer when I moved to Japan in 2015, expanding the design
+      team to three people and working on some minor feature updates before
+      moving into prototyping new payment experiences.
+    </Text>
+    <Text class="px-2">
+      Working in a culture I had little understanding of at the time was
+      incredibly formative. It taught me that what feels intuitive to users
+      varies dramatically by context. Assumptions about "good design" often don't
+      translate across cultures, making local user research and cultural
+      awareness essential.
+    </Text>
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+  <Group>
+    <Heading class="px-2">Origami Pay</Heading>
+    <Text class="px-2">
+      One of the company's moonshots. A novel payment method using Bluetooth
+      technology that would let customers pay before Apple Pay was widely
+      supported in Japan. I worked closely with an iOS engineer to prototype the
+      experience directly in code, focusing on making purchases feel enjoyable
+      and effortless.
+    </Text>
+    <Text class="px-2">
+      Before we shipped, I added a feature to let customers rate their in-store
+      experience. This idea which was really just an afterthought became a big
+      value add for store owners. They finally had insights beyond purchase
+      history, to understand how customers actually felt about shopping in their
+      stores. Something traditional payment methods didn't provide.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/origami-pay.png"
+      alt="Mobile payment flow optimized for Japanese market preferences."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+    <Image
+      src="/images/work/origami-ipad-payment.png"
+      alt="Mobile payment flow optimized for Japanese market preferences."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Heading class="px-2">Core Navigation</Heading>
+    <Text class="px-2">
+      With promotions for Origami regularly happening in malls and shopping
+      centers, we needed to let people browse and pay without creating accounts
+      first.
+    </Text>
+    <Text class="px-2">
+      To support this need I redesigned core call to actions to prioritize
+      payment functions (paying, cards, receipts) as the most prominent
+      features, while moving the original ecommerce view to a secondary tab.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/origami-navigation.png"
+      alt="Navigation system designed for single-handed mobile usage patterns."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+</Layout>
