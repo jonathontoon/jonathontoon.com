@@ -106,7 +106,7 @@ const educationSection = await getSectionCollection("education");
     <ListView>
       {
         experienceSection.map((experience) => (
-          <ListViewItem 
+          <ListViewItem
             href={experience.path || experience.url}
             target={experience.path ? undefined : "_blank"}
           >
