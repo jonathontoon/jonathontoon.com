@@ -53,21 +53,23 @@ const { class: className = "", ...attrs } = Astro.props;
       <Link href="/" class="flex items-center no-underline">
         <Icon
           name="solid-house"
-          class="h-7 w-7 text-stone-900 dark:text-stone-100"
+          class="h-6 w-6 text-stone-900 dark:text-stone-100"
         />
       </Link>
       {breadcrumbs.map((crumb) => (
         <Fragment>
           <Icon
             name="stroke-arrow-small-right"
-            class="h-7 w-7 text-stone-400 dark:text-stone-500"
+            class="h-6 w-6 text-stone-400 dark:text-stone-500"
           />
-          <Link
-            href={crumb.href}
-            class="text-lg font-semibold text-stone-900 no-underline dark:text-stone-100"
-          >
-            {crumb.label}
-          </Link>
+          {crumb.href && (
+            <Link
+                href={crumb.href}
+                class="text-lg font-semibold text-stone-900 no-underline dark:text-stone-100"
+              >
+                {crumb.label}
+            </Link>
+          )}
         </Fragment>
       ))}
     </header>
