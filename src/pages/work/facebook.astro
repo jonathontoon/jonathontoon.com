@@ -12,36 +12,19 @@ import HeadingSmall from "@components/HeadingSmall.astro";
 <Layout
   title="Facebook | Jonathon Toon | Software Designer, Product Leader"
   description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
-  keywords="design, software, product, fractional, leadership, new zealand, aoteoroa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  keywords="design, software, product, fractional, leadership, new zealand, aotearoa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
   twitterHandle="@jonathontoon"
   canonicalUrl="https://www.jonathontoon.com/"
   ogImage="/images/og-image.png"
 >
-  <!-- <Group>
-    <View class="shrink-1 flex px-2">
-      <Link href="/" class="hover:translate-y-0.5 duration-300 ease-in-out flex">
-        <SquareImageLarge
-          class="h-32 w-32 md:h-36 md:w-36"
-          src="/images/logos/moneytree.svg"
-          alt="Jonathon Toon"
-        />
-      </Link>
-    </View>
-  </Group> -->
   <Group>
     <HeadingLarge class="px-2">Facebook</HeadingLarge>
-      <Text class="px-2">
-        Founded in 2012 as one of the first personal finance apps of it's kind in Japan (named Apple’s App of the Year 2013/2014) Moneytree grew to serve over 6.5 million users.
-      </Text>
-      <Text class="px-2">
-        Its open banking platform, Moneytree Link, now the core of the business, connects to more than 2,500 financial institutions and supports 120 enterprise customers.
-      </Text>
-      <Text class="px-2">
-        Across my two tenures at the company, I influenced both craft and strategy through a variety of roles. I first joined as a Senior Product Designer before becoming Product & Design Lead, where I drove hands-on product and design efforts for the Moneytree Link platform.
-      </Text>
-      <Text class="px-2">
-        I later returned as Director of Design to build and scale the design team, expanding my remit to become Director of Discovery, leading the business vertical focused on incubating 0-to-1 products and enterprise customer growth.
-      </Text>
+    <Text class="px-2">
+      I joined Facebook as a Product Designer in August 2012, fresh out of school and moving from New Zealand to the US. The platform was connecting nearly one billion people, and the post-IPO energy created opportunities for teams to take ambitious bets on new ideas.
+    </Text>
+    <Text class="px-2">
+      The design team was still small enough to fit in a conference room, giving me direct access to work alongside and learn from some of the most talented designers in the industry while shipping features that improved how people share and connect.
+    </Text>
   </Group>
   <Group>
     <View class="px-2">
@@ -49,66 +32,114 @@ import HeadingSmall from "@components/HeadingSmall.astro";
     </View>
   </Group>
   <Group>
-    <Heading class="px-2">Photos</Heading>
+    <Heading class="px-2">Photos Team</Heading>
+    <HeadingSmall class="px-2">Simple Picker</HeadingSmall>
+    <Text class="px-2">
+      Around 2013, Facebook was heavily focused on metrics rather than understanding how people actually used the platform. I saw this as an opportunity to research how people really felt about sharing photos on Facebook.
+    </Text>
+    <Text class="px-2">
+      What we discovered was that people didn't see Facebook as a place for polished, Instagram-style photos. They wanted to share candid moments with friends and family, which meant filters and heavy editing weren't important. We also learned that Facebook's algorithmic photo ordering frustrated users—they wanted their photos to appear in the order they chose.
+    </Text>
+    <Text class="px-2">
+      From these insights, I designed Simple Picker. Working closely with iOS and Android engineers, we built an interface optimized for larger screens with bigger thumbnails, intuitive tap-to-select ordering, and minimal editing options accessible through long press.
+    </Text>
   </Group>
   <Group>
-    <HeadingSmall class="px-2">Simple Picker</HeadingSmall>
     <Image
       src="/images/work/facebook-simple-picker-ios.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
+      alt="Streamlined photo selection experience with batch upload capabilities."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
     />
     <Image
       src="/images/work/facebook-simple-picker-android.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
+      alt="Cross-platform photo picker maintaining iOS design consistency on Android."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
     />
   </Group>
+   <Group>
+    <Text class="px-2">
+      The redesign delivered strong results: photo posts increased 3%, average photos per post doubled, and engagement lifted meaningfully. The larger thumbnails and preserved aspect ratios made photo selection faster and more intuitive, proving that user-centered design drives better metrics.
+    </Text>
+   </Group>
   <Group>
     <HeadingSmall class="px-2">Composer</HeadingSmall>
+    <Text class="px-2">
+      Taking over a weekend prototype from our Design Manager, I integrated Simple Picker directly into the composer, eliminating the need to leave the posting flow. 
+    </Text>
+        <Text class="px-2">
+      As part of this effort we also replaced tiny square thumbnails with larger previews that preserved aspect ratios, making photo selection more engaging and reducing sharing friction.
+    </Text>
+  </Group>
+  <Group>
     <Image
-      src="/images/work/facebook-simple-picker-ios.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
-    />
-    <Image
-      src="/images/work/facebook-simple-picker-android.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
+      src="/images/work/facebook-composer-ios.png"
+      alt="Streamlined photo selection experience with batch upload capabilities."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
     />
   </Group>
   <Group>
     <HeadingSmall class="px-2">Shared Albums</HeadingSmall>
+    <Text class="px-2">
+      Born from several hackathon efforts, Shared Albums became a major focus for the Photos team. Facebook had lost significant ground in photo sharing, with many users not seeing it as a place to preserve memories.
+    </Text>
+    <Text class="px-2">
+      I designed the collaborative album experience for Android, allowing users to invite friends and family to contribute photos from shared events. While the interface looked familiar, the underlying technology enabled seamless collaboration across different devices and platforms, helping Facebook compete with Google and Dropbox.
+    </Text>
+  </Group>
+  <Group>
     <Image
       src="/images/work/facebook-shared-albums-android.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
+      alt="Collaborative photo sharing with granular privacy controls."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
     />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      The feature drove millions of users to create shared memories from weddings, vacations, and family gatherings, helping Facebook compete with Google and Dropbox in photo sharing.
+    </Text>
   </Group>
   <Group>
     <HeadingSmall class="px-2">Feed Tagging</HeadingSmall>
-    <Image
-      src="/images/work/facebook-feed-tagging.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
-    />
-  </Group>
- <Group>
-    <Heading class="px-2">Messenger</Heading>
+    <Text class="px-2">
+      We tested several custom interfaces to help users tag untagged faces in their photos, but found the simplest approach worked best: leveraging existing behaviors rather than creating new ones.
+    </Text>
+    <Text class="px-2">
+      Since people commonly visited their own posts right after sharing, I designed a small prompt that appeared during these visits, showing missing tags and connecting directly to the existing tagging flow. Tags on recent photos increased by 10%, proving that small, well-placed improvements often deliver the biggest results.
+    </Text>
   </Group>
   <Group>
+    <Image
+      src="/images/work/facebook-feed-tagging.png"
+      alt="Enhanced feed tagging improving user engagement and content discovery."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Heading class="px-2">Messenger Team</Heading>
     <HeadingSmall class="px-2">Voice Calling</HeadingSmall>
+    <Text class="px-2">
+      Following Messenger's separation from the main Facebook app in 2012, we believed voice calling was essential to help users stay connected. It also helped us compete with Skype (who held 30% market share) while expanding into emerging markets where voice calls were more common than text messaging.
+    </Text>
+  </Group>
+  <Group>
     <Image
       src="/images/work/facebook-voice-calling.png"
-      alt="Moneytree Vault"
-      class="rounded-xl bg-stone-200 dark:bg-stone-800 w-full"
-      lightbox={true} 
+      alt="Voice calling redesign with improved audio controls and call quality indicators."
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
     />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      We designed and shipped the first version for iOS in just four weeks. I focused on clear call quality indicators and intuitive controls, while convincing the team to add seamless multi-tasking support. This made voice calls feel natural within Messenger rather than a separate experience.
+    </Text>
+    <Text class="px-2">
+      Voice calling eventually grew to 300 million users, becoming one of Messenger's most popular features and helping Facebook compete with established voice platforms.
+    </Text>
   </Group>
 </Layout>
