@@ -13,7 +13,7 @@ const { class: className = "", lightbox = false, ...attrs } = Astro.props;
 
 {
   lightbox ? (
-    <View class="relative transition-all duration-300 hover:translate-y-0.5 md:-mx-16">
+    <View class="relative px-2 transition-all duration-300 hover:translate-y-0.5 md:-mx-16 md:px-0">
       <img
         data-lightbox="true"
         class={cn(

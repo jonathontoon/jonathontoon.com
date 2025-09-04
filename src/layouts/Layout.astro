@@ -3,10 +3,10 @@ import Text from "@components/Text.astro";
 import View from "@components/View.astro";
 import GlobalStyles from "@components/GlobalStyles.astro";
 import Lightbox from "@components/Lightbox.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
 import "@fontsource-variable/archivo";
 import { ClientRouter } from "astro:transitions";
 import ScrollView from "@components/ScrollView.astro";
-import CloseButton from "@components/CloseButton.astro";
 
 interface Props {
   title: string;
@@ -272,6 +272,7 @@ const serviceSchema = {
       <main
         class="mx-auto flex max-w-2xl flex-col gap-y-12 px-3 py-5 md:gap-y-14 md:px-6 md:py-12"
       >
+        <Breadcrumbs />
         <slot />
         <footer class="flex flex-col gap-8 p-1">
           <View class="flex w-full flex-col justify-between gap-2 md:flex-row">
@@ -281,7 +282,6 @@ const serviceSchema = {
       </main>
     </ScrollView>
     <Lightbox />
-    <CloseButton currentPath={Astro.url.pathname} />
   </body>
 </html>
 
