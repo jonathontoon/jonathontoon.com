@@ -64,10 +64,10 @@ const { class: className = "", ...attrs } = Astro.props;
           />
           {crumb.href && (
             <Link
-                href={crumb.href}
-                class="text-lg font-semibold text-stone-900 no-underline dark:text-stone-100"
-              >
-                {crumb.label}
+              href={crumb.href}
+              class="text-lg font-semibold text-stone-900 no-underline dark:text-stone-100"
+            >
+              {crumb.label}
             </Link>
           )}
         </Fragment>
