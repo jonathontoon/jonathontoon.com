@@ -10,7 +10,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.jonathontoon.com",
-  output: "static",
+  output: "server",
   adapter: cloudflare({
     platformProxy: {
       enabled: true
