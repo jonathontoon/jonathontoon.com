@@ -18,11 +18,21 @@ import { Layout } from "@layouts";
 import { getSectionCollection } from "@utils/getSectionCollection";
 import TextButtonLarge from "@components/TextButtonLarge.astro";
 
-const experienceSection = await getSectionCollection("experience");
-const mentorshipSection = await getSectionCollection("mentorship");
-const projectsSection = await getSectionCollection("projects");
-const achievementsSection = await getSectionCollection("achievements");
-const educationSection = await getSectionCollection("education");
+export const prerender = true;
+
+const [
+  experienceSection,
+  mentorshipSection,
+  projectsSection,
+  achievementsSection,
+  educationSection
+] = await Promise.all([
+  getSectionCollection("experience"),
+  getSectionCollection("mentorship"),
+  getSectionCollection("projects"),
+  getSectionCollection("achievements"),
+  getSectionCollection("education")
+]);
 ---
 
 <Layout
