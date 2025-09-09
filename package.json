@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.5",
     "@fontsource-variable/archivo": "^5.2.6",
+    "@yeskunall/astro-umami": "^0.0.7",
     "astro": "5.13.3",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
