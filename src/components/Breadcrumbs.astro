@@ -28,19 +28,13 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
   }
 
   const segments = pathname.split("/").filter((segment) => segment !== "");
-  const breadcrumbs: BreadcrumbItem[] = [];
-  let currentPath = "";
+  const lastSegment = segments[segments.length - 1];
 
-  segments.forEach((segment, index) => {
-    currentPath += `/${segment}`;
-
-    breadcrumbs.push({
-      label: pathToLabel(segment),
-      href: currentPath
-    });
-  });
-
-  return breadcrumbs;
+  // Only return the current page (last segment)
+  return [{
+    label: pathToLabel(lastSegment),
+    href: pathname
+  }];
 }
 
 const breadcrumbs = generateBreadcrumbs(Astro.url.pathname);
