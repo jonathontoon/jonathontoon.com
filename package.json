@@ -12,13 +12,9 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.5",
-    "@astrojs/mdx": "^4.3.4",
-    "@astrojs/sitemap": "^3.5.0",
     "@fontsource-variable/archivo": "^5.2.6",
     "astro": "5.13.3",
-    "astro-compress": "^2.3.8",
     "astro-icon": "^1.1.5",
-    "astro-robots-txt": "^1.0.0",
     "clsx": "^2.1.1",
     "purgecss": "^6.0.0",
     "sharp": "0.32.6",

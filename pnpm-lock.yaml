@@ -20,12 +20,18 @@ importers:
       '@fontsource-variable/archivo':
         specifier: ^5.2.6
         version: 5.2.6
+      '@hotjar/browser':
+        specifier: ^1.0.9
+        version: 1.0.9
       astro:
         specifier: 5.13.3
         version: 5.13.3(@types/node@20.14.2)(jiti@1.21.7)(lightningcss@1.29.3)(rollup@4.48.0)(terser@5.39.0)(typescript@5.9.2)(yaml@2.8.1)
       astro-compress:
         specifier: ^2.3.8
         version: 2.3.8(@types/node@20.14.2)(jiti@1.21.7)(rollup@4.48.0)(typescript@5.9.2)(yaml@2.8.1)
+      astro-hotjar:
+        specifier: ^1.0.1
+        version: 1.0.1
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -546,6 +552,9 @@ packages:
   '@fontsource-variable/archivo@5.2.6':
     resolution: {integrity: sha512-6l6yqhuNWkAz5anuWBYJ+TONIx7sWBJK5TKmMD0QsE1E8mkHYmzZAHM4K10EKeRVF6efh9n2XHIiSqDIGUmA4g==}
 
+  '@hotjar/browser@1.0.9':
+    resolution: {integrity: sha512-n9akDMod8BLGpYEQCrHwlYWWd63c1HlhUSXNIDfClZtKYXbUjIUOFlNZNNcUxgHTCsi4l2i+SWKsGsO0t93S8w==}
+
   '@iconify/tools@4.1.2':
     resolution: {integrity: sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA==}
 
@@ -1017,6 +1026,9 @@ packages:
 
   astro-compress@2.3.8:
     resolution: {integrity: sha512-XajjEtSTJuVRBOrtZ/Siavd4KcH47SEHo0XoZZeYVRF6BODSBqxVdtlfkqYJKM+F4XRUmLDS5ncVTILnQYvvXw==}
+
+  astro-hotjar@1.0.1:
+    resolution: {integrity: sha512-KvKOAHOub7RMcmyqVynmOM+DCsuUYUUDuDbDew8dEdadjmmHQ7huyFFtVxfK0pXpfz7THo1/vyUl8ah2YjRC/g==}
 
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
@@ -3740,6 +3752,8 @@ snapshots:
 
   '@fontsource-variable/archivo@5.2.6': {}
 
+  '@hotjar/browser@1.0.9': {}
+
   '@iconify/tools@4.1.2':
     dependencies:
       '@iconify/types': 2.0.0
@@ -4271,6 +4285,8 @@ snapshots:
       - typescript
       - uploadthing
       - yaml
+
+  astro-hotjar@1.0.1: {}
 
   astro-icon@1.1.5:
     dependencies:
