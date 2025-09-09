@@ -1,0 +1,21 @@
+---
+import View from "@components/View.astro";
+import TextLink from "@components/TextLink.astro";
+import Text from "./Text.astro";
+---
+
+<View
+  class="w-full transform bg-stone-100 px-6 py-5 md:text-center shadow-sm transition-transform duration-300 dark:bg-stone-800 dark:shadow-stone-700/20"
+>
+  <Text class="text-base text-stone-700 dark:text-stone-300">
+    I'm currently looking for my next role. Interested in working together?
+    <TextLink
+      href="https://cal.com/jonathontoon/hire-me"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline">Book a call.
+    </TextLink>
+  </Text>
+</View>
+
+

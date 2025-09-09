@@ -4,6 +4,7 @@ import View from "@components/View.astro";
 import GlobalStyles from "@components/GlobalStyles.astro";
 import Lightbox from "@components/Lightbox.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
+import JobBanner from "@components/JobBanner.astro";
 import "@fontsource-variable/archivo";
 import { ClientRouter } from "astro:transitions";
 import ScrollView from "@components/ScrollView.astro";
@@ -269,6 +270,7 @@ const serviceSchema = {
     class="max-h-screen overflow-hidden bg-stone-50 font-sans text-stone-900 selection:bg-stone-900 selection:text-stone-50 dark:bg-stone-900 dark:text-stone-100 dark:selection:bg-stone-100 dark:selection:text-stone-900"
   >
     <ScrollView>
+      <JobBanner />
       <main
         class="mx-auto flex max-w-2xl flex-col gap-y-12 px-3 py-5 md:gap-y-14 md:px-6 md:py-12"
       >
