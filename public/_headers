@@ -1,0 +1,6 @@
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self' https://static.cloudflareinsights.com https://script.hotjar.com;
+  connect-src 'self' https://api-gateway.umami.dev https://*.hotjar.com https://vc.hotjar.io;
+  img-src 'self' data: https://static.hotjar.com;
+  style-src 'self' 'unsafe-inline';
