@@ -32,9 +32,9 @@ export default defineConfig({
     }),
     compress({
       CSS: true,
-      HTML: true,
+      HTML: false,
       Image: true,
-      JavaScript: true,
+      JavaScript: false,
       SVG: true
     })
   ],
