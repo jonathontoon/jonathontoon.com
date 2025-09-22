@@ -1,6 +1,6 @@
 - id: "out-of-work"
   title: "Out-Of-Work"
-  subtitle: "$50.00 NZD"
+  subtitle: "$57.50 NZD"
   date: "45 Minutes"
   type: "mentorship"
   logo: "images/logos/new-grad.svg"
@@ -9,7 +9,7 @@
 
 - id: "early-career"
   title: "Early-Career"
-  subtitle: "$120.00 NZD"
+  subtitle: "$138.00 NZD"
   date: "45 Minutes"
   type: "mentorship"
   logo: "images/logos/early-career.svg"
@@ -18,7 +18,7 @@
 
 - id: "mid-career"
   title: "Mid-Career"
-  subtitle: "$200.00 NZD"
+  subtitle: "$230.00 NZD"
   date: "45 Minutes"
   type: "mentorship"
   logo: "images/logos/mid-career.svg"
@@ -27,7 +27,7 @@
 
 - id: "founder"
   title: "Founder"
-  subtitle: "$300.00 NZD"
+  subtitle: "$345.00 NZD"
   date: "90 Minutes"
   type: "mentorship"
   logo: "images/logos/founder.svg"
