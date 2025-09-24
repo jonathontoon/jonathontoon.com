@@ -1,13 +1,29 @@
 ---
-import type { HTMLAttributes } from "astro/types";
 import { cn } from "@utils/cn";
 import Image from "./Image.astro";
+import type { ImageMetadata } from "astro";
 
-interface Props extends HTMLAttributes<"img"> {
+interface Props {
   class?: string;
+  src: string | ImageMetadata;
+  alt: string;
+  width?: number;
+  height?: number;
+  format?: "webp" | "avif" | "png" | "jpg" | "jpeg";
+  quality?: number;
+  loading?: "lazy" | "eager";
 }
 
-const { class: className = "", ...attrs } = Astro.props;
+const {
+  class: className = "",
+  src,
+  alt,
+  width = 48,
+  height = 48,
+  format,
+  quality = 80,
+  loading = "lazy",
+} = Astro.props;
 ---
 
 <Image
@@ -15,5 +31,11 @@ const { class: className = "", ...attrs } = Astro.props;
     "w-12 h-12 rounded-2xl bg-stone-200 dark:bg-stone-800 aspect-square object-cover object-center",
     className
   )}
-  {...attrs}
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  format={format}
+  quality={quality}
+  loading={loading}
 />

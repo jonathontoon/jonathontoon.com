@@ -1,16 +1,38 @@
 ---
-import type { HTMLAttributes } from "astro/types";
 import { cn } from "@utils/cn";
 import SquareImage from "./SquareImage.astro";
+import type { ImageMetadata } from "astro";
 
-interface Props extends HTMLAttributes<"img"> {
+interface Props {
   class?: string;
+  src: string | ImageMetadata;
+  alt: string;
+  width?: number;
+  height?: number;
+  format?: "webp" | "avif" | "png" | "jpg" | "jpeg";
+  quality?: number;
+  loading?: "lazy" | "eager";
 }
 
-const { class: className = "", ...attrs } = Astro.props;
+const {
+  class: className = "",
+  src,
+  alt,
+  width = 48,
+  height = 48,
+  format,
+  quality = 80,
+  loading = "lazy",
+} = Astro.props;
 ---
 
 <SquareImage
   class={cn("w-12 h-12 rounded-lg bg-stone-200 dark:bg-stone-800", className)}
-  {...attrs}
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  format={format}
+  quality={quality}
+  loading={loading}
 />

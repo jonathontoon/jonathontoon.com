@@ -1,14 +1,29 @@
 ---
 import SquareImage from "./SquareImage.astro";
 import View from "./View.astro";
+import type { ImageMetadata } from "astro";
 
 interface Props {
-  src?: string;
+  src?: string | ImageMetadata;
   alt?: string;
   class?: string;
+  width?: number;
+  height?: number;
+  format?: "webp" | "avif" | "png" | "jpg" | "jpeg";
+  quality?: number;
+  loading?: "lazy" | "eager";
 }
 
-const { src, alt, class: className = "", ...attrs } = Astro.props;
+const {
+  src,
+  alt,
+  class: className = "",
+  width = 80,
+  height = 80,
+  format,
+  quality = 80,
+  loading = "lazy",
+} = Astro.props;
 ---
 
 <View class="flex-shrink-0">
@@ -18,7 +33,11 @@ const { src, alt, class: className = "", ...attrs } = Astro.props;
         src={src}
         alt={alt || ""}
         class="h-20 w-20 md:h-24 md:w-24"
-        {...attrs}
+        width={width}
+        height={height}
+        format={format}
+        quality={quality}
+        loading={loading}
       />
     ) : (
       <slot>Image</slot>
