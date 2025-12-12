@@ -3,8 +3,10 @@ import Text from "@components/Text.astro";
 import View from "@components/View.astro";
 import GlobalStyles from "@components/GlobalStyles.astro";
 import Lightbox from "@components/Lightbox.astro";
-import Breadcrumbs from "@components/Breadcrumbs.astro";
 import JobBanner from "@components/JobBanner.astro";
+import Link from "@components/Link.astro";
+import { Icon } from "astro-icon/components";
+import { cn } from "@utils/cn";
 import "@fontsource-variable/archivo";
 import { ClientRouter } from "astro:transitions";
 import ScrollView from "@components/ScrollView.astro";
@@ -284,7 +286,16 @@ const serviceSchema = {
       <main
         class="mx-auto flex max-w-2xl flex-col gap-y-12 px-3 py-5 pt-8 md:gap-y-14 md:px-6 md:py-12"
       >
-        <Breadcrumbs />
+        {Astro.url.pathname !== "/" && (
+          <header class={cn("flex items-center gap-x-2 px-2")}>
+            <Link href="/" class="flex items-center no-underline">
+              <Icon
+                name="solid-house"
+                class="h-8 w-8 text-stone-900 dark:text-stone-100"
+              />
+            </Link>
+          </header>
+        )}
         <slot />
         <footer class="flex flex-col gap-8 p-1">
           <View class="flex w-full flex-col justify-between gap-2 md:flex-row">
