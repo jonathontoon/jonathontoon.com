@@ -35,7 +35,6 @@
   logo: "images/logos/rainforest-qa.svg"
   url: "https://www.rainforestqa.com"
   urlText: "Visit"
-  path: "/work/rainforest"
 
 - id: "moneytree"
   title: "Moneytree"
