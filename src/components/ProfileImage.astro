@@ -10,20 +10,22 @@ const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <View
-  class={`hover:translate-y-0.5 duration-300 ease-in-out flex relative group ${className}`}
+  class={`duration-300 ease-in-out flex relative group overflow-hidden rounded-2xl md:rounded-3xl ${className}`}
 >
-  <SquareImageLarge
-    class="h-32 w-32 bg-blue-500 group-hover:invisible md:h-36 md:w-36 dark:bg-blue-500"
-    src="/images/profile.png"
-    alt="Jonathon Toon"
-    loading="eager"
-    {...attrs}
-  />
-  <SquareImageLarge
-    class="invisible absolute inset-0 h-32 w-32 bg-blue-500 group-hover:visible md:h-36 md:w-36 dark:bg-blue-500"
-    src="/images/profile-blink.png"
-    alt="Jonathon Toon"
-    loading="eager"
-    {...attrs}
-  />
+  <div class="flex flex-col transition-transform duration-300 ease-in-out group-hover:-translate-y-32 md:group-hover:-translate-y-36">
+    <SquareImageLarge
+      class="h-32 w-32 bg-blue-500 md:h-36 md:w-36 dark:bg-blue-500"
+      src="/images/profile.png"
+      alt="Jonathon Toon"
+      loading="eager"
+      {...attrs}
+    />
+    <SquareImageLarge
+      class="h-32 w-32 bg-blue-500 md:h-36 md:w-36 dark:bg-blue-500"
+      src="/images/profile-blink.png"
+      alt="Jonathon Toon"
+      loading="eager"
+      {...attrs}
+    />
+  </div>
 </View>
