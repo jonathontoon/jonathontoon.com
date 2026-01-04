@@ -10,9 +10,9 @@ const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <View
-  class={`duration-300 ease-in-out flex relative group overflow-hidden rounded-2xl md:rounded-3xl ${className}`}
+  class={`hover:translate-y-0.5 transition-transform duration-300 ease-in-out flex relative group overflow-hidden rounded-2xl md:rounded-3xl ${className}`}
 >
-  <div class="flex flex-col transition-transform duration-300 ease-in-out group-hover:-translate-y-32 md:group-hover:-translate-y-36">
+  <div class="flex flex-col group-hover:-translate-y-32 md:group-hover:-translate-y-36">
     <SquareImageLarge
       class="h-32 w-32 bg-blue-500 md:h-36 md:w-36 dark:bg-blue-500"
       src="/images/profile.png"
