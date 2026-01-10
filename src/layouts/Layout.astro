@@ -10,6 +10,7 @@ import { cn } from "@utils/cn";
 import "@fontsource-variable/archivo";
 import { ClientRouter } from "astro:transitions";
 import ScrollView from "@components/ScrollView.astro";
+import HeadingSmall from "@components/HeadingSmall.astro";
 
 interface Props {
   title: string;
@@ -291,9 +292,12 @@ const serviceSchema = {
             <header class={cn("flex items-center gap-x-2 px-2")}>
               <Link href="/" class="flex items-center no-underline">
                 <Icon
-                  name="solid-house"
+                  name="solid-arrow-block-left"
                   class="h-8 w-8 text-stone-900 dark:text-stone-100"
                 />
+                <span class="pl-4 text-2xl font-bold leading-tight tracking-normal text-stone-900 dark:text-stone-100">
+                  Back
+                </span>
               </Link>
             </header>
           )
