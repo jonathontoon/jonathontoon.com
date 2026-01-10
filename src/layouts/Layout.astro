@@ -286,16 +286,18 @@ const serviceSchema = {
       <main
         class="mx-auto flex max-w-2xl flex-col gap-y-12 px-3 py-5 pt-8 md:gap-y-14 md:px-6 md:py-12"
       >
-        {Astro.url.pathname !== "/" && (
-          <header class={cn("flex items-center gap-x-2 px-2")}>
-            <Link href="/" class="flex items-center no-underline">
-              <Icon
-                name="solid-house"
-                class="h-8 w-8 text-stone-900 dark:text-stone-100"
-              />
-            </Link>
-          </header>
-        )}
+        {
+          Astro.url.pathname !== "/" && (
+            <header class={cn("flex items-center gap-x-2 px-2")}>
+              <Link href="/" class="flex items-center no-underline">
+                <Icon
+                  name="solid-house"
+                  class="h-8 w-8 text-stone-900 dark:text-stone-100"
+                />
+              </Link>
+            </header>
+          )
+        }
         <slot />
         <footer class="flex flex-col gap-8 p-1">
           <View class="flex w-full flex-col justify-between gap-2 md:flex-row">

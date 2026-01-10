@@ -1,7 +1,7 @@
 - id: "sofi"
   title: "SoFi"
   subtitle: "Personal Banking"
-  date: "2025"
+  date: "2025 — Now"
   type: "experience"
   logo: "images/logos/sofi.svg"
   url: "https://www.sofi.com/"
@@ -35,6 +35,7 @@
   logo: "images/logos/rainforest-qa.svg"
   url: "https://www.rainforestqa.com"
   urlText: "Visit"
+  path: "/work/rainforest-qa"
 
 - id: "moneytree"
   title: "Moneytree"

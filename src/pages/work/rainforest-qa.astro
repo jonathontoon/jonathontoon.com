@@ -1,0 +1,298 @@
+---
+import Heading from "@components/Heading.astro";
+import HeadingLarge from "@components/HeadingLarge.astro";
+import Text from "@components/Text.astro";
+import View from "@components/View.astro";
+import Group from "@components/Group.astro";
+import { Layout } from "@layouts";
+import Image from "@components/Image.astro";
+
+export const prerender = true;
+---
+
+<Layout
+  title="Rainforest | Work | Jonathon Toon | Software Designer & Product Leader"
+  description="Jonathon Toon is a versatile software designer and product leader based in Aotearoa New Zealand."
+  keywords="design, software, product, fractional, leadership, new zealand, aotearoa, technology, typescript, start ups, engineering, mentorship, coaching, adplist"
+  twitterHandle="@jonathontoon"
+  canonicalUrl="https://www.jonathontoon.com/"
+  ogImage="/images/og-image.png"
+>
+  <Group>
+    <HeadingLarge class="px-2">Rainforest QA</HeadingLarge>
+    <Text class="px-2">
+      Rainforest QA builds browser-based developer tools that help teams ship
+      quickly with confidence, by blending no-code test authoring with
+      AI-powered automation.
+    </Text>
+    <Text class="px-2">
+      I joined as the first designer after a major reorganization, a pivot from
+      enterprise sales to a product-led growth focus. This transition required a
+      lean structure without dedicated Product Managers, where designers were
+      empowered to drive both strategy and execution.
+    </Text>
+    <Text class="px-2">
+      During this time I also stepped into my first leadership role as Director
+      of Design. Guiding a team of three designers and establishing a culture
+      where design wasn't just about delivery, but central to defining the
+      product itself.
+    </Text>
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+  <Group>
+    <Heading class="px-2">Customer Discovery</Heading>
+    <Text class="px-2">
+      After joining, I noticed several recent releases in the product hadn't
+      landed as expected. While we built technically impressive features, they
+      didn't meet customer quality standards. This was an indicator that we
+      weren't close enough to understanding their core needs.
+    </Text>
+    <Text class="px-2">
+      I flagged this to the founders, proposing a short pause on further product
+      work to conduct some customer discovery. The intent wasn't to stop all
+      work, but to reorient focus and recalibrate our intuition.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-customer-research-1.png"
+      alt="Rainforest QA wordmark and logomark refreshed for the product-led brand."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      Partnering with the CTO and a Customer Success Manager, we interviewed
+      three key cohorts over two weeks: potential customers, active users, and
+      those who had churned.
+    </Text>
+    <Text class="px-2">
+      While doing so, we examined the opinions of critical areas: the marketing
+      website (our primary growth engine) and the test authoring experience (the
+      product’s core value).
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-customer-research-2.png"
+      alt="Rainforest QA wordmark and logomark refreshed for the product-led brand."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      Research from 30 interviews uncovered a wealth of insights, from confusing
+      user flows to critical bugs. While painful to hear, the feedback reignited
+      the team's passion for building a product we had strong conviction for.
+    </Text>
+    <Text class="px-2">
+      It was agreed that the feedback was significant enough to reshape our
+      roadmap, shifting focus for the next six months to address the most major
+      findings.
+    </Text>
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+  <Group>
+    <Heading class="px-2">Test Authoring</Heading>
+    <Text class="px-2">
+      To serve teams without dedicated QA engineers, we needed a faster path
+      from idea to executable test. Alongside our engineers the design team led
+      a holistic rethink which resulted in 12 months of small iterative
+      projects.
+    </Text>
+    <Text class="px-2">
+      The goal was to simplify the test writing experience to help new users see
+      value sooner, while helping everyday customers write tests that were
+      significantly more resilient to failure.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-test-creation.png"
+      alt="Rainforest QA no-code test authoring interface with reusable steps."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      We started by rethinking the core interaction model. Using the project's
+      natural language interface, we established a clear taxonomy of "actions" a
+      user could instruct the browser to take.
+    </Text>
+    <Text class="px-2">
+      This enabled users to write tests that read like user stories, directly in
+      a live browser. It lowered the barrier to entry, ensuring that anyone,
+      even non-technical staff, could understand and contribute to the test
+      suite.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-test-authoring.png"
+      alt="Rainforest QA no-code test authoring interface with reusable steps."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      To prevent duplication, we introduced a modular component system. Users
+      could group frequent actions, such as "Login" or "Checkout", into reusable
+      steps. This created a shared library across teams, meaning a single update
+      to one test would instantly propagate to every other test, drastically
+      reducing maintenance overhead.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-test-run.png"
+      alt="Rainforest QA no-code test authoring interface with reusable steps."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      Lastly, we clarified the execution process. It was critical users
+      understood how they were running a test, whether via our automated AI
+      agents or using a real person from our crowdsourced tester pool.
+    </Text>
+    <Text class="px-2">
+      We surfaced these modes alongside their respective costs, allowing teams
+      to make informed decisions regarding speed, human insight, and budget.
+    </Text>
+  </Group>
+  <Group>
+    <Heading class="px-2">Idea Evaluation</Heading>
+    <Text class="px-2">
+      During my time at the company, ideas would always arrive rapidly from
+      every direction, including leadership, engineering, sales, and support.
+      Without a structured evaluation process, the team frequently paused work
+      to debate new possibilities, losing focus on goals.
+    </Text>
+    <Text class="px-2">
+      To manage this, I worked with the Director of Engineering to establish an
+      evaluation framework adapted from Basecamp’s “Shape Up”. This introduced a
+      rubric a team would use before committing to any non-critical work.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-shaping-1.png"
+      alt="Rainforest QA no-code test authoring interface with reusable steps."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-shaping-2.png"
+      alt="Rainforest QA no-code test authoring interface with reusable steps."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2">
+      Its purpose was to require anyone proposing an idea to answer critical
+      questions about customer impact, business value, and more importantly
+      success criteria.
+    </Text>
+    <Text class="px-2">
+      Crucially, it gave leadership transparency into the goals of committed
+      work, allowing them to contribute insights or veto initiatives that
+      strayed from the vision.
+    </Text>
+    <Text class="px-2">
+      In an organization without a dedicated product management function, this
+      shared context was vital. It distributed product thinking across the
+      company, ensuring everyone considered the “why” behind their work, not
+      just the “how.”
+    </Text>
+  </Group>
+  <!-- <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group>
+  <Group>
+    <Heading class="px-2">Brand Refresh</Heading>
+    <Text class="px-2">
+      As the company matured Rainforest's product and marketing sites had grown
+      distant, creating a split identity in what the brand promised and the
+      product could achieve. In some cases presenting an inconsistent tone that
+      turned off potential customers.
+    </Text>
+    <Text class="px-2">
+      The refreshed identity framed Rainforest as a dependable engineering tool
+      rather than a services company, while still celebrating the human QA
+      network that differentiated us from purely automated competitors.
+    </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-branding-logo.png"
+      alt="Rainforest QA wordmark and logomark refreshed for the product-led brand."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2"> ... </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-branding-styleguide.png"
+      alt="Rainforest QA wordmark and logomark refreshed for the product-led brand."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <Text class="px-2"> ... </Text>
+  </Group>
+  <Group>
+    <Image
+      src="/images/work/rainforest-qa-branding-website.png"
+      alt="Rainforest QA wordmark and logomark refreshed for the product-led brand."
+      width={3840}
+      height={2560}
+      class="w-full rounded-xl bg-stone-200 dark:bg-stone-800"
+      lightbox={true}
+    />
+  </Group>
+  <Group>
+    <View class="px-2">
+      <View class="h-px w-full bg-stone-200 dark:bg-stone-700" />
+    </View>
+  </Group> -->
+</Layout>

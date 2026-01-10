@@ -11,9 +11,9 @@
     "format": "prettier -c \"src/**/*.{json,js,ts,astro,css}\" --write"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.9",
+    "@astrojs/cloudflare": "^12.6.12",
     "@fontsource-variable/archivo": "^5.2.6",
-    "astro": "5.13.3",
+    "astro": "5.16.7",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "purgecss": "^6.0.0",
@@ -21,7 +21,7 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.4",
+    "@astrojs/check": "0.9.6",
     "@astrojs/tailwind": "6.0.2",
     "@types/node": "20.14.2",
     "prettier": "3.3.2",
