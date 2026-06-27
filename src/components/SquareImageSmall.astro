@@ -22,12 +22,15 @@ const {
   height = 48,
   format,
   quality = 80,
-  loading = "lazy",
+  loading = "lazy"
 } = Astro.props;
 ---
 
 <SquareImage
-  class={cn("w-12 h-12 rounded-lg bg-stone-200 dark:bg-stone-800", className)}
+  class={cn(
+    "w-12 h-12 rounded-lg bg-neutral-200 dark:bg-neutral-800",
+    className
+  )}
   src={src}
   alt={alt}
   width={width}
