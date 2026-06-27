@@ -27,7 +27,7 @@ const {
   formats = ["webp", "avif"],
   quality = 80,
   loading = "lazy",
-  decoding = "async",
+  decoding = "async"
 } = Astro.props;
 ---
 
@@ -37,7 +37,7 @@ const {
       <Picture
         data-lightbox="true"
         class={cn(
-          "w-full cursor-pointer rounded-xl bg-stone-200 opacity-0 transition-opacity duration-700 ease-out dark:bg-stone-800",
+          "w-full cursor-pointer rounded-xl bg-neutral-200 opacity-0 transition-opacity duration-700 ease-out dark:bg-neutral-800",
           className
         )}
         src={src}
@@ -52,7 +52,7 @@ const {
     </View>
   ) : (
     <Picture
-      class={cn("bg-stone-200 dark:bg-stone-800", className)}
+      class={cn("bg-neutral-200 dark:bg-neutral-800", className)}
       src={src}
       alt={alt}
       widths={widths}
