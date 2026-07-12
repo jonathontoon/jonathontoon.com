@@ -1,10 +1,6 @@
 {
 	"_variables": {
-<<<<<<< HEAD
 		"lastUpdateCheck": 1783820969036
-=======
-		"lastUpdateCheck": 1783820106937
->>>>>>> develop
 	},
 	"devToolbar": {
 		"enabled": false
