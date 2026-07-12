@@ -1,58 +1,46 @@
 {
-  "$ref": "#/definitions/sections",
-  "definitions": {
-    "sections": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "subtitle": {
-            "type": "string"
-          },
-          "date": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "logo": {
-            "type": "string",
-            "pattern": "\\.(jpg|jpeg|png|webp|svg)$",
-            "errorMessage": {
-              "pattern": "Image must be a valid image file"
-            }
-          },
-          "slug": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "format": "uri"
-          },
-          "urlText": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string",
-            "pattern": "^\\/",
-            "errorMessage": {
-              "pattern": "Internal path must start with /"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "title"
-        ],
-        "additionalProperties": false
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "subtitle": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "logo": {
+        "type": "string",
+        "pattern": "\\.(jpg|jpeg|png|webp|svg)$"
+      },
+      "slug": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "urlText": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string",
+        "pattern": "^\\/"
       }
-    }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+    },
+    "required": [
+      "id",
+      "title"
+    ]
+  }
 }

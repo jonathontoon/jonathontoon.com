@@ -1,0 +1,23 @@
+{"message":"Enabling sessions with Cloudflare KV with the \"SESSION\" KV binding.","label":"@astrojs/cloudflare","level":"info"}
+{"message":"connected.","label":"vite","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":"Generated 1ms","label":"types","level":"info"}
+{"message":"Syncing content","label":"content","level":"info"}
+{"message":"Astro config changed","label":"content","level":"info"}
+{"message":"Clearing content store","label":"content","level":"info"}
+{"message":"Synced content","label":"content","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":"Re-optimizing dependencies because vite config has changed","label":"vite","level":"info"}
+{"message":" astro  v7.0.7 ready in 2110 ms\n┃ Local    http://localhost:4321/\n┃ Network  use --host to expose","label":"SKIP_FORMAT","level":"info"}
+{"message":"watching for file changes...","label":null,"level":"info"}
+Browserslist: browsers data (caniuse-lite) is 11 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+{"message":"dependencies optimized: astro-icon/components, tailwind-merge","label":"vite","level":"info"}
+{"message":"optimized dependencies changed. reloading","label":"vite","level":"info"}
+{"message":"[vite] program reload","label":"vite","level":"info"}
+{"message":"dependency optimized: astro/assets/services/noop","label":"vite","level":"info"}
+{"message":"optimized dependencies changed. reloading","label":"vite","level":"info"}
+{"message":"[vite] program reload","label":"vite","level":"info"}
+{"message":"Loaded icons from public/images/icons","label":"astro-icon","level":"info"}
+{"message":"Internal server error: module is not defined\n      at runInRunnerObject (workers/runner-worker/index.js:107:3)\n      at NonRunnablePipeline.getComponentByRoute (/Users/toon/src/jonathontoon.com/node_modules/.vite/deps_ssr/astro_app_entrypoint_dev.js?v=acf7761b:162:10)\n      at matchRoute (/Users/toon/src/jonathontoon.com/node_modules/.vite/deps_ssr/astro_app_entrypoint_dev.js?v=acf7761b:233:9)\n      at DevApp.devMatch (/Users/toon/src/jonathontoon.com/node_modules/.vite/deps_ssr/astro_app_entrypoint_dev.js?v=acf7761b:318:24)\n      at Object.handle [as fetch] (/Users/toon/src/jonathontoon.com/node_modules/.vite/deps_ssr/@astrojs_cloudflare_entrypoints_server.js?v=acf7761b:169:18)\n      at maybeCaptureError (workers/runner-worker/index.js:51:10)","label":"vite","level":"error"}
