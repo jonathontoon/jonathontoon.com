@@ -1,3 +1,12 @@
+- id: "what-light-remains"
+  title: "What Light Remains"
+  subtitle: "WebGL, TypeScript"
+  date: "2026"
+  type: "project"
+  logo: "images/logos/what-light-remains.svg"
+  url: "https://www.whatlightremains.com"
+  urlText: "View"
+
 - id: "manifest"
   title: "Manifest"
   subtitle: "JavaScript, HTML/CSS"
