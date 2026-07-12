@@ -22,13 +22,13 @@ const {
   height = 48,
   format,
   quality = 80,
-  loading = "lazy",
+  loading = "lazy"
 } = Astro.props;
 ---
 
 <Image
   class={cn(
-    "w-12 h-12 rounded-2xl bg-stone-200 dark:bg-stone-800 aspect-square object-cover object-center",
+    "w-12 h-12 rounded-2xl bg-neutral-200 dark:bg-neutral-800 aspect-square object-cover object-center",
     className
   )}
   src={src}
